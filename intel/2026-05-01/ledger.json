@@ -1,0 +1,151 @@
+[
+  {
+    "topic_key": "socure_q1_2026_growth",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Socure reported Q1 2026 ARR exceeding $340M with 62% YoY profitable growth, confirming identity verification market consolidation around well-capitalized incumbents.",
+    "entities": [
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "q2_holdings_ai_coding_amazon",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Q2 Holdings reportedly uses an AI coding tool cutting platform builds from weeks to days, and is collaborating with Amazon on digital banking modernization.",
+    "entities": [
+      "Q2 Holdings",
+      "Amazon"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "plaid_transaction_foundation_model",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid shipped a proprietary transaction foundation model targeting categorization quality and intelligent finance insights at scale.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "compass"
+    ]
+  },
+  {
+    "topic_key": "plaid_protect_fraud_network",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid Protect fraud network claims 59% more fraud caught with no added friction, setting a network-effect benchmark single-FI deployments cannot match.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "plaid_perplexity_integration",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid expanded its Perplexity integration to cover spending tracking, net worth, and AI planning, creating a consumer-facing AI insight layer.",
+    "entities": [
+      "Plaid",
+      "Perplexity"
+    ],
+    "roadmap_areas": [
+      "compass"
+    ]
+  },
+  {
+    "topic_key": "plaid_income_engine_rebuild",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid rebuilt its Income verification engine with finer taxonomy and configurable calculation, upgrading income verification capabilities.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "personetics_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Personetics launched an MCP server enabling agentic AI on customer financial data; also announced a deposit-growth collaboration with Atomic.",
+    "entities": [
+      "Personetics",
+      "Atomic"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "nymbus_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Nymbus launched a secure MCP server for AI-driven core banking actions, adding agentic access infrastructure to its core banking platform.",
+    "entities": [
+      "Nymbus"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_material_agreement",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Jack Henry's 2026-03-26 8-K disclosed entry into and termination of material agreements plus a new financial obligation; counterparty unknown.",
+    "entities": [
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fincen_ofac_stablecoin_genius_act",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "FinCEN and OFAC jointly proposed rules requiring payment stablecoin issuers to comply with the GENIUS Act, establishing the first federal AML/sanctions framework for stablecoin rails.",
+    "entities": [
+      "FinCEN",
+      "OFAC"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "bud_financial_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Bud Financial launched an MCP server enabling AI agents to access bank-grade financial intelligence, entering agentic-data-access infrastructure market.",
+    "entities": [
+      "Bud Financial"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "alkami_8k_material_agreement",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Alkami's 8-K disclosed a material definitive agreement and an unregistered equity sale; details limited.",
+    "entities": [
+      "Alkami"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  }
+]
