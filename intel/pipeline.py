@@ -355,7 +355,6 @@ def synthesize(in_file: Path, out_file: Path) -> None:
     response = client.messages.create(
         model=SYNTHESIS_MODEL,
         max_tokens=4096,
-        temperature=SYNTHESIS_TEMP,
         messages=[{"role": "user", "content": prompt}],
     )
     brief = strip_code_fences(response.content[0].text)
