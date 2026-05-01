@@ -49,7 +49,7 @@ SYNTHESIS_TEMP = 0.3       # slight variation in prose, still controlled
 
 TRIAGE_CONCURRENCY = 8     # parallel triage calls
 TRIAGE_RELEVANCE_DROP = 2  # drop anything below this score
-RSS_ITEMS_PER_FEED = 30    # cap per feed; older items are stale
+RSS_ITEMS_PER_FEED = 10    # cap per feed; older items are stale
 
 DEFAULT_HTTP_TIMEOUT = 30
 USER_AGENT = "asa-intel/0.1 (https://www.asavault.com)"
