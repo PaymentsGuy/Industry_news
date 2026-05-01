@@ -1,36 +1,36 @@
 # ASA Daily Intelligence Brief — 2026-05-01
 
-**Items reviewed:** 933
+**Items reviewed:** 931
 **Items surfaced:** 14
-**Today's headline:** Open banking's regulatory foundation is being rewritten while Plaid, Bud, and bank-owned networks lock in distribution at ASA's channel partners — the platform's data-access thesis is under simultaneous pressure on three fronts.
+**Today's headline:** Open banking economics are being rewritten in real time — bank-imposed data fees, a stayed 1033 rule, and Bud's capture of Banno are the three forces ASA must answer this quarter.
 
 ---
 
 ## TL;DR
 
-1. Bud Financial is now embedded in two ASA channel partners — Jack Henry/Banno (transaction enrichment) and Nymbus (PFM) — directly displacing One View and Compass positioning in those channels [REF 1][REF 2][REF 3]. 
-2. CFPB's Section 1033 rule is in active rewrite/stay/interim-rule limbo with FDX confirmed as standard-setter, while JPMorgan and peers move to charge aggregators for data access — the economics and rights underpinning ASA's data layer are unsettled [REF 4][REF 5][REF 6][REF 7][REF 8]. 
-3. Plaid shipped a transaction foundation model and Personetics launched an MCP server for agentic banking — the AI-over-financial-data layer where Compass/Forecast must compete is being commoditized [REF 9][REF 10].
+1. Bud Financial is now embedded in Jack Henry/Banno for transaction enrichment and signed Nymbus and First Fidelity Bank — a direct competitor is colonizing two ASA channel partners simultaneously [REF 1] [REF 2] [REF 3].
+2. CFPB's Section 1033 rule is stayed by court order with an interim final rule and ANPR in motion, while JPMorgan's data-access fees and renegotiated Yodlee pact are repricing the entire aggregation layer [REF 4] [REF 5] [REF 6] [REF 7].
+3. Agentic AI via MCP is shipping in production: Personetics, Bud, Plaid, FactSet, and Narmi/Grasshopper all released MCP servers or transaction foundation models in the last six months [REF 8] [REF 9] [REF 10] [REF 11].
 
 ---
 
 ## By roadmap area
 
-**Vault.** No material signal today.
+**Vault.** No direct signal on Vault itself today, but the JPMorgan aggregator-fee regime [REF 6] and renegotiated JPM/Yodlee pact [REF 7] reshape the cost structure underneath any permissioned-data product. **Monitor** — track whether ASA's pass-through economics hold if top-5 banks adopt JPM-style fees.
 
-**Compass.** Personetics' MCP server lets banks build agentic apps directly on customer financial intelligence, and Bud landed in Nymbus for AI-PFM [REF 10][REF 2][REF 3]. Both moves commoditize the insights layer Compass is built on and put a competitor inside an ASA channel. Recommendation: Investigate MCP exposure for Compass and quantify Nymbus exposure by 2026-05-15.
+**Compass.** Personetics' MCP server [REF 8], Bud's MCP server [REF 9], and Plaid's transaction foundation model [REF 12] all directly target Compass's insights moat. Personetics now serves 150M+ monthly users at peer banks [REF 13]. **Decision needed by 2026-05-22:** ship an MCP-compatible interface for Compass or publicly commit to one.
 
-**Auth.** Wells Fargo and PNC are pushing fintechs onto Akoya, and FDX is now the CFPB-recognized standard setter — the auth/data-access rail is consolidating away from aggregator-mediated access [REF 11][REF 5]. ASA Auth needs a clear FDX-aligned posture and an Akoya story for major-bank prospects. Recommendation: Decision needed by 2026-05-22 on FDX certification timing and Akoya interoperability.
+**Auth.** The 1033 stay [REF 4] freezes the regulatory tailwind ASA's Auth narrative depends on. Wells Fargo and PNC are pressuring fintechs onto Akoya [REF 14], and Plaid Protect now claims 59% more fraud detection [REF 15]. **Investigate** how an Akoya-mandated FI shifts ASA Auth's connectivity story for shared accounts.
 
-**Verify.** Pinwheel launched API-driven direct deposit switching with OneSource Virtual (Workday payroll), the first of its kind [REF 12]. This deepens Pinwheel's payroll-data moat against Verify's income and deposit-capture use cases. Recommendation: Investigate the OneSource Virtual integration pattern and assess whether Verify needs a payroll-provider-direct path by 2026-05-29.
+**Verify.** Plaid's AI document verification, Encompass mortgage integration, and new income-classification engine [REF 16] tighten the verify race. JPMorgan's fee regime threatens the unit economics of every income/asset verification call ASA brokers [REF 6]. **Investigate** Verify pricing exposure to top-5 bank fee schedules within two weeks.
 
-**Pay.** Pinwheel's DDS launch is the only direct Pay-adjacent signal today and pressures deposit-funding flows [REF 12]. No regulatory or rails-level Pay signal surfaced. Recommendation: Monitor for follow-on payroll-provider partnerships before reprioritizing Pay roadmap.
+**Pay.** Pinwheel-Plaid alliance for direct deposit switching [REF 17] and Q2's stablecoin and BNPL/Affirm integrations [REF 18] expand the competitive surface. The 1033 fee provisions [REF 5] could reshape Pay's permissioned-debit economics. **Monitor** — no immediate action.
 
-**One View.** Jack Henry has integrated Bud Financial transaction enrichment into Banno — a channel partner is now shipping a competitor's core One View capability natively [REF 1]. This is the single most concrete competitive displacement signal in today's set. Recommendation: Decision needed by 2026-05-15 on Banno co-sell posture and One View differentiation messaging for Jack Henry FIs.
+**One View.** Bud Financial powers Jack Henry's Banno transaction enrichment [REF 1] and First Fidelity Bank's deployment [REF 3]. This is the most acute channel-partner threat in today's set: a direct competitor now sits inside ASA's largest distribution partner. **Decision needed by 2026-05-15:** BD and CPO align on Banno counter-positioning — defend, displace, or differentiate.
 
-**Forecast.** Plaid announced a transaction foundation model targeting richer categorization and scalable insights — directly raising the accuracy bar for Forecast's predictive layer [REF 9]. Combined with Personetics' MCP play, the predictive-insights category is being repriced on AI capability [REF 10]. Recommendation: Investigate Plaid's model claims and benchmark Forecast accuracy against published categorization standards by 2026-06-01.
+**Forecast.** Bud and Personetics are both wrapping forecast-adjacent capabilities in agentic AI [REF 8] [REF 9]. Plaid's transaction foundation model directly targets predictive cashflow [REF 12]. **Investigate** whether Forecast's roadmap clearly differentiates from foundation-model-based categorization within 30 days.
 
-**Horizontal.** Section 1033 is simultaneously stayed, in rewrite, and headed for an interim final rule, with FDX formally designated and JPMorgan signing fee deals with aggregators including Yodlee [REF 4][REF 6][REF 7][REF 8]. Yodlee was sold to PE firm STG, opening customer-migration windows [REF 13]. The data-access economics ASA depends on are in flux across rights, fees, and ownership. Recommendation: Decision needed by 2026-05-30 on ASA's public position re: 1033 interim rule and bank-imposed aggregator fees.
+**Horizontal.** Section 1033 is in active rewrite under an ANPR with an interim final rule pending [REF 4] [REF 5]. CFPB has told a court it cannot lawfully draw Federal Reserve funds [REF 19], adding institutional uncertainty. JPMorgan's bilateral aggregator pacts [REF 7] suggest the future of US open banking may be commercially negotiated rather than regulator-defined. **Monitor** the interim rule text when published; **Decision needed by 2026-06-01** on whether ASA publicly takes a position in the comment period.
 
 ---
 
@@ -38,44 +38,41 @@
 
 | Entity | Signal type | One-line detail | Ref |
 |---|---|---|---|
-| Jack Henry/Banno + Bud | partnership | Bud transaction enrichment integrated into Banno digital platform | [REF 1] |
-| Nymbus + Bud | partnership | Bud powers AI PFM in Nymbus for banks/CUs | [REF 2][REF 3] |
-| CFPB | regulatory | 1033 stayed; interim final rule planned; rewrite underway | [REF 4][REF 6][REF 7] |
-| FDX | regulatory | CFPB designates FDX as recognized standard-setting body | [REF 5] |
-| Pinwheel | launch | API-driven DDS via OneSource Virtual (Workday payroll) | [REF 12] |
-| Akoya | positioning | Wells Fargo, PNC pushing fintechs to bank-backed network | [REF 11] |
-| Plaid | research | Transaction foundation model for categorization/insights | [REF 9] |
-| Personetics | launch | MCP server for agentic AI banking apps | [REF 10] |
-| Envestnet/Yodlee | M&A | Sold to PE firm STG | [REF 13] |
-| JPMorgan + aggregators | partnership | Fee-based data-access deals signed, including Yodlee | [REF 8] |
-| Mastercard/Finicity | M&A | Card networks now own competing aggregation infra | [REF 14] |
+| Bud Financial / Jack Henry | partnership | Bud powers Banno transaction enrichment | 1 |
+| Bud Financial / Nymbus | partnership | AI-powered PFM via Bud at Nymbus | 2 |
+| Bud Financial / First Fidelity | partnership | Bank deployment in ASA target segment | 3 |
+| CFPB | regulatory | 1033 stayed; new rulemaking initiated | 4 |
+| CFPB | regulatory | Interim final rule on 1033 planned | 5 |
+| JPMorgan (tech_macro) | regulatory | Aggregator data-access fees announced | 6 |
+| Envestnet/Yodlee | partnership | JPM-Yodlee fee-based pact renegotiated | 7 |
+| Personetics | launch | MCP server for agentic banking apps | 8 |
+| Bud Financial | launch | MCP server for AI agents on bank data | 9 |
+| Plaid | launch | March/April product updates incl. AI IDV | 10 |
+| MCP for finance | launch | Narmi/Grasshopper first US bank MCP | 11 |
+| Plaid | research | Transaction foundation model | 12 |
+| Personetics | positioning | 150M+ monthly users milestone | 13 |
+| Akoya | positioning | Wells Fargo, PNC pushing fintechs to Akoya | 14 |
+| Plaid | launch | Protect detects 59% more fraud | 15 |
+| Plaid | launch | Encompass mortgage + new Income engine | 16 |
+| Pinwheel | partnership | Plaid preferred provider for DDS | 17 |
+| Q2 | partnership | Stablecoin and Affirm BNPL integrations | 18 |
+| CFPB | regulatory | Notified court it cannot draw Fed funds | 19 |
 
 ---
 
 ## Open questions for the team
 
-1. Engineering: how quickly can ASA expose Compass/Forecast/One View via an MCP-compatible interface, and what is the security model given the recent malicious-MCP exfiltration cases?
-2. BD: what is our current contractual status and exclusivity posture with Jack Henry/Banno and Nymbus given Bud's deepening footprint in both?
-3. CEO/CPO: do we publicly take a position on the 1033 interim rule and bank-imposed aggregator fees, or stay neutral until the rewrite scope is clear?
+1. **BD/CPO:** What is our concrete counter-move for Banno now that Bud is the embedded enrichment provider — displace, co-exist, or shift channel weight to Alkami/Q2/Lumin?
+2. **CTO:** Should ASA ship an MCP server in Q2, and if so, against which surface (One View read, Compass insights, or Vault actions)?
+3. **CEO:** Do we file public comments on the 1033 rewrite under our name, and what is our stated position on bank-imposed aggregator fees?
 
 ---
 
 ## References
 
-1. PR Newswire, "Jack Henry's transaction enrichment, powered by Bud Financial, brings greater clarity and accuracy to digital banking experiences," 2026-01-28. https://news.google.com/rss/articles/CBMijwJ... — *A direct competitor is shipping inside an ASA channel partner's core platform.*
-2. Finovate, "Nymbus Partners with Bud Financial on AI-Powered PFM," 2025-07-08. https://news.google.com/rss/articles/CBMif0FV... — *Second ASA channel partner choosing Bud over ASA for insights/PFM.*
-3. PR Newswire, "Nymbus Signs Agreement With Bud Financial To Launch AI-Powered Personal Financial Management Services for Banks and Credit Unions," 2025-07-08. https://news.google.com/rss/articles/CBMikwJB... — *Confirms scope and target segment of the Nymbus-Bud deal.*
-4. Consumer Financial Services Law Monitor, "CFPB Section 1033 Open Banking Rule Stayed as CFPB Initiates New Rulemaking," 2025-07-30. https://news.google.com/rss/articles/CBMi0gFB... — *Foundational rule for ASA's data-access thesis is in active rewrite.*
-5. FinTech Futures, "CFPB approves Financial Data Exchange as first 'standard setting body' under new US open banking rule," 2025-03-26. https://news.google.com/rss/articles/CBMi6AFB... — *FDX standards now govern ASA's auth/verify compliance posture.*
-6. American Banker, "CFPB to issue 'interim' final rule on 1033 open banking," 2025-12-10. https://news.google.com/rss/articles/CBMikwFB... — *Interim rule could compress compliance timelines across the platform.*
-7. Consumer Finance Monitor, "Reversing course, CFPB says it will issue revised open banking rule," 2025-08-04. https://news.google.com/rss/articles/CBMiuAFB... — *Confirms the rewrite is happening, scope still unclear.*
-8. Reuters, "JPMorgan secures deals with fintech aggregators over fees to access data, CNBC reports," 2025-11-14. https://news.google.com/rss/articles/CBMi5AFB... — *Bank-imposed fees reshape aggregator economics ASA partners with.*
-9. Plaid blog, "Building a transaction foundation model to power intelligent finance," 2026-04-04. https://plaid.com/blog/building-transaction-foundation-model-intelligent-finance/ — *Raises the AI/categorization bar Forecast and One View must meet.*
-10. Fintech Finance, "Personetics Launches MCP Server—Enabling Banks to Develop Agentic AI Applications Using Customer Financial Intelligence Data," 2025-09-11. https://news.google.com/rss/articles/CBMi9wFB... — *Standardizes agentic-AI access to bank data, pressuring Compass.*
-11. Bloomberg Law News, "Wells Fargo, PNC Push Fintechs to Use Bank-Backed Data Firm," 2025-11-04. https://news.google.com/rss/articles/CBMipgFB... — *Major banks mandating Akoya threatens ASA Auth/Verify connectivity.*
-12. PR Newswire, "Millions of US Workers Can Move their Direct Deposit in Seconds with Pinwheel's Breakthrough Direct Deposit Switching (DDS) Product," 2023-11-29. https://news.google.com/rss/articles/CBMikwNB... — *First API-driven payroll-provider DDS, directly competes with Verify/Pay.*
-13. Citywire, "Envestnet sells Yodlee to PE firm STG," 2025-06-25. https://news.google.com/rss/articles/CBMiigFB... — *PE ownership creates Yodlee customer-migration windows.*
-14. Tearsheet, "Visa has Plaid and now Mastercard acquires Finicity for close to $1 billion," 2020-06-23. https://news.google.com/rss/articles/CBMiowFB... — *Both card networks now own competing aggregation infra adjacent to ASA.*
-
----
-*Brief generated by ASA daily intel pipeline. Triage rubric v0.1 / synthesis prompt v0.1.*
+1. ATM Marketplace, "Jack Henry partners with Bud Financial to add transaction details to Banno Digital Platform," 2026-02-09. https://news.google.com/rss/articles/CBMixwFBVV95cUxNc05GZ1ZBZFcxdnhZVHdwTGpBN2R5VVVxeVhRcjdJRnBPUUw4WndYLTFxQmlkSTh1eWQ4dGYzejc5V0lfWmtLYjRQX08xZ2NSS2VXb0NmZThLWGVoa1ZLWm5qWjhJNGl6bkhSVWxjaUQ1UldQV3RuVVAzSVNpRXBvb3RYTkxobnJuZGdyRTVaTWR4OF9ON3pNQ0FQWHlKMGF2NGgxa2ZaYTU3SWxLUExhbXJiSmxUOUN3UlAxWnNvS25ZNWpySGZF — *Direct competitor inside top ASA channel partner.*
+2. PR Newswire, "Nymbus Signs Agreement With Bud Financial," 2025-07-08. https://news.google.com/rss/articles/CBMikwJBVV95cUxNblZST0NuTmhUM2QtNmN3RTdiX3JCOGs2M29BMHZfMnZZWjNpUW9hRGhyS2VpSUVsWTJ1UmFGSW91NENkek1SME4tOXlmakpnMkJqZl9GbzBXb1VfR1EzN3ZqeVFnRnd4M3Mwb3pYOVF3c3RZX3JtRnJVaFlYd3QtTElhQXppM2N4Q3NiVThIY1VuZnNzYi1Kd3k1d3RhTXpGZWRnLXA0RkZDOV9XRFhpNmN1YXFJMWhMY2JWLWdHRExNa2ZVYWdCNVVUcWhZdk1rbHhFVWo2c3RDdERXX2x6ODlvWmh1R2JvY3M3TVZqOGk0MWl3VWVvTjhDMWZIcDBDdkF4VkhfZ1I1bEZUUkk1XzI3cw — *Second channel partner taken by Bud.*
+3. FinTech Futures, "First Fidelity Bank partners Bud Financial," 2026-02-25. https://news.google.com/rss/articles/CBMikwFBVV95cUxOcGtIeTMzWW5ET25xTnhtTnRuQk5CZlB4LXV5WV9XU1FYNFhQUmtsMEpCUVQ5S3h2eFNFRlVPOFVfd3pYX2pvVldJcEdLR09EYmRFeGxIbDZsM3ktRjhHR1pzNFNTRmwwTVBKSkZid19VdEljWkxBSW40R2Z0VTZOZVRVUDdBUU41ZG1uWDE3VmxpWGc — *Bud expanding direct FI footprint.*
+4. Consumer Financial Services Law Monitor, "CFPB Section 1033 Open Banking Rule Stayed," 2025-07-30. https://news.google.com/rss/articles/CBMi0gFBVV95cUxOQ0ZJeE5IRXViWHFNZUphRlVpX0dLSjhnNmRCVTlNdy1wUGhzUDhjanU4bnVJalZlRGJEb3dMQkd5Z0xQaFZuZVJFZTdrd1Q3QnRMeWppUHJmYmhIZ3lpZS1jMEJBSXVNczlMUjc2NUUwWVhDSXVMblR2aVB6NkEzNlE0a2NrbHRsQnROTkgzb0JNbDlvU285aDlMWENUcUx0M2UzNk1GbHdtWG1jTThkNWJzNkp0Qkx1dXFCYnU0V3FoYXZ3NmY5NUZSRlkwdjFveEE — *Stay reshapes 1033 timeline.*
+5. American Banker, "CFPB to issue 'interim' final rule on 1033 open banking," 2025-12-10. https://news.google.com/rss/articles/CBMikwFBVV95cUxNMU5HQzVKYVlJSFFXU29hQmg4bUpISVNqMlhwUDFrcnlXbWxEYWxDX1JROUF2YkNqRHBKcnpZWnZEaHYxRGtlektzWHVhT2JFSlZoSVpiS0NJMXlWdUlRcFJ0WkdBNWxmY1JGdGxIdGEySWU3aW03Q0syc2ZwTG9GWDVUWFNLRWZaSGVDaThpNERaRk0 — *Interim rule could move quickly.*
+6
