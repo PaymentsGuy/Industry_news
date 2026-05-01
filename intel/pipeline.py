@@ -241,10 +241,23 @@ def collect(out_dir: Path) -> None:
 # ---------------------------------------------------------------------------
 
 def call_claude_triage(client: Anthropic, item: dict, watchlist_version: str) -> dict:
-    """Single-item triage call. Always returns a dict; never raises.
-    On failure returns a relevance_score=0 record so the item is dropped."""
+    """Single-item triage call with prompt caching on the static rubric.
+
+    The triage prompt is split into:
+      - A cacheable preamble (rubric, watchlist, output schema) that is identical
+        for every item in the run. Marked with cache_control=ephemeral so the
+        Anthropic API caches it for 5 minutes.
+      - A per-item suffix containing only the title/url/text being classified.
+
+    On a typical run of ~80 items, this means 1 cache write + ~79 cache hits,
+    which cuts triage input cost by roughly 90%.
+
+    On failure returns a relevance_score=0 record so the item is dropped.
+    """
     template = load_prompt("triage")
-    prompt = render_prompt(
+
+    # Render the full prompt with all variables substituted.
+    full_prompt = render_prompt(
         template,
         title=item["title"],
         source=item["source"],
@@ -255,17 +268,56 @@ def call_claude_triage(client: Anthropic, item: dict, watchlist_version: str) ->
         deterministic_id=item["id"],
     )
 
+    # Split the prompt at the INPUT ITEM marker so we can cache everything
+    # before it (rubric, watchlist, schema) and send only the item data fresh.
+    # The triage.md prompt has "INPUT ITEM:" as a stable section header.
+    split_marker = "INPUT ITEM:"
+    if split_marker in full_prompt:
+        before, after = full_prompt.split(split_marker, 1)
+        cacheable_part = before.rstrip()
+        per_item_part = split_marker + after
+    else:
+        # Fallback: prompt structure changed, send uncached
+        cacheable_part = ""
+        per_item_part = full_prompt
+
+    # Build the message content. The cacheable block gets cache_control;
+    # the per-item block does not.
+    if cacheable_part:
+        content = [
+            {
+                "type": "text",
+                "text": cacheable_part,
+                "cache_control": {"type": "ephemeral"},
+            },
+            {
+                "type": "text",
+                "text": per_item_part,
+            },
+        ]
+    else:
+        content = [{"type": "text", "text": per_item_part}]
+
     try:
         response = client.messages.create(
             model=TRIAGE_MODEL,
             max_tokens=400,
             temperature=TRIAGE_TEMP,
-            messages=[{"role": "user", "content": prompt}],
+            messages=[{"role": "user", "content": content}],
         )
         text = strip_code_fences(response.content[0].text)
         parsed = json.loads(text)
-        # Carry the original item forward so synthesis has full context.
         parsed["_source_item"] = item
+        # Surface cache stats in the audit trail so we can verify caching is
+        # actually working in production.
+        usage = getattr(response, "usage", None)
+        if usage is not None:
+            parsed["_cache_stats"] = {
+                "cache_creation_input_tokens": getattr(usage, "cache_creation_input_tokens", 0) or 0,
+                "cache_read_input_tokens": getattr(usage, "cache_read_input_tokens", 0) or 0,
+                "input_tokens": getattr(usage, "input_tokens", 0) or 0,
+                "output_tokens": getattr(usage, "output_tokens", 0) or 0,
+            }
         return parsed
     except Exception as e:
         log.warning("triage failure for %s: %s", item.get("id"), e)
