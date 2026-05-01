@@ -7,7 +7,7 @@
 {"source": "Alloy (blog)", "url": "https://www.alloy.com/blog/rss.xml", "error": "parse failure: <unknown>:113:115: not well-formed (invalid token)"}
 {"source": "OCC (newsroom)", "url": "https://www.occ.gov/rss/news-release.xml", "error": "parse failure: <unknown>:51:120: not well-formed (invalid token)"}
 {"source": "American Banker", "url": "https://www.americanbanker.com/feed", "error": "parse failure: <unknown>:2:4050: not well-formed (invalid token)"}
-{"source": "The Financial Brand", "url": "https://thefinancialbrand.com/feed/", "error": "parse failure: <unknown>:2:258790: not well-formed (invalid token)"}
+{"source": "The Financial Brand", "url": "https://thefinancialbrand.com/feed/", "error": "parse failure: <unknown>:2:258808: not well-formed (invalid token)"}
 {"source": "Bank Automation News", "url": "https://bankautomationnews.com/feed/", "error": "parse failure: <unknown>:15:4: mismatched tag"}
 {"source": "Finextra", "url": "https://www.finextra.com/rss/headlines.aspx", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
 {"source": "Fintech Business Weekly (Mikula)", "url": "https://fintechbusinessweekly.substack.com/feed", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
