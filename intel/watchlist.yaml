@@ -6,11 +6,13 @@
 # Each entry must have: name, why_we_care (one line). Optional: blog_rss,
 # pressroom_rss, careers_url, ticker, sec_cik, github_org, twitter_handle.
 #
-# RSS URLs marked "verify" below are best-guesses based on common patterns; check
-# them in your first dry run and correct anything that 404s.
+# Feed strategy: where companies publish reliable first-party RSS we use it.
+# Where they don't (or where their RSS keeps breaking), we route through
+# Google News RSS — same URL pattern for every query, catches third-party
+# coverage too. The triage step drops irrelevant matches automatically.
 
-version: "0.1"
-last_reviewed: "2026-04-29"
+version: "0.2"
+last_reviewed: "2026-05-01"
 
 buckets:
   # Direct & adjacent platforms — whose moves directly affect ASA's win rate
@@ -18,50 +20,57 @@ buckets:
   direct_adjacent:
     - name: Plaid
       why_we_care: "Largest data-aggregation network; pivoting to 'intelligent finance' positioning that overlaps ASA Vault."
-      blog_rss: "https://plaid.com/blog/rss.xml"        # verify
+      blog_rss: "https://plaid.com/blog/rss.xml"
       careers_url: "https://plaid.com/careers/"
 
     - name: MX
       why_we_care: "Direct positioning overlap; aggressive agentic-AI moves via Primitive partnership."
-      blog_rss: "https://www.mx.com/blog/rss.xml"        # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22MX+Technologies%22+OR+%22mx.com%22+fintech&hl=en-US&gl=US&ceid=US:en"
       careers_url: "https://www.mx.com/careers/"
 
     - name: Mastercard Open Banking (Finicity)
       why_we_care: "Aggregator with Mastercard distribution muscle and bank channel relationships."
-      blog_rss: "https://www.finicity.com/feed/"          # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Finicity%22+OR+%22Mastercard+Open+Banking%22&hl=en-US&gl=US&ceid=US:en"
 
     - name: Envestnet | Yodlee
       why_we_care: "Long-tail aggregator with deep wealth-management hooks."
-      blog_rss: "https://www.yodlee.com/blog/feed"        # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Envestnet+Yodlee%22+OR+%22Yodlee%22+aggregator&hl=en-US&gl=US&ceid=US:en"
 
     - name: Akoya
       why_we_care: "Bank-owned aggregation network; relevant for 1033 fee dynamics."
+      blog_rss: "https://news.google.com/rss/search?q=%22Akoya%22+open+banking+aggregator&hl=en-US&gl=US&ceid=US:en"
 
     - name: Atomic Financial
       why_we_care: "Payroll/income-data adjacency; potential ASA Verify overlap."
+      blog_rss: "https://news.google.com/rss/search?q=%22Atomic+Financial%22+payroll+OR+income&hl=en-US&gl=US&ceid=US:en"
 
     - name: Pinwheel
       why_we_care: "Payroll API; direct deposit switching is a contested space."
+      blog_rss: "https://news.google.com/rss/search?q=%22Pinwheel%22+payroll+API&hl=en-US&gl=US&ceid=US:en"
 
     - name: Method Financial
       why_we_care: "Liability-side data network; ASA Compass-adjacent insights."
+      blog_rss: "https://news.google.com/rss/search?q=%22Method+Financial%22+fintech&hl=en-US&gl=US&ceid=US:en"
 
     - name: Personetics
       why_we_care: "Direct competitor in 'cognitive banking' / financial intelligence space; shipped MCP server."
-      blog_rss: "https://personetics.com/feed/"           # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Personetics%22&hl=en-US&gl=US&ceid=US:en"
 
     - name: Flybits
       why_we_care: "Contextual intelligence for FIs; adjacent positioning."
+      blog_rss: "https://news.google.com/rss/search?q=%22Flybits%22+banking&hl=en-US&gl=US&ceid=US:en"
 
     - name: Bud Financial
       why_we_care: "Transaction enrichment; now native in Banno — direct One View competitor."
-      blog_rss: "https://www.bud.co.uk/blog/feed"          # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Bud+Financial%22+OR+%22thisisbud%22&hl=en-US&gl=US&ceid=US:en"
 
     - name: Monarch Money
       why_we_care: "Consumer PFM; signals end-user expectation drift."
+      blog_rss: "https://news.google.com/rss/search?q=%22Monarch+Money%22&hl=en-US&gl=US&ceid=US:en"
 
     - name: Copilot Money
       why_we_care: "Consumer PFM; iOS-first design signals."
+      blog_rss: "https://news.google.com/rss/search?q=%22Copilot+Money%22&hl=en-US&gl=US&ceid=US:en"
 
   # Channel partners & frenemies — moves here can expand or vaporize ASA's TAM.
   channel_partners:
@@ -69,43 +78,49 @@ buckets:
       why_we_care: "Banno digital banking platform = primary distribution channel; native Bud integration is a direct hit."
       ticker: "JKHY"
       sec_cik: "0000779152"
-      blog_rss: "https://www.jackhenry.com/feed"          # verify
-      pressroom_rss: "https://www.jackhenry.com/news/feed" # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Jack+Henry%22+OR+Banno+OR+JKHY&hl=en-US&gl=US&ceid=US:en"
 
     - name: Alkami
       why_we_care: "Digital banking platform competitor; Co:lab launches set the bar for FI tooling."
       ticker: "ALKT"
-      sec_cik: "0001599298"                               # verify
+      sec_cik: "0001599298"
       blog_rss: "https://www.alkami.com/feed/"
 
     - name: Q2 Holdings
       why_we_care: "Digital banking + Helix BaaS; embedded finance distribution."
       ticker: "QTWO"
       sec_cik: "0001410384"
+      blog_rss: "https://news.google.com/rss/search?q=%22Q2+Holdings%22+OR+%22Q2+Helix%22+digital+banking&hl=en-US&gl=US&ceid=US:en"
 
     - name: Fiserv
       why_we_care: "Core processor with massive FI footprint; ecosystem moves matter."
       ticker: "FI"
+      blog_rss: "https://news.google.com/rss/search?q=Fiserv+core+banking&hl=en-US&gl=US&ceid=US:en"
 
     - name: FIS
       why_we_care: "Core processor; D1/Code Connect ecosystem."
       ticker: "FIS"
+      blog_rss: "https://news.google.com/rss/search?q=%22FIS%22+%22Code+Connect%22+OR+%22D1%22+core+banking&hl=en-US&gl=US&ceid=US:en"
 
     - name: Corelation
       why_we_care: "Credit-union-focused core; KeyStone API ecosystem."
+      blog_rss: "https://news.google.com/rss/search?q=%22Corelation%22+OR+%22KeyStone%22+credit+union&hl=en-US&gl=US&ceid=US:en"
 
     - name: Apiture
       why_we_care: "Digital banking platform for community FIs."
+      blog_rss: "https://news.google.com/rss/search?q=%22Apiture%22+digital+banking&hl=en-US&gl=US&ceid=US:en"
 
     - name: Lumin Digital
       why_we_care: "Cloud-native digital banking for credit unions."
+      blog_rss: "https://news.google.com/rss/search?q=%22Lumin+Digital%22&hl=en-US&gl=US&ceid=US:en"
 
     - name: Socure
       why_we_care: "Identity verification incumbent; raises bar for ASA Verify."
+      blog_rss: "https://news.google.com/rss/search?q=%22Socure%22+identity+OR+fraud&hl=en-US&gl=US&ceid=US:en"
 
     - name: Alloy
       why_we_care: "Onboarding/fraud orchestration; just deepened Plaid integration."
-      blog_rss: "https://www.alloy.com/blog/rss.xml"      # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Alloy%22+identity+OR+onboarding+fintech&hl=en-US&gl=US&ceid=US:en"
 
   # Regulators & standards — anything that changes data rights, liability,
   # or interoperability.
@@ -116,47 +131,56 @@ buckets:
 
     - name: OCC
       why_we_care: "Bank-fintech partnership guidance; charter activity."
-      newsroom_rss: "https://www.occ.gov/rss/news-release.xml"  # verify
+      newsroom_rss: "https://news.google.com/rss/search?q=%22OCC%22+OR+%22Office+of+the+Comptroller%22+bank+fintech&hl=en-US&gl=US&ceid=US:en"
 
     - name: FDIC
       why_we_care: "Deposit insurance and partnership guidance."
+      newsroom_rss: "https://news.google.com/rss/search?q=%22FDIC%22+bank+fintech+partnership&hl=en-US&gl=US&ceid=US:en"
 
     - name: FinCEN
       why_we_care: "AML / BSA rules affect identity flows."
+      newsroom_rss: "https://news.google.com/rss/search?q=%22FinCEN%22+AML+OR+BSA&hl=en-US&gl=US&ceid=US:en"
 
     - name: FDX (Financial Data Exchange)
       why_we_care: "API standards body; recognized standard-setter under 1033."
-      blog_rss: "https://financialdataexchange.org/feed"  # verify
+      blog_rss: "https://news.google.com/rss/search?q=%22Financial+Data+Exchange%22+OR+%22FDX%22+open+banking&hl=en-US&gl=US&ceid=US:en"
 
   # Technology & macro — things that bend the roadmap regardless of any
   # one competitor.
   tech_macro:
-    - name: Agentic AI in finance
-      why_we_care: "Defining theme of 2026; MCP servers becoming table stakes."
+    - name: Section 1033 regulatory rewrite
+      why_we_care: "Direct tracking of the rule rewrite; affects whole category economics."
+      blog_rss: "https://news.google.com/rss/search?q=%22Section+1033%22+CFPB+open+banking&hl=en-US&gl=US&ceid=US:en"
+
+    - name: Agentic AI in banking
+      why_we_care: "Defining theme of 2026; MCP servers becoming table stakes for FIs."
+      blog_rss: "https://news.google.com/rss/search?q=%22agentic+AI%22+banking+OR+%22financial+institution%22&hl=en-US&gl=US&ceid=US:en"
 
     - name: MCP for finance
       why_we_care: "Personetics, MX, Plaid all moving here; ASA needs an answer."
+      blog_rss: "https://news.google.com/rss/search?q=%22MCP+server%22+bank+OR+financial+OR+fintech&hl=en-US&gl=US&ceid=US:en"
 
     - name: On-device inference / privacy-preserving compute
       why_we_care: "Aligns with ASA's privacy-first positioning."
+      blog_rss: "https://news.google.com/rss/search?q=%22on-device+AI%22+OR+%22privacy-preserving%22+financial&hl=en-US&gl=US&ceid=US:en"
 
     - name: Fraud trends (deepfakes, social engineering)
       why_we_care: "ASA Verify roadmap; Plaid IDV claims set the bar."
+      blog_rss: "https://news.google.com/rss/search?q=deepfake+OR+%22synthetic+identity%22+banking+fraud&hl=en-US&gl=US&ceid=US:en"
 
 # Google Alerts feeds — set these up in your Google Alerts UI with delivery
 # set to "RSS feed", then paste the URLs here. Pattern: one alert per
 # competitor name, plus thematic alerts.
 google_alerts:
   # - "https://www.google.com/alerts/feeds/<your-id>/<alert-id>"
-  # - "https://www.google.com/alerts/feeds/<your-id>/<alert-id>"
   # ... seed empty; add as you create alerts.
 
 # Industry trade press (broad coverage; lower precision but high recall).
 trade_press:
   - name: American Banker
-    rss: "https://www.americanbanker.com/feed"             # verify
+    rss: "https://news.google.com/rss/search?q=site:americanbanker.com&hl=en-US&gl=US&ceid=US:en"
   - name: The Financial Brand
-    rss: "https://thefinancialbrand.com/feed/"
+    rss: "https://news.google.com/rss/search?q=site:thefinancialbrand.com&hl=en-US&gl=US&ceid=US:en"
   - name: Tearsheet
     rss: "https://tearsheet.co/feed/"
   - name: Finovate
@@ -164,7 +188,7 @@ trade_press:
   - name: Bank Automation News
     rss: "https://bankautomationnews.com/feed/"
   - name: Banking Dive
-    rss: "https://www.bankingdive.com/feeds/news/"          # verify
+    rss: "https://www.bankingdive.com/feeds/news/"
   - name: PYMNTS
     rss: "https://www.pymnts.com/feed/"
   - name: Finextra
