@@ -381,8 +381,16 @@ def triage(in_file: Path, out_file: Path) -> None:
 @cli.command()
 @click.option("--in-file",  required=True, type=click.Path(path_type=Path))
 @click.option("--out-file", required=True, type=click.Path(path_type=Path))
-def synthesize(in_file: Path, out_file: Path) -> None:
-    """Run Stage 2 synthesis to produce a markdown brief."""
+@click.option("--prior-ledger", type=click.Path(path_type=Path), default=None,
+              help="Path to yesterday's ledger.json. If missing or empty, "
+                   "synthesis runs without the dedup filter (every item is fresh).")
+def synthesize(in_file: Path, out_file: Path, prior_ledger: Path | None) -> None:
+    """Run Stage 2 synthesis to produce a markdown brief.
+
+    If --prior-ledger is supplied and exists, its contents are passed to the
+    synthesis prompt so the model can dedupe today's items against topics
+    already covered in the last 14 days.
+    """
     triaged = read_jsonl(in_file)
     surviving = [t for t in triaged if (t.get("relevance_score") or 0) >= TRIAGE_RELEVANCE_DROP]
 
@@ -391,6 +399,19 @@ def synthesize(in_file: Path, out_file: Path) -> None:
         sys.exit(2)
     client = Anthropic()
 
+    # Load the prior topic ledger if it exists. On the first run after this
+    # feature ships, no ledger will exist — that's fine, the prompt handles
+    # the empty-array case explicitly.
+    ledger: list[dict] = []
+    if prior_ledger and Path(prior_ledger).exists():
+        try:
+            ledger = json.loads(Path(prior_ledger).read_text(encoding="utf-8"))
+            log.info("Loaded prior ledger with %d entries from %s", len(ledger), prior_ledger)
+        except Exception as e:
+            log.warning("Could not parse prior ledger %s: %s — proceeding without dedup", prior_ledger, e)
+    else:
+        log.info("No prior ledger provided; synthesis will treat all items as fresh")
+
     template = load_prompt("synthesis")
     today_iso = date.today().isoformat()
     prompt = render_prompt(
@@ -398,12 +419,13 @@ def synthesize(in_file: Path, out_file: Path) -> None:
         today_iso=today_iso,
         items_reviewed_count=len(triaged),
         triaged_items_json=json.dumps(surviving, ensure_ascii=False, indent=2),
-        yesterdays_summary_or_null="null",  # v2: load yesterday's brief
-        rubric_version="0.1",
-        synthesis_version="0.1",
+        topic_ledger_json=json.dumps(ledger, ensure_ascii=False, indent=2),
+        rubric_version="0.2",
+        synthesis_version="0.3",
     )
 
-    log.info("Synthesizing brief from %d surviving items", len(surviving))
+    log.info("Synthesizing brief from %d surviving items (ledger has %d topics)",
+             len(surviving), len(ledger))
     response = client.messages.create(
         model=SYNTHESIS_MODEL,
         max_tokens=4096,
@@ -412,7 +434,7 @@ def synthesize(in_file: Path, out_file: Path) -> None:
     brief = strip_code_fences(response.content[0].text)
 
     out_file.parent.mkdir(parents=True, exist_ok=True)
-    out_file.write_text(brief)
+    out_file.write_text(brief, encoding="utf-8")
     log.info("Brief written to %s (%d chars)", out_file, len(brief))
 
 

@@ -17,7 +17,7 @@ concurrency:
 jobs:
   brief:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60   # was 20; ledger pipeline is ~5min slower
 
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -40,7 +40,29 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Set DATE env
-        run: echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+        run: |
+          echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+          echo "YESTERDAY=$(date -u -d 'yesterday' +%F 2>/dev/null || date -u -v-1d +%F)" >> "$GITHUB_ENV"
+
+      - name: Find most recent prior ledger
+        # Look back up to 14 days for the most recent ledger.json. We can't
+        # assume yesterday exists — runs can be skipped, repos can be branched.
+        id: find_ledger
+        run: |
+          PRIOR_LEDGER=""
+          for i in $(seq 1 14); do
+            CHECK_DATE=$(date -u -d "${i} days ago" +%F 2>/dev/null || date -u -v-${i}d +%F)
+            CANDIDATE="intel/${CHECK_DATE}/ledger.json"
+            if [ -f "$CANDIDATE" ]; then
+              PRIOR_LEDGER="$CANDIDATE"
+              echo "Found prior ledger: $PRIOR_LEDGER"
+              break
+            fi
+          done
+          if [ -z "$PRIOR_LEDGER" ]; then
+            echo "No prior ledger found in the last 14 days; synthesis will run without dedup"
+          fi
+          echo "PRIOR_LEDGER=$PRIOR_LEDGER" >> "$GITHUB_ENV"
 
       - name: Collect raw signal
         run: python intel/pipeline.py collect --out-dir intel/${DATE}
@@ -51,14 +73,33 @@ jobs:
             --in-file  intel/${DATE}/raw.jsonl \
             --out-file intel/${DATE}/triaged.jsonl
 
-      - name: Stage 2 — synthesize
+      - name: Stage 2 — synthesize (with ledger dedup)
         run: |
-          python intel/pipeline.py synthesize \
-            --in-file  intel/${DATE}/triaged.jsonl \
-            --out-file intel/${DATE}/brief.md
+          if [ -n "${PRIOR_LEDGER}" ]; then
+            python intel/pipeline.py synthesize \
+              --in-file      intel/${DATE}/triaged.jsonl \
+              --out-file     intel/${DATE}/brief.md \
+              --prior-ledger "${PRIOR_LEDGER}"
+          else
+            python intel/pipeline.py synthesize \
+              --in-file  intel/${DATE}/triaged.jsonl \
+              --out-file intel/${DATE}/brief.md
+          fi
+
+      - name: Update topic ledger
+        run: |
+          if [ -n "${PRIOR_LEDGER}" ]; then
+            python intel/update_ledger.py \
+              --brief-file    intel/${DATE}/brief.md \
+              --prior-ledger  "${PRIOR_LEDGER}" \
+              --ledger-out    intel/${DATE}/ledger.json
+          else
+            python intel/update_ledger.py \
+              --brief-file  intel/${DATE}/brief.md \
+              --ledger-out  intel/${DATE}/ledger.json
+          fi
 
       - name: Publish to Slack
-        # Don't fail the run if Slack is down; we still want the commit.
         continue-on-error: true
         run: python intel/pipeline.py publish --brief-file intel/${DATE}/brief.md
 
