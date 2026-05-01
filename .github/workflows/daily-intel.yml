@@ -1,0 +1,83 @@
+name: Daily Intel Brief
+
+on:
+  schedule:
+    # 12:00 UTC = 5:00 AM Pacific (during PDT), 4:00 AM (PST). Brief lands in
+    # Slack by 8 AM PT either way.
+    - cron: '0 12 * * *'
+  workflow_dispatch:    # allow manual runs from the Actions tab
+
+permissions:
+  contents: write       # required to commit the daily brief back to the repo
+
+concurrency:
+  group: daily-intel
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      MAX_DAILY_COST_USD: "3.00"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Set DATE env
+        run: echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+
+      - name: Collect raw signal
+        run: python intel/pipeline.py collect --out-dir intel/${DATE}
+
+      - name: Stage 1 — triage
+        run: |
+          python intel/pipeline.py triage \
+            --in-file  intel/${DATE}/raw.jsonl \
+            --out-file intel/${DATE}/triaged.jsonl
+
+      - name: Stage 2 — synthesize
+        run: |
+          python intel/pipeline.py synthesize \
+            --in-file  intel/${DATE}/triaged.jsonl \
+            --out-file intel/${DATE}/brief.md
+
+      - name: Publish to Slack
+        # Don't fail the run if Slack is down; we still want the commit.
+        continue-on-error: true
+        run: python intel/pipeline.py publish --brief-file intel/${DATE}/brief.md
+
+      - name: Commit run artifacts
+        run: |
+          git config user.name  "asa-intel-bot"
+          git config user.email "asa-intel-bot@users.noreply.github.com"
+          git add intel/${DATE}/
+          if git diff --cached --quiet; then
+            echo "Nothing to commit (quiet day)."
+          else
+            git commit -m "intel: brief ${DATE}"
+            git push
+          fi
+
+      - name: Upload artifacts (always, even on failure)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: intel-${{ env.DATE }}
+          path: intel/${{ env.DATE }}/
+          retention-days: 30
