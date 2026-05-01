@@ -47,7 +47,7 @@ SYNTHESIS_MODEL = "claude-opus-4-7"
 TRIAGE_TEMP = 0.0          # deterministic classification
 SYNTHESIS_TEMP = 0.3       # slight variation in prose, still controlled
 
-TRIAGE_CONCURRENCY = 8     # parallel triage calls
+TRIAGE_CONCURRENCY = 3     # parallel triage calls
 TRIAGE_RELEVANCE_DROP = 2  # drop anything below this score
 RSS_ITEMS_PER_FEED = 10    # cap per feed; older items are stale
 

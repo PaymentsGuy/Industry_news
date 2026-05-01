@@ -172,7 +172,7 @@ OUTPUT (return ONLY a JSON object matching this schema, no prose, no markdown
 fences, no explanation):
 
 {
-  "id": "{{deterministic_id}}",
+  "id": "<copy the id from the input item below verbatim>",
   "watchlist_bucket": "direct_adjacent" | "channel_partners" | "regulators_standards" | "tech_macro" | "none",
   "watchlist_entity": "<canonical entity name from the watchlist, or null>",
   "signal_type": "<one of the SIGNAL TYPES>",
@@ -197,6 +197,7 @@ CRITICAL RULES:
   no commentary before or after the object.
 
 INPUT ITEM:
+- id: {{deterministic_id}}
 - title: {{title}}
 - source: {{source}}
 - url: {{source_url}}
