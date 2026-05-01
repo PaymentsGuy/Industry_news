@@ -1,0 +1,11 @@
+{"source": "MX (blog)", "url": "https://www.mx.com/blog/rss.xml", "error": "parse failure: <unknown>:26:58: not well-formed (invalid token)"}
+{"source": "Mastercard Open Banking (Finicity) (blog)", "url": "https://www.finicity.com/feed/", "error": "parse failure: <unknown>:10:2: mismatched tag"}
+{"source": "Envestnet | Yodlee (blog)", "url": "https://www.yodlee.com/blog/feed", "error": "parse failure: <unknown>:93:72: not well-formed (invalid token)"}
+{"source": "Bud Financial (blog)", "url": "https://www.bud.co.uk/blog/feed", "error": "parse failure: <unknown>:2:0: syntax error"}
+{"source": "Jack Henry (blog)", "url": "https://www.jackhenry.com/feed", "error": "parse failure: <unknown>:2:0: syntax error"}
+{"source": "Jack Henry (pressroom)", "url": "https://www.jackhenry.com/news/feed", "error": "parse failure: <unknown>:2:0: syntax error"}
+{"source": "Alloy (blog)", "url": "https://www.alloy.com/blog/rss.xml", "error": "parse failure: <unknown>:113:115: not well-formed (invalid token)"}
+{"source": "OCC (newsroom)", "url": "https://www.occ.gov/rss/news-release.xml", "error": "parse failure: <unknown>:51:120: not well-formed (invalid token)"}
+{"source": "American Banker", "url": "https://www.americanbanker.com/feed", "error": "parse failure: <unknown>:2:4050: not well-formed (invalid token)"}
+{"source": "The Financial Brand", "url": "https://thefinancialbrand.com/feed/", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
+{"source": "Bank Automation News", "url": "https://bankautomationnews.com/feed/", "error": "parse failure: <unknown>:15:4: mismatched tag"}
