@@ -1,36 +1,36 @@
 # ASA Daily Intelligence Brief — 2026-05-01
 
-**Items reviewed:** 142
-**Items surfaced:** 12
-**Today's headline:** Plaid is compounding an AI-data-plus-fraud-plus-insights stack while FDX gains CFPB-backed standards authority — ASA's differentiation window on Verify, One View, and Forecast is narrowing this quarter.
+**Items reviewed:** 933
+**Items surfaced:** 14
+**Today's headline:** Open banking's regulatory foundation is being rewritten while Plaid, Bud, and bank-owned networks lock in distribution at ASA's channel partners — the platform's data-access thesis is under simultaneous pressure on three fronts.
 
 ---
 
 ## TL;DR
 
-1. Plaid shipped a transaction foundation model, a rebuilt Income engine, expanded Perplexity AI integration, and Protect network-fraud claims of "up to 59% more fraud" detected — a coordinated push into ASA's One View, Forecast, Verify, and Auth surfaces [REF 1][REF 2][REF 3][REF 4][REF 5]. 
-2. CFPB formally recognized FDX as a U.S. open banking standard-setting body, while FDX simultaneously launched an AI-agent data-sharing standards initiative — compliance scope for ASA's data-access layer is now anchored to FDX cadence [REF 6][REF 7]. 
-3. CFPB told a court in November 2025 it cannot lawfully draw Federal Reserve funds, and in April 2025 said it will deprioritize enforcement outside the Texas Bankers Association stay — federal enforcement risk is materially lower, but rulemaking timelines are unpredictable [REF 8][REF 9].
+1. Bud Financial is now embedded in two ASA channel partners — Jack Henry/Banno (transaction enrichment) and Nymbus (PFM) — directly displacing One View and Compass positioning in those channels [REF 1][REF 2][REF 3]. 
+2. CFPB's Section 1033 rule is in active rewrite/stay/interim-rule limbo with FDX confirmed as standard-setter, while JPMorgan and peers move to charge aggregators for data access — the economics and rights underpinning ASA's data layer are unsettled [REF 4][REF 5][REF 6][REF 7][REF 8]. 
+3. Plaid shipped a transaction foundation model and Personetics launched an MCP server for agentic banking — the AI-over-financial-data layer where Compass/Forecast must compete is being commoditized [REF 9][REF 10].
 
 ---
 
 ## By roadmap area
 
-**Vault.** FDX's new initiative on AI agent access to consumer financial data targets consent, credentialing, and data-transmission protocols that sit at Vault's core [REF 7]. If FDX-defined agent standards become the CFPB-endorsed default, Vault's privacy-first posture is an asset only if it maps cleanly to those specs. Recommendation: **Investigate** FDX agent-initiative working group membership and gap-analyze Vault consent flows against draft scope within 30 days.
+**Vault.** No material signal today.
 
-**Compass.** Plaid + Perplexity expanded their integration to spending tracking, net worth monitoring, and AI planning — the exact insight surface Compass sells [REF 3]. Plaid's Replit connector also lowers the build floor for AI personal-finance apps that bypass FI channels entirely [REF 10]. Recommendation: **Decision needed by 2026-05-22** on whether Compass ships an FI-embedded AI assistant this half or cedes the consumer-AI narrative.
+**Compass.** Personetics' MCP server lets banks build agentic apps directly on customer financial intelligence, and Bud landed in Nymbus for AI-PFM [REF 10][REF 2][REF 3]. Both moves commoditize the insights layer Compass is built on and put a competitor inside an ASA channel. Recommendation: Investigate MCP exposure for Compass and quantify Nymbus exposure by 2026-05-15.
 
-**Auth.** Plaid Protect's self-reported "up to 59% more fraud" detection via network intelligence is now the public benchmark prospects will cite [REF 4]. Plaid's April release also added new User APIs touching auth flows [REF 11]. Recommendation: **Investigate** whether ASA Auth has comparable network-effect fraud signal or needs a partnership; output a position memo in two weeks.
+**Auth.** Wells Fargo and PNC are pushing fintechs onto Akoya, and FDX is now the CFPB-recognized standard setter — the auth/data-access rail is consolidating away from aggregator-mediated access [REF 11][REF 5]. ASA Auth needs a clear FDX-aligned posture and an Akoya story for major-bank prospects. Recommendation: Decision needed by 2026-05-22 on FDX certification timing and Akoya interoperability.
 
-**Verify.** Plaid integrated asset verification into Encompass LOS and added AI-powered document verification in March [REF 12][REF 13]. The mortgage LOS beachhead is the most concrete enterprise-channel encroachment in the dataset. Recommendation: **Decision needed by 2026-05-29** on Verify's LOS partnership strategy (Encompass, Blend, or alternative).
+**Verify.** Pinwheel launched API-driven direct deposit switching with OneSource Virtual (Workday payroll), the first of its kind [REF 12]. This deepens Pinwheel's payroll-data moat against Verify's income and deposit-capture use cases. Recommendation: Investigate the OneSource Virtual integration pattern and assess whether Verify needs a payroll-provider-direct path by 2026-05-29.
 
-**Pay.** Plaid's April update mentions "smarter payment rules" but provides no detail [REF 11]. Material impact unclear from the source. Recommendation: **Monitor** for follow-up Plaid documentation; revisit in next brief if Pay-specific detail surfaces.
+**Pay.** Pinwheel's DDS launch is the only direct Pay-adjacent signal today and pressures deposit-funding flows [REF 12]. No regulatory or rails-level Pay signal surfaced. Recommendation: Monitor for follow-on payroll-provider partnerships before reprioritizing Pay roadmap.
 
-**One View.** Plaid published a transaction foundation model and a rebuilt Income engine with granular taxonomy [REF 1][REF 2]. These directly target One View's categorization quality bar — a feature buyers test on day one of evals. Recommendation: **Investigate** One View's categorization accuracy on a shared benchmark vs. Plaid's described outputs; results to CPO within 21 days.
+**One View.** Jack Henry has integrated Bud Financial transaction enrichment into Banno — a channel partner is now shipping a competitor's core One View capability natively [REF 1]. This is the single most concrete competitive displacement signal in today's set. Recommendation: Decision needed by 2026-05-15 on Banno co-sell posture and One View differentiation messaging for Jack Henry FIs.
 
-**Forecast.** Plaid's foundation model is positioned for "scalable financial insights" — i.e., predictive cashflow signals adjacent to Forecast [REF 1]. Combined with the rebuilt Income engine, Plaid is assembling the upstream layer Forecast depends on differentiated categorization for. Recommendation: **Decision needed by 2026-06-15** on whether Forecast doubles down on FI-specific predictive features (cash position, NSF prediction) where Plaid has no FI core access.
+**Forecast.** Plaid announced a transaction foundation model targeting richer categorization and scalable insights — directly raising the accuracy bar for Forecast's predictive layer [REF 9]. Combined with Personetics' MCP play, the predictive-insights category is being repriced on AI capability [REF 10]. Recommendation: Investigate Plaid's model claims and benchmark Forecast accuracy against published categorization standards by 2026-06-01.
 
-**Horizontal.** CFPB recognized FDX as standard-setting body; FDX shipped API v6.4 with 24 RFCs in spring 2025; MX's Jane Barratt is now FDX co-chair [REF 6][REF 14][REF 15]. Open banking compliance is now FDX-centric, and a direct competitor (MX) holds influence over the spec. Meanwhile CFPB enforcement is dormant and possibly defunded [REF 8][REF 9]. Recommendation: **Decision needed by 2026-05-15** on FDX membership tier and whether ASA seeks technical-committee representation.
+**Horizontal.** Section 1033 is simultaneously stayed, in rewrite, and headed for an interim final rule, with FDX formally designated and JPMorgan signing fee deals with aggregators including Yodlee [REF 4][REF 6][REF 7][REF 8]. Yodlee was sold to PE firm STG, opening customer-migration windows [REF 13]. The data-access economics ASA depends on are in flux across rights, fees, and ownership. Recommendation: Decision needed by 2026-05-30 on ASA's public position re: 1033 interim rule and bank-imposed aggregator fees.
 
 ---
 
@@ -38,48 +38,44 @@
 
 | Entity | Signal type | One-line detail | Ref |
 |---|---|---|---|
-| FDX | regulatory | CFPB formally recognized FDX as U.S. open banking standard-setter. | 6 |
-| Plaid | research | Published transaction foundation model for categorization and insights. | 1 |
-| Plaid | launch | New Income engine with granular taxonomy and calculation control. | 2 |
-| Plaid | launch | Plaid Protect claims up to 59% more fraud caught via network data. | 4 |
-| Plaid | partnership | Asset verification integrated into Encompass LOS. | 12 |
-| Plaid | launch | AI-powered document verification shipped in March. | 13 |
-| Plaid | partnership | Expanded Perplexity integration: spending, net worth, AI planning. | 3 |
-| Plaid | launch | Replit native connector lowers AI finance-app build cost. | 10 |
-| Plaid | launch | April update: User APIs, margin balances, payment rules. | 11 |
-| FDX | launch | New initiative on AI-agent financial data sharing standards. | 7 |
-| FDX | launch | API v6.4 released with 24 new RFCs. | 14 |
-| CFPB | regulatory | Notified court it cannot lawfully draw Fed funds. | 8 |
-| CFPB | regulatory | Will deprioritize enforcement outside TBA stay. | 9 |
-| MX | exec_change | Jane Barratt named FDX Board Co-Chair. | 15 |
+| Jack Henry/Banno + Bud | partnership | Bud transaction enrichment integrated into Banno digital platform | [REF 1] |
+| Nymbus + Bud | partnership | Bud powers AI PFM in Nymbus for banks/CUs | [REF 2][REF 3] |
+| CFPB | regulatory | 1033 stayed; interim final rule planned; rewrite underway | [REF 4][REF 6][REF 7] |
+| FDX | regulatory | CFPB designates FDX as recognized standard-setting body | [REF 5] |
+| Pinwheel | launch | API-driven DDS via OneSource Virtual (Workday payroll) | [REF 12] |
+| Akoya | positioning | Wells Fargo, PNC pushing fintechs to bank-backed network | [REF 11] |
+| Plaid | research | Transaction foundation model for categorization/insights | [REF 9] |
+| Personetics | launch | MCP server for agentic AI banking apps | [REF 10] |
+| Envestnet/Yodlee | M&A | Sold to PE firm STG | [REF 13] |
+| JPMorgan + aggregators | partnership | Fee-based data-access deals signed, including Yodlee | [REF 8] |
+| Mastercard/Finicity | M&A | Card networks now own competing aggregation infra | [REF 14] |
 
 ---
 
 ## Open questions for the team
 
-1. Engineering: can we run Plaid's described Income/foundation-model outputs against One View on a representative FI dataset to quantify the categorization gap?
-2. BD: what is our path to a mortgage LOS integration (Encompass or otherwise) given Plaid now occupies the Encompass slot [REF 12]?
-3. CEO/CPO: do we join FDX at a tier that earns technical-committee voice, given MX co-chairs and standards now drive compliance scope [REF 6][REF 15]?
+1. Engineering: how quickly can ASA expose Compass/Forecast/One View via an MCP-compatible interface, and what is the security model given the recent malicious-MCP exfiltration cases?
+2. BD: what is our current contractual status and exclusivity posture with Jack Henry/Banno and Nymbus given Bud's deepening footprint in both?
+3. CEO/CPO: do we publicly take a position on the 1033 interim rule and bank-imposed aggregator fees, or stay neutral until the rewrite scope is clear?
 
 ---
 
 ## References
 
-1. Plaid (blog), "Building a transaction foundation model to power intelligent finance," 2026-04-04. https://plaid.com/blog/building-transaction-foundation-model-intelligent-finance/ — *Direct ML capability claim against One View / Forecast categorization.*
-2. Plaid (blog), "Meet the new engine behind Plaid Income," 2026-04-04. https://plaid.com/blog/meet-the-new-engine-behind-plaid-income/ — *Rebuilt income classification with granular taxonomy.*
-3. Plaid (blog), "Plaid and Perplexity expand integration to power personalized financial insights," 2026-04-04. https://plaid.com/blog/plaid-perplexity-ai-financial-insights-integration/ — *Consumer AI-native PFM bundled with Plaid data.*
-4. Plaid (blog), "New era of fraud network intelligence: Early results from Plaid Protect," 2026-03-04. https://plaid.com/blog/plaid-protect-network-insights/ — *Network-effect fraud claim sets new public benchmark.*
-5. Plaid (blog), "Product Updates - March 2026," 2026-03-03. https://plaid.com/blog/product-updates-march-2026/ — *AI doc verification, Encompass, fraud/onboarding tools.*
-6. FDX (blog), "FDX Recognized by CFPB as a Standard-Setting Body," 2025-01-09. https://financialdataexchange.org/fdx-feed/fdx-recognized-by-cfpb-as-a-standard-setting-body-a-step-forward-for-open-banking/ — *Anchors U.S. open banking compliance to FDX cadence.*
-7. FDX (blog), "As AI Agents Get Involved in Financial Data Sharing, Leading Standards Body Launches Initiative to Stay Ahead," 2026-04-14. https://financialdataexchange.org/fdx-feed/as-ai-agents-get-involved-in-financial-data-sharing-leading-standards-body-launches-initiative-to-stay-ahead/ — *Defines future consent and credentialing rules for Vault.*
-8. CFPB (newsroom), "CFPB Notifies Court it Cannot Lawfully Draw Funds from the Federal Reserve," 2025-11-11. https://www.consumerfinance.gov/about-us/newsroom/cfpb-notifies-court-it-cannot-lawfully-draw-funds-from-the-federal-reserve/ — *Operational continuity of CFPB in question.*
-9. CFPB (newsroom), "CFPB Keeps Its Enforcement and Supervision Resources Focused on Pressing Threats to Consumers," 2025-04-30. https://www.consumerfinance.gov/about-us/newsroom/cfpb-keeps-its-enforcement-and-supervision-resources-focused-on-pressing-threats-to-consumers/ — *Enforcement deprioritization narrows near-term compliance pressure.*
-10. Plaid (blog), "Build personalized finance apps in Replit with Plaid," 2026-04-03. https://plaid.com/blog/build-personalized-finance-apps-replit-plaid/ — *Lowers floor for AI PFM app development.*
-11. Plaid (blog), "Product Updates – April 2026," 2026-04-03. https://plaid.com/blog/product-updates-april-2026/ — *User APIs, payment rules, partner alerts.*
-12. Plaid (blog), "Plaid brings next-gen asset verification solution to Encompass," 2026-03-02. https://plaid.com/blog/mortgage-asset-verification-encompass/ — *Mortgage LOS beachhead pressuring Verify.*
-13. Plaid (blog), "Product Updates - March 2026," 2026-03-03. https://plaid.com/blog/product-updates-march-2026/ — *AI-powered document verification capability.*
-14. FDX (blog), "FDX Announces Spring 2025 API Release – FDX API Version 6.4," 2025-06-16. https://financialdataexchange.org/fdx-feed/fdx-announces-spring-2025-api-release-fdx-api-version-6-4/ — *24 new RFCs may require ASA integration updates.*
-15. FDX (blog), "MX Chief Advocacy Officer Jane Barratt Named FDX Co-Chair," 2024-10-22. https://financialdataexchange.org/fdx-feed/mx-chief-advocacy-officer-jane-barratt-named-financial-data-exchange-fdx-co-chair/ — *Direct competitor MX now influences the standard ASA must follow.*
+1. PR Newswire, "Jack Henry's transaction enrichment, powered by Bud Financial, brings greater clarity and accuracy to digital banking experiences," 2026-01-28. https://news.google.com/rss/articles/CBMijwJ... — *A direct competitor is shipping inside an ASA channel partner's core platform.*
+2. Finovate, "Nymbus Partners with Bud Financial on AI-Powered PFM," 2025-07-08. https://news.google.com/rss/articles/CBMif0FV... — *Second ASA channel partner choosing Bud over ASA for insights/PFM.*
+3. PR Newswire, "Nymbus Signs Agreement With Bud Financial To Launch AI-Powered Personal Financial Management Services for Banks and Credit Unions," 2025-07-08. https://news.google.com/rss/articles/CBMikwJB... — *Confirms scope and target segment of the Nymbus-Bud deal.*
+4. Consumer Financial Services Law Monitor, "CFPB Section 1033 Open Banking Rule Stayed as CFPB Initiates New Rulemaking," 2025-07-30. https://news.google.com/rss/articles/CBMi0gFB... — *Foundational rule for ASA's data-access thesis is in active rewrite.*
+5. FinTech Futures, "CFPB approves Financial Data Exchange as first 'standard setting body' under new US open banking rule," 2025-03-26. https://news.google.com/rss/articles/CBMi6AFB... — *FDX standards now govern ASA's auth/verify compliance posture.*
+6. American Banker, "CFPB to issue 'interim' final rule on 1033 open banking," 2025-12-10. https://news.google.com/rss/articles/CBMikwFB... — *Interim rule could compress compliance timelines across the platform.*
+7. Consumer Finance Monitor, "Reversing course, CFPB says it will issue revised open banking rule," 2025-08-04. https://news.google.com/rss/articles/CBMiuAFB... — *Confirms the rewrite is happening, scope still unclear.*
+8. Reuters, "JPMorgan secures deals with fintech aggregators over fees to access data, CNBC reports," 2025-11-14. https://news.google.com/rss/articles/CBMi5AFB... — *Bank-imposed fees reshape aggregator economics ASA partners with.*
+9. Plaid blog, "Building a transaction foundation model to power intelligent finance," 2026-04-04. https://plaid.com/blog/building-transaction-foundation-model-intelligent-finance/ — *Raises the AI/categorization bar Forecast and One View must meet.*
+10. Fintech Finance, "Personetics Launches MCP Server—Enabling Banks to Develop Agentic AI Applications Using Customer Financial Intelligence Data," 2025-09-11. https://news.google.com/rss/articles/CBMi9wFB... — *Standardizes agentic-AI access to bank data, pressuring Compass.*
+11. Bloomberg Law News, "Wells Fargo, PNC Push Fintechs to Use Bank-Backed Data Firm," 2025-11-04. https://news.google.com/rss/articles/CBMipgFB... — *Major banks mandating Akoya threatens ASA Auth/Verify connectivity.*
+12. PR Newswire, "Millions of US Workers Can Move their Direct Deposit in Seconds with Pinwheel's Breakthrough Direct Deposit Switching (DDS) Product," 2023-11-29. https://news.google.com/rss/articles/CBMikwNB... — *First API-driven payroll-provider DDS, directly competes with Verify/Pay.*
+13. Citywire, "Envestnet sells Yodlee to PE firm STG," 2025-06-25. https://news.google.com/rss/articles/CBMiigFB... — *PE ownership creates Yodlee customer-migration windows.*
+14. Tearsheet, "Visa has Plaid and now Mastercard acquires Finicity for close to $1 billion," 2020-06-23. https://news.google.com/rss/articles/CBMiowFB... — *Both card networks now own competing aggregation infra adjacent to ASA.*
 
 ---
 *Brief generated by ASA daily intel pipeline. Triage rubric v0.1 / synthesis prompt v0.1.*
