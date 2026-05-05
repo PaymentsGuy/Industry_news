@@ -1,0 +1,371 @@
+[
+  {
+    "topic_key": "q2_ai_fraud_tools_guidance",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "Q2 Holdings raised 2026 guidance and unveiled native AI fraud detection tools; shares rose 5.5%, signaling channel partners building fraud capabilities in-house.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "new_york_open_banking_legislation",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "New York proposed open banking-style consumer financial data access legislation, creating a state-level track distinct from the stalled federal CFPB Section 1033 pathway.",
+    "entities": [
+      "NY DFS",
+      "New York State",
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fiserv_scg_acquisition",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "Fiserv acquired SCG to strengthen its core banking position amid ongoing activist investor pressure.",
+    "entities": [
+      "Fiserv",
+      "SCG"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fis_anthropic_agentic_ai",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "FIS and Anthropic launched native agentic AI for banking starting with AML/financial-crimes investigation workflows, signaling core vendors owning the agentic layer.",
+    "entities": [
+      "FIS",
+      "Anthropic"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "plaid_ai_doc_verification_encompass",
+    "first_covered": "2026-05-04",
+    "last_covered": "2026-05-04",
+    "summary": "Plaid's March 2026 update adds AI document verification and an Encompass LOS Home Lending Report integration, expanding into Verify/Auth identity and lending-workflow territory.",
+    "entities": [
+      "Plaid",
+      "Encompass",
+      "ICE Mortgage Technology"
+    ],
+    "roadmap_areas": [
+      "verify",
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "cfpb_humility_pledge_exam_posture",
+    "first_covered": "2026-05-04",
+    "last_covered": "2026-05-04",
+    "summary": "CFPB Supervision Division issued a 'Humility Pledge' signaling procedural changes and a softer exam posture under new leadership, reducing compliance burden on FI partners.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "jana_fiserv_activist",
+    "first_covered": "2026-05-03",
+    "last_covered": "2026-05-03",
+    "summary": "JANA Partners built a stake in Fiserv, advocating 'One Fiserv' platform consolidation and banking-growth strategy, potentially reshaping partnership lanes.",
+    "entities": [
+      "JANA Partners",
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "genius_act_stablecoin_nprm",
+    "first_covered": "2026-05-03",
+    "last_covered": "2026-05-03",
+    "summary": "FinCEN and OFAC published GENIUS Act NPRM targeting payment stablecoin issuers with AML and sanctions program obligations, now in formal comment stage.",
+    "entities": [
+      "FinCEN",
+      "OFAC"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "pinwheel_plaid_partnership",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "Pinwheel was named Plaid's preferred provider for direct deposit switching and payroll-powered income verification.",
+    "entities": [
+      "Pinwheel",
+      "Plaid"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "method_financial_series_b",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "Method Financial closed a $41.5M Series B led by Emergence Capital to expand its account-connectivity platform.",
+    "entities": [
+      "Method Financial",
+      "Emergence Capital"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "jpmorgan_yodlee_data_pact",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "JPMorgan renegotiated its data-access agreement with Yodlee amid anticipated new fintech fees, signaling paid-API aggregation becoming standard.",
+    "entities": [
+      "JPMorgan",
+      "Yodlee"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "envestnet_yodlee_stg_sale",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "Envestnet agreed to sell Yodlee to private equity firm STG.",
+    "entities": [
+      "Envestnet",
+      "Yodlee",
+      "STG"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "cfpb_fed_funding_impairment",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "CFPB notified a federal court that DOJ/OLC determined it cannot lawfully draw funds from the Federal Reserve, impairing its enforcement capacity.",
+    "entities": [
+      "CFPB",
+      "DOJ",
+      "OLC"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "cfpb_fdx_1033_designation",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "CFPB formally designated FDX as the first Section 1033 standard-setting body, establishing the binding technical compliance baseline for open banking.",
+    "entities": [
+      "CFPB",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "banno_bud_enrichment",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "Jack Henry launched Bud Financial-powered transaction enrichment natively inside Banno Digital Platform, creating a default-on competitor to ASA One View and Forecast.",
+    "entities": [
+      "Jack Henry",
+      "Bud Financial"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "forecast"
+    ]
+  },
+  {
+    "topic_key": "akoya_screen_scraping_lobbying",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "Akoya filed a public CFPB comment urging a ban on screen scraping and narrowed secondary data use, seeking to entrench bank-permissioned API access.",
+    "entities": [
+      "Akoya",
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "akoya_bank_pressure_fintechs",
+    "first_covered": "2026-05-02",
+    "last_covered": "2026-05-02",
+    "summary": "Wells Fargo and PNC are reportedly pressuring fintechs to adopt Akoya's rails, hardening a bank-controlled aggregation pathway.",
+    "entities": [
+      "Akoya",
+      "Wells Fargo",
+      "PNC"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "socure_q1_2026_growth",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Socure reported Q1 2026 ARR exceeding $340M with 62% YoY profitable growth, confirming identity verification market consolidation around well-capitalized incumbents.",
+    "entities": [
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "q2_holdings_ai_coding_amazon",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Q2 Holdings reportedly uses an AI coding tool cutting platform builds from weeks to days, and is collaborating with Amazon on digital banking modernization.",
+    "entities": [
+      "Q2 Holdings",
+      "Amazon"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "plaid_transaction_foundation_model",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid shipped a proprietary transaction foundation model targeting categorization quality and intelligent finance insights at scale.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "compass"
+    ]
+  },
+  {
+    "topic_key": "plaid_protect_fraud_network",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid Protect fraud network claims 59% more fraud caught with no added friction, setting a network-effect benchmark single-FI deployments cannot match.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "plaid_perplexity_integration",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid expanded its Perplexity integration to cover spending tracking, net worth, and AI planning, creating a consumer-facing AI insight layer.",
+    "entities": [
+      "Plaid",
+      "Perplexity"
+    ],
+    "roadmap_areas": [
+      "compass"
+    ]
+  },
+  {
+    "topic_key": "plaid_income_engine_rebuild",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Plaid rebuilt its Income verification engine with finer taxonomy and configurable calculation, upgrading income verification capabilities.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "personetics_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Personetics launched an MCP server enabling agentic AI on customer financial data; also announced a deposit-growth collaboration with Atomic.",
+    "entities": [
+      "Personetics",
+      "Atomic"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "nymbus_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Nymbus launched a secure MCP server for AI-driven core banking actions, adding agentic access infrastructure to its core banking platform.",
+    "entities": [
+      "Nymbus"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_material_agreement",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Jack Henry's 2026-03-26 8-K disclosed entry into and termination of material agreements plus a new financial obligation; counterparty unknown.",
+    "entities": [
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fincen_ofac_stablecoin_genius_act",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "FinCEN and OFAC jointly proposed rules requiring payment stablecoin issuers to comply with the GENIUS Act, establishing the first federal AML/sanctions framework for stablecoin rails.",
+    "entities": [
+      "FinCEN",
+      "OFAC"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "bud_financial_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Bud Financial launched an MCP server enabling AI agents to access bank-grade financial intelligence, entering agentic-data-access infrastructure market.",
+    "entities": [
+      "Bud Financial"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "alkami_8k_material_agreement",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-01",
+    "summary": "Alkami's 8-K disclosed a material definitive agreement and an unregistered equity sale; details limited.",
+    "entities": [
+      "Alkami"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  }
+]
