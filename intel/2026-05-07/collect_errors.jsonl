@@ -1,0 +1,4 @@
+{"source": "Bank Automation News", "url": "https://bankautomationnews.com/feed/", "error": "parse failure: <unknown>:15:4: mismatched tag"}
+{"source": "Finextra", "url": "https://www.finextra.com/rss/headlines.aspx", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
+{"source": "Fintech Business Weekly (Mikula)", "url": "https://fintechbusinessweekly.substack.com/feed", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
+{"source": "Fintech Takes (Alex Johnson)", "url": "https://fintechtakes.substack.com/feed", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
