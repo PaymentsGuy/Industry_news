@@ -1,0 +1,484 @@
+[
+  {
+    "topic_key": "plaid_transaction_foundation_model",
+    "first_covered": "2026-05-17",
+    "last_covered": "2026-05-17",
+    "summary": "Plaid is building a proprietary transaction foundation model for categorization and insights, directly contesting One View's enrichment differentiation.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "plaid_perplexity_integration_expansion",
+    "first_covered": "2026-05-17",
+    "last_covered": "2026-05-17",
+    "summary": "Plaid expanded its Perplexity integration to surface net worth, spend tracking, and AI-driven financial planning insights.",
+    "entities": [
+      "Plaid",
+      "Perplexity"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "forecast"
+    ]
+  },
+  {
+    "topic_key": "plaid_income_engine_update",
+    "first_covered": "2026-05-17",
+    "last_covered": "2026-05-17",
+    "summary": "Plaid launched a new Income engine with finer taxonomy and configurable calculation controls, raising the feature bar in income verification.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "plaid_bank_intelligence_fi_analytics",
+    "first_covered": "2026-05-17",
+    "last_covered": "2026-05-17",
+    "summary": "Plaid expanded Bank Intelligence with Fraud Insights and a Primacy Score loyalty metric targeting FI-facing decisioning, overlapping Compass and One View.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "jpmorgan_aggregator_data_fee_deals",
+    "first_covered": "2026-05-17",
+    "last_covered": "2026-05-17",
+    "summary": "JPMorgan signed executed fee agreements with multiple fintech aggregators, converting data-access costs from speculation to contracted reality and resetting Vault unit economics.",
+    "entities": [
+      "JPMorgan",
+      "Akoya",
+      "Yodlee"
+    ],
+    "roadmap_areas": [
+      "vault",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "cfpb_bnpl_regz_enforcement_pullback",
+    "first_covered": "2026-05-17",
+    "last_covered": "2026-05-17",
+    "summary": "CFPB will not prioritize enforcement of its 2024 BNPL Reg Z digital-accounts rule, easing near-term compliance burden for BNPL-adjacent payment flows.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "pay",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "plaid_ai_data_rail_consolidation",
+    "first_covered": "2026-05-16",
+    "last_covered": "2026-05-16",
+    "summary": "Plaid is now the default consumer-permissioned data rail for frontier AI platforms, combining data connectivity and intelligence layers for third-party AI surfaces.",
+    "entities": [
+      "Plaid",
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "openai_chatgpt_plaid_finance_dashboard",
+    "first_covered": "2026-05-16",
+    "last_covered": "2026-05-16",
+    "summary": "OpenAI launched a Plaid-powered personal finance dashboard inside ChatGPT for Pro users on May 15, directly competing with Compass and One View.",
+    "entities": [
+      "OpenAI",
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "q2_holdings_exec_churn",
+    "first_covered": "2026-05-15",
+    "last_covered": "2026-05-15",
+    "summary": "Two additional Q2 Holdings 8-Ks (Items 5.02) extend leadership-churn pattern; cumulative four filings now on record.",
+    "entities": [
+      "Q2 Holdings",
+      "SEC"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "occ_illinois_interchange_preemption",
+    "first_covered": "2026-05-15",
+    "last_covered": "2026-05-15",
+    "summary": "OCC preempted Illinois's interchange fee law, federalizing payment-fee rulemaking and reshaping legal terrain for ASA Pay fee and rev-share structures.",
+    "entities": [
+      "OCC",
+      "State of Illinois"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_exec_change",
+    "first_covered": "2026-05-15",
+    "last_covered": "2026-05-15",
+    "summary": "Jack Henry 8-K (Item 5.02) discloses a second undisclosed director/officer change event; counterparty and role still not public.",
+    "entities": [
+      "Jack Henry",
+      "SEC"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "fiserv_agentOS_launch",
+    "first_covered": "2026-05-15",
+    "last_covered": "2026-05-15",
+    "summary": "Finextra second-sourced Fiserv's agentOS launch with no new facts beyond prior Business Wire and American Banker reports; story echoing not advancing.",
+    "entities": [
+      "Fiserv",
+      "Finextra"
+    ],
+    "roadmap_areas": [
+      "horizontal",
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "lumin_compounding_growth_platform_expansion",
+    "first_covered": "2026-05-14",
+    "last_covered": "2026-05-14",
+    "summary": "Lumin Digital previewed expansion of its Compounding Growth Platform beyond digital banking, one day after its Solaire AI launch.",
+    "entities": [
+      "Lumin Digital"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fiserv_agentos_launch",
+    "first_covered": "2026-05-14",
+    "last_covered": "2026-05-14",
+    "summary": "Fiserv launched agentOS, an agentic AI operating system for banking built with OpenAI and AWS, co-developed with six banks.",
+    "entities": [
+      "Fiserv",
+      "OpenAI",
+      "AWS"
+    ],
+    "roadmap_areas": [
+      "vault",
+      "compass"
+    ]
+  },
+  {
+    "topic_key": "chopra_california_consumer_agency",
+    "first_covered": "2026-05-14",
+    "last_covered": "2026-05-14",
+    "summary": "Former CFPB director Rohit Chopra named to lead a new consolidated California consumer and financial oversight agency combining DCA and DFPI.",
+    "entities": [
+      "CFPB",
+      "Rohit Chopra",
+      "California DFPI",
+      "California DCA"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "q2_holdings_exec_change",
+    "first_covered": "2026-05-13",
+    "last_covered": "2026-05-13",
+    "summary": "Q2 Holdings filed two 8-Ks (2025-11-05 and 2025-02-12) disclosing undisclosed director/officer changes, suggesting a pattern of leadership churn.",
+    "entities": [
+      "Q2 Holdings",
+      "SEC"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "lumin_solaire_ai_launch",
+    "first_covered": "2026-05-13",
+    "last_covered": "2026-05-13",
+    "summary": "Lumin Digital launched Solaire, a native AI intelligence layer in its growth platform, creating an in-channel alternative to Compass-style insights for Lumin-hosted FIs.",
+    "entities": [
+      "Lumin Digital"
+    ],
+    "roadmap_areas": [
+      "compass"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_officer_change",
+    "first_covered": "2026-05-12",
+    "last_covered": "2026-05-12",
+    "summary": "Jack Henry filed an 8-K (Item 5.02) on 2025-08-27 disclosing an undisclosed director or officer change at ASA's primary distribution channel.",
+    "entities": [
+      "Jack Henry",
+      "Banno"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fdx_agentic_ai_data_sharing",
+    "first_covered": "2026-05-12",
+    "last_covered": "2026-05-12",
+    "summary": "FDX launched a formal initiative to define safe financial-data-sharing standards for agentic AI, the first standards-body action scoping agent access.",
+    "entities": [
+      "FDX",
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "mx_magats_ceo",
+    "first_covered": "2026-05-11",
+    "last_covered": "2026-05-11",
+    "summary": "Jim Magats (ex-PayPal) was named MX CEO in March 2025; item resurfaced with no new development, over 12 months old.",
+    "entities": [
+      "MX",
+      "Jim Magats",
+      "PayPal"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "jack_henry_8k_material_agreement",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-05-11",
+    "summary": "Jack Henry filed an 8-K on 2026-03-26 disclosing entry into and termination of a material definitive agreement; counterparty and scope undisclosed.",
+    "entities": [
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "bud_first_fidelity_deployment",
+    "first_covered": "2026-05-11",
+    "last_covered": "2026-05-11",
+    "summary": "First Fidelity Bank deployed Bud Financial per Feb–Mar 2026 republished reports; no new FI count or contract value beyond prior Banno/Bud coverage.",
+    "entities": [
+      "Bud Financial",
+      "First Fidelity Bank"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "fis_anthropic_agentic_ai",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-10",
+    "summary": "Third source confirms FIS-Anthropic agentic AI launch is scoped to financial crimes only, with no expansion into customer-facing or commercial intelligence yet.",
+    "entities": [
+      "Anthropic",
+      "FIS",
+      "Pulse 2.0"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "horizontal",
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "alacriti_socure_instant_payments_fraud",
+    "first_covered": "2026-05-10",
+    "last_covered": "2026-05-10",
+    "summary": "Alacriti partnered with Socure to embed identity-based fraud prevention into instant payments rails, extending Socure beyond onboarding into transaction-time decisioning.",
+    "entities": [
+      "Alacriti",
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify",
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "socure_cpo_caio_appointments",
+    "first_covered": "2026-05-08",
+    "last_covered": "2026-05-08",
+    "summary": "Business Wire second-sources Socure's dual appointment of Chung-Man Tam as CPO and Pablo Abreu as Chief AI and Innovation Officer, confirming an AI-native product reorg.",
+    "entities": [
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "socure_cpo_caio_appointment",
+    "first_covered": "2026-05-07",
+    "last_covered": "2026-05-07",
+    "summary": "Socure named Chung-Man Tam as CPO and Pablo Abreu as Chief AI and Innovation Officer, signaling an AI-native identity decisioning acceleration.",
+    "entities": [
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "newline_mcp_skills",
+    "first_covered": "2026-05-06",
+    "last_covered": "2026-05-06",
+    "summary": "Fifth Third's Newline extended its MCP server with a Skills feature, confirming institutional MCP adoption as a banking-platform pattern.",
+    "entities": [
+      "Fifth Third",
+      "Newline",
+      "Nymbus",
+      "Bud Financial",
+      "Personetics"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "fiserv_core_attrition",
+    "first_covered": "2026-05-06",
+    "last_covered": "2026-05-06",
+    "summary": "Fiserv reported revenue decline with confirmed core banking client losses, validating JANA activist thesis and creating FI migration opportunities.",
+    "entities": [
+      "Fiserv",
+      "JANA Partners"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "cfpb_synapse_evolve_settlement",
+    "first_covered": "2026-05-06",
+    "last_covered": "2026-05-06",
+    "summary": "CFPB directed $46M to Synapse/Evolve victims in a first-of-kind fintech middleware regulatory action establishing new middleware liability precedent.",
+    "entities": [
+      "CFPB",
+      "FDIC",
+      "Synapse",
+      "Evolve"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "alloy_perpetual_kyb",
+    "first_covered": "2026-05-06",
+    "last_covered": "2026-05-06",
+    "summary": "Alloy launched perpetual KYB and continuous customer risk assessment, expanding from point-in-time onboarding into continuous monitoring adjacent to ASA Verify.",
+    "entities": [
+      "Alloy",
+      "Banno",
+      "Alkami"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "q2_ai_fraud_tools_guidance",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "Q2 Holdings raised 2026 guidance and unveiled native AI fraud detection tools; shares rose 5.5%, signaling channel partners building fraud capabilities in-house.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "new_york_open_banking_legislation",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "New York proposed open banking-style consumer financial data access legislation, creating a state-level track distinct from the stalled federal CFPB Section 1033 pathway.",
+    "entities": [
+      "NY DFS",
+      "New York State",
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fiserv_scg_acquisition",
+    "first_covered": "2026-05-05",
+    "last_covered": "2026-05-05",
+    "summary": "Fiserv acquired SCG to strengthen its core banking position amid ongoing activist investor pressure.",
+    "entities": [
+      "Fiserv",
+      "SCG"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "plaid_ai_doc_verification_encompass",
+    "first_covered": "2026-05-04",
+    "last_covered": "2026-05-04",
+    "summary": "Plaid's March 2026 update adds AI document verification and an Encompass LOS Home Lending Report integration, expanding into Verify/Auth identity and lending-workflow territory.",
+    "entities": [
+      "Plaid",
+      "Encompass",
+      "ICE Mortgage Technology"
+    ],
+    "roadmap_areas": [
+      "verify",
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "cfpb_humility_pledge_exam_posture",
+    "first_covered": "2026-05-04",
+    "last_covered": "2026-05-04",
+    "summary": "CFPB Supervision Division issued a 'Humility Pledge' signaling procedural changes and a softer exam posture under new leadership, reducing compliance burden on FI partners.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "jana_fiserv_activist",
+    "first_covered": "2026-05-03",
+    "last_covered": "2026-05-03",
+    "summary": "JANA Partners built a stake in Fiserv, advocating 'One Fiserv' platform consolidation and banking-growth strategy, potentially reshaping partnership lanes.",
+    "entities": [
+      "JANA Partners",
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "genius_act_stablecoin_nprm",
+    "first_covered": "2026-05-03",
+    "last_covered": "2026-05-03",
+    "summary": "FinCEN and OFAC published GENIUS Act NPRM targeting payment stablecoin issuers with AML and sanctions program obligations, now in formal comment stage.",
+    "entities": [
+      "FinCEN",
+      "OFAC"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  }
+]
