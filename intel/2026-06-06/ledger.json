@@ -1,0 +1,465 @@
+[
+  {
+    "topic_key": "q2_helix_officer_change",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Two stale Q2 Holdings Item 5.02 8-Ks from early 2025 republished in feed; no new content.",
+    "entities": [
+      "Q2 Holdings",
+      "Helix",
+      "SEC"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "occ_fintech_partnership_consent_order",
+    "first_covered": "2026-06-03",
+    "last_covered": "2026-06-06",
+    "summary": "OCC consent order warns community banks on fintech partnerships; National Law Review restatement reinforces supervisory tightening narrative already in ledger from 6-03.",
+    "entities": [
+      "FDIC",
+      "National Law Review",
+      "OCC"
+    ],
+    "roadmap_areas": [
+      "horizontal",
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_officer_change",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Jack Henry filed a 2026-06-04 8-K disclosing an officer/director change (Item 5.02) with an atypical Reg FD disclosure (Item 7.01); named officer not yet public.",
+    "entities": [
+      "Jack Henry",
+      "Banno",
+      "SEC"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fincen_aml_cip_eo",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Executive order on AML/CIP/credit underwriting restated by Consumer Finance Monitor; no new rule text beyond 6-02 ledger entry.",
+    "entities": [
+      "FinCEN",
+      "Consumer Finance Monitor"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "fdic_fintech_partnership_oversight",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Loeb & Loeb summary of FDIC fintech-partnership oversight resurfaced as second-source confirmation of elevated examiner posture; no new guidance text.",
+    "entities": [
+      "FDIC",
+      "Loeb & Loeb"
+    ],
+    "roadmap_areas": [
+      "verify",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "q2_holdings_officer_change_8k",
+    "first_covered": "2026-06-05",
+    "last_covered": "2026-06-05",
+    "summary": "Two stale Q2 Holdings Item 5.02 8-Ks from early 2025 resurfaced in the feed; no new officer or content, treated as RSS replay artifact.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "fiserv_fiusd_stablecoin",
+    "first_covered": "2026-06-05",
+    "last_covered": "2026-06-05",
+    "summary": "Fiserv launched FIUSD, a proprietary stablecoin targeting community-bank rails and payments infrastructure, raising settlement-layer questions for ASA Pay.",
+    "entities": [
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "q2_stale_8k_officer_change",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Stale Q2 Holdings Section 5.02 8-K filings from early 2025 surfaced in today's pull but provide no new context on Q2's recent AI assistant launch.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "plaid_monitor_aml_dashboard",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Plaid launched a redesigned AML Monitor dashboard targeting high-growth companies, extending its footprint from one-time verify into recurring compliance workflow.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "plaid_link_fin_agent_auth",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Plaid embedded Link inside Fin AI Agent chat so users can connect and repair bank connections without leaving the conversation.",
+    "entities": [
+      "Plaid",
+      "Fin AI Agent"
+    ],
+    "roadmap_areas": [
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_officer_change_2026",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Jack Henry filed a 2026-06-04 8-K disclosing an Item 5.02 officer/director change paired with an unusual Item 7.01 Reg FD disclosure; name and role not yet disclosed.",
+    "entities": [
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "q2_ai_assistant_launch",
+    "first_covered": "2026-06-03",
+    "last_covered": "2026-06-03",
+    "summary": "Q2 Holdings AI assistant for banking platforms recirculated via Investing.com; no new features or FI details beyond prior coverage.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "aeropay_jack_henry_pay_by_bank",
+    "first_covered": "2026-06-03",
+    "last_covered": "2026-06-03",
+    "summary": "Aeropay/Jack Henry pay-by-bank integration restated by multiple sources; no new FI adoption numbers or rail detail surfaced.",
+    "entities": [
+      "Aeropay",
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "q2_ai_assistant_banking",
+    "first_covered": "2026-06-02",
+    "last_covered": "2026-06-02",
+    "summary": "Q2 Holdings launched a native AI assistant for banking platforms; scope, partner extensibility, and FI rollout details undisclosed.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "eo_aml_kyc_credit_underwriting",
+    "first_covered": "2026-06-02",
+    "last_covered": "2026-06-02",
+    "summary": "Executive order signals major federal shifts in AML rules, customer identification, and credit underwriting standards, affecting KYC/CIP and lender-facing data use.",
+    "entities": [
+      "FinCEN",
+      "White House"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "woodforest_jack_henry_selection",
+    "first_covered": "2026-06-01",
+    "last_covered": "2026-06-01",
+    "summary": "FinTech Futures restated Woodforest National Bank's Jack Henry core and digital banking selection; no new detail beyond 5-28 PR Newswire coverage.",
+    "entities": [
+      "Woodforest National Bank",
+      "Jack Henry",
+      "FinTech Futures"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_ai_partnership",
+    "first_covered": "2026-06-01",
+    "last_covered": "2026-06-01",
+    "summary": "Retail Banker International provided second-source confirmation of Fiserv-Cognition AI engagement; no new scope or financial terms beyond 5-29 8-K coverage.",
+    "entities": [
+      "Fiserv",
+      "Cognition AI",
+      "Retail Banker International"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "jana_partners_fiserv_activist",
+    "first_covered": "2026-05-30",
+    "last_covered": "2026-05-31",
+    "summary": "Jana Partners is publicly targeting Fiserv; activist thesis undisclosed but could trigger divestitures or strategy shifts affecting digital banking and aggregation.",
+    "entities": [
+      "Cognition AI",
+      "Fiserv",
+      "Jana Partners",
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_material_agreement",
+    "first_covered": "2026-05-29",
+    "last_covered": "2026-05-29",
+    "summary": "Jack Henry filed an 8-K on 2026-03-26 disclosing entry into one material agreement, termination of another, and a new financial obligation; exhibit content unknown.",
+    "entities": [
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_ai",
+    "first_covered": "2026-05-29",
+    "last_covered": "2026-05-29",
+    "summary": "Fiserv engaged Cognition AI as a second AI modernization partner alongside its existing OpenAI/agentOS relationship.",
+    "entities": [
+      "Fiserv",
+      "Cognition AI",
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "vault",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "cfpb_supervision_humility_pledge",
+    "first_covered": "2026-05-29",
+    "last_covered": "2026-05-29",
+    "summary": "CFPB Supervision Division announced a procedural 'Humility Pledge' changing exam conduct under new leadership; substantive impact on data-aggregation supervision unclear.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "banno_bud_enrichment",
+    "first_covered": "2026-05-29",
+    "last_covered": "2026-05-29",
+    "summary": "Jack Henry launched Bud Financial-powered transaction enrichment as a native Banno feature, now shipping across ~1,000 FIs in the Jack Henry footprint.",
+    "entities": [
+      "Jack Henry",
+      "Bud Financial",
+      "Banno"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "forecast"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_woodforest_core_win",
+    "first_covered": "2026-05-28",
+    "last_covered": "2026-05-28",
+    "summary": "Woodforest National Bank ($9B AUM, 740 branches) selected Jack Henry as its core platform, expanding Banno's reachable FI footprint.",
+    "entities": [
+      "Jack Henry",
+      "Banno",
+      "Woodforest National Bank"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "socure_exec_changes",
+    "first_covered": "2026-05-27",
+    "last_covered": "2026-05-27",
+    "summary": "Socure named Chung-Man Tam as CPO and Pablo Abreu as Chief AI and Innovation Officer, signaling potential product direction shift at a verify/auth competitor.",
+    "entities": [
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify",
+      "auth"
+    ]
+  },
+  {
+    "topic_key": "ny_open_banking_legislation",
+    "first_covered": "2026-05-27",
+    "last_covered": "2026-05-27",
+    "summary": "New York proposed open banking-style financial data access legislation, creating a state-level parallel track to the stalled federal CFPB Section 1033 rulemaking.",
+    "entities": [
+      "NY State",
+      "CFPB",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_material_agreements",
+    "first_covered": "2026-05-27",
+    "last_covered": "2026-05-27",
+    "summary": "Jack Henry filed an 8-K disclosing a new material agreement, termination of another, and a new financial obligation — unusual three-item combination at ASA's primary distribution channel.",
+    "entities": [
+      "Jack Henry",
+      "SEC"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fiserv_openai_partnership",
+    "first_covered": "2026-05-27",
+    "last_covered": "2026-05-27",
+    "summary": "Fiserv formally announced a platform-wide OpenAI partnership to embed frontier AI across financial services platforms, escalating the prior agentOS pilot.",
+    "entities": [
+      "Fiserv",
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "socure_prism_data_riscos",
+    "first_covered": "2026-05-26",
+    "last_covered": "2026-05-26",
+    "summary": "Socure integrated Prism Data cash-flow underwriting signals into RiskOS, extending a channel partner into territory overlapping Verify income signals and Forecast recurring-flow modeling.",
+    "entities": [
+      "Socure",
+      "Prism Data"
+    ],
+    "roadmap_areas": [
+      "verify",
+      "forecast"
+    ]
+  },
+  {
+    "topic_key": "openai_plaid_chatgpt_pfm",
+    "first_covered": "2026-05-26",
+    "last_covered": "2026-05-26",
+    "summary": "OpenAI and Plaid expanded ChatGPT's Plaid-connected PFM from Pro-tier preview to general consumer product, escalating disintermediation risk to FI-channel PFM surfaces.",
+    "entities": [
+      "OpenAI",
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "cfpb_synapse_evolve_remediation",
+    "first_covered": "2026-05-25",
+    "last_covered": "2026-05-25",
+    "summary": "CFPB allocated $46M to consumers harmed by Synapse/Evolve middleware collapse, the first regulator-funded fintech remediation of its kind.",
+    "entities": [
+      "CFPB",
+      "Synapse",
+      "Evolve Bank & Trust"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "q2_stablecore_stablecoin_payments",
+    "first_covered": "2026-05-24",
+    "last_covered": "2026-05-24",
+    "summary": "Q2 Holdings partnered with Stablecore to offer stablecoin payments to bank and credit union clients, introducing a new payment rail inside an ASA distribution channel.",
+    "entities": [
+      "Q2 Holdings",
+      "Stablecore"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ]
+  },
+  {
+    "topic_key": "nymbus_mcp_server_launch",
+    "first_covered": "2026-05-24",
+    "last_covered": "2026-05-24",
+    "summary": "Nymbus shipped a secure MCP server for AI-driven core banking actions, becoming the third MCP-native core/channel vendor after Personetics and Bud.",
+    "entities": [
+      "Nymbus",
+      "Personetics",
+      "Bud Financial"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "fiserv_noncore_asset_divestitures",
+    "first_covered": "2026-05-24",
+    "last_covered": "2026-05-24",
+    "summary": "Fiserv disclosed non-core asset divestitures via 8-K; divested units unnamed, with potential impact on digital banking or aggregation channels.",
+    "entities": [
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "apiture_live_oak_stake_sale",
+    "first_covered": "2026-05-24",
+    "last_covered": "2026-05-24",
+    "summary": "Live Oak Bank booked a $24M Q3 gain on sale of its Apiture stake, providing a concrete valuation datapoint separate from the CSI acquisition narrative.",
+    "entities": [
+      "Live Oak Bank",
+      "Apiture",
+      "CSI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fincen_aml_program_nprm",
+    "first_covered": "2026-05-23",
+    "last_covered": "2026-05-23",
+    "summary": "FinCEN proposed rule revising baseline AML program requirements for all FIs, distinct from GENIUS Act AML NPRM; affects every ASA channel-partner FI.",
+    "entities": [
+      "FinCEN",
+      "WilmerHale"
+    ],
+    "roadmap_areas": [
+      "vault",
+      "verify",
+      "horizontal"
+    ]
+  }
+]
