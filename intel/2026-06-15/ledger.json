@@ -1,5 +1,151 @@
 [
   {
+    "topic_key": "socure_identity_fraud_partnerships",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Socure expanded its identity and fraud stack through partnerships with Checkr Trust and Thomson Reuters.",
+    "entities": [
+      "Socure",
+      "Checkr Trust",
+      "Thomson Reuters"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "q2_ai_assistant_q2_code",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Q2 rolled out an AI assistant and Q2 Code, an AI-enabled development environment for digital-banking extensions.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "personetics_mcp_server",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Personetics launched an MCP server so banks can build agentic AI applications on top of its customer financial-intelligence data.",
+    "entities": [
+      "Personetics"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "nymbus_secure_mcp_server",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Nymbus announced a secure MCP server to let AI agents perform core banking actions.",
+    "entities": [
+      "Nymbus"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "flybits_agentic_banking",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Flybits introduced an agentic banking capability to orchestrate AI-guided customer journeys inside digital banking channels.",
+    "entities": [
+      "Flybits"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "fiserv_openai_agent_co_creation",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Fiserv said it has co-created AI agents with six banks and OpenAI, extending its agentOS-style push.",
+    "entities": [
+      "Fiserv",
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fincen_aml_cft_rule_update",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "FinCEN and banking agencies proposed updated AML/CFT program rules that raise compliance expectations for banks and money services businesses.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "executive_order_fincen_aml_shift",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Commentary on an executive order and FinCEN proposals says federal AML, KYC, and underwriting expectations are tightening across financial institutions.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify",
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "corelation_cotribute_ai_agents",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Cotribute and Corelation launched AI agents for credit unions, bringing agentic automation into a core-banking partner ecosystem.",
+    "entities": [
+      "Cotribute",
+      "Corelation"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "alloy_perpetual_kyc",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Alloy released AI-driven perpetual KYC tooling that supports continuous compliance monitoring for banks and fintechs.",
+    "entities": [
+      "Alloy"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "alkami_fdx_yodlee_aggregation",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Alkami is moving data aggregation to the FDX API standard with Yodlee, making API-only open-banking connectivity a new baseline for digital channels.",
+    "entities": [
+      "Alkami",
+      "Envestnet Yodlee",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
     "topic_key": "mx_ceo_cto_appointments",
     "first_covered": "2026-06-08",
     "last_covered": "2026-06-08",
