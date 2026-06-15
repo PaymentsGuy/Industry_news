@@ -303,7 +303,6 @@ def call_perplexity_triage(
             model=TRIAGE_MODEL,
             max_tokens=400,
             temperature=TRIAGE_TEMP,
-            response_format={"type": "json_object"},
         )
         parsed = json.loads(strip_code_fences(text))
         parsed["_source_item"] = item
@@ -345,10 +344,27 @@ def triage(in_file: Path, out_file: Path) -> None:
     )
 
     write_jsonl(out_file, triaged)
+    triage_error_count = sum(
+        1 for t in triaged if "triage_error" in (t.get("uncertainty_flags") or [])
+    )
+    if triaged and triage_error_count == len(triaged):
+        log.error(
+            "All %d triage calls failed; refusing to publish a green-but-empty brief",
+            len(triaged),
+        )
+        sys.exit(1)
+    if triaged and triage_error_count > len(triaged) // 2:
+        log.error(
+            "Triage failure rate too high: %d/%d items failed; refusing to publish",
+            triage_error_count,
+            len(triaged),
+        )
+        sys.exit(1)
+
     surviving = [t for t in triaged if (t.get("relevance_score") or 0) >= TRIAGE_RELEVANCE_DROP]
     log.info(
-        "Triage complete: %d items, %d survive (score >= %d)",
-        len(triaged), len(surviving), TRIAGE_RELEVANCE_DROP,
+        "Triage complete: %d items, %d survive (score >= %d), %d triage errors",
+        len(triaged), len(surviving), TRIAGE_RELEVANCE_DROP, triage_error_count,
     )
 
 

@@ -57,6 +57,7 @@ def test_perplexity_triage_preserves_required_schema_and_omits_anthropic_cache_b
     assert "_cache_stats" not in triaged
     assert len(calls) == 1
     assert calls[0]["model"] == "sonar"
+    assert "response_format" not in calls[0]
     assert calls[0]["messages"][0]["role"] == "user"
     assert isinstance(calls[0]["messages"][0]["content"], str)
     assert "cache_control" not in json.dumps(calls[0]["messages"])
