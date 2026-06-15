@@ -11,26 +11,37 @@ the brief and when, so the synthesis step can dedupe-with-deltas on the next
 day. Topics older than 14 days are pruned automatically.
 
 Topic extraction is done by an LLM call — we hand it the brief and ask for a
-structured topic list. This is one extra Sonnet call per day (~1c).
+structured topic list. This is one extra Perplexity call per run.
 """
 
 from __future__ import annotations
 
 import json
 import logging
-import os
 import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import click
-from anthropic import Anthropic
+
+try:
+    from intel.llm_provider import (
+        MissingProviderCredential,
+        perplexity_chat_completion,
+        require_perplexity_api_key,
+    )
+except ModuleNotFoundError:  # pragma: no cover - supports `python intel/update_ledger.py`
+    from llm_provider import (
+        MissingProviderCredential,
+        perplexity_chat_completion,
+        require_perplexity_api_key,
+    )
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger("ledger")
 
 LEDGER_WINDOW_DAYS = 14
-EXTRACTION_MODEL = "claude-sonnet-4-6"
+EXTRACTION_MODEL = "sonar"
 
 EXTRACTION_PROMPT = """You are extracting structured topic data from a daily
 competitive intelligence brief, so the next day's brief can dedupe against it.
@@ -75,15 +86,17 @@ BRIEF:
 """
 
 
-def extract_topics_from_brief(brief_text: str, client: Anthropic) -> list[dict]:
-    """Call Sonnet to pull topic entries out of today's brief."""
-    response = client.messages.create(
+def extract_topics_from_brief(
+    brief_text: str,
+    completion_func=perplexity_chat_completion,
+) -> list[dict]:
+    """Call Perplexity to pull topic entries out of today's brief."""
+    text = completion_func(
+        messages=[{"role": "user", "content": EXTRACTION_PROMPT + brief_text}],
         model=EXTRACTION_MODEL,
         max_tokens=2000,
         temperature=0.0,
-        messages=[{"role": "user", "content": EXTRACTION_PROMPT + brief_text}],
-    )
-    text = response.content[0].text.strip()
+    ).strip()
     # Strip code fences if the model added them despite instructions
     if text.startswith("```"):
         nl = text.find("\n")
@@ -198,16 +211,17 @@ def merge_and_prune(
 @click.option("--today", default=None, help="ISO date for the merge. Defaults to UTC today.")
 def main(brief_file: Path, prior_ledger: Path | None, ledger_out: Path, today: str | None) -> None:
     """Extract topics from today's brief, merge with prior ledger, prune old."""
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        log.error("ANTHROPIC_API_KEY not set")
+    try:
+        require_perplexity_api_key()
+    except MissingProviderCredential as e:
+        log.error(str(e))
         sys.exit(2)
-    client = Anthropic()
 
     today_iso = today or date.today().isoformat()
 
     brief_text = brief_file.read_text(encoding="utf-8")
     log.info("Extracting topics from brief (%d chars)", len(brief_text))
-    new_topics = extract_topics_from_brief(brief_text, client)
+    new_topics = extract_topics_from_brief(brief_text)
     log.info("Extracted %d topics from today's brief", len(new_topics))
 
     prior = load_prior_ledger(prior_ledger)

@@ -1,14 +1,14 @@
-name: Daily Intel Brief
+name: Weekly Intel Brief
 
 on:
   schedule:
-    # 12:00 UTC = 5:00 AM Pacific (during PDT), 4:00 AM (PST). Brief lands in
-    # Slack by 8 AM PT either way.
-    - cron: '0 12 * * *'
+    # Weekly Monday 12:00 UTC = 5:00 AM Pacific (during PDT), 4:00 AM (PST).
+    # Brief lands in Slack by 8 AM PT either way.
+    - cron: '0 12 * * 1'
   workflow_dispatch:    # allow manual runs from the Actions tab
 
 permissions:
-  contents: write       # required to commit the daily brief back to the repo
+  contents: write       # required to commit the weekly brief back to the repo
 
 concurrency:
   group: daily-intel
@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 60   # was 20; ledger pipeline is ~5min slower
 
     env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       MAX_DAILY_COST_USD: "3.00"
 
@@ -42,15 +42,14 @@ jobs:
       - name: Set DATE env
         run: |
           echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
-          echo "YESTERDAY=$(date -u -d 'yesterday' +%F 2>/dev/null || date -u -v-1d +%F)" >> "$GITHUB_ENV"
 
       - name: Find most recent prior ledger
-        # Look back up to 14 days for the most recent ledger.json. We can't
-        # assume yesterday exists — runs can be skipped, repos can be branched.
+        # Look back up to 35 days for the most recent ledger.json. We can't
+        # assume last week's run exists — runs can be skipped, repos can be branched.
         id: find_ledger
         run: |
           PRIOR_LEDGER=""
-          for i in $(seq 1 14); do
+          for i in $(seq 1 35); do
             CHECK_DATE=$(date -u -d "${i} days ago" +%F 2>/dev/null || date -u -v-${i}d +%F)
             CANDIDATE="intel/${CHECK_DATE}/ledger.json"
             if [ -f "$CANDIDATE" ]; then
@@ -60,7 +59,7 @@ jobs:
             fi
           done
           if [ -z "$PRIOR_LEDGER" ]; then
-            echo "No prior ledger found in the last 14 days; synthesis will run without dedup"
+            echo "No prior ledger found in the last 35 days; synthesis will run without dedup"
           fi
           echo "PRIOR_LEDGER=$PRIOR_LEDGER" >> "$GITHUB_ENV"
 

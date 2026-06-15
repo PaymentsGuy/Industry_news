@@ -28,7 +28,19 @@ import click
 import feedparser
 import requests
 import yaml
-from anthropic import Anthropic
+
+try:
+    from intel.llm_provider import (
+        MissingProviderCredential,
+        perplexity_chat_completion,
+        require_perplexity_api_key,
+    )
+except ModuleNotFoundError:  # pragma: no cover - supports `python intel/pipeline.py`
+    from llm_provider import (
+        MissingProviderCredential,
+        perplexity_chat_completion,
+        require_perplexity_api_key,
+    )
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -38,11 +50,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 WATCHLIST_PATH = REPO_ROOT / "intel" / "watchlist.yaml"
 PROMPTS_DIR = REPO_ROOT / "intel" / "prompts"
 
-# Model selection. Triage runs once per item (~50/day) so cost matters; Sonnet
-# is the right balance of quality vs cost. Synthesis runs once per day and
-# quality matters more than cost, so Opus.
-TRIAGE_MODEL = "claude-sonnet-4-6"
-SYNTHESIS_MODEL = "claude-opus-4-7"
+# Model selection. Triage runs once per item (~50/day) so cost matters; Sonar
+# is the right Perplexity tier for deterministic classification. Synthesis uses
+# Sonar Pro for citation-aware executive brief generation.
+TRIAGE_MODEL = "sonar"
+SYNTHESIS_MODEL = "sonar-pro"
 
 TRIAGE_TEMP = 0.0          # deterministic classification
 SYNTHESIS_TEMP = 0.3       # slight variation in prose, still controlled
@@ -240,24 +252,27 @@ def collect(out_dir: Path) -> None:
 # TRIAGE — Stage 1
 # ---------------------------------------------------------------------------
 
-def call_claude_triage(client: Anthropic, item: dict, watchlist_version: str) -> dict:
-    """Single-item triage call with prompt caching on the static rubric.
+def triage_error_record(item: dict) -> dict:
+    """Return the schema-compatible zero-score record used when triage fails."""
+    return {
+        "id": item["id"],
+        "watchlist_bucket": "none",
+        "watchlist_entity": None,
+        "signal_type": "other",
+        "roadmap_areas": [],
+        "relevance_score": 0,
+        "headline_paraphrase": item["title"][:140],
+        "why_it_matters_for_asa": "[triage error - see logs]",
+        "uncertainty_flags": ["triage_error"],
+        "duplicate_of_id": None,
+        "_source_item": item,
+    }
 
-    The triage prompt is split into:
-      - A cacheable preamble (rubric, watchlist, output schema) that is identical
-        for every item in the run. Marked with cache_control=ephemeral so the
-        Anthropic API caches it for 5 minutes.
-      - A per-item suffix containing only the title/url/text being classified.
 
-    On a typical run of ~80 items, this means 1 cache write + ~79 cache hits,
-    which cuts triage input cost by roughly 90%.
-
-    On failure returns a relevance_score=0 record so the item is dropped.
-    """
+def render_triage_prompt(item: dict, watchlist_version: str) -> str:
+    """Render the single-item triage prompt as plain text for Perplexity."""
     template = load_prompt("triage")
-
-    # Render the full prompt with all variables substituted.
-    full_prompt = render_prompt(
+    return render_prompt(
         template,
         title=item["title"],
         source=item["source"],
@@ -268,72 +283,34 @@ def call_claude_triage(client: Anthropic, item: dict, watchlist_version: str) ->
         deterministic_id=item["id"],
     )
 
-    # Split the prompt at the INPUT ITEM marker so we can cache everything
-    # before it (rubric, watchlist, schema) and send only the item data fresh.
-    # The triage.md prompt has "INPUT ITEM:" as a stable section header.
-    split_marker = "INPUT ITEM:"
-    if split_marker in full_prompt:
-        before, after = full_prompt.split(split_marker, 1)
-        cacheable_part = before.rstrip()
-        per_item_part = split_marker + after
-    else:
-        # Fallback: prompt structure changed, send uncached
-        cacheable_part = ""
-        per_item_part = full_prompt
 
-    # Build the message content. The cacheable block gets cache_control;
-    # the per-item block does not.
-    if cacheable_part:
-        content = [
-            {
-                "type": "text",
-                "text": cacheable_part,
-                "cache_control": {"type": "ephemeral"},
-            },
-            {
-                "type": "text",
-                "text": per_item_part,
-            },
-        ]
-    else:
-        content = [{"type": "text", "text": per_item_part}]
+def call_perplexity_triage(
+    item: dict,
+    watchlist_version: str,
+    completion_func=perplexity_chat_completion,
+) -> dict:
+    """Single-item Perplexity triage call.
+
+    Perplexity uses an OpenAI-compatible chat shape, so the prompt is sent as a
+    plain user message. Anthropic-only cache_control blocks and cache audit
+    fields are intentionally omitted.
+    """
+    prompt = render_triage_prompt(item, watchlist_version)
 
     try:
-        response = client.messages.create(
+        text = completion_func(
+            messages=[{"role": "user", "content": prompt}],
             model=TRIAGE_MODEL,
             max_tokens=400,
             temperature=TRIAGE_TEMP,
-            messages=[{"role": "user", "content": content}],
+            response_format={"type": "json_object"},
         )
-        text = strip_code_fences(response.content[0].text)
-        parsed = json.loads(text)
+        parsed = json.loads(strip_code_fences(text))
         parsed["_source_item"] = item
-        # Surface cache stats in the audit trail so we can verify caching is
-        # actually working in production.
-        usage = getattr(response, "usage", None)
-        if usage is not None:
-            parsed["_cache_stats"] = {
-                "cache_creation_input_tokens": getattr(usage, "cache_creation_input_tokens", 0) or 0,
-                "cache_read_input_tokens": getattr(usage, "cache_read_input_tokens", 0) or 0,
-                "input_tokens": getattr(usage, "input_tokens", 0) or 0,
-                "output_tokens": getattr(usage, "output_tokens", 0) or 0,
-            }
         return parsed
     except Exception as e:
         log.warning("triage failure for %s: %s", item.get("id"), e)
-        return {
-            "id": item["id"],
-            "watchlist_bucket": "none",
-            "watchlist_entity": None,
-            "signal_type": "other",
-            "roadmap_areas": [],
-            "relevance_score": 0,
-            "headline_paraphrase": item["title"][:140],
-            "why_it_matters_for_asa": "[triage error - see logs]",
-            "uncertainty_flags": ["triage_error"],
-            "duplicate_of_id": None,
-            "_source_item": item,
-        }
+        return triage_error_record(item)
 
 
 @cli.command()
@@ -345,15 +322,16 @@ def triage(in_file: Path, out_file: Path) -> None:
     watchlist = load_watchlist()
     version = watchlist.get("version", "0")
 
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        log.error("ANTHROPIC_API_KEY not set")
+    try:
+        require_perplexity_api_key()
+    except MissingProviderCredential as e:
+        log.error(str(e))
         sys.exit(2)
-    client = Anthropic()
 
     log.info("Triaging %d items (concurrency=%d)", len(items), TRIAGE_CONCURRENCY)
     triaged: list[dict] = []
     with ThreadPoolExecutor(max_workers=TRIAGE_CONCURRENCY) as ex:
-        futures = [ex.submit(call_claude_triage, client, it, version) for it in items]
+        futures = [ex.submit(call_perplexity_triage, it, version) for it in items]
         for fut in as_completed(futures):
             triaged.append(fut.result())
 
@@ -378,26 +356,20 @@ def triage(in_file: Path, out_file: Path) -> None:
 # SYNTHESIZE — Stage 2
 # ---------------------------------------------------------------------------
 
-@cli.command()
-@click.option("--in-file",  required=True, type=click.Path(path_type=Path))
-@click.option("--out-file", required=True, type=click.Path(path_type=Path))
-@click.option("--prior-ledger", type=click.Path(path_type=Path), default=None,
-              help="Path to yesterday's ledger.json. If missing or empty, "
-                   "synthesis runs without the dedup filter (every item is fresh).")
-def synthesize(in_file: Path, out_file: Path, prior_ledger: Path | None) -> None:
-    """Run Stage 2 synthesis to produce a markdown brief.
+def synthesize_brief(
+    in_file: Path,
+    out_file: Path,
+    prior_ledger: Path | None,
+    completion_func=perplexity_chat_completion,
+) -> None:
+    """Run Stage 2 synthesis with Perplexity and write a markdown brief.
 
     If --prior-ledger is supplied and exists, its contents are passed to the
-    synthesis prompt so the model can dedupe today's items against topics
+    synthesis prompt so the model can dedupe this week's items against topics
     already covered in the last 14 days.
     """
     triaged = read_jsonl(in_file)
     surviving = [t for t in triaged if (t.get("relevance_score") or 0) >= TRIAGE_RELEVANCE_DROP]
-
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        log.error("ANTHROPIC_API_KEY not set")
-        sys.exit(2)
-    client = Anthropic()
 
     # Load the prior topic ledger if it exists. On the first run after this
     # feature ships, no ledger will exist — that's fine, the prompt handles
@@ -426,16 +398,32 @@ def synthesize(in_file: Path, out_file: Path, prior_ledger: Path | None) -> None
 
     log.info("Synthesizing brief from %d surviving items (ledger has %d topics)",
              len(surviving), len(ledger))
-    response = client.messages.create(
+    brief = completion_func(
+        messages=[{"role": "user", "content": prompt}],
         model=SYNTHESIS_MODEL,
         max_tokens=4096,
-        messages=[{"role": "user", "content": prompt}],
+        temperature=SYNTHESIS_TEMP,
     )
-    brief = strip_code_fences(response.content[0].text)
+    brief = strip_code_fences(brief)
 
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(brief, encoding="utf-8")
     log.info("Brief written to %s (%d chars)", out_file, len(brief))
+
+
+@cli.command()
+@click.option("--in-file",  required=True, type=click.Path(path_type=Path))
+@click.option("--out-file", required=True, type=click.Path(path_type=Path))
+@click.option("--prior-ledger", type=click.Path(path_type=Path), default=None,
+              help="Path to the prior ledger.json. If missing or empty, "
+                   "synthesis runs without the dedup filter (every item is fresh).")
+def synthesize(in_file: Path, out_file: Path, prior_ledger: Path | None) -> None:
+    """Run Stage 2 synthesis to produce a markdown brief."""
+    try:
+        synthesize_brief(in_file, out_file, prior_ledger)
+    except MissingProviderCredential as e:
+        log.error(str(e))
+        sys.exit(2)
 
 
 # ---------------------------------------------------------------------------
