@@ -1,0 +1,134 @@
+[
+  {
+    "topic_key": "plaid_august_product_update",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Plaid released an August product update adding identity verification, bank linking, onboarding, and fraud features.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify",
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "plaid_alkami_partnership",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Alkami expanded its Plaid integration to add account linking, financial visibility, and enriched transaction data in digital banking.",
+    "entities": [
+      "Alkami",
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "vault",
+      "one_view"
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_devin_ai",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Fiserv said it is partnering with Cognition to use Devin AI for core banking modernization.",
+    "entities": [
+      "Fiserv",
+      "Cognition"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fincen_beneficial_ownership_rule",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "FinCEN finalized a rule ending beneficial ownership reporting for U.S. companies and persons, retaining limited reporting for some foreign companies.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "fdx_agentic_ai_standards",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "FDX launched standards work for safe financial data sharing with agentic AI, raising expectations for consent, identity, and audit controls.",
+    "entities": [
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "vault",
+      "auth",
+      "verify"
+    ]
+  },
+  {
+    "topic_key": "cfpb_fdx_open_banking_standard_setter",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "CFPB recognized FDX as the first standard-setting body for open banking, increasing its influence on the rule environment.",
+    "entities": [
+      "CFPB",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "cfpb_complaint_narrative_publication_change",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "CFPB said it will stop publishing unverified complaint narratives and visualizations.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  },
+  {
+    "topic_key": "plaid_sierra_bank_linking_agents",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "Plaid and Sierra partnered to embed secure bank account linking inside AI agent conversations.",
+    "entities": [
+      "Plaid",
+      "Sierra"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_devin_modernization",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "Fiserv partnered with Cognition to use Devin AI for core banking modernization.",
+    "entities": [
+      "Fiserv",
+      "Cognition",
+      "Devin AI"
+    ],
+    "roadmap_areas": []
+  },
+  {
+    "topic_key": "cfpb_1033_open_banking_rewrite",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "The CFPB’s Section 1033 open-banking rewrite moved back into active rulemaking, with a new proposal to OIRA and an interim final rule expected.",
+    "entities": [
+      "Consumer Financial Protection Bureau",
+      "Office of Information and Regulatory Affairs",
+      "Consumer Finance Monitor",
+      "American Banker"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ]
+  }
+]
