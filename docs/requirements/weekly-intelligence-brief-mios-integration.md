@@ -13,9 +13,9 @@ This document defines requirements and acceptance behavior. It does not authoriz
 ## Current-state evidence
 
 - Current Slack destination: `#troy-research`, channel ID `C0B1TPFSZKJ`.
-- The Industry_news repository currently contains 40 dated `brief.md` artifacts:
+- The Industry_news repository currently contains 42 dated `brief.md` artifacts:
   - 39 daily predecessor briefs dated 2026-05-01 through 2026-06-08.
-  - One weekly brief dated 2026-06-15.
+  - Three weekly briefs dated 2026-06-15, 2026-08-10, and 2026-08-17.
 - The most recent 100 Slack messages expose four messages with Weekly Intelligence Brief headers:
   - Two distinct 2026-06-15 messages with different hashes and headlines.
   - 2026-08-10.
