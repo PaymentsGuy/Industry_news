@@ -1,13 +1,13 @@
 # ASA Weekly Competitive Intelligence Pipeline
 
-Automated weekly pull of competitor, channel-partner, regulatory, and technology signal for ASA Technologies. Runs Monday at 5:00 AM Pacific during PDT / 4:00 AM during PST, produces a one-page executive brief by 8:00 AM Pacific, posts to Slack, and commits the full audit trail to this repo.
+Automated weekly pull of competitor, channel-partner, regulatory, and technology signal for ASA Technologies. Runs Monday at 5:00 AM Pacific during PDT / 4:00 AM during PST, produces a one-page executive brief by 8:00 AM Pacific, posts to Slack, and commits the full audit trail to this repo. Vault dual-delivery and MIOS ingestion are approved requirements but are not implemented yet.
 
 ## What it does
 
 1. **Collect** — pulls RSS feeds for every entity in `intel/watchlist.yaml`, plus SEC EDGAR filings for public competitors.
 2. **Triage** — calls Perplexity once per raw item with the Stage 1 rubric prompt; drops anything scoring below 2.
 3. **Synthesize** — calls Perplexity once with the surviving items and produces a markdown brief in the canonical format.
-4. **Publish** — posts the brief to Slack (`#daily-intel`) and commits raw items + triage scores + final brief to `intel/<date>/`.
+4. **Publish** — posts the brief to Slack (`#troy-research`) and commits raw items + triage scores + final brief to `intel/<date>/`.
 
 ## Repo structure
 
@@ -36,7 +36,7 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
 
 2. **Set repository secrets** (Settings → Secrets and variables → Actions):
    - `PERPLEXITY_API_KEY` — your Perplexity API key
-   - `SLACK_WEBHOOK_URL` — incoming webhook for `#daily-intel`
+   - `SLACK_WEBHOOK_URL` — incoming webhook for `#troy-research`
 
 3. **Verify watchlist URLs.** The seed `watchlist.yaml` has reasonable RSS guesses but URLs change. Run locally once to confirm:
    ```bash
@@ -62,11 +62,28 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
 
 ## Weekly ops
 
-- The brief lands in `#daily-intel` around 8 AM PT. Reading time: 90 seconds.
+- The brief lands in `#troy-research` around 8 AM PT. Reading time: 90 seconds.
 - Anything tagged "Decision needed by [date]" goes on your action list immediately. Everything else is reading.
 - Once a week, glance at the `intel/<date>/triaged.jsonl` files — look for score-3 items the brief de-emphasized, or score-1 items that should have been higher. That's how you tune the rubric.
 - Once a month, edit `watchlist.yaml`. Markets shift; entities die or get acquired. The watchlist is a living document.
 - Once a quarter, review `intel/prompts/triage.md` and `synthesis.md`. Treat any change as a code change — PR, review, ship.
+
+## Approved requirements: Vault archive and MIOS ingestion
+
+The approved requirements are documented in:
+
+`docs/requirements/weekly-intelligence-brief-mios-integration.md`
+
+Summary:
+
+- Reconcile the complete repository and Slack brief inventory before ingestion.
+- Archive every historical Daily/Weekly Intelligence Brief in the Obsidian Vault using a date-defined canonical filename.
+- Ingest oldest first, one brief at a time, with Troy manually releasing and accepting each brief before the next unlocks.
+- Future briefs must deliver to both `#troy-research` and the Vault, with independent readback and fail-loud partial-delivery behavior.
+- A verified Vault-created event queues MIOS ingestion and carries stable identity, date, path, hash, producer, and Slack provenance.
+- MIOS-produced briefs are output-only and must not be re-ingested.
+
+These are requirements only. The current pipeline still posts to Slack and commits repository artifacts; no Vault delivery, MIOS trigger, historical ingestion, or live workflow change is authorized or implemented by this documentation update.
 
 ## Cost ceiling
 
