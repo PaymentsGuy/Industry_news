@@ -30,12 +30,14 @@ import requests
 import yaml
 
 try:
+    from intel.brief_contract import BriefContractError, validate_weekly_brief
     from intel.llm_provider import (
         MissingProviderCredential,
         perplexity_chat_completion,
         require_perplexity_api_key,
     )
 except ModuleNotFoundError:  # pragma: no cover - supports `python intel/pipeline.py`
+    from brief_contract import BriefContractError, validate_weekly_brief
     from llm_provider import (
         MissingProviderCredential,
         perplexity_chat_completion,
@@ -414,13 +416,32 @@ def synthesize_brief(
 
     log.info("Synthesizing brief from %d surviving items (ledger has %d topics)",
              len(surviving), len(ledger))
-    brief = completion_func(
-        messages=[{"role": "user", "content": prompt}],
-        model=SYNTHESIS_MODEL,
-        max_tokens=4096,
-        temperature=SYNTHESIS_TEMP,
-    )
-    brief = strip_code_fences(brief)
+    brief = None
+    last_error = None
+    for attempt in range(3):
+        current_prompt = prompt if attempt == 0 else (
+            prompt
+            + "\n\nYour prior weekly brief failed the deterministic publication contract. "
+            + "Regenerate the complete brief and correct every listed defect. Defects: "
+            + str(last_error)
+        )
+        candidate = completion_func(
+            messages=[{"role": "user", "content": current_prompt}],
+            model=SYNTHESIS_MODEL,
+            max_tokens=4096,
+            temperature=SYNTHESIS_TEMP,
+        )
+        candidate = strip_code_fences(candidate)
+        try:
+            validate_weekly_brief(candidate)
+        except BriefContractError as exc:
+            last_error = exc
+            log.warning("Weekly brief contract rejected attempt %d: %s", attempt + 1, exc)
+            continue
+        brief = candidate
+        break
+    if brief is None:
+        raise BriefContractError(f"weekly brief contract failed after 3 attempts: {last_error}")
 
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(brief, encoding="utf-8")
