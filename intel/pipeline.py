@@ -437,37 +437,37 @@ def synthesize_brief(
              len(surviving), len(ledger))
     brief = None
     last_error = None
-    for contract_attempt in range(3):
+    contract_attempts = 0
+    transport_failures = 0
+    while contract_attempts < 3 and transport_failures < 3:
         current_prompt = prompt if not isinstance(last_error, BriefContractError) else (
             prompt
             + "\n\nYour prior weekly brief failed the deterministic publication contract. "
             + "Regenerate the complete brief and correct every listed defect. Defects: "
             + str(last_error)
         )
-        candidate = None
-        for transport_attempt in range(3):
-            try:
-                candidate = completion_func(
-                    messages=[{"role": "user", "content": current_prompt}],
-                    model=SYNTHESIS_MODEL,
-                    max_tokens=4096,
-                    temperature=SYNTHESIS_TEMP,
-                )
-                break
-            except RequestException as exc:
-                last_error = exc
-                log.warning(
-                    "Weekly brief provider attempt %d.%d failed transiently: %s",
-                    contract_attempt + 1, transport_attempt + 1, type(exc).__name__,
-                )
-        if candidate is None:
+        try:
+            candidate = completion_func(
+                messages=[{"role": "user", "content": current_prompt}],
+                model=SYNTHESIS_MODEL,
+                max_tokens=4096,
+                temperature=SYNTHESIS_TEMP,
+            )
+        except RequestException as exc:
+            transport_failures += 1
+            last_error = exc
+            log.warning(
+                "Weekly brief transport failure %d of 3: %s",
+                transport_failures, type(exc).__name__,
+            )
             continue
         candidate = strip_code_fences(candidate)
         try:
             validate_weekly_brief(candidate)
         except BriefContractError as exc:
+            contract_attempts += 1
             last_error = exc
-            log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempt + 1, exc)
+            log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempts, exc)
             continue
         brief = candidate
         break

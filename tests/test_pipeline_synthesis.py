@@ -161,6 +161,24 @@ def test_synthesize_retries_transient_provider_timeout_before_writing(tmp_path):
     assert out_file.read_text(encoding="utf-8") == valid_weekly_brief().rstrip()
 
 
+def test_synthesize_caps_transport_failures_at_three_provider_calls(tmp_path):
+    in_file, out_file, prior_ledger, event_registry = prepare_files(tmp_path)
+    calls = []
+
+    def unavailable(**kwargs):
+        calls.append(kwargs)
+        raise ReadTimeout("provider unavailable")
+
+    with pytest.raises(BriefContractError, match="after 3 attempts"):
+        synthesize_brief(
+            in_file, out_file, prior_ledger,
+            event_registry=event_registry, completion_func=unavailable,
+        )
+
+    assert len(calls) == 3
+    assert not out_file.exists()
+
+
 @pytest.mark.parametrize("malformed", [
     [None],
     [{"summary": "malformed"}],
