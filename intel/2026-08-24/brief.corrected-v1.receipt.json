@@ -1,0 +1,18 @@
+{
+  "analysis_text_changed": false,
+  "brief_date": "2026-08-24",
+  "corrected_canonical_sha256": "02ae8ab5838142d88dc09463281d5a510034c0b90f12c14add334c0be9b04d15",
+  "corrected_file_sha256": "02ae8ab5838142d88dc09463281d5a510034c0b90f12c14add334c0be9b04d15",
+  "corrected_path": "intel/2026-08-24/brief.md",
+  "original_canonical_sha256": "31f4d11b0518f5411e9cfcd0e3bfae7ff5942ab2bfe384cf7cdc932c6b44844e",
+  "original_file_sha256": "31f4d11b0518f5411e9cfcd0e3bfae7ff5942ab2bfe384cf7cdc932c6b44844e",
+  "original_path": "intel/2026-08-24/brief.original-v1.md",
+  "original_preserved": true,
+  "raw_path": "intel/2026-08-24/raw.jsonl",
+  "raw_sha256": "66e4b4a2f379e45755a65bd392df843287afc8403b46dfd6144351b7afd1384d",
+  "reason": "correct declared Items surfaced count from 4 to 5 to match five unchanged watchlist rows",
+  "receipt_sha256": "d5f67585ff2025839eace5ed3400dbf849aafa64a46bd65b1ce4388d33f64be3",
+  "restored_references": [],
+  "revision_id": "august24-inventory-v1",
+  "schema_version": 1
+}
