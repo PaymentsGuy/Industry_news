@@ -1,8 +1,8 @@
 import json
 
 from intel.update_ledger import (
-    EXTRACTION_MODEL, LEDGER_WINDOW_DAYS, extract_topics_from_brief,
-    merge_and_prune, merge_durable_registry,
+    EXTRACTION_MODEL, LEDGER_WINDOW_DAYS, derive_recent_ledger,
+    extract_topics_from_brief, merge_and_prune, merge_durable_registry,
 )
 
 
@@ -141,8 +141,31 @@ def test_durable_registry_retains_old_events_and_merges_source_identity():
 
     registry = merge_durable_registry(prior, new, "2026-08-17")
 
-    assert [entry["topic_key"] for entry in registry] == [
+    assert registry["schema_version"] == 1
+    assert [entry["topic_key"] for entry in registry["topics"]] == [
         "plaid_sierra_agents", "fiserv_cognition_devin",
     ]
-    assert registry[1]["first_covered"] == "2026-06-01"
-    assert registry[1]["source_urls"] == ["https://example.test/fiserv-june"]
+    assert registry["topics"][1]["first_covered"] == "2026-06-01"
+    assert registry["topics"][1]["events"][0]["source_urls"] == [
+        "https://example.test/fiserv-june"
+    ]
+
+    delta = [{
+        "topic_key": "fiserv_cognition_devin",
+        "summary": "Fiserv disclosed the first named bank deployment.",
+        "entities": ["Fiserv", "Cognition"],
+        "roadmap_areas": ["horizontal"],
+        "source_urls": ["https://example.test/fiserv-august"],
+        "source_dates": ["2026-08-16"],
+    }]
+    updated = merge_durable_registry(registry, delta, "2026-08-17")
+    repeated = merge_durable_registry(updated, delta, "2026-08-17")
+    fiserv = next(topic for topic in updated["topics"] if topic["topic_key"] == "fiserv_cognition_devin")
+    assert [event["summary"] for event in fiserv["events"]] == [
+        "Fiserv partnered with Cognition to use Devin AI.",
+        "Fiserv disclosed the first named bank deployment.",
+    ]
+    assert repeated == updated
+    assert {topic["topic_key"] for topic in derive_recent_ledger(updated, "2026-08-17")} == {
+        "fiserv_cognition_devin", "plaid_sierra_agents",
+    }

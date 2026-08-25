@@ -208,11 +208,107 @@ def merge_and_prune(
     return pruned
 
 
-def merge_durable_registry(
-    prior_registry: list[dict], new_topics: list[dict], today: str,
-) -> list[dict]:
-    """Merge covered events without time-based pruning."""
-    return _merge_topics(prior_registry, new_topics, today)
+def _registry_topics(value):
+    if isinstance(value, dict) and value.get("schema_version") == 1 and isinstance(value.get("topics"), list):
+        return [dict(topic) for topic in value["topics"]]
+    if not isinstance(value, list):
+        raise ValueError("durable event registry contract mismatch")
+    topics = []
+    for entry in value:
+        if not isinstance(entry, dict) or not entry.get("topic_key"):
+            continue
+        event = {
+            "covered_on": entry.get("last_covered") or entry.get("first_covered"),
+            "summary": entry.get("summary", ""),
+            "source_urls": sorted(set(entry.get("source_urls", []))),
+            "source_dates": sorted(set(entry.get("source_dates", []))),
+        }
+        topics.append({
+            "topic_key": entry["topic_key"],
+            "first_covered": entry.get("first_covered", event["covered_on"]),
+            "last_covered": entry.get("last_covered", event["covered_on"]),
+            "entities": sorted(set(entry.get("entities", []))),
+            "roadmap_areas": sorted(set(entry.get("roadmap_areas", []))),
+            "events": [event],
+        })
+    return topics
+
+
+def merge_durable_registry(prior_registry, new_topics: list[dict], today: str) -> dict:
+    """Append covered event deltas without time-based pruning."""
+    indexed = {topic["topic_key"]: topic for topic in _registry_topics(prior_registry)}
+    source_owner = {}
+    for key, topic in indexed.items():
+        for event in topic.get("events", []):
+            for url in event.get("source_urls", []):
+                source_owner[url] = key
+    for item in new_topics:
+        if not isinstance(item, dict) or not item.get("topic_key"):
+            continue
+        urls = sorted(set(item.get("source_urls", [])))
+        existing_keys = {source_owner[url] for url in urls if url in source_owner}
+        key = sorted(existing_keys)[0] if len(existing_keys) == 1 else item["topic_key"]
+        topic = indexed.setdefault(key, {
+            "topic_key": key, "first_covered": today, "last_covered": today,
+            "entities": [], "roadmap_areas": [], "events": [],
+        })
+        topic["first_covered"] = min(topic.get("first_covered") or today, today)
+        topic["last_covered"] = max(topic.get("last_covered") or today, today)
+        for field in ("entities", "roadmap_areas"):
+            topic[field] = sorted(set(topic.get(field, [])) | set(item.get(field, [])))
+        event = {
+            "covered_on": today,
+            "summary": item.get("summary", ""),
+            "source_urls": urls,
+            "source_dates": sorted(set(item.get("source_dates", []))),
+        }
+        identity = (
+            event["covered_on"], " ".join(event["summary"].split()).casefold(),
+            tuple(event["source_urls"]),
+        )
+        existing = {
+            (
+                prior.get("covered_on"), " ".join(prior.get("summary", "").split()).casefold(),
+                tuple(sorted(prior.get("source_urls", []))),
+            )
+            for prior in topic.get("events", [])
+        }
+        if identity not in existing:
+            topic.setdefault("events", []).append(event)
+            topic["events"].sort(key=lambda value: (value.get("covered_on", ""), value.get("summary", "")))
+        for url in urls:
+            source_owner[url] = key
+    topics = sorted(indexed.values(), key=lambda value: (value.get("last_covered", ""), value["topic_key"]), reverse=True)
+    return {"schema_version": 1, "topics": topics}
+
+
+def derive_recent_ledger(registry, today: str, window_days: int = LEDGER_WINDOW_DAYS) -> list[dict]:
+    cutoff = datetime.strptime(today, "%Y-%m-%d").date() - timedelta(days=window_days)
+    recent = []
+    for topic in _registry_topics(registry):
+        events = [
+            event for event in topic.get("events", [])
+            if event.get("covered_on") and datetime.strptime(event["covered_on"], "%Y-%m-%d").date() >= cutoff
+        ]
+        if not events:
+            continue
+        recent.append({
+            "topic_key": topic["topic_key"],
+            "first_covered": topic.get("first_covered"),
+            "last_covered": max(event["covered_on"] for event in events),
+            "summary": events[-1].get("summary", ""),
+            "entities": topic.get("entities", []),
+            "roadmap_areas": topic.get("roadmap_areas", []),
+            "events": events,
+        })
+    return sorted(recent, key=lambda value: (value["last_covered"], value["topic_key"]), reverse=True)
+
+
+def _write_json_atomic(path: Path, value) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    candidate = path.with_name(path.name + ".tmp")
+    candidate.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    candidate.replace(path)
 
 
 @click.command()
@@ -245,17 +341,21 @@ def main(
     log.info("Loaded %d prior ledger entries from %s", len(prior),
              prior_ledger if prior_ledger else "(no prior ledger)")
 
-    merged = merge_and_prune(prior, new_topics, today_iso)
-
-    ledger_out.parent.mkdir(parents=True, exist_ok=True)
-    ledger_out.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-    log.info("Wrote ledger with %d entries to %s", len(merged), ledger_out)
+    if event_registry is not None and event_registry.exists():
+        try:
+            prior_events = json.loads(event_registry.read_text(encoding="utf-8"))
+            _registry_topics(prior_events)
+        except Exception as exc:
+            raise click.ClickException(f"durable event registry is invalid: {exc}") from exc
+    else:
+        prior_events = prior
+    durable = merge_durable_registry(prior_events, new_topics, today_iso)
+    recent = derive_recent_ledger(durable, today_iso)
+    _write_json_atomic(ledger_out, recent)
+    log.info("Wrote ledger with %d entries to %s", len(recent), ledger_out)
     if event_registry is not None:
-        prior_events = load_prior_ledger(event_registry)
-        durable = merge_durable_registry(prior_events, new_topics, today_iso)
-        event_registry.parent.mkdir(parents=True, exist_ok=True)
-        event_registry.write_text(json.dumps(durable, ensure_ascii=False, indent=2), encoding="utf-8")
-        log.info("Wrote durable event registry with %d entries to %s", len(durable), event_registry)
+        _write_json_atomic(event_registry, durable)
+        log.info("Wrote durable event registry with %d topics to %s", len(durable["topics"]), event_registry)
 
 
 if __name__ == "__main__":
