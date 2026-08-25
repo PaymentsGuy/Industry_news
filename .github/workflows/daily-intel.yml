@@ -102,10 +102,6 @@ jobs:
               --event-registry intel/event_registry.json
           fi
 
-      - name: Publish to Slack
-        continue-on-error: true
-        run: python intel/pipeline.py publish --brief-file intel/${DATE}/brief.md
-
       - name: Commit run artifacts
         run: |
           git config user.name  "asa-intel-bot"

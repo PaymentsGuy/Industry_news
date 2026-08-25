@@ -1,6 +1,7 @@
 import json
 
 import pytest
+from requests import ReadTimeout
 
 from intel.brief_contract import BriefContractError
 from intel.pipeline import SYNTHESIS_MODEL, synthesize_brief
@@ -114,6 +115,49 @@ def test_synthesize_retries_contract_failure_before_writing(tmp_path):
 
     assert len(calls) == 2
     assert "reference 1 is missing a URL" in calls[1]["messages"][0]["content"]
+    assert out_file.read_text(encoding="utf-8") == valid_weekly_brief().rstrip()
+
+
+def test_synthesize_keeps_transport_retries_separate_from_contract_regeneration(tmp_path):
+    in_file, out_file, prior_ledger, event_registry = prepare_files(tmp_path)
+    invalid = valid_weekly_brief().replace(" https://example.com/item-123", "")
+    responses = [ReadTimeout("first timeout"), invalid, ReadTimeout("second timeout"), valid_weekly_brief()]
+    calls = []
+
+    def fake_completion(**kwargs):
+        calls.append(kwargs)
+        value = responses.pop(0)
+        if isinstance(value, Exception):
+            raise value
+        return value
+
+    synthesize_brief(
+        in_file, out_file, prior_ledger,
+        event_registry=event_registry, completion_func=fake_completion,
+    )
+
+    assert len(calls) == 4
+    assert out_file.read_text(encoding="utf-8") == valid_weekly_brief().rstrip()
+
+
+def test_synthesize_retries_transient_provider_timeout_before_writing(tmp_path):
+    in_file, out_file, prior_ledger, event_registry = prepare_files(tmp_path)
+    responses = [ReadTimeout("provider timeout"), valid_weekly_brief()]
+    calls = []
+
+    def fake_completion(**kwargs):
+        calls.append(kwargs)
+        value = responses.pop(0)
+        if isinstance(value, Exception):
+            raise value
+        return value
+
+    synthesize_brief(
+        in_file, out_file, prior_ledger,
+        event_registry=event_registry, completion_func=fake_completion,
+    )
+
+    assert len(calls) == 2
     assert out_file.read_text(encoding="utf-8") == valid_weekly_brief().rstrip()
 
 

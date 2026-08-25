@@ -2,6 +2,108 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "fiserv_banksouth_finxact_modernization",
+      "first_covered": "2026-08-24",
+      "last_covered": "2026-08-24",
+      "entities": [
+        "BankSouth",
+        "Finxact",
+        "Fiserv"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-08-24",
+          "summary": "Fiserv said BankSouth will use Finxact for a phased core modernization, strengthening its bank-channel position.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMivwFBVV95cUxPY2UtTFVqNDJHMXZrd1g0VE1QV3c5R2hZWkR4MzIyZjE3bWdZNG93RXNYN3RhRUtwdU1BUHBWQ05aVzNaTlBzbG5BUFRMUXBEYlNLOU5NczFnNnUydXhFQmwyYzhPSFZTT3FaTjZSTTdRUDJkaURIYXREa3BPU29HaHphTEl2LVctS2I0MUFndjh4SDhQd19scHVwLUZ4MEh1UnIwTF9BNmxpcVpGMVJtVDAxVmpqUDdzb1RDM3kyTQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-08-20"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fdic_third_party_standards_body",
+      "first_covered": "2026-08-24",
+      "last_covered": "2026-08-24",
+      "entities": [
+        "FDIC"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-08-24",
+          "summary": "The FDIC is floating a standards body for bank-fintech oversight, but it remains a conceptual idea rather than policy.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMingFBVV95cUxOeENpTkVlSEhNWVN6Ti00MWJUeVZtSGRqaU9oMzZhRDZjdU1CTmlvZjFzaTlqcjgzT1dkUE9TRW80NEtuQ3RRblVLa3lIblBNbjl3MDhZRG55X0lRMlpwT1VKN19sbDFFOFVFVWRYSnBXS1V6QnhxN1JRbDV4bFFfMnlNZnBUeGFGLTNfTVZOTENIdk9MUU10aUstZnNFdw?oc=5"
+          ],
+          "source_dates": [
+            "2026-08-19"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "cfpb_section_1033_fees",
+      "first_covered": "2026-08-24",
+      "last_covered": "2026-08-24",
+      "entities": [
+        "CFPB",
+        "OIRA",
+        "White House"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-08-24",
+          "summary": "The CFPB is reconsidering Section 1033 economics and may allow data aggregators to be charged for consumer data access.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObGowbkFIZWtrMGNKdWg4VDAwWWljMThNaXRWM2FENE1nVWpNbjh2cUdjcWhjZWdJS1poc1JaQ3lWaFpWeU5TendBUUdqT1RKVFB2ZnZSNVdkQnpTYjl0T1Q2c3FlOHEzNWh5cXhNTHR3U2M4NVlyZkl6dHVrYUR5Ynpwd1RGeHMw?oc=5",
+            "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSFowNGQ0WlpXb2JRRUxSaEFYV0VDNEZCSzNQbWhZS1ZUZmp3OThzMHR4QnVSS2ZMcml0TmFORWl0YXllenZKdEYyYXk2LVRhTjRnMDlOdjJHaEtmMWhZNS02T1Y2aG1VUWpRQWJxd0pvek9tT2lUeVZVNFJGbTRfRmdrTGdYRmoxZGhsN3p5Z0xmd1Fra0xUbk5HU3BOY0Qta2NOUHVJLXpfLTBwcUFWeWtSMWFPLTBoZDZv?oc=5"
+          ],
+          "source_dates": [
+            "2026-08-05",
+            "2026-08-06"
+          ]
+        },
+        {
+          "covered_on": "2026-08-24",
+          "summary": "The CFPB's revised open-banking rule has moved deeper into White House review and remains active.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSFowNGQ0WlpXb2JRRUxSaEFYV0VDNEZCSzNQbWhZS1ZUZmp3OThzMHR4QnVSS2ZMcml0TmFORWl0YXllenZKdEYyYXk2LVRhTjRnMDlOdjJHaEtmMWhZNS02T1Y2aG1VUWpRQWJxd0pvek9tT2lUeVZVNFJGbTRfRmdrTGdYRmoxZGhsN3p5Z0xmd1Fra0xUbk5HU3BOY0Qta2NOUHVJLXpfLTBwcUFWeWtSMWFPLTBoZDZv?oc=5"
+          ],
+          "source_dates": [
+            "2026-08-06"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "cfpb_complaint_narratives_change",
+      "first_covered": "2026-08-24",
+      "last_covered": "2026-08-24",
+      "entities": [
+        "CFPB"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-08-24",
+          "summary": "The CFPB will stop publicly posting unverified complaint narratives and related visualizations.",
+          "source_urls": [
+            "https://www.consumerfinance.gov/about-us/newsroom/the-cfpb-is-correcting-flaws-to-restore-integrity-and-utility-to-the-consumer-complaint-system/"
+          ],
+          "source_dates": [
+            "2026-06-24"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "plaid_august_product_update",
       "first_covered": "2026-08-17",
       "last_covered": "2026-08-17",

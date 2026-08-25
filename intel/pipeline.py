@@ -27,6 +27,7 @@ from typing import Any
 import click
 import feedparser
 import requests
+from requests import RequestException
 import yaml
 
 try:
@@ -436,25 +437,37 @@ def synthesize_brief(
              len(surviving), len(ledger))
     brief = None
     last_error = None
-    for attempt in range(3):
-        current_prompt = prompt if attempt == 0 else (
+    for contract_attempt in range(3):
+        current_prompt = prompt if not isinstance(last_error, BriefContractError) else (
             prompt
             + "\n\nYour prior weekly brief failed the deterministic publication contract. "
             + "Regenerate the complete brief and correct every listed defect. Defects: "
             + str(last_error)
         )
-        candidate = completion_func(
-            messages=[{"role": "user", "content": current_prompt}],
-            model=SYNTHESIS_MODEL,
-            max_tokens=4096,
-            temperature=SYNTHESIS_TEMP,
-        )
+        candidate = None
+        for transport_attempt in range(3):
+            try:
+                candidate = completion_func(
+                    messages=[{"role": "user", "content": current_prompt}],
+                    model=SYNTHESIS_MODEL,
+                    max_tokens=4096,
+                    temperature=SYNTHESIS_TEMP,
+                )
+                break
+            except RequestException as exc:
+                last_error = exc
+                log.warning(
+                    "Weekly brief provider attempt %d.%d failed transiently: %s",
+                    contract_attempt + 1, transport_attempt + 1, type(exc).__name__,
+                )
+        if candidate is None:
+            continue
         candidate = strip_code_fences(candidate)
         try:
             validate_weekly_brief(candidate)
         except BriefContractError as exc:
             last_error = exc
-            log.warning("Weekly brief contract rejected attempt %d: %s", attempt + 1, exc)
+            log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempt + 1, exc)
             continue
         brief = candidate
         break
