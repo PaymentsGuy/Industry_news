@@ -80,6 +80,11 @@ def validate_weekly_brief(brief: str) -> None:
                 )
     if row_count == 0:
         errors.append("watchlist has no valid rows")
+    surfaced = re.search(r"(?m)^\*\*Items surfaced:\*\*\s*(\d+)\s*$", brief)
+    if not surfaced:
+        errors.append("Items surfaced count is missing or malformed")
+    elif row_count > int(surfaced.group(1)):
+        errors.append("watchlist row count exceeds declared Items surfaced")
 
     if errors:
         raise BriefContractError("; ".join(errors))

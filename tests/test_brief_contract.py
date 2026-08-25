@@ -28,6 +28,17 @@ def test_weekly_contract_accepts_complete_reference():
     )
 
 
+def test_weekly_contract_rejects_more_watchlist_rows_than_items_surfaced():
+    brief = weekly_brief(
+        '1. Source, "Acme changed," 2026-06-15. https://example.test/1 — *Evidence.*'
+    )
+    extra_row = "| Beta | launch | Beta changed. | New | [REF 1] |\n"
+    brief = brief.replace("## Open questions", extra_row + "\n## Open questions")
+
+    with pytest.raises(BriefContractError, match="watchlist row count exceeds declared Items surfaced"):
+        validate_weekly_brief(brief)
+
+
 def test_weekly_contract_rejects_reference_without_url():
     with pytest.raises(BriefContractError, match="reference 1 is missing a URL"):
         validate_weekly_brief(

@@ -1,7 +1,7 @@
 # ASA Weekly Intelligence Brief — Week of 2026-08-24
 
 **Items reviewed:** 420
-**Items surfaced:** 4
+**Items surfaced:** 5
 **Items deduped against ledger:** 5
 **This week's headline:** CFPB open-banking uncertainty is still live, but the only fresh moves were on fees, complaint data, and a minor recalibration in the FDIC’s oversight talk.
 
