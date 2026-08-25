@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Update the rolling 14-day topic ledger after a brief is synthesized.
+"""Update recent context and durable event memory after brief synthesis.
 
 This is invoked as a separate step in the workflow:
     python intel/update_ledger.py --brief-file intel/<date>/brief.md \
                                   --ledger-out intel/<date>/ledger.json \
-                                  --prior-ledger intel/<prev-date>/ledger.json
+                                  --prior-ledger intel/<prev-date>/ledger.json \
+                                  --event-registry intel/event_registry.json
 
-The ledger is a small JSON file that tracks which topics have been covered in
-the brief and when, so the synthesis step can dedupe-with-deltas on the next
-day. Topics older than 14 days are pruned automatically.
+The rolling ledger retains 90 days of narrative context. The durable event
+registry retains covered event identity indefinitely so old stories cannot
+become fresh merely because they aged out of recent context.
 
 Topic extraction is done by an LLM call — we hand it the brief and ask for a
 structured topic list. This is one extra Perplexity call per run.
@@ -40,7 +41,7 @@ except ModuleNotFoundError:  # pragma: no cover - supports `python intel/update_
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger("ledger")
 
-LEDGER_WINDOW_DAYS = 14
+LEDGER_WINDOW_DAYS = 90
 EXTRACTION_MODEL = "sonar"
 
 EXTRACTION_PROMPT = """You are extracting structured topic data from a daily
@@ -68,6 +69,9 @@ For each topic produce:
   - roadmap_areas: array from {vault, compass, auth, verify, pay, one_view,
     forecast, horizontal} — the ASA product areas the brief associated with
     this topic. Empty array if not stated.
+  - source_urls: array of exact reference URLs supporting this topic.
+  - source_dates: array of exact reference dates supporting this topic, in
+    YYYY-MM-DD form when the brief provides that format.
 
 Return ONLY a JSON array. No prose, no markdown fences. Example:
 
@@ -127,14 +131,45 @@ def load_prior_ledger(path: Path | None) -> list[dict]:
         return []
 
 
+def _merge_topics(prior_topics: list[dict], new_topics: list[dict], today: str) -> list[dict]:
+    indexed = {
+        entry["topic_key"]: dict(entry)
+        for entry in prior_topics
+        if isinstance(entry, dict) and entry.get("topic_key")
+    }
+    for topic in new_topics:
+        key = topic.get("topic_key") if isinstance(topic, dict) else None
+        if not key:
+            continue
+        if key not in indexed:
+            indexed[key] = {
+                "topic_key": key,
+                "first_covered": today,
+                "last_covered": today,
+                "summary": topic.get("summary", ""),
+                "entities": [],
+                "roadmap_areas": [],
+            }
+        entry = indexed[key]
+        entry["last_covered"] = today
+        entry["summary"] = topic.get("summary", entry.get("summary", ""))
+        for field in ("entities", "roadmap_areas", "source_urls", "source_dates"):
+            values = set(entry.get(field, []))
+            values.update(value for value in topic.get(field, []) if value)
+            if values or field in entry or field in topic:
+                entry[field] = sorted(values)
+    return sorted(
+        indexed.values(),
+        key=lambda entry: (entry.get("last_covered", ""), entry.get("topic_key", "")),
+        reverse=True,
+    )
+
+
 def merge_and_prune(
-    prior_ledger: list[dict],
-    new_topics: list[dict],
-    today: str,
+    prior_ledger: list[dict], new_topics: list[dict], today: str,
     window_days: int = LEDGER_WINDOW_DAYS,
 ) -> list[dict]:
-    """Merge today's topics into the prior ledger and prune anything older
-    than the window.
+    """Merge today's topics and retain only the rolling context window.
 
     Merge rules:
       - If a topic_key in new_topics already exists in the prior ledger, update
@@ -150,40 +185,10 @@ def merge_and_prune(
     today_dt = datetime.strptime(today, "%Y-%m-%d").date()
     cutoff = today_dt - timedelta(days=window_days)
 
-    # Index prior ledger by topic_key for fast merge
-    indexed = {entry["topic_key"]: entry for entry in prior_ledger if "topic_key" in entry}
-
-    for topic in new_topics:
-        key = topic.get("topic_key")
-        if not key:
-            continue
-        if key in indexed:
-            indexed[key]["last_covered"] = today
-            indexed[key]["summary"] = topic.get("summary", indexed[key].get("summary", ""))
-            # Merge entities and roadmap areas additively (a topic can grow
-            # in scope over time)
-            existing_ents = set(indexed[key].get("entities", []))
-            for e in topic.get("entities", []):
-                existing_ents.add(e)
-            indexed[key]["entities"] = sorted(existing_ents)
-            existing_areas = set(indexed[key].get("roadmap_areas", []))
-            for a in topic.get("roadmap_areas", []):
-                existing_areas.add(a)
-            indexed[key]["roadmap_areas"] = sorted(existing_areas)
-        else:
-            indexed[key] = {
-                "topic_key": key,
-                "first_covered": today,
-                "last_covered": today,
-                "summary": topic.get("summary", ""),
-                "entities": topic.get("entities", []),
-                "roadmap_areas": topic.get("roadmap_areas", []),
-            }
-
-    # Prune old entries
+    merged = _merge_topics(prior_ledger, new_topics, today)
     pruned = []
     dropped = 0
-    for entry in indexed.values():
+    for entry in merged:
         try:
             last = datetime.strptime(entry["last_covered"], "%Y-%m-%d").date()
         except (KeyError, ValueError):
@@ -195,7 +200,7 @@ def merge_and_prune(
         else:
             dropped += 1
 
-    pruned.sort(key=lambda e: (e.get("last_covered", ""), e.get("topic_key", "")), reverse=True)
+
     log.info(
         "ledger merge: %d existing, %d new topics, %d dropped (older than %d days), %d total",
         len(prior_ledger), len(new_topics), dropped, window_days, len(pruned),
@@ -203,13 +208,25 @@ def merge_and_prune(
     return pruned
 
 
+def merge_durable_registry(
+    prior_registry: list[dict], new_topics: list[dict], today: str,
+) -> list[dict]:
+    """Merge covered events without time-based pruning."""
+    return _merge_topics(prior_registry, new_topics, today)
+
+
 @click.command()
 @click.option("--brief-file", required=True, type=click.Path(path_type=Path))
 @click.option("--prior-ledger", type=click.Path(path_type=Path), default=None,
               help="Path to yesterday's ledger.json. Optional; treated as empty if missing.")
 @click.option("--ledger-out", required=True, type=click.Path(path_type=Path))
+@click.option("--event-registry", type=click.Path(path_type=Path), default=None,
+              help="Durable event registry path; retained indefinitely when supplied.")
 @click.option("--today", default=None, help="ISO date for the merge. Defaults to UTC today.")
-def main(brief_file: Path, prior_ledger: Path | None, ledger_out: Path, today: str | None) -> None:
+def main(
+    brief_file: Path, prior_ledger: Path | None, ledger_out: Path,
+    event_registry: Path | None, today: str | None,
+) -> None:
     """Extract topics from today's brief, merge with prior ledger, prune old."""
     try:
         require_perplexity_api_key()
@@ -233,6 +250,12 @@ def main(brief_file: Path, prior_ledger: Path | None, ledger_out: Path, today: s
     ledger_out.parent.mkdir(parents=True, exist_ok=True)
     ledger_out.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
     log.info("Wrote ledger with %d entries to %s", len(merged), ledger_out)
+    if event_registry is not None:
+        prior_events = load_prior_ledger(event_registry)
+        durable = merge_durable_registry(prior_events, new_topics, today_iso)
+        event_registry.parent.mkdir(parents=True, exist_ok=True)
+        event_registry.write_text(json.dumps(durable, ensure_ascii=False, indent=2), encoding="utf-8")
+        log.info("Wrote durable event registry with %d entries to %s", len(durable), event_registry)
 
 
 if __name__ == "__main__":

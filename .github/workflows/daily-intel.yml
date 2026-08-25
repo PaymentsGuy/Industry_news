@@ -44,12 +44,12 @@ jobs:
           echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
 
       - name: Find most recent prior ledger
-        # Look back up to 35 days for the most recent ledger.json. We can't
+        # Look back up to 120 days for the most recent 90-day context ledger. We can't
         # assume last week's run exists — runs can be skipped, repos can be branched.
         id: find_ledger
         run: |
           PRIOR_LEDGER=""
-          for i in $(seq 1 35); do
+          for i in $(seq 1 120); do
             CHECK_DATE=$(date -u -d "${i} days ago" +%F 2>/dev/null || date -u -v-${i}d +%F)
             CANDIDATE="intel/${CHECK_DATE}/ledger.json"
             if [ -f "$CANDIDATE" ]; then
@@ -59,7 +59,7 @@ jobs:
             fi
           done
           if [ -z "$PRIOR_LEDGER" ]; then
-            echo "No prior ledger found in the last 35 days; synthesis will run without dedup"
+            echo "No prior context ledger found in the last 120 days; durable event dedup remains active"
           fi
           echo "PRIOR_LEDGER=$PRIOR_LEDGER" >> "$GITHUB_ENV"
 
@@ -78,11 +78,13 @@ jobs:
             python intel/pipeline.py synthesize \
               --in-file      intel/${DATE}/triaged.jsonl \
               --out-file     intel/${DATE}/brief.md \
-              --prior-ledger "${PRIOR_LEDGER}"
+              --prior-ledger "${PRIOR_LEDGER}" \
+              --event-registry intel/event_registry.json
           else
             python intel/pipeline.py synthesize \
               --in-file  intel/${DATE}/triaged.jsonl \
-              --out-file intel/${DATE}/brief.md
+              --out-file intel/${DATE}/brief.md \
+              --event-registry intel/event_registry.json
           fi
 
       - name: Update topic ledger
@@ -91,11 +93,13 @@ jobs:
             python intel/update_ledger.py \
               --brief-file    intel/${DATE}/brief.md \
               --prior-ledger  "${PRIOR_LEDGER}" \
-              --ledger-out    intel/${DATE}/ledger.json
+              --ledger-out    intel/${DATE}/ledger.json \
+              --event-registry intel/event_registry.json
           else
             python intel/update_ledger.py \
               --brief-file  intel/${DATE}/brief.md \
-              --ledger-out  intel/${DATE}/ledger.json
+              --ledger-out  intel/${DATE}/ledger.json \
+              --event-registry intel/event_registry.json
           fi
 
       - name: Publish to Slack
@@ -106,7 +110,7 @@ jobs:
         run: |
           git config user.name  "asa-intel-bot"
           git config user.email "asa-intel-bot@users.noreply.github.com"
-          git add intel/${DATE}/
+          git add intel/${DATE}/ intel/event_registry.json
           if git diff --cached --quiet; then
             echo "Nothing to commit (quiet day)."
           else

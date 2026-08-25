@@ -378,13 +378,16 @@ def synthesize_brief(
     in_file: Path,
     out_file: Path,
     prior_ledger: Path | None,
+    event_registry: Path | None = None,
     completion_func=perplexity_chat_completion,
 ) -> None:
     """Run Stage 2 synthesis with Perplexity and write a markdown brief.
 
     If --prior-ledger is supplied and exists, its contents are passed to the
     synthesis prompt so the model can dedupe this week's items against topics
-    already covered in the last 14 days.
+    already covered in the last 90 days. The durable event registry prevents
+    older covered events from resurfacing as fresh merely because they aged out
+    of recent context.
     """
     triaged = read_jsonl(in_file)
     surviving = [t for t in triaged if (t.get("relevance_score") or 0) >= TRIAGE_RELEVANCE_DROP]
@@ -393,14 +396,26 @@ def synthesize_brief(
     # feature ships, no ledger will exist — that's fine, the prompt handles
     # the empty-array case explicitly.
     ledger: list[dict] = []
-    if prior_ledger and Path(prior_ledger).exists():
+    if prior_ledger:
         try:
             ledger = json.loads(Path(prior_ledger).read_text(encoding="utf-8"))
+            if not isinstance(ledger, list):
+                raise ValueError("recent ledger must be a JSON array")
             log.info("Loaded prior ledger with %d entries from %s", len(ledger), prior_ledger)
         except Exception as e:
-            log.warning("Could not parse prior ledger %s: %s — proceeding without dedup", prior_ledger, e)
+            raise BriefContractError(f"recent topic ledger is unavailable or invalid: {e}") from e
     else:
         log.info("No prior ledger provided; synthesis will treat all items as fresh")
+
+    durable_events: list[dict] = []
+    if event_registry:
+        try:
+            durable_events = json.loads(Path(event_registry).read_text(encoding="utf-8"))
+            if not isinstance(durable_events, list):
+                raise ValueError("durable event registry must be a JSON array")
+        except Exception as e:
+            raise BriefContractError(f"durable event registry is unavailable or invalid: {e}") from e
+        log.info("Loaded durable event registry with %d entries from %s", len(durable_events), event_registry)
 
     template = load_prompt("synthesis")
     today_iso = date.today().isoformat()
@@ -410,6 +425,7 @@ def synthesize_brief(
         items_reviewed_count=len(triaged),
         triaged_items_json=json.dumps(surviving, ensure_ascii=False, indent=2),
         topic_ledger_json=json.dumps(ledger, ensure_ascii=False, indent=2),
+        durable_event_registry_json=json.dumps(durable_events, ensure_ascii=False, indent=2),
         rubric_version="0.2",
         synthesis_version="0.3",
     )
@@ -454,10 +470,15 @@ def synthesize_brief(
 @click.option("--prior-ledger", type=click.Path(path_type=Path), default=None,
               help="Path to the prior ledger.json. If missing or empty, "
                    "synthesis runs without the dedup filter (every item is fresh).")
-def synthesize(in_file: Path, out_file: Path, prior_ledger: Path | None) -> None:
+@click.option("--event-registry", type=click.Path(path_type=Path), default=None,
+              help="Path to the indefinite durable event registry.")
+def synthesize(
+    in_file: Path, out_file: Path, prior_ledger: Path | None,
+    event_registry: Path | None,
+) -> None:
     """Run Stage 2 synthesis to produce a markdown brief."""
     try:
-        synthesize_brief(in_file, out_file, prior_ledger)
+        synthesize_brief(in_file, out_file, prior_ledger, event_registry)
     except MissingProviderCredential as e:
         log.error(str(e))
         sys.exit(2)

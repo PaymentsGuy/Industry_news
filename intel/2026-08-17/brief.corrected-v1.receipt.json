@@ -1,0 +1,54 @@
+{
+  "analysis_text_changed": false,
+  "brief_date": "2026-08-17",
+  "corrected_canonical_sha256": "1c1d444ce138f9195db103167ccaa34550028c5fce4adfe5f4f6d7cdcd102cde",
+  "corrected_file_sha256": "69993ed81556ff4f0cdf8110b6362c2def1335e1fe250ec33bdf07fa4fc6bab0",
+  "corrected_path": "intel/2026-08-17/brief.corrected-v1.md",
+  "original_canonical_sha256": "d25e07320ef6413000739a269b835d5cb6b9d4c6e56ba41bc3d185465b5842ba",
+  "original_file_sha256": "5668aefb3e1ead749837c64eeb00ed87dd034986cda8de668c378f07f581dcb2",
+  "original_path": "intel/2026-08-17/brief.md",
+  "original_preserved": true,
+  "raw_path": "intel/2026-08-17/raw.jsonl",
+  "raw_sha256": "f3957b764d0ddf149f72071f55d1113e96593ea8807497fca761b4f2cb83c208",
+  "reason": "Restore seven source URLs omitted during weekly brief publication from exact raw.jsonl records.",
+  "receipt_sha256": "3067031e233beccba43e432e05bcefd71d4c632d4d06863ec1763b52b8aae7c5",
+  "restored_references": [
+    {
+      "raw_item_id": "5160d6940b30c447",
+      "reference": 1,
+      "source_url": "https://plaid.com/blog/product-updates-august-2026/"
+    },
+    {
+      "raw_item_id": "55f7b0625ca268a4",
+      "reference": 2,
+      "source_url": "https://www.alkami.com/news/alkami-expands-partnership-with-plaid-to-deliver-connected-digital-banking-experiences/"
+    },
+    {
+      "raw_item_id": "4a63bd8db7cf23b8",
+      "reference": 3,
+      "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNd0xGcUpzNVJhYWpOSDRFajdMNXo4Qkk4S0NEX0tuSm1lWGxNc3pTNy1CbzZOUU45d2JlZFlScWJpTG5RX2J1MnBHOWpOQnE1c2Z1eF9GYWZmNjRTOEg5T3JMdVg1emhydWxXRTRfM1B1V3BscDU5WEttc3YyZjRIbGw1QzBWYXJPWVB6aEZfNDlHQ29oR3JZYlB1TUc2R0dCV0I4Z2p0dlhPbjVJcEstbHNVMHNPSXNqQ1E?oc=5"
+    },
+    {
+      "raw_item_id": "bc6cb13e50e23edd",
+      "reference": 4,
+      "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOOGpOQXhtVmFyVmdqWjAwaWJ4N0JqVGhiZS13V1l3OUsyQjlEd09pNXhFVlNkN2FQQWNfREcyZEN5V1NicDdWMGlRc2N5WkhsUUF6Zl91UmdiLWFRWUNqdDgyd2NXeG5INGRaVXkwdEpFMWhjSkthcHJfSmxKZnlwSHFVZkM5Sks5TWVvcG9RZE1qaGxhcVdnU3N1N3ZwSUZ2ZWxvRGZnUGJoelVsdlRid1NqR2RFQQ?oc=5"
+    },
+    {
+      "raw_item_id": "61d8f9979f129bbb",
+      "reference": 5,
+      "source_url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPU3Qtdkd5SXBDdU5wMnNUeVpSUHQzSlZ0WmFfa2tXa0dETUxOQzVUN3FHT1A2RmJaWmVJREFNaTV3VVhJdl9KeDlYR295MnZHczFVQkROYmU1QWpEMGUyaE9RNVVTNUtLMmQ2SXJiMzdGRFdiZ2dreWZrd21BTXdlTzlMYnh5SmppczBUNHpNZ2NZZ0dJV3dvNlR4cEt3QlY0WlhNOVBPWWFiTk93czNTcTJfV19nX0xMMXF2eDcxZGZ3c2Y3X01vcUlB?oc=5"
+    },
+    {
+      "raw_item_id": "86b325bcb819e84f",
+      "reference": 6,
+      "source_url": "https://www.consumerfinance.gov/about-us/newsroom/the-cfpb-to-cease-discretionary-publication-of-complaint-narratives-and-visualizations/"
+    },
+    {
+      "raw_item_id": "96e64704ebb9d92c",
+      "reference": 7,
+      "source_url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPLU9jTVhZZ2dtSXFLVUh0LXFOTWM0Zld5bHFWUDdsT3UxVkZrMGpDeXdLUjg4dkpycHVYQURuSjJNWVZ0TmNFaGppQ0J1cjFXZzJzTEF2QWE2eHBCQWFPXzBMNzROamJVaGdmYVFweVdyVDYwNkkxd3NMdzhjM3poTXg5cjFHcjVobW10dWF1MHRpdWVkSDhFVjJHUU1PTVVEY05kOWM1TnQ?oc=5"
+    }
+  ],
+  "revision_id": "august17-corrected-v1",
+  "schema_version": 1
+}

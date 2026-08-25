@@ -1,6 +1,9 @@
 import json
 
-from intel.update_ledger import EXTRACTION_MODEL, extract_topics_from_brief, merge_and_prune
+from intel.update_ledger import (
+    EXTRACTION_MODEL, LEDGER_WINDOW_DAYS, extract_topics_from_brief,
+    merge_and_prune, merge_durable_registry,
+)
 
 
 def test_extract_topics_from_brief_uses_perplexity_completion_and_returns_topic_dicts():
@@ -102,3 +105,44 @@ def test_merge_and_prune_preserves_existing_behavior():
             "roadmap_areas": ["auth", "verify"],
         },
     ]
+
+
+def test_default_recent_context_window_is_90_days():
+    assert LEDGER_WINDOW_DAYS == 90
+    prior = [
+        {"topic_key": "within-window", "last_covered": "2026-06-01"},
+        {"topic_key": "outside-window", "last_covered": "2026-04-01"},
+    ]
+
+    merged = merge_and_prune(prior, [], "2026-08-17")
+
+    assert [entry["topic_key"] for entry in merged] == ["within-window"]
+
+
+def test_durable_registry_retains_old_events_and_merges_source_identity():
+    prior = [{
+        "topic_key": "fiserv_cognition_devin",
+        "first_covered": "2026-06-01",
+        "last_covered": "2026-06-01",
+        "summary": "Fiserv partnered with Cognition to use Devin AI.",
+        "entities": ["Fiserv", "Cognition"],
+        "roadmap_areas": ["horizontal"],
+        "source_urls": ["https://example.test/fiserv-june"],
+        "source_dates": ["2026-06-01"],
+    }]
+    new = [{
+        "topic_key": "plaid_sierra_agents",
+        "summary": "Plaid partnered with Sierra for embedded bank linking.",
+        "entities": ["Plaid", "Sierra"],
+        "roadmap_areas": ["vault"],
+        "source_urls": ["https://example.test/plaid-august"],
+        "source_dates": ["2026-08-03"],
+    }]
+
+    registry = merge_durable_registry(prior, new, "2026-08-17")
+
+    assert [entry["topic_key"] for entry in registry] == [
+        "plaid_sierra_agents", "fiserv_cognition_devin",
+    ]
+    assert registry[1]["first_covered"] == "2026-06-01"
+    assert registry[1]["source_urls"] == ["https://example.test/fiserv-june"]
