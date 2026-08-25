@@ -21,7 +21,6 @@ jobs:
 
     env:
       PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       MAX_DAILY_COST_USD: "3.00"
 
     steps:
