@@ -216,7 +216,7 @@ def _registry_topics(value):
     topics = []
     for entry in value:
         if not isinstance(entry, dict) or not entry.get("topic_key"):
-            continue
+            raise ValueError("legacy durable event registry entry is invalid")
         event = {
             "covered_on": entry.get("last_covered") or entry.get("first_covered"),
             "summary": entry.get("summary", ""),
