@@ -61,7 +61,11 @@ The topic_ledger is a JSON array of objects with this shape:
 
 If both stores are empty on the first run, proceed without historical dedupe.
 If durable_event_registry is populated, it remains authoritative for historical
-coverage even when the 90-day topic_ledger is empty.
+coverage even when the 90-day topic_ledger is empty. Its schema is
+`{"schema_version": 1, "topics": [...]}`; each topic contains append-only
+`events` with `covered_on`, `summary`, `source_urls`, and `source_dates`.
+Preserve a genuinely new event as a Delta rather than overwriting the earlier
+fact.
 
 ASA CONTEXT (read every time so framing stays consistent):
 - ASA Vault is a Financial Intelligence Platform connecting FIs, fintechs,

@@ -51,15 +51,22 @@ def prepare_files(tmp_path):
     prior_ledger = tmp_path / "ledger.json"
     event_registry = tmp_path / "event_registry.json"
     prior_ledger.write_text(json.dumps([{"topic": "already covered"}]), encoding="utf-8")
-    event_registry.write_text(json.dumps([{
-        "topic_key": "fiserv_cognition_devin",
-        "first_covered": "2026-06-01",
-        "last_covered": "2026-06-01",
-        "summary": "Fiserv partnered with Cognition to use Devin AI.",
-        "entities": ["Fiserv", "Cognition"],
-        "source_urls": ["https://example.com/fiserv-june"],
-        "source_dates": ["2026-06-01"],
-    }]), encoding="utf-8")
+    event_registry.write_text(json.dumps({
+        "schema_version": 1,
+        "topics": [{
+            "topic_key": "fiserv_cognition_devin",
+            "first_covered": "2026-06-01",
+            "last_covered": "2026-06-01",
+            "summary": "Fiserv partnered with Cognition to use Devin AI.",
+            "entities": ["Fiserv", "Cognition"],
+            "events": [{
+                "covered_on": "2026-06-01",
+                "summary": "Fiserv partnered with Cognition to use Devin AI.",
+                "source_urls": ["https://example.com/fiserv-june"],
+                "source_dates": ["2026-06-01"],
+            }],
+        }],
+    }), encoding="utf-8")
     in_file.write_text(json.dumps(sample_triage_record()) + "\n", encoding="utf-8")
     return in_file, out_file, prior_ledger, event_registry
 

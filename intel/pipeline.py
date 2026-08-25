@@ -411,11 +411,20 @@ def synthesize_brief(
     if event_registry:
         try:
             durable_events = json.loads(Path(event_registry).read_text(encoding="utf-8"))
-            if not isinstance(durable_events, list):
-                raise ValueError("durable event registry must be a JSON array")
+            valid_registry = (
+                isinstance(durable_events, list)
+                or (
+                    isinstance(durable_events, dict)
+                    and durable_events.get("schema_version") == 1
+                    and isinstance(durable_events.get("topics"), list)
+                )
+            )
+            if not valid_registry:
+                raise ValueError("durable event registry contract mismatch")
         except Exception as e:
             raise BriefContractError(f"durable event registry is unavailable or invalid: {e}") from e
-        log.info("Loaded durable event registry with %d entries from %s", len(durable_events), event_registry)
+        durable_count = len(durable_events.get("topics", durable_events)) if isinstance(durable_events, dict) else len(durable_events)
+        log.info("Loaded durable event registry with %d entries from %s", durable_count, event_registry)
 
     template = load_prompt("synthesis")
     today_iso = date.today().isoformat()
