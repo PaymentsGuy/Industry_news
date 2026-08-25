@@ -117,6 +117,22 @@ def test_synthesize_retries_contract_failure_before_writing(tmp_path):
     assert out_file.read_text(encoding="utf-8") == valid_weekly_brief().rstrip()
 
 
+def test_synthesize_fails_closed_before_provider_when_durable_registry_has_malformed_topic(tmp_path):
+    in_file, out_file, prior_ledger, event_registry = prepare_files(tmp_path)
+    event_registry.write_text(json.dumps({"schema_version": 1, "topics": [None]}), encoding="utf-8")
+    calls = []
+
+    with pytest.raises(BriefContractError, match="durable event registry"):
+        synthesize_brief(
+            in_file, out_file, prior_ledger,
+            event_registry=event_registry,
+            completion_func=lambda **kwargs: calls.append(kwargs),
+        )
+
+    assert calls == []
+    assert not out_file.exists()
+
+
 def test_synthesize_fails_closed_before_provider_when_durable_registry_is_invalid(tmp_path):
     in_file, out_file, prior_ledger, event_registry = prepare_files(tmp_path)
     event_registry.write_text("not-json", encoding="utf-8")

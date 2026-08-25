@@ -234,6 +234,31 @@ def _registry_topics(value):
     return topics
 
 
+def validate_durable_registry(value):
+    topics = _registry_topics(value)
+    for topic in topics:
+        if not isinstance(topic.get("topic_key"), str) or not topic["topic_key"].strip():
+            raise ValueError("durable event registry topic_key is required")
+        events = topic.get("events")
+        if not isinstance(events, list) or not events:
+            raise ValueError("durable event registry events are required")
+        for event in events:
+            if not isinstance(event, dict):
+                raise ValueError("durable event registry event must be an object")
+            try:
+                datetime.strptime(event.get("covered_on", ""), "%Y-%m-%d")
+            except (TypeError, ValueError) as exc:
+                raise ValueError("durable event registry covered_on is invalid") from exc
+            if not isinstance(event.get("summary"), str):
+                raise ValueError("durable event registry summary is invalid")
+            for field in ("source_urls", "source_dates"):
+                if not isinstance(event.get(field, []), list) or any(
+                    not isinstance(item, str) for item in event.get(field, [])
+                ):
+                    raise ValueError(f"durable event registry {field} is invalid")
+    return value
+
+
 def merge_durable_registry(prior_registry, new_topics: list[dict], today: str) -> dict:
     """Append covered event deltas without time-based pruning."""
     indexed = {topic["topic_key"]: topic for topic in _registry_topics(prior_registry)}

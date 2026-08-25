@@ -30,6 +30,7 @@ import requests
 import yaml
 
 try:
+    from intel.update_ledger import validate_durable_registry
     from intel.brief_contract import BriefContractError, validate_weekly_brief
     from intel.llm_provider import (
         MissingProviderCredential,
@@ -37,6 +38,7 @@ try:
         require_perplexity_api_key,
     )
 except ModuleNotFoundError:  # pragma: no cover - supports `python intel/pipeline.py`
+    from update_ledger import validate_durable_registry
     from brief_contract import BriefContractError, validate_weekly_brief
     from llm_provider import (
         MissingProviderCredential,
@@ -411,16 +413,7 @@ def synthesize_brief(
     if event_registry:
         try:
             durable_events = json.loads(Path(event_registry).read_text(encoding="utf-8"))
-            valid_registry = (
-                isinstance(durable_events, list)
-                or (
-                    isinstance(durable_events, dict)
-                    and durable_events.get("schema_version") == 1
-                    and isinstance(durable_events.get("topics"), list)
-                )
-            )
-            if not valid_registry:
-                raise ValueError("durable event registry contract mismatch")
+            validate_durable_registry(durable_events)
         except Exception as e:
             raise BriefContractError(f"durable event registry is unavailable or invalid: {e}") from e
         durable_count = len(durable_events.get("topics", durable_events)) if isinstance(durable_events, dict) else len(durable_events)
