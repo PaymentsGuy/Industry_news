@@ -2,6 +2,54 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_funding_fravity_acquisition",
+      "first_covered": "2026-08-31",
+      "last_covered": "2026-08-31",
+      "entities": [
+        "Fravity",
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-08-31",
+          "summary": "Socure raised $156 million at a $5.2 billion valuation and acquired Fravity to expand agentic fraud-investigation capabilities.",
+          "source_urls": [
+            "https://finovate.com/socure-secures-new-investment-acquires-fraud-platform-fravity/"
+          ],
+          "source_dates": [
+            "2026-08-27"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "occ_bunq_charter_denial",
+      "first_covered": "2026-08-31",
+      "last_covered": "2026-08-31",
+      "entities": [
+        "Bunq",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-08-31",
+          "summary": "The OCC denied Bunq's U.S. national bank charter application, signaling continued scrutiny of fintech charter bids.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZTYwVEtTQk5QcEgyV2hWaF83Z0NhaUNZYlhxVHdGeklmdWdpZ3p2bkROM3VmVEJxdW1CTFpNTUpJVUd0N3RsVVFIa3BFUy1Oak1STzVhX0NVMUMzZFFmeFI4MnRtWjRTRzBxTVNfSTRQTHpYLTExR01uWHVMSHlkWlpIbUVvUHFzR0dWOWlDNkZMRzRlS04xY1pGQWxSMFhYZnNBYjVqSk02NFpVYVdPUm9VQVIxS2g3WldjYnZhZnJlNHViV1E?oc=5"
+          ],
+          "source_dates": [
+            "2026-08-07"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "fiserv_banksouth_finxact_modernization",
       "first_covered": "2026-08-24",
       "last_covered": "2026-08-24",

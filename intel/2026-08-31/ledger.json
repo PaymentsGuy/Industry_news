@@ -1,0 +1,1092 @@
+[
+  {
+    "topic_key": "socure_funding_fravity_acquisition",
+    "first_covered": "2026-08-31",
+    "last_covered": "2026-08-31",
+    "summary": "Socure raised $156 million at a $5.2 billion valuation and acquired Fravity to expand agentic fraud-investigation capabilities.",
+    "entities": [
+      "Fravity",
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-31",
+        "summary": "Socure raised $156 million at a $5.2 billion valuation and acquired Fravity to expand agentic fraud-investigation capabilities.",
+        "source_urls": [
+          "https://finovate.com/socure-secures-new-investment-acquires-fraud-platform-fravity/"
+        ],
+        "source_dates": [
+          "2026-08-27"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "occ_bunq_charter_denial",
+    "first_covered": "2026-08-31",
+    "last_covered": "2026-08-31",
+    "summary": "The OCC denied Bunq's U.S. national bank charter application, signaling continued scrutiny of fintech charter bids.",
+    "entities": [
+      "Bunq",
+      "Office of the Comptroller of the Currency"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-31",
+        "summary": "The OCC denied Bunq's U.S. national bank charter application, signaling continued scrutiny of fintech charter bids.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZTYwVEtTQk5QcEgyV2hWaF83Z0NhaUNZYlhxVHdGeklmdWdpZ3p2bkROM3VmVEJxdW1CTFpNTUpJVUd0N3RsVVFIa3BFUy1Oak1STzVhX0NVMUMzZFFmeFI4MnRtWjRTRzBxTVNfSTRQTHpYLTExR01uWHVMSHlkWlpIbUVvUHFzR0dWOWlDNkZMRzRlS04xY1pGQWxSMFhYZnNBYjVqSk02NFpVYVdPUm9VQVIxS2g3WldjYnZhZnJlNHViV1E?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-07"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_banksouth_finxact_modernization",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "Fiserv said BankSouth will use Finxact for a phased core modernization, strengthening its bank-channel position.",
+    "entities": [
+      "BankSouth",
+      "Finxact",
+      "Fiserv"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "Fiserv said BankSouth will use Finxact for a phased core modernization, strengthening its bank-channel position.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMivwFBVV95cUxPY2UtTFVqNDJHMXZrd1g0VE1QV3c5R2hZWkR4MzIyZjE3bWdZNG93RXNYN3RhRUtwdU1BUHBWQ05aVzNaTlBzbG5BUFRMUXBEYlNLOU5NczFnNnUydXhFQmwyYzhPSFZTT3FaTjZSTTdRUDJkaURIYXREa3BPU29HaHphTEl2LVctS2I0MUFndjh4SDhQd19scHVwLUZ4MEh1UnIwTF9BNmxpcVpGMVJtVDAxVmpqUDdzb1RDM3kyTQ?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-20"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "fdic_third_party_standards_body",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "The FDIC is floating a standards body for bank-fintech oversight, but it remains a conceptual idea rather than policy.",
+    "entities": [
+      "FDIC"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The FDIC is floating a standards body for bank-fintech oversight, but it remains a conceptual idea rather than policy.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMingFBVV95cUxOeENpTkVlSEhNWVN6Ti00MWJUeVZtSGRqaU9oMzZhRDZjdU1CTmlvZjFzaTlqcjgzT1dkUE9TRW80NEtuQ3RRblVLa3lIblBNbjl3MDhZRG55X0lRMlpwT1VKN19sbDFFOFVFVWRYSnBXS1V6QnhxN1JRbDV4bFFfMnlNZnBUeGFGLTNfTVZOTENIdk9MUU10aUstZnNFdw?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-19"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_section_1033_fees",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "The CFPB's revised open-banking rule has moved deeper into White House review and remains active.",
+    "entities": [
+      "CFPB",
+      "OIRA",
+      "White House"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The CFPB is reconsidering Section 1033 economics and may allow data aggregators to be charged for consumer data access.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObGowbkFIZWtrMGNKdWg4VDAwWWljMThNaXRWM2FENE1nVWpNbjh2cUdjcWhjZWdJS1poc1JaQ3lWaFpWeU5TendBUUdqT1RKVFB2ZnZSNVdkQnpTYjl0T1Q2c3FlOHEzNWh5cXhNTHR3U2M4NVlyZkl6dHVrYUR5Ynpwd1RGeHMw?oc=5",
+          "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSFowNGQ0WlpXb2JRRUxSaEFYV0VDNEZCSzNQbWhZS1ZUZmp3OThzMHR4QnVSS2ZMcml0TmFORWl0YXllenZKdEYyYXk2LVRhTjRnMDlOdjJHaEtmMWhZNS02T1Y2aG1VUWpRQWJxd0pvek9tT2lUeVZVNFJGbTRfRmdrTGdYRmoxZGhsN3p5Z0xmd1Fra0xUbk5HU3BOY0Qta2NOUHVJLXpfLTBwcUFWeWtSMWFPLTBoZDZv?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-05",
+          "2026-08-06"
+        ]
+      },
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The CFPB's revised open-banking rule has moved deeper into White House review and remains active.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSFowNGQ0WlpXb2JRRUxSaEFYV0VDNEZCSzNQbWhZS1ZUZmp3OThzMHR4QnVSS2ZMcml0TmFORWl0YXllenZKdEYyYXk2LVRhTjRnMDlOdjJHaEtmMWhZNS02T1Y2aG1VUWpRQWJxd0pvek9tT2lUeVZVNFJGbTRfRmdrTGdYRmoxZGhsN3p5Z0xmd1Fra0xUbk5HU3BOY0Qta2NOUHVJLXpfLTBwcUFWeWtSMWFPLTBoZDZv?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-06"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_complaint_narratives_change",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "The CFPB will stop publicly posting unverified complaint narratives and related visualizations.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The CFPB will stop publicly posting unverified complaint narratives and related visualizations.",
+        "source_urls": [
+          "https://www.consumerfinance.gov/about-us/newsroom/the-cfpb-is-correcting-flaws-to-restore-integrity-and-utility-to-the-consumer-complaint-system/"
+        ],
+        "source_dates": [
+          "2026-06-24"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_august_product_update",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Plaid released an August product update adding identity verification, bank linking, onboarding, and fraud features.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "vault",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "Plaid released an August product update adding identity verification, bank linking, onboarding, and fraud features.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_alkami_partnership",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Alkami expanded its Plaid integration to add account linking, financial visibility, and enriched transaction data in digital banking.",
+    "entities": [
+      "Alkami",
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "vault"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "Alkami expanded its Plaid integration to add account linking, financial visibility, and enriched transaction data in digital banking.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_devin_ai",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Fiserv said it is partnering with Cognition to use Devin AI for core banking modernization.",
+    "entities": [
+      "Cognition",
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "Fiserv said it is partnering with Cognition to use Devin AI for core banking modernization.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fincen_beneficial_ownership_rule",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "FinCEN finalized a rule ending beneficial ownership reporting for U.S. companies and persons, retaining limited reporting for some foreign companies.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "FinCEN finalized a rule ending beneficial ownership reporting for U.S. companies and persons, retaining limited reporting for some foreign companies.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fdx_agentic_ai_standards",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "FDX launched standards work for safe financial data sharing with agentic AI, raising expectations for consent, identity, and audit controls.",
+    "entities": [
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "vault",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "FDX launched standards work for safe financial data sharing with agentic AI, raising expectations for consent, identity, and audit controls.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_fdx_open_banking_standard_setter",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "CFPB recognized FDX as the first standard-setting body for open banking, increasing its influence on the rule environment.",
+    "entities": [
+      "CFPB",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "CFPB recognized FDX as the first standard-setting body for open banking, increasing its influence on the rule environment.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_complaint_narrative_publication_change",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "CFPB said it will stop publishing unverified complaint narratives and visualizations.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "CFPB said it will stop publishing unverified complaint narratives and visualizations.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_sierra_bank_linking_agents",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "Plaid and Sierra partnered to embed secure bank account linking inside AI agent conversations.",
+    "entities": [
+      "Plaid",
+      "Sierra"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-10",
+        "summary": "Plaid and Sierra partnered to embed secure bank account linking inside AI agent conversations.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_devin_modernization",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "Fiserv partnered with Cognition to use Devin AI for core banking modernization.",
+    "entities": [
+      "Cognition",
+      "Devin AI",
+      "Fiserv"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-10",
+        "summary": "Fiserv partnered with Cognition to use Devin AI for core banking modernization.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_1033_open_banking_rewrite",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "The CFPB’s Section 1033 open-banking rewrite moved back into active rulemaking, with a new proposal to OIRA and an interim final rule expected.",
+    "entities": [
+      "American Banker",
+      "Consumer Finance Monitor",
+      "Consumer Financial Protection Bureau",
+      "Office of Information and Regulatory Affairs"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-10",
+        "summary": "The CFPB’s Section 1033 open-banking rewrite moved back into active rulemaking, with a new proposal to OIRA and an interim final rule expected.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "socure_identity_fraud_partnerships",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Socure expanded its identity and fraud stack through partnerships with Checkr Trust and Thomson Reuters.",
+    "entities": [
+      "Checkr Trust",
+      "Socure",
+      "Thomson Reuters"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Socure expanded its identity and fraud stack through partnerships with Checkr Trust and Thomson Reuters.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "q2_ai_assistant_q2_code",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Q2 rolled out an AI assistant and Q2 Code, an AI-enabled development environment for digital-banking extensions.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Q2 rolled out an AI assistant and Q2 Code, an AI-enabled development environment for digital-banking extensions.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "personetics_mcp_server",
+    "first_covered": "2026-05-01",
+    "last_covered": "2026-06-15",
+    "summary": "Personetics launched an MCP server so banks can build agentic AI applications on top of its customer financial-intelligence data.",
+    "entities": [
+      "Atomic",
+      "Personetics"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view",
+      "vault"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Personetics launched an MCP server so banks can build agentic AI applications on top of its customer financial-intelligence data.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "nymbus_secure_mcp_server",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Nymbus announced a secure MCP server to let AI agents perform core banking actions.",
+    "entities": [
+      "Nymbus"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Nymbus announced a secure MCP server to let AI agents perform core banking actions.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "flybits_agentic_banking",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Flybits introduced an agentic banking capability to orchestrate AI-guided customer journeys inside digital banking channels.",
+    "entities": [
+      "Flybits"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "one_view"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Flybits introduced an agentic banking capability to orchestrate AI-guided customer journeys inside digital banking channels.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_openai_agent_co_creation",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Fiserv said it has co-created AI agents with six banks and OpenAI, extending its agentOS-style push.",
+    "entities": [
+      "Fiserv",
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Fiserv said it has co-created AI agents with six banks and OpenAI, extending its agentOS-style push.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fincen_aml_cft_rule_update",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "FinCEN and banking agencies proposed updated AML/CFT program rules that raise compliance expectations for banks and money services businesses.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "horizontal",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "FinCEN and banking agencies proposed updated AML/CFT program rules that raise compliance expectations for banks and money services businesses.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "executive_order_fincen_aml_shift",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Commentary on an executive order and FinCEN proposals says federal AML, KYC, and underwriting expectations are tightening across financial institutions.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "horizontal",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Commentary on an executive order and FinCEN proposals says federal AML, KYC, and underwriting expectations are tightening across financial institutions.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "corelation_cotribute_ai_agents",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Cotribute and Corelation launched AI agents for credit unions, bringing agentic automation into a core-banking partner ecosystem.",
+    "entities": [
+      "Corelation",
+      "Cotribute"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Cotribute and Corelation launched AI agents for credit unions, bringing agentic automation into a core-banking partner ecosystem.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "alloy_perpetual_kyc",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Alloy released AI-driven perpetual KYC tooling that supports continuous compliance monitoring for banks and fintechs.",
+    "entities": [
+      "Alloy"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Alloy released AI-driven perpetual KYC tooling that supports continuous compliance monitoring for banks and fintechs.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "alkami_fdx_yodlee_aggregation",
+    "first_covered": "2026-06-15",
+    "last_covered": "2026-06-15",
+    "summary": "Alkami is moving data aggregation to the FDX API standard with Yodlee, making API-only open-banking connectivity a new baseline for digital channels.",
+    "entities": [
+      "Alkami",
+      "Envestnet Yodlee",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-15",
+        "summary": "Alkami is moving data aggregation to the FDX API standard with Yodlee, making API-only open-banking connectivity a new baseline for digital channels.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "mx_ceo_cto_appointments",
+    "first_covered": "2026-06-08",
+    "last_covered": "2026-06-08",
+    "summary": "MX named ex-PayPal exec Jim Magats as CEO and Wes Hummel as CTO, signaling a payments-and-platform strategic reset.",
+    "entities": [
+      "MX Technologies",
+      "PayPal"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-08",
+        "summary": "MX named ex-PayPal exec Jim Magats as CEO and Wes Hummel as CTO, signaling a payments-and-platform strategic reset.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "lumin_digital_solaire_launch",
+    "first_covered": "2026-05-18",
+    "last_covered": "2026-06-08",
+    "summary": "Lumin Digital's Solaire AI-native intelligence layer received second-source confirmation via Fintech Finance with no new product detail beyond the May 13 launch.",
+    "entities": [
+      "Fintech Finance",
+      "Lumin Digital"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-08",
+        "summary": "Lumin Digital's Solaire AI-native intelligence layer received second-source confirmation via Fintech Finance with no new product detail beyond the May 13 launch.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "bud_financial_watsonx_latency",
+    "first_covered": "2026-06-08",
+    "last_covered": "2026-06-08",
+    "summary": "Bud Financial claimed sub-5ms banking data processing on IBM watsonx.data, setting a concrete enrichment infrastructure performance benchmark.",
+    "entities": [
+      "Bud Financial",
+      "IBM"
+    ],
+    "roadmap_areas": [
+      "one_view"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-08",
+        "summary": "Bud Financial claimed sub-5ms banking data processing on IBM watsonx.data, setting a concrete enrichment infrastructure performance benchmark.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_trust_index_3",
+    "first_covered": "2026-06-07",
+    "last_covered": "2026-06-07",
+    "summary": "Plaid launched Trust Index 3, a deeper fraud graph model powering Plaid Protect, reinforcing its Verify-adjacent fraud push.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-07",
+        "summary": "Plaid launched Trust Index 3, a deeper fraud graph model powering Plaid Protect, reinforcing its Verify-adjacent fraud push.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_guaranteed_payments",
+    "first_covered": "2026-05-22",
+    "last_covered": "2026-06-07",
+    "summary": "Plaid launched Guaranteed Payments, a fully-managed ACH product where Plaid absorbs fraud risk on approved transactions.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-07",
+        "summary": "Plaid launched Guaranteed Payments, a fully-managed ACH product where Plaid absorbs fraud risk on approved transactions.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_effects_2026",
+    "first_covered": "2026-06-07",
+    "last_covered": "2026-06-07",
+    "summary": "Plaid's Effects 2026 event delivered a multi-front launch across AI models, fraud, lending, payments, and developer tooling in a single day.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "pay",
+      "vault",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-07",
+        "summary": "Plaid's Effects 2026 event delivered a multi-front launch across AI models, fraud, lending, payments, and developer tooling in a single day.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_bank_intelligence_fraud_primacy",
+    "first_covered": "2026-06-07",
+    "last_covered": "2026-06-07",
+    "summary": "Plaid expanded Bank Intelligence for FIs with Fraud Insights and a Primacy Score, overlapping Compass and Verify positioning.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "compass",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-07",
+        "summary": "Plaid expanded Bank Intelligence for FIs with Fraud Insights and a Primacy Score, overlapping Compass and Verify positioning.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_funding_olc_ruling",
+    "first_covered": "2026-06-07",
+    "last_covered": "2026-06-07",
+    "summary": "DOJ OLC determined CFPB cannot lawfully draw Federal Reserve funds under Dodd-Frank; notice filed in NTEU v. Vought, escalating the 1033 funding-constraint thread.",
+    "entities": [
+      "CFPB",
+      "DOJ",
+      "Office of Legal Counsel"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-07",
+        "summary": "DOJ OLC determined CFPB cannot lawfully draw Federal Reserve funds under Dodd-Frank; notice filed in NTEU v. Vought, escalating the 1033 funding-constraint thread.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "q2_helix_officer_change",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Two stale Q2 Holdings Item 5.02 8-Ks from early 2025 republished in feed; no new content.",
+    "entities": [
+      "Helix",
+      "Q2 Holdings",
+      "SEC"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-06-06",
+        "summary": "Two stale Q2 Holdings Item 5.02 8-Ks from early 2025 republished in feed; no new content.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "occ_fintech_partnership_consent_order",
+    "first_covered": "2026-06-03",
+    "last_covered": "2026-06-06",
+    "summary": "OCC consent order warns community banks on fintech partnerships; National Law Review restatement reinforces supervisory tightening narrative already in ledger from 6-03.",
+    "entities": [
+      "FDIC",
+      "National Law Review",
+      "OCC"
+    ],
+    "roadmap_areas": [
+      "horizontal",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-03",
+        "summary": "OCC issued a consent order framed as a warning to community banks in fintech partnerships, now the binding supervisory signal with CFPB sidelined.",
+        "source_urls": [],
+        "source_dates": []
+      },
+      {
+        "covered_on": "2026-06-06",
+        "summary": "OCC consent order warns community banks on fintech partnerships; National Law Review restatement reinforces supervisory tightening narrative already in ledger from 6-03.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_officer_change",
+    "first_covered": "2026-05-12",
+    "last_covered": "2026-06-06",
+    "summary": "Jack Henry filed a 2026-06-04 8-K disclosing an officer/director change (Item 5.02) with an atypical Reg FD disclosure (Item 7.01); named officer not yet public.",
+    "entities": [
+      "Banno",
+      "Jack Henry",
+      "SEC"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-06",
+        "summary": "Jack Henry filed a 2026-06-04 8-K disclosing an officer/director change (Item 5.02) with an atypical Reg FD disclosure (Item 7.01); named officer not yet public.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fincen_aml_cip_eo",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Executive order on AML/CIP/credit underwriting restated by Consumer Finance Monitor; no new rule text beyond 6-02 ledger entry.",
+    "entities": [
+      "Consumer Finance Monitor",
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-06",
+        "summary": "Executive order on AML/CIP/credit underwriting restated by Consumer Finance Monitor; no new rule text beyond 6-02 ledger entry.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fdic_fintech_partnership_oversight",
+    "first_covered": "2026-06-06",
+    "last_covered": "2026-06-06",
+    "summary": "Loeb & Loeb summary of FDIC fintech-partnership oversight resurfaced as second-source confirmation of elevated examiner posture; no new guidance text.",
+    "entities": [
+      "FDIC",
+      "Loeb & Loeb"
+    ],
+    "roadmap_areas": [
+      "horizontal",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-06",
+        "summary": "Loeb & Loeb summary of FDIC fintech-partnership oversight resurfaced as second-source confirmation of elevated examiner posture; no new guidance text.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "q2_holdings_officer_change_8k",
+    "first_covered": "2026-06-05",
+    "last_covered": "2026-06-05",
+    "summary": "Two stale Q2 Holdings Item 5.02 8-Ks from early 2025 resurfaced in the feed; no new officer or content, treated as RSS replay artifact.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-06-05",
+        "summary": "Two stale Q2 Holdings Item 5.02 8-Ks from early 2025 resurfaced in the feed; no new officer or content, treated as RSS replay artifact.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_fiusd_stablecoin",
+    "first_covered": "2026-06-05",
+    "last_covered": "2026-06-05",
+    "summary": "Fiserv launched FIUSD, a proprietary stablecoin targeting community-bank rails and payments infrastructure, raising settlement-layer questions for ASA Pay.",
+    "entities": [
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-05",
+        "summary": "Fiserv launched FIUSD, a proprietary stablecoin targeting community-bank rails and payments infrastructure, raising settlement-layer questions for ASA Pay.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "q2_stale_8k_officer_change",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Stale Q2 Holdings Section 5.02 8-K filings from early 2025 surfaced in today's pull but provide no new context on Q2's recent AI assistant launch.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-06-04",
+        "summary": "Stale Q2 Holdings Section 5.02 8-K filings from early 2025 surfaced in today's pull but provide no new context on Q2's recent AI assistant launch.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_monitor_aml_dashboard",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Plaid launched a redesigned AML Monitor dashboard targeting high-growth companies, extending its footprint from one-time verify into recurring compliance workflow.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-04",
+        "summary": "Plaid launched a redesigned AML Monitor dashboard targeting high-growth companies, extending its footprint from one-time verify into recurring compliance workflow.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_link_fin_agent_auth",
+    "first_covered": "2026-06-04",
+    "last_covered": "2026-06-04",
+    "summary": "Plaid embedded Link inside Fin AI Agent chat so users can connect and repair bank connections without leaving the conversation.",
+    "entities": [
+      "Fin AI Agent",
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "auth"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-04",
+        "summary": "Plaid embedded Link inside Fin AI Agent chat so users can connect and repair bank connections without leaving the conversation.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "jack_henry_8k_officer_change_2026",
+    "first_covered": "2026-05-19",
+    "last_covered": "2026-06-04",
+    "summary": "Jack Henry filed a 2026-06-04 8-K disclosing an Item 5.02 officer/director change paired with an unusual Item 7.01 Reg FD disclosure; name and role not yet disclosed.",
+    "entities": [
+      "Jack Henry",
+      "SEC"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-04",
+        "summary": "Jack Henry filed a 2026-06-04 8-K disclosing an Item 5.02 officer/director change paired with an unusual Item 7.01 Reg FD disclosure; name and role not yet disclosed.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "q2_ai_assistant_launch",
+    "first_covered": "2026-06-03",
+    "last_covered": "2026-06-03",
+    "summary": "Q2 Holdings AI assistant for banking platforms recirculated via Investing.com; no new features or FI details beyond prior coverage.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-03",
+        "summary": "Q2 Holdings AI assistant for banking platforms recirculated via Investing.com; no new features or FI details beyond prior coverage.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "aeropay_jack_henry_pay_by_bank",
+    "first_covered": "2026-06-03",
+    "last_covered": "2026-06-03",
+    "summary": "Aeropay/Jack Henry pay-by-bank integration restated by multiple sources; no new FI adoption numbers or rail detail surfaced.",
+    "entities": [
+      "Aeropay",
+      "Jack Henry"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-03",
+        "summary": "Aeropay/Jack Henry pay-by-bank integration restated by multiple sources; no new FI adoption numbers or rail detail surfaced.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "q2_ai_assistant_banking",
+    "first_covered": "2026-06-02",
+    "last_covered": "2026-06-02",
+    "summary": "Q2 Holdings launched a native AI assistant for banking platforms; scope, partner extensibility, and FI rollout details undisclosed.",
+    "entities": [
+      "Q2 Holdings"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-02",
+        "summary": "Q2 Holdings launched a native AI assistant for banking platforms; scope, partner extensibility, and FI rollout details undisclosed.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "eo_aml_kyc_credit_underwriting",
+    "first_covered": "2026-06-02",
+    "last_covered": "2026-06-02",
+    "summary": "Executive order signals major federal shifts in AML rules, customer identification, and credit underwriting standards, affecting KYC/CIP and lender-facing data use.",
+    "entities": [
+      "FinCEN",
+      "White House"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "horizontal",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-06-02",
+        "summary": "Executive order signals major federal shifts in AML rules, customer identification, and credit underwriting standards, affecting KYC/CIP and lender-facing data use.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  }
+]
