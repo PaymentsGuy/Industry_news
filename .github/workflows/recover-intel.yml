@@ -1,0 +1,129 @@
+name: Recover Weekly Intel Brief
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Failed workflow run containing the validated intel artifact"
+        required: true
+        type: number
+      brief_date:
+        description: "Brief date in YYYY-MM-DD format"
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: daily-intel
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      DATE: ${{ inputs.brief_date }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate recovery inputs
+        run: |
+          if [[ ! "${DATE}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "brief_date must use YYYY-MM-DD" >&2
+            exit 2
+          fi
+
+      - name: Download prior run artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: intel-${{ inputs.brief_date }}
+          path: intel/${{ inputs.brief_date }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify recovery artifact
+        run: |
+          test -s "intel/${DATE}/raw.jsonl"
+          test -s "intel/${DATE}/triaged.jsonl"
+
+      - name: Find most recent prior ledger
+        run: |
+          PRIOR_LEDGER=""
+          for i in $(seq 1 120); do
+            CHECK_DATE=$(date -u -d "${DATE} - ${i} days" +%F)
+            CANDIDATE="intel/${CHECK_DATE}/ledger.json"
+            if [ -f "$CANDIDATE" ]; then
+              PRIOR_LEDGER="$CANDIDATE"
+              echo "Found prior ledger: $PRIOR_LEDGER"
+              break
+            fi
+          done
+          if [ -z "$PRIOR_LEDGER" ]; then
+            echo "No prior context ledger found in the last 120 days; durable event dedup remains active"
+          fi
+          echo "PRIOR_LEDGER=$PRIOR_LEDGER" >> "$GITHUB_ENV"
+
+      - name: Synthesize recovered brief
+        run: |
+          if [ -n "${PRIOR_LEDGER}" ]; then
+            python intel/pipeline.py synthesize \
+              --in-file "intel/${DATE}/triaged.jsonl" \
+              --out-file "intel/${DATE}/brief.md" \
+              --prior-ledger "${PRIOR_LEDGER}" \
+              --event-registry intel/event_registry.json
+          else
+            python intel/pipeline.py synthesize \
+              --in-file "intel/${DATE}/triaged.jsonl" \
+              --out-file "intel/${DATE}/brief.md" \
+              --event-registry intel/event_registry.json
+          fi
+
+      - name: Update topic ledger
+        run: |
+          if [ -n "${PRIOR_LEDGER}" ]; then
+            python intel/update_ledger.py \
+              --brief-file "intel/${DATE}/brief.md" \
+              --prior-ledger "${PRIOR_LEDGER}" \
+              --ledger-out "intel/${DATE}/ledger.json" \
+              --event-registry intel/event_registry.json
+          else
+            python intel/update_ledger.py \
+              --brief-file "intel/${DATE}/brief.md" \
+              --ledger-out "intel/${DATE}/ledger.json" \
+              --event-registry intel/event_registry.json
+          fi
+
+      - name: Commit recovered artifacts
+        run: |
+          git config user.name "asa-intel-bot"
+          git config user.email "asa-intel-bot@users.noreply.github.com"
+          git add "intel/${DATE}/" intel/event_registry.json
+          git commit -m "intel: recovered brief ${DATE}"
+          git push
+
+      - name: Upload recovery artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-intel-${{ inputs.brief_date }}
+          path: intel/${{ inputs.brief_date }}/
+          retention-days: 30
