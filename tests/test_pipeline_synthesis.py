@@ -88,6 +88,7 @@ def test_synthesize_brief_uses_perplexity_and_writes_validated_markdown(tmp_path
     assert out_file.read_text(encoding="utf-8") == valid_weekly_brief().rstrip()
     assert len(calls) == 1
     assert calls[0]["model"] == SYNTHESIS_MODEL
+    assert calls[0]["timeout"] == 120
     assert calls[0]["messages"] == [{"role": "user", "content": calls[0]["messages"][0]["content"]}]
     assert "already covered" in calls[0]["messages"][0]["content"]
     assert "fiserv_cognition_devin" in calls[0]["messages"][0]["content"]

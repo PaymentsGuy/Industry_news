@@ -63,6 +63,7 @@ SYNTHESIS_MODEL = "sonar-pro"
 
 TRIAGE_TEMP = 0.0          # deterministic classification
 SYNTHESIS_TEMP = 0.3       # slight variation in prose, still controlled
+SYNTHESIS_TIMEOUT_SECONDS = 120  # large weekly prompts need more than the provider default
 
 TRIAGE_CONCURRENCY = 3     # parallel triage calls
 TRIAGE_RELEVANCE_DROP = 2  # drop anything below this score
@@ -452,6 +453,7 @@ def synthesize_brief(
                 model=SYNTHESIS_MODEL,
                 max_tokens=4096,
                 temperature=SYNTHESIS_TEMP,
+                timeout=SYNTHESIS_TIMEOUT_SECONDS,
             )
         except RequestException as exc:
             transport_failures += 1
