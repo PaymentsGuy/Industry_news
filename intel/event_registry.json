@@ -2,6 +2,75 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "revolut_conditional_occ_occ_approval",
+      "first_covered": "2026-09-07",
+      "last_covered": "2026-09-07",
+      "entities": [
+        "Office of the Comptroller of the Currency",
+        "Revolut"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-09-07",
+          "summary": "The OCC granted Revolut conditional approval for a U.S. national bank charter, leaving final launch dependent on additional approvals.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObnBqNnV1aFVhQXVFbEJKNlNUd0V5QlRtV0J6Qkc3RmtyUGNydGg0UUU2dFZEdy0tUW1NYlMzbEJMdURMUDAyQW5yUGtsb0FpeHlPaXFtWUFPanAta3ZORGRLTGxSanpBZHZIX1FJZFBVemRlZFF0b1lZZEhQVDg1bUVON2M1NHlxYzgzanFsQlZTTmhDbG05Y0FVWjFkaXJCNVVwUUxieVJ2UWdrUlE0cVIyYlBSRXJna1VDNTFUWVBMclU?oc=5"
+          ],
+          "source_dates": [
+            "2026-09-07"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "paytabs_amazon_mena_acquisition",
+      "first_covered": "2026-09-07",
+      "last_covered": "2026-09-07",
+      "entities": [
+        "Amazon",
+        "PayTabs"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-09-07",
+          "summary": "PayTabs agreed to acquire Amazon's Middle East and North Africa payments operations in a deal reported at over $100 million.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48356/paytabs-to-acquire-amazon-payments-mena-operations?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-09-07"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "emvco_agentic_payments_framework",
+      "first_covered": "2026-09-07",
+      "last_covered": "2026-09-07",
+      "entities": [
+        "EMVCo"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-09-07",
+          "summary": "EMVCo released a draft framework for card-based agentic payments and opened comments through September 30.",
+          "source_urls": [
+            "https://finovate.com/emvco-releases-framework-for-card-based-agentic-payments/"
+          ],
+          "source_dates": [
+            "2026-09-03"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_funding_fravity_acquisition",
       "first_covered": "2026-08-31",
       "last_covered": "2026-08-31",
