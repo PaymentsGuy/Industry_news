@@ -1,6 +1,6 @@
 # ASA Intelligence Brief → MIOS Integration Requirements
 
-Status: requirements complete; implementation not authorized
+Status: requirements complete; planning and local implementation authorized 2026-08-20; external live writes and production deployment separately gated
 Updated: 2026-08-20
 Governing MIOS definition: `10-Projects/MIOS/MIOS Definition Interview.md`
 
@@ -8,7 +8,7 @@ Governing MIOS definition: `10-Projects/MIOS/MIOS Definition Interview.md`
 
 Preserve every historical ASA Intelligence Brief in the Obsidian Vault, ingest the briefs into MIOS in chronological order with Troy-controlled release and acceptance, and update future brief delivery so each new brief is sent to both Slack and the Vault. A verified Vault-create event queues the brief for MIOS ingestion.
 
-This document defines requirements and acceptance behavior. It does not authorize code changes, workflow changes, source ingestion, migration, deployment, Slack writes, or MIOS writes.
+This document defines requirements and acceptance behavior. Troy authorized planning and local implementation on 2026-08-20. External live writes, production deployment, historical-manifest acceptance, individual brief release, candidate promotion, and predecessor retirement remain separate explicit gates.
 
 ## Current-state evidence
 

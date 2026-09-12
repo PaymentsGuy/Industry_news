@@ -21,6 +21,9 @@ jobs:
 
     env:
       PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_CHANNEL_ID: C0B1TPFSZKJ
+      SLACK_TEAM_ID: ${{ secrets.SLACK_TEAM_ID }}
       MAX_DAILY_COST_USD: "3.00"
 
     steps:
@@ -101,7 +104,17 @@ jobs:
               --event-registry intel/event_registry.json
           fi
 
-      - name: Commit run artifacts
+      - name: Create receipt-bound delivery package
+        run: |
+          python intel/delivery.py create \
+            --brief-file intel/${DATE}/brief.md \
+            --package-file intel/${DATE}/delivery.json \
+            --brief-date ${DATE} \
+            --cadence weekly \
+            --workspace-id "${SLACK_TEAM_ID}" \
+            --workflow-run-id "${GITHUB_RUN_ID}"
+
+      - name: Commit canonical artifact and delivery package
         run: |
           git config user.name  "asa-intel-bot"
           git config user.email "asa-intel-bot@users.noreply.github.com"
@@ -112,6 +125,26 @@ jobs:
             git commit -m "intel: brief ${DATE}"
             git push
           fi
+
+      - name: Bind repository receipt
+        run: |
+          python intel/delivery.py mark-repository \
+            --package-file intel/${DATE}/delivery.json \
+            --commit-sha "$(git rev-parse HEAD)"
+          git add intel/${DATE}/delivery.json
+          git diff --cached --quiet || (git commit -m "intel: repository receipt ${DATE}" && git push)
+
+      - name: Deliver and read back Slack message
+        run: |
+          python intel/delivery.py resume-slack \
+            --package-file intel/${DATE}/delivery.json \
+            --channel "${SLACK_CHANNEL_ID}"
+
+      - name: Commit Slack delivery receipt
+        if: always()
+        run: |
+          git add intel/${DATE}/delivery.json
+          git diff --cached --quiet || (git commit -m "intel: Slack delivery receipt ${DATE}" && git push)
 
       - name: Upload artifacts (always, even on failure)
         if: always()

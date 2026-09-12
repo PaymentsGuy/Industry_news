@@ -1,13 +1,13 @@
 # ASA Weekly Competitive Intelligence Pipeline
 
-Automated weekly pull of competitor, channel-partner, regulatory, and technology signal for ASA Technologies. Runs Monday at 5:00 AM Pacific during PDT / 4:00 AM during PST, produces a one-page executive brief by 8:00 AM Pacific, posts to Slack, and commits the full audit trail to this repo. Vault dual-delivery and MIOS ingestion are approved requirements but are not implemented yet.
+Automated weekly pull of competitor, channel-partner, regulatory, and technology signal for ASA Technologies. Runs Monday at 5:00 AM Pacific during PDT / 4:00 AM during PST, produces a one-page executive brief by 8:00 AM Pacific, commits the canonical artifact and delivery package, and then posts/readbacks Slack through one receipt-bound delivery coordinator. The local Vault bridge and live Slack-token migration remain separately gated and are not activated by the source change alone.
 
 ## What it does
 
 1. **Collect** — pulls RSS feeds for every entity in `intel/watchlist.yaml`, plus SEC EDGAR filings for public competitors.
 2. **Triage** — calls Perplexity once per raw item with the Stage 1 rubric prompt; drops anything scoring below 2.
 3. **Synthesize** — calls Perplexity once with the surviving items and produces a markdown brief in the canonical format.
-4. **Publish** — posts the brief to Slack (`#troy-research`) and commits raw items + triage scores + final brief to `intel/<date>/`.
+4. **Deliver** — commits raw items, scores, brief, and `delivery.json`; posts to Slack `#troy-research` with deterministic identity; reads the native message back; then waits for the separately operated local Vault receipt before claiming full delivery.
 
 ## Repo structure
 
@@ -18,6 +18,7 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
 │       └── daily-intel.yml          # GitHub Actions scheduler
 ├── intel/
 │   ├── watchlist.yaml               # source of truth for what to track
+│   ├── delivery.py                  # repository/Slack/Vault transaction owner
 │   ├── pipeline.py                  # CLI: collect | triage | synthesize | publish
 │   ├── prompts/
 │   │   ├── triage.md                # Stage 1 prompt (canonical)
@@ -25,7 +26,8 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
 │   └── 2026-04-29/                  # one folder per run
 │       ├── raw.jsonl                # everything pulled
 │       ├── triaged.jsonl            # everything scored
-│       └── brief.md                 # the published output
+│       ├── brief.md                 # canonical output
+│       └── delivery.json            # durable per-destination receipts/state
 ├── requirements.txt
 └── README.md
 ```
@@ -36,7 +38,10 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
 
 2. **Set repository secrets** (Settings → Secrets and variables → Actions):
    - `PERPLEXITY_API_KEY` — your Perplexity API key
-   - `SLACK_WEBHOOK_URL` — incoming webhook for `#troy-research`
+   - `SLACK_BOT_TOKEN` — bot token scoped for `chat:write` and destination-native history/readback for `#troy-research`
+   - `SLACK_TEAM_ID` — immutable Slack workspace/team ID used to bind native readback to the correct workspace
+
+   The source expects channel ID `C0B1TPFSZKJ`. The local MIOS bridge and Industry_news receipt importer must share `MIOS_VAULT_RECEIPT_KEY` through their secret environments; the key is never stored in the delivery package or Vault note. Do not enable the migrated live workflow until the token, workspace/channel membership, native readback, and local Vault bridge have passed their separately approved canaries.
 
 3. **Verify watchlist URLs.** The seed `watchlist.yaml` has reasonable RSS guesses but URLs change. Run locally once to confirm:
    ```bash

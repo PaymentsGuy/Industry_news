@@ -16,7 +16,6 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
-import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -26,21 +25,22 @@ from typing import Any
 
 import click
 import feedparser
-import requests
-from requests import RequestException
 import yaml
+from requests import RequestException
 
 try:
-    from intel.update_ledger import validate_durable_registry
+    from intel import delivery
     from intel.brief_contract import BriefContractError, validate_weekly_brief
+    from intel.update_ledger import validate_durable_registry
     from intel.llm_provider import (
         MissingProviderCredential,
         perplexity_chat_completion,
         require_perplexity_api_key,
     )
 except ModuleNotFoundError:  # pragma: no cover - supports `python intel/pipeline.py`
-    from update_ledger import validate_durable_registry
+    import delivery
     from brief_contract import BriefContractError, validate_weekly_brief
+    from update_ledger import validate_durable_registry
     from llm_provider import (
         MissingProviderCredential,
         perplexity_chat_completion,
@@ -507,26 +507,20 @@ def synthesize(
 
 @cli.command()
 @click.option("--brief-file", required=True, type=click.Path(path_type=Path))
-@click.option("--dry-run", is_flag=True, default=False, help="Print to stdout instead of posting to Slack.")
+@click.option("--dry-run", is_flag=True, default=False, help="Print to stdout instead of entering the delivery transaction.")
 def publish(brief_file: Path, dry_run: bool) -> None:
-    """Post the brief to the Slack incoming webhook."""
-    brief = brief_file.read_text()
-    webhook = os.environ.get("SLACK_WEBHOOK_URL")
-
-    if dry_run or not webhook:
-        log.info("Dry run / no webhook; printing brief preview.")
+    """Deliver through the receipt-bound repository/Slack/Vault coordinator."""
+    brief = brief_file.read_text(encoding="utf-8")
+    if dry_run:
+        log.info("Dry run; printing brief preview without provider calls.")
         print(brief)
         return
-
-    # Slack webhook accepts up to ~40k chars; our briefs are well under that.
-    payload = {"text": brief, "mrkdwn": True}
     try:
-        r = requests.post(webhook, json=payload, timeout=DEFAULT_HTTP_TIMEOUT)
-        r.raise_for_status()
-        log.info("Posted brief to Slack (%d chars)", len(brief))
-    except Exception as e:
-        log.error("Slack post failed: %s", e)
-        sys.exit(1)
+        result = delivery.publish_brief(brief_file)
+    except Exception as exc:
+        log.error("Receipt-bound delivery failed: %s", exc)
+        raise click.ClickException(str(exc)) from exc
+    log.info("Slack delivery state: %s", result["destinations"]["slack"]["status"])
 
 
 if __name__ == "__main__":
