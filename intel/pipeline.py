@@ -16,10 +16,12 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 
@@ -68,6 +70,9 @@ SYNTHESIS_TIMEOUT_SECONDS = 120  # large weekly prompts need more than the provi
 TRIAGE_CONCURRENCY = 3     # parallel triage calls
 TRIAGE_RELEVANCE_DROP = 2  # drop anything below this score
 RSS_ITEMS_PER_FEED = 10    # cap per feed; older items are stale
+SYNTHESIS_FRESHNESS_DAYS = 7
+SYNTHESIS_MAX_ITEMS = 12
+SYNTHESIS_MAX_PER_BUCKET = 3
 
 DEFAULT_HTTP_TIMEOUT = 30
 USER_AGENT = "asa-intel/0.1 (https://www.asavault.com)"
@@ -144,6 +149,102 @@ def strip_code_fences(text: str) -> str:
         if text.endswith("```"):
             text = text[:-3]
     return text.strip()
+
+
+def _published_on(item: dict) -> date | None:
+    """Normalize the RSS publication timestamp needed for weekly freshness."""
+    value = str(item.get("_source_item", {}).get("published_date") or "").strip()
+    if not value:
+        return None
+    try:
+        parsed = parsedate_to_datetime(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.date()
+    except (TypeError, ValueError):
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).date()
+        except ValueError:
+            return None
+
+
+def _synthesis_catalog(surviving: list[dict], brief_date: date) -> tuple[list[dict], list[dict]]:
+    """Return a bounded, fresh, source-numbered set for one weekly brief."""
+    cutoff = brief_date - timedelta(days=SYNTHESIS_FRESHNESS_DAYS)
+    fresh = [
+        item for item in surviving
+        if (published := _published_on(item)) is not None and cutoff <= published <= brief_date
+    ]
+    fresh.sort(
+        key=lambda item: (
+            -int(item.get("relevance_score", 0) or 0),
+            -(_published_on(item) or date.min).toordinal(),
+            str(item.get("id") or ""),
+        )
+    )
+
+    selected: list[dict] = []
+    bucket_counts: dict[str, int] = {}
+    for item in fresh:
+        bucket = str(item.get("watchlist_bucket") or "other")
+        if bucket_counts.get(bucket, 0) >= SYNTHESIS_MAX_PER_BUCKET:
+            continue
+        selected.append(item)
+        bucket_counts[bucket] = bucket_counts.get(bucket, 0) + 1
+        if len(selected) == SYNTHESIS_MAX_ITEMS:
+            break
+
+    catalog: list[dict] = []
+    cataloged: list[dict] = []
+    for number, item in enumerate(selected, start=1):
+        source = item.get("_source_item", {})
+        published = _published_on(item)
+        catalog.append({
+            "ref": number,
+            "publisher": str(source.get("source") or "Source"),
+            "title": str(source.get("title") or "Untitled source"),
+            "date": published.isoformat() if published else "",
+            "url": str(source.get("source_url") or ""),
+            "why_it_matters": str(item.get("why_it_matters_for_asa") or "Evidence for the associated brief claim."),
+        })
+        cataloged.append({**item, "reference_number": number})
+    return cataloged, catalog
+
+
+def _watchlist_row_count(brief: str) -> int:
+    match = re.search(r"(?ms)^## Watchlist movement\s*(.*?)(?=^## |\Z)", brief)
+    if not match:
+        return 0
+    rows = 0
+    for line in match.group(1).splitlines():
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if line.lstrip().startswith("|") and len(cells) == 5 and cells[0].casefold() not in {"entity", "---"} and set(cells[0]) != {"-"}:
+            rows += 1
+    return rows
+
+
+def _materialize_references(brief: str, catalog: list[dict]) -> str:
+    """Replace model-authored citations with source metadata from the catalog."""
+    body = re.split(r"(?m)^## References\s*$", brief, maxsplit=1)[0].rstrip()
+    used = {int(number) for number in re.findall(r"\[REF\s+(\d+)\]", body, re.I)}
+    by_number = {entry["ref"]: entry for entry in catalog}
+    unknown = used - set(by_number)
+    if unknown:
+        raise BriefContractError("undefined source catalog anchors: " + ", ".join(map(str, sorted(unknown))))
+    references = []
+    for number in sorted(used):
+        entry = by_number[number]
+        title = entry["title"].replace('"', "'")
+        references.append(
+            f'{number}. {entry["publisher"]}, "{title}," {entry["date"]}. '
+            f'{entry["url"]} — *{entry["why_it_matters"]}.*'
+        )
+    body = re.sub(
+        r"(?m)^\*\*Items surfaced:\*\*\s*\d+\s*$",
+        f"**Items surfaced:** {_watchlist_row_count(body)}",
+        body,
+    )
+    return body + "\n\n## References\n\n" + "\n".join(references)
 
 
 # ---------------------------------------------------------------------------
@@ -384,6 +485,7 @@ def synthesize_brief(
     prior_ledger: Path | None,
     event_registry: Path | None = None,
     completion_func=perplexity_chat_completion,
+    brief_date: date | None = None,
 ) -> None:
     """Run Stage 2 synthesis with Perplexity and write a markdown brief.
 
@@ -421,21 +523,26 @@ def synthesize_brief(
         durable_count = len(durable_events.get("topics", durable_events)) if isinstance(durable_events, dict) else len(durable_events)
         log.info("Loaded durable event registry with %d entries from %s", durable_count, event_registry)
 
+    if brief_date:
+        synthesis_items, reference_catalog = _synthesis_catalog(surviving, brief_date)
+    else:
+        synthesis_items, reference_catalog = surviving, []
     template = load_prompt("synthesis")
-    today_iso = date.today().isoformat()
+    today_iso = (brief_date or date.today()).isoformat()
     prompt = render_prompt(
         template,
         today_iso=today_iso,
         items_reviewed_count=len(triaged),
-        triaged_items_json=json.dumps(surviving, ensure_ascii=False, indent=2),
+        triaged_items_json=json.dumps(synthesis_items, ensure_ascii=False, indent=2),
+        reference_catalog_json=json.dumps(reference_catalog, ensure_ascii=False, indent=2),
         topic_ledger_json=json.dumps(ledger, ensure_ascii=False, indent=2),
         durable_event_registry_json=json.dumps(durable_events, ensure_ascii=False, indent=2),
         rubric_version="0.2",
         synthesis_version="0.3",
     )
 
-    log.info("Synthesizing brief from %d surviving items (ledger has %d topics)",
-             len(surviving), len(ledger))
+    log.info("Synthesizing brief from %d selected items (%d surviving; ledger has %d topics)",
+             len(synthesis_items), len(surviving), len(ledger))
     brief = None
     last_error = None
     contract_attempts = 0
@@ -464,6 +571,14 @@ def synthesize_brief(
             )
             continue
         candidate = strip_code_fences(candidate)
+        if brief_date:
+            try:
+                candidate = _materialize_references(candidate, reference_catalog)
+            except BriefContractError as exc:
+                contract_attempts += 1
+                last_error = exc
+                log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempts, exc)
+                continue
         try:
             validate_weekly_brief(candidate)
         except BriefContractError as exc:
@@ -489,13 +604,16 @@ def synthesize_brief(
                    "synthesis runs without the dedup filter (every item is fresh).")
 @click.option("--event-registry", type=click.Path(path_type=Path), default=None,
               help="Path to the indefinite durable event registry.")
+@click.option("--brief-date", required=True, type=click.DateTime(formats=["%Y-%m-%d"]),
+              help="Canonical weekly brief date in YYYY-MM-DD.")
 def synthesize(
     in_file: Path, out_file: Path, prior_ledger: Path | None,
     event_registry: Path | None,
+    brief_date: datetime,
 ) -> None:
     """Run Stage 2 synthesis to produce a markdown brief."""
     try:
-        synthesize_brief(in_file, out_file, prior_ledger, event_registry)
+        synthesize_brief(in_file, out_file, prior_ledger, event_registry, brief_date=brief_date.date())
     except MissingProviderCredential as e:
         log.error(str(e))
         sys.exit(2)

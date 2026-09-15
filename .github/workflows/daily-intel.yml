@@ -81,12 +81,14 @@ jobs:
               --in-file      intel/${DATE}/triaged.jsonl \
               --out-file     intel/${DATE}/brief.md \
               --prior-ledger "${PRIOR_LEDGER}" \
-              --event-registry intel/event_registry.json
+              --event-registry intel/event_registry.json \
+              --brief-date "${DATE}"
           else
             python intel/pipeline.py synthesize \
               --in-file  intel/${DATE}/triaged.jsonl \
               --out-file intel/${DATE}/brief.md \
-              --event-registry intel/event_registry.json
+              --event-registry intel/event_registry.json \
+              --brief-date "${DATE}"
           fi
 
       - name: Update topic ledger

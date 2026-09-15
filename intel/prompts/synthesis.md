@@ -46,6 +46,7 @@ INPUTS:
 - date: {{today_iso}}
 - items_reviewed_count: {{items_reviewed_count}}
 - triaged_items: {{triaged_items_json}}
+- reference_catalog: {{reference_catalog_json}}
 - topic_ledger: {{topic_ledger_json}}
 - durable_event_registry: {{durable_event_registry_json}}
 
@@ -66,6 +67,12 @@ coverage even when the 90-day topic_ledger is empty. Its schema is
 `events` with `covered_on`, `summary`, `source_urls`, and `source_dates`.
 Preserve a genuinely new event as a Delta rather than overwriting the earlier
 fact.
+
+The `reference_catalog` is the complete, source-of-record citation set for this
+brief. Each entry has `ref`, `publisher`, `title`, `date`, and `url`. Cite only
+its assigned `[REF n]` number; never invent a reference number or use a source
+outside this catalog. The pipeline writes the final References section from the
+catalog, so use anchors precisely in the body and Watchlist movement table.
 
 ASA CONTEXT (read every time so framing stays consistent):
 - ASA Vault is a Financial Intelligence Platform connecting FIs, fintechs,
@@ -163,8 +170,8 @@ CRITICAL RULES (the brief is rejected if any are violated):
 - Recommendations must include a verb (Monitor / Investigate / Decision
   needed) and, where the verb is "Decision needed", a specific date by which.
 - Maximum total length: 800 words excluding the references and table.
-- If fewer than 3 items survive the triage AND ledger dedup combined, write
-  a short note explaining the day was quiet and skip the "By roadmap area"
-  section. Quiet days exist and are useful information.
+- If fewer than 3 items survive the triage AND ledger dedup combined, write a
+  short note explaining the day was quiet, but retain every required section
+  and use the prescribed "No material signal this week" text where applicable.
 - The dedupe-with-deltas rule is mandatory. A brief that simply restates
   prior coverage with new sources is a failed brief.

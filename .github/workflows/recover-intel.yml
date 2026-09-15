@@ -27,6 +27,7 @@ jobs:
 
     env:
       PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      SLACK_TEAM_ID: ${{ secrets.SLACK_TEAM_ID }}
       DATE: ${{ inputs.brief_date }}
 
     steps:
@@ -89,12 +90,14 @@ jobs:
               --in-file "intel/${DATE}/triaged.jsonl" \
               --out-file "intel/${DATE}/brief.md" \
               --prior-ledger "${PRIOR_LEDGER}" \
-              --event-registry intel/event_registry.json
+              --event-registry intel/event_registry.json \
+              --brief-date "${DATE}"
           else
             python intel/pipeline.py synthesize \
               --in-file "intel/${DATE}/triaged.jsonl" \
               --out-file "intel/${DATE}/brief.md" \
-              --event-registry intel/event_registry.json
+              --event-registry intel/event_registry.json \
+              --brief-date "${DATE}"
           fi
 
       - name: Update topic ledger
@@ -112,12 +115,31 @@ jobs:
               --event-registry intel/event_registry.json
           fi
 
-      - name: Commit recovered artifacts
+      - name: Create receipt-bound delivery package
+        run: |
+          python intel/delivery.py create \
+            --brief-file "intel/${DATE}/brief.md" \
+            --package-file "intel/${DATE}/delivery.json" \
+            --brief-date "${DATE}" \
+            --cadence weekly \
+            --workspace-id "${SLACK_TEAM_ID}" \
+            --workflow-run-id "${GITHUB_RUN_ID}"
+
+      - name: Commit canonical artifact and delivery package
         run: |
           git config user.name "asa-intel-bot"
           git config user.email "asa-intel-bot@users.noreply.github.com"
           git add "intel/${DATE}/" intel/event_registry.json
           git commit -m "intel: recovered brief ${DATE}"
+          git push
+
+      - name: Bind repository receipt
+        run: |
+          python intel/delivery.py mark-repository \
+            --package-file "intel/${DATE}/delivery.json" \
+            --commit-sha "$(git rev-parse HEAD)"
+          git add "intel/${DATE}/delivery.json"
+          git commit -m "intel: recovered producer receipt ${DATE}"
           git push
 
       - name: Upload recovery artifacts
