@@ -1,0 +1,650 @@
+[
+  {
+    "topic_key": "worldline_agentic_ai_payments",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "Worldline said it is among the first European providers to accept payments via agentic AI, operationalizing agent-initiated transactions.",
+    "entities": [
+      "Worldline"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "Worldline said it is among the first European providers to accept payments via agentic AI, operationalizing agent-initiated transactions.",
+        "source_urls": [
+          "https://www.finextra.com/newsarticle/48393/worldline-to-accept-agentic-ai-payments?utm_medium=rssfinextra&utm_source=finextrafeed"
+        ],
+        "source_dates": [
+          "2026-09-14"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "third_party_risk_guidance_principles_framework",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "U.S. banking agencies proposed replacing legacy third-party risk guidance with a principles-based framework for bank vendors.",
+    "entities": [
+      "Board of Governors of the Federal Reserve System",
+      "Federal Deposit Insurance Corporation",
+      "National Credit Union Administration",
+      "Office of the Comptroller of the Currency"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "U.S. banking agencies proposed replacing legacy third-party risk guidance with a principles-based framework for bank vendors.",
+        "source_urls": [
+          "https://www.pymnts.com/legal/bank-regulation/2026/community-banks-biggest-third-party-risk-is-vendor-they-cannot-replace/"
+        ],
+        "source_dates": [
+          "2026-09-14"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "socure_funding_fravity_acquisition",
+    "first_covered": "2026-08-31",
+    "last_covered": "2026-09-15",
+    "summary": "Socure raised $156M at a $5.2B valuation and acquired Fravity to deepen its AI-driven fraud and compliance automation stack.",
+    "entities": [
+      "Fravity",
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-31",
+        "summary": "Socure raised $156 million at a $5.2 billion valuation and acquired Fravity to expand agentic fraud-investigation capabilities.",
+        "source_urls": [
+          "https://finovate.com/socure-secures-new-investment-acquires-fraud-platform-fravity/"
+        ],
+        "source_dates": [
+          "2026-08-27"
+        ]
+      },
+      {
+        "covered_on": "2026-09-15",
+        "summary": "Socure raised $156M at a $5.2B valuation and acquired Fravity to deepen its AI-driven fraud and compliance automation stack.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMidkFVX3lxTE1CNFBuSVV3SU5Kc1k0bnpKN3ZOTEd1eTlVT3BWRlg3QWFSMU41S0JIeW1MQzBIaXd3OXZkNkRlS0VvOWdNZDV1OUhsN0lSOEJLQVRWbGhPWUVSX0hFUWN1Wmdzel90WGpWTUREM1hCWkZGRVlLTFE?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-10"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "socure_crypto_onboarding_compliance",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "Socure said four of five top U.S. crypto exchanges use its onboarding compliance tools, reinforcing its position in high-risk identity workflows.",
+    "entities": [
+      "Socure"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "Socure said four of five top U.S. crypto exchanges use its onboarding compliance tools, reinforcing its position in high-risk identity workflows.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBoLVFzWjRxV0E2dUI3Vkg4QUQ1Qk0xRTREVHoyN25UUnpwSm52bFFTQQc0SEtoTFhuZDZZdWFnX2FrenhWNmUtekt5cl80ZncycUVWaXY0bw?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-10"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "openai_chatgpt_financial_services",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "OpenAI released a financial-services-specific ChatGPT focused on research, modeling, and customized client materials.",
+    "entities": [
+      "OpenAI"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "OpenAI released a financial-services-specific ChatGPT focused on research, modeling, and customized client materials.",
+        "source_urls": [
+          "https://www.finextra.com/newsarticle/48391/openai-launches-chatgpt-for-financial-service?utm_medium=rssfinextra&utm_source=finextrafeed"
+        ],
+        "source_dates": [
+          "2026-09-11"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "mx_lumin_digital_open_banking_connectivity",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "Lumin Digital announced secure open-banking connectivity with MX for banks and credit unions on its platform.",
+    "entities": [
+      "Lumin Digital",
+      "MX"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "Lumin Digital announced secure open-banking connectivity with MX for banks and credit unions on its platform.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMivAFBVV95cUxOX1V2dFk1cHZfNkdfRmpqWlNQYXFSSkNkVDNWOGJsMFN4RGVqVHlPZW9WRFRSY0JfZEVDZjdMOXE1VEx4Z3ZMbjFHeWhZUTYtQi1MTHVEclU4SktucjJuNTNjQUlYWkVUUm5rbl95OXhvT3dEMHBPWEpKYmJsdDZuc25BaW9yX194dDFxblE4TDEycDFoTzVRa25NMW5fMERrdW1tZEY4UTVRaG9WUmdieXpGMDFsTDZIS1QyMw?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-10"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "fincen_health_fraud_bsa_filings",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "FinCEN said BSA filings point to about $17.5B in possible health-care fraud, underscoring ongoing AML scrutiny.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "horizontal",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "FinCEN said BSA filings point to about $17.5B in possible health-care fraud, underscoring ongoing AML scrutiny.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMi1gFBVV95cUxONjJaYlhEUnBHSzlRbkNvV2YwV1lidEF6dUJqVjJQZElaMzE1eUpDYmxSa01rQTllSDRxWE9SZlJEWmgxWmlBcVF6NzJYQlBoMTRqNEZQRGh6LVQ4ZkNyRWlaM29RZXNkSWZ6aUp6WFlrZXpfODBNcHpFQkJMcmhCVEJFSV9ZQXBCQVk3MGc2STdheVk5NWctR2NwWW1FNU9zNUJmcUFaaklPYUcteXQzTHlWNkUtM205djAtOHBfV0JTcUFoNTdpR1cycWdST0VUaUh3blln?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-11"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "chime_stride_bank_acquisition",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "Chime agreed to acquire sponsor bank Stride Bank for $590M cash, bringing more banking infrastructure in-house.",
+    "entities": [
+      "Chime",
+      "Stride Bank"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "Chime agreed to acquire sponsor bank Stride Bank for $590M cash, bringing more banking infrastructure in-house.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcE5oX09QMG5jZFA3WFNSNllSelhSWElhT0QzTTNfOEh5LXpST0Z5bU9QSXBGZ2RVaUxXSTRURFFkY3RCQWNMWWRfN2FiUTdiMDFaQ0JIcnAtS1VuXzliZ1NXajdsbk5nYUVRRGhEaER6dVVDVXNlQkpNNmRDLWtFRFVnYkNlMGI2RW1PYjUwR1VFcndPa21Pek83NzY0N0tmSUt4NA?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-08"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "ant_international_agentic_payments_protocol",
+    "first_covered": "2026-09-15",
+    "last_covered": "2026-09-15",
+    "summary": "Ant International launched a protocol enabling AI agents to initiate mobile payments across wallets and interfaces.",
+    "entities": [
+      "Ant International"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-15",
+        "summary": "Ant International launched a protocol enabling AI agents to initiate mobile payments across wallets and interfaces.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMirwFBVV95cUxQV21LQTdkbnNNSEdiWWRJR21uREozYlJMQmoyQnhtREhYaHFNU2hUdE40Y0dXZnNGSmtPdkYwTkFpX0lpY2hvXzU2V1ZZZ2psYlAyX21EUkl2Q0VqLWFkSzZSMjFubU41VXltbFctNC1kaE4ybEZScmtRd3BUVDBJVnRhXzhuaDZtNU9FVVA5eW80alRfSnV6R1hxNHVvQTBCTFNETWszZDI0dlNOaHhV?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-14"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "revolut_conditional_occ_occ_approval",
+    "first_covered": "2026-09-07",
+    "last_covered": "2026-09-07",
+    "summary": "The OCC granted Revolut conditional approval for a U.S. national bank charter, leaving final launch dependent on additional approvals.",
+    "entities": [
+      "Office of the Comptroller of the Currency",
+      "Revolut"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-07",
+        "summary": "The OCC granted Revolut conditional approval for a U.S. national bank charter, leaving final launch dependent on additional approvals.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObnBqNnV1aFVhQXVFbEJKNlNUd0V5QlRtV0J6Qkc3RmtyUGNydGg0UUU2dFZEdy0tUW1NYlMzbEJMdURMUDAyQW5yUGtsb0FpeHlPaXFtWUFPanAta3ZORGRLTGxSanpBZHZIX1FJZFBVemRlZFF0b1lZZEhQVDg1bUVON2M1NHlxYzgzanFsQlZTTmhDbG05Y0FVWjFkaXJCNVVwUUxieVJ2UWdrUlE0cVIyYlBSRXJna1VDNTFUWVBMclU?oc=5"
+        ],
+        "source_dates": [
+          "2026-09-07"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "paytabs_amazon_mena_acquisition",
+    "first_covered": "2026-09-07",
+    "last_covered": "2026-09-07",
+    "summary": "PayTabs agreed to acquire Amazon's Middle East and North Africa payments operations in a deal reported at over $100 million.",
+    "entities": [
+      "Amazon",
+      "PayTabs"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-09-07",
+        "summary": "PayTabs agreed to acquire Amazon's Middle East and North Africa payments operations in a deal reported at over $100 million.",
+        "source_urls": [
+          "https://www.finextra.com/newsarticle/48356/paytabs-to-acquire-amazon-payments-mena-operations?utm_medium=rssfinextra&utm_source=finextrafeed"
+        ],
+        "source_dates": [
+          "2026-09-07"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "emvco_agentic_payments_framework",
+    "first_covered": "2026-09-07",
+    "last_covered": "2026-09-07",
+    "summary": "EMVCo released a draft framework for card-based agentic payments and opened comments through September 30.",
+    "entities": [
+      "EMVCo"
+    ],
+    "roadmap_areas": [
+      "pay"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-09-07",
+        "summary": "EMVCo released a draft framework for card-based agentic payments and opened comments through September 30.",
+        "source_urls": [
+          "https://finovate.com/emvco-releases-framework-for-card-based-agentic-payments/"
+        ],
+        "source_dates": [
+          "2026-09-03"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "occ_bunq_charter_denial",
+    "first_covered": "2026-08-31",
+    "last_covered": "2026-08-31",
+    "summary": "The OCC denied Bunq's U.S. national bank charter application, signaling continued scrutiny of fintech charter bids.",
+    "entities": [
+      "Bunq",
+      "Office of the Comptroller of the Currency"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-31",
+        "summary": "The OCC denied Bunq's U.S. national bank charter application, signaling continued scrutiny of fintech charter bids.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZTYwVEtTQk5QcEgyV2hWaF83Z0NhaUNZYlhxVHdGeklmdWdpZ3p2bkROM3VmVEJxdW1CTFpNTUpJVUd0N3RsVVFIa3BFUy1Oak1STzVhX0NVMUMzZFFmeFI4MnRtWjRTRzBxTVNfSTRQTHpYLTExR01uWHVMSHlkWlpIbUVvUHFzR0dWOWlDNkZMRzRlS04xY1pGQWxSMFhYZnNBYjVqSk02NFpVYVdPUm9VQVIxS2g3WldjYnZhZnJlNHViV1E?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-07"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_banksouth_finxact_modernization",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "Fiserv said BankSouth will use Finxact for a phased core modernization, strengthening its bank-channel position.",
+    "entities": [
+      "BankSouth",
+      "Finxact",
+      "Fiserv"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "Fiserv said BankSouth will use Finxact for a phased core modernization, strengthening its bank-channel position.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMivwFBVV95cUxPY2UtTFVqNDJHMXZrd1g0VE1QV3c5R2hZWkR4MzIyZjE3bWdZNG93RXNYN3RhRUtwdU1BUHBWQ05aVzNaTlBzbG5BUFRMUXBEYlNLOU5NczFnNnUydXhFQmwyYzhPSFZTT3FaTjZSTTdRUDJkaURIYXREa3BPU29HaHphTEl2LVctS2I0MUFndjh4SDhQd19scHVwLUZ4MEh1UnIwTF9BNmxpcVpGMVJtVDAxVmpqUDdzb1RDM3kyTQ?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-20"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "fdic_third_party_standards_body",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "The FDIC is floating a standards body for bank-fintech oversight, but it remains a conceptual idea rather than policy.",
+    "entities": [
+      "FDIC"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The FDIC is floating a standards body for bank-fintech oversight, but it remains a conceptual idea rather than policy.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMingFBVV95cUxOeENpTkVlSEhNWVN6Ti00MWJUeVZtSGRqaU9oMzZhRDZjdU1CTmlvZjFzaTlqcjgzT1dkUE9TRW80NEtuQ3RRblVLa3lIblBNbjl3MDhZRG55X0lRMlpwT1VKN19sbDFFOFVFVWRYSnBXS1V6QnhxN1JRbDV4bFFfMnlNZnBUeGFGLTNfTVZOTENIdk9MUU10aUstZnNFdw?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-19"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_section_1033_fees",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "The CFPB's revised open-banking rule has moved deeper into White House review and remains active.",
+    "entities": [
+      "CFPB",
+      "OIRA",
+      "White House"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The CFPB is reconsidering Section 1033 economics and may allow data aggregators to be charged for consumer data access.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObGowbkFIZWtrMGNKdWg4VDAwWWljMThNaXRWM2FENE1nVWpNbjh2cUdjcWhjZWdJS1poc1JaQ3lWaFpWeU5TendBUUdqT1RKVFB2ZnZSNVdkQnpTYjl0T1Q2c3FlOHEzNWh5cXhNTHR3U2M4NVlyZkl6dHVrYUR5Ynpwd1RGeHMw?oc=5",
+          "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSFowNGQ0WlpXb2JRRUxSaEFYV0VDNEZCSzNQbWhZS1ZUZmp3OThzMHR4QnVSS2ZMcml0TmFORWl0YXllenZKdEYyYXk2LVRhTjRnMDlOdjJHaEtmMWhZNS02T1Y2aG1VUWpRQWJxd0pvek9tT2lUeVZVNFJGbTRfRmdrTGdYRmoxZGhsN3p5Z0xmd1Fra0xUbk5HU3BOY0Qta2NOUHVJLXpfLTBwcUFWeWtSMWFPLTBoZDZv?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-05",
+          "2026-08-06"
+        ]
+      },
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The CFPB's revised open-banking rule has moved deeper into White House review and remains active.",
+        "source_urls": [
+          "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSFowNGQ0WlpXb2JRRUxSaEFYV0VDNEZCSzNQbWhZS1ZUZmp3OThzMHR4QnVSS2ZMcml0TmFORWl0YXllenZKdEYyYXk2LVRhTjRnMDlOdjJHaEtmMWhZNS02T1Y2aG1VUWpRQWJxd0pvek9tT2lUeVZVNFJGbTRfRmdrTGdYRmoxZGhsN3p5Z0xmd1Fra0xUbk5HU3BOY0Qta2NOUHVJLXpfLTBwcUFWeWtSMWFPLTBoZDZv?oc=5"
+        ],
+        "source_dates": [
+          "2026-08-06"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_complaint_narratives_change",
+    "first_covered": "2026-08-24",
+    "last_covered": "2026-08-24",
+    "summary": "The CFPB will stop publicly posting unverified complaint narratives and related visualizations.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-24",
+        "summary": "The CFPB will stop publicly posting unverified complaint narratives and related visualizations.",
+        "source_urls": [
+          "https://www.consumerfinance.gov/about-us/newsroom/the-cfpb-is-correcting-flaws-to-restore-integrity-and-utility-to-the-consumer-complaint-system/"
+        ],
+        "source_dates": [
+          "2026-06-24"
+        ]
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_august_product_update",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Plaid released an August product update adding identity verification, bank linking, onboarding, and fraud features.",
+    "entities": [
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "vault",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "Plaid released an August product update adding identity verification, bank linking, onboarding, and fraud features.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_alkami_partnership",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Alkami expanded its Plaid integration to add account linking, financial visibility, and enriched transaction data in digital banking.",
+    "entities": [
+      "Alkami",
+      "Plaid"
+    ],
+    "roadmap_areas": [
+      "one_view",
+      "vault"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "Alkami expanded its Plaid integration to add account linking, financial visibility, and enriched transaction data in digital banking.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_devin_ai",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "Fiserv said it is partnering with Cognition to use Devin AI for core banking modernization.",
+    "entities": [
+      "Cognition",
+      "Fiserv"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "Fiserv said it is partnering with Cognition to use Devin AI for core banking modernization.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fincen_beneficial_ownership_rule",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "FinCEN finalized a rule ending beneficial ownership reporting for U.S. companies and persons, retaining limited reporting for some foreign companies.",
+    "entities": [
+      "FinCEN"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "FinCEN finalized a rule ending beneficial ownership reporting for U.S. companies and persons, retaining limited reporting for some foreign companies.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fdx_agentic_ai_standards",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "FDX launched standards work for safe financial data sharing with agentic AI, raising expectations for consent, identity, and audit controls.",
+    "entities": [
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "auth",
+      "vault",
+      "verify"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "FDX launched standards work for safe financial data sharing with agentic AI, raising expectations for consent, identity, and audit controls.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_fdx_open_banking_standard_setter",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "CFPB recognized FDX as the first standard-setting body for open banking, increasing its influence on the rule environment.",
+    "entities": [
+      "CFPB",
+      "FDX"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "CFPB recognized FDX as the first standard-setting body for open banking, increasing its influence on the rule environment.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_complaint_narrative_publication_change",
+    "first_covered": "2026-08-17",
+    "last_covered": "2026-08-17",
+    "summary": "CFPB said it will stop publishing unverified complaint narratives and visualizations.",
+    "entities": [
+      "CFPB"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-17",
+        "summary": "CFPB said it will stop publishing unverified complaint narratives and visualizations.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "plaid_sierra_bank_linking_agents",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "Plaid and Sierra partnered to embed secure bank account linking inside AI agent conversations.",
+    "entities": [
+      "Plaid",
+      "Sierra"
+    ],
+    "roadmap_areas": [
+      "vault"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-10",
+        "summary": "Plaid and Sierra partnered to embed secure bank account linking inside AI agent conversations.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "fiserv_cognition_devin_modernization",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "Fiserv partnered with Cognition to use Devin AI for core banking modernization.",
+    "entities": [
+      "Cognition",
+      "Devin AI",
+      "Fiserv"
+    ],
+    "roadmap_areas": [],
+    "events": [
+      {
+        "covered_on": "2026-08-10",
+        "summary": "Fiserv partnered with Cognition to use Devin AI for core banking modernization.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  },
+  {
+    "topic_key": "cfpb_1033_open_banking_rewrite",
+    "first_covered": "2026-08-10",
+    "last_covered": "2026-08-10",
+    "summary": "The CFPB’s Section 1033 open-banking rewrite moved back into active rulemaking, with a new proposal to OIRA and an interim final rule expected.",
+    "entities": [
+      "American Banker",
+      "Consumer Finance Monitor",
+      "Consumer Financial Protection Bureau",
+      "Office of Information and Regulatory Affairs"
+    ],
+    "roadmap_areas": [
+      "horizontal"
+    ],
+    "events": [
+      {
+        "covered_on": "2026-08-10",
+        "summary": "The CFPB’s Section 1033 open-banking rewrite moved back into active rulemaking, with a new proposal to OIRA and an interim final rule expected.",
+        "source_urls": [],
+        "source_dates": []
+      }
+    ]
+  }
+]
