@@ -78,13 +78,15 @@ def validate_weekly_brief(brief: str) -> None:
                     f"watchlist row {row_count} uses undefined references: "
                     + ", ".join(str(number) for number in sorted(undefined))
                 )
-    if row_count == 0:
-        errors.append("watchlist has no valid rows")
     surfaced = re.search(r"(?m)^\*\*Items surfaced:\*\*\s*(\d+)\s*$", brief)
     if not surfaced:
         errors.append("Items surfaced count is missing or malformed")
-    elif row_count > int(surfaced.group(1)):
-        errors.append("watchlist row count exceeds declared Items surfaced")
+    else:
+        surfaced_count = int(surfaced.group(1))
+        if row_count == 0 and surfaced_count != 0:
+            errors.append("watchlist has no valid rows")
+        elif row_count > surfaced_count:
+            errors.append("watchlist row count exceeds declared Items surfaced")
 
     if errors:
         raise BriefContractError("; ".join(errors))
