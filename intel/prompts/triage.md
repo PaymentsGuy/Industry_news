@@ -181,7 +181,8 @@ fences, no explanation):
   "headline_paraphrase": "<one neutral sentence in your own words, max 25 words>",
   "why_it_matters_for_asa": "<one sentence specific to ASA's roadmap, max 30 words>",
   "uncertainty_flags": ["<short tag>", "..."],
-  "duplicate_of_id": "<id of earlier item this duplicates, or null>"
+  "duplicate_of_id": "<id of earlier item this duplicates, or null>",
+  "classification": "material" | "monitor" | "noise" | "duplicate" | "needs_validation"
 }
 
 CRITICAL RULES:
@@ -193,6 +194,7 @@ CRITICAL RULES:
 - If signal_type is "regulatory", roadmap_areas should usually include
   "horizontal" unless the rule plainly targets a single product area.
 - Score 3 is RARE. Reserve it for signals that would change a quarterly plan.
+- Classification is durable: score 2–3 is material, score 1 is monitor, score 0 is noise, a duplicate is duplicate, and unresolved evidence is needs_validation.
 - Output ONLY valid JSON. No surrounding prose, no markdown code fences,
   no commentary before or after the object.
 

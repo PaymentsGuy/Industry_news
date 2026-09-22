@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "report_date": "2026-09-21",
+  "report_path": "report.md",
+  "report_sha256": "cbecaf1993c17cb5824cec66514120ae90c76c1cd80f3061558a84615a2064f3",
+  "atlas_backlink": "Atlas/competitive-intel/ASA Competitive Radar Weekly — 2026-09-21.md",
+  "transaction_id": "competitive-radar-2026-09-21-fixture-v1",
+  "evidence": [
+    {
+      "path": "evidence/channel-signal.md",
+      "sha256": "76f0d10fcad4857fc40d7ef067a7e6a7ca3f5829275798abd2b2d07fa75963fc"
+    },
+    {
+      "path": "evidence/pricing-signal.md",
+      "sha256": "f1e6cebd74cb681665897be3b6b9733bedbcebcb5e7fae151219164c249dfcb3"
+    }
+  ]
+}

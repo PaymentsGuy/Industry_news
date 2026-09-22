@@ -20,6 +20,8 @@ from typing import Any, Protocol
 import click
 import requests
 
+from .routing_contract import extract_daily_pulse_metadata, validate_industry_pulse_delivery
+
 DEFAULT_CHANNEL = "C0B1TPFSZKJ"
 SLACK_API = "https://slack.com/api"
 
@@ -98,24 +100,38 @@ def create_package(
     workspace_id: str,
     producer: str = "industry_news",
     workflow_run_id: str | None = None,
+    interval: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     body = canonical_body(brief_file.read_text(encoding="utf-8"))
     content_hash = sha256_text(body)
-    brief_id = f"asa-intelligence-brief-{brief_date}"
+    brief_id = (
+        f"industry-pulse-{brief_date}"
+        if cadence == "weekday_daily"
+        else f"asa-intelligence-brief-{brief_date}"
+    )
     transaction_id = _stable_id(brief_id, content_hash, producer, prefix="brief-delivery")
     client_msg_id = str(uuid.uuid5(uuid.NAMESPACE_URL, f"mios:{transaction_id}:{DEFAULT_CHANNEL}"))
     if not workspace_id:
         raise ValueError("Slack workspace identity is required")
+    classification_counts, signals = (
+        extract_daily_pulse_metadata(body, brief_id)
+        if cadence == "weekday_daily"
+        else ({"material": 0, "monitor": 0, "noise": 0, "duplicate": 0, "needs_validation": 0}, [])
+    )
     payload = {
         "version": 2,
         "brief_id": brief_id,
         "brief_date": brief_date,
         "cadence": cadence,
+        "interval": interval,
         "producer": producer,
         "canonical_body": body,
         "content_sha256": content_hash,
         "source_repository_path": str(brief_file),
         "transaction_id": transaction_id,
+        "classification_counts": classification_counts,
+        "material_signal_count": classification_counts["material"],
+        "signals": signals,
         "workflow_run_id": workflow_run_id or os.environ.get("GITHUB_RUN_ID") or None,
         "destinations": {
             "repository": {"status": "pending", "commit_sha": None},
@@ -130,10 +146,12 @@ def create_package(
         },
         "status": "pending",
     }
+    if cadence == "weekday_daily":
+        validate_industry_pulse_delivery(payload, body)
     if package_file.exists():
         existing = _read(package_file)
-        expected = (brief_id, brief_date, cadence, producer, content_hash, transaction_id, workspace_id, workflow_run_id or os.environ.get("GITHUB_RUN_ID") or None)
-        actual = (existing.get("brief_id"), existing.get("brief_date"), existing.get("cadence"), existing.get("producer"), existing.get("content_sha256"), existing.get("transaction_id"), existing.get("destinations", {}).get("slack", {}).get("workspace_id"), existing.get("workflow_run_id"))
+        expected = (brief_id, brief_date, cadence, interval, producer, content_hash, transaction_id, workspace_id, workflow_run_id or os.environ.get("GITHUB_RUN_ID") or None)
+        actual = (existing.get("brief_id"), existing.get("brief_date"), existing.get("cadence"), existing.get("interval"), existing.get("producer"), existing.get("content_sha256"), existing.get("transaction_id"), existing.get("destinations", {}).get("slack", {}).get("workspace_id"), existing.get("workflow_run_id"))
         if actual != expected:
             raise ValueError("existing delivery package has a different immutable identity")
         return existing
@@ -370,8 +388,11 @@ def cli() -> None:
 @click.option("--cadence", default="weekly")
 @click.option("--workspace-id", required=True)
 @click.option("--workflow-run-id", default=lambda: os.environ.get("GITHUB_RUN_ID", ""))
-def create_cmd(brief_file: Path, package_file: Path, brief_date: str, cadence: str, workspace_id: str, workflow_run_id: str) -> None:
-    click.echo(json.dumps(create_package(brief_file, package_file, brief_date=brief_date, cadence=cadence, workspace_id=workspace_id, workflow_run_id=workflow_run_id or None), indent=2))
+@click.option("--interval-start")
+@click.option("--interval-end")
+def create_cmd(brief_file: Path, package_file: Path, brief_date: str, cadence: str, workspace_id: str, workflow_run_id: str, interval_start: str | None, interval_end: str | None) -> None:
+    interval = {"start": interval_start, "end": interval_end} if interval_start and interval_end else None
+    click.echo(json.dumps(create_package(brief_file, package_file, brief_date=brief_date, cadence=cadence, workspace_id=workspace_id, workflow_run_id=workflow_run_id or None, interval=interval), indent=2))
 
 
 @cli.command("mark-repository")

@@ -1,0 +1,29 @@
+{
+  "brief_date": "2026-09-21",
+  "brief_id": "industry-pulse-2026-09-21",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-09-21\n\n**Reporting interval:** 2026-09-18T06:30:00-07:00 to 2026-09-21T06:30:00-07:00\n**Candidates classified:** 10\n**Material signals:** 6\n**Classification counts:** material=6; monitor=1; noise=1; duplicate=1; needs_validation=1\n\n## Top summary\n\nSix evidence-backed material changes were retained from the Friday-to-Monday interval; weekend collection is included exactly once.\n\n## Material signals\n\n### 1. Signal 1\nEvidence-backed material signal.\n\n### 2. Signal 2\nEvidence-backed material signal.\n\n### 3. Signal 3\nEvidence-backed material signal.\n\n### 4. Signal 4\nEvidence-backed material signal.\n\n### 5. Signal 5\nEvidence-backed material signal.\n\n### 6. Signal 6\nEvidence-backed material signal.\n\n## Candidate disposition\n\n| Signal | Classification | Evidence |\n|---|---|---|\n| signal-01 | material | evidence-01 |\n| signal-02 | material | evidence-02 |\n| signal-03 | material | evidence-03 |\n| signal-04 | material | evidence-04 |\n| signal-05 | material | evidence-05 |\n| signal-06 | material | evidence-06 |\n| signal-07 | monitor | evidence-07 |\n| signal-08 | noise | evidence-08 |\n| signal-09 | duplicate | evidence-02 |\n| signal-10 | needs_validation | evidence-10 |\n\n## References\n",
+  "classification_counts": {"duplicate": 1, "material": 6, "monitor": 1, "needs_validation": 1, "noise": 1},
+  "content_sha256": "44f0a79910f606e3bedc32f616ae4d1b8d2082c13d68347ed8e7fcba355d22f5",
+  "destinations": {
+    "repository": {"commit_sha": null, "status": "pending"},
+    "slack": {"attempt_count": 0, "channel_id": "C0B1TPFSZKJ", "client_msg_id": "d3d84f2c-574f-595b-ac43-b167e5a438a7", "status": "pending", "workspace_id": "T_FIXTURE"},
+    "vault": {"status": "pending"}
+  },
+  "interval": {"end": "2026-09-21T06:30:00-07:00", "start": "2026-09-18T06:30:00-07:00"},
+  "material_signal_count": 6,
+  "producer": "industry_news",
+  "signals": [
+    {"classification": "material", "signal_id": "signal-df1e5b8ef0b6a269aabfebf2", "title": "Signal 1"},
+    {"classification": "material", "signal_id": "signal-4f218e8d6c348d5bff158439", "title": "Signal 2"},
+    {"classification": "material", "signal_id": "signal-5b01ff19b4ba99b334b6a57d", "title": "Signal 3"},
+    {"classification": "material", "signal_id": "signal-dda4559a7c54350d07af9f75", "title": "Signal 4"},
+    {"classification": "material", "signal_id": "signal-f2872ad81dc77c180a389914", "title": "Signal 5"},
+    {"classification": "material", "signal_id": "signal-003ac4731b90758144e1fd67", "title": "Signal 6"}
+  ],
+  "source_repository_path": "tests/fixtures/industry_pulse/2026-09-21/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-a1bca3cff6fc61736705277f2c5115f5efd6777e2569aec55608697b61ab9a70",
+  "version": 2,
+  "workflow_run_id": "fixture"
+}

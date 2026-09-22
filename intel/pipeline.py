@@ -20,10 +20,11 @@ import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time as datetime_time, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 import click
 import feedparser
@@ -32,7 +33,7 @@ from requests import RequestException
 
 try:
     from intel import delivery
-    from intel.brief_contract import BriefContractError, validate_weekly_brief
+    from intel.brief_contract import BriefContractError, validate_daily_pulse, validate_weekly_brief
     from intel.update_ledger import validate_durable_registry
     from intel.llm_provider import (
         MissingProviderCredential,
@@ -41,7 +42,7 @@ try:
     )
 except ModuleNotFoundError:  # pragma: no cover - supports `python intel/pipeline.py`
     import delivery
-    from brief_contract import BriefContractError, validate_weekly_brief
+    from brief_contract import BriefContractError, validate_daily_pulse, validate_weekly_brief
     from update_ledger import validate_durable_registry
     from llm_provider import (
         MissingProviderCredential,
@@ -70,9 +71,7 @@ SYNTHESIS_TIMEOUT_SECONDS = 120  # large weekly prompts need more than the provi
 TRIAGE_CONCURRENCY = 3     # parallel triage calls
 TRIAGE_RELEVANCE_DROP = 2  # drop anything below this score
 RSS_ITEMS_PER_FEED = 10    # cap per feed; older items are stale
-SYNTHESIS_FRESHNESS_DAYS = 7
-SYNTHESIS_MAX_ITEMS = 12
-SYNTHESIS_MAX_PER_BUCKET = 3
+SYNTHESIS_FRESHNESS_DAYS = 4
 
 DEFAULT_HTTP_TIMEOUT = 30
 USER_AGENT = "asa-intel/0.1 (https://www.asavault.com)"
@@ -151,8 +150,8 @@ def strip_code_fences(text: str) -> str:
     return text.strip()
 
 
-def _published_on(item: dict) -> date | None:
-    """Normalize the RSS publication timestamp needed for weekly freshness."""
+def _published_at(item: dict) -> datetime | None:
+    """Normalize an RSS publication timestamp for interval enforcement."""
     value = str(item.get("_source_item", {}).get("published_date") or "").strip()
     if not value:
         return None
@@ -160,39 +159,51 @@ def _published_on(item: dict) -> date | None:
         parsed = parsedate_to_datetime(value)
         if parsed.tzinfo is None:
             parsed = parsed.replace(tzinfo=timezone.utc)
-        return parsed.date()
+        return parsed.astimezone(timezone.utc)
     except (TypeError, ValueError):
         try:
-            return datetime.fromisoformat(value.replace("Z", "+00:00")).date()
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            return parsed.astimezone(timezone.utc)
         except ValueError:
             return None
 
 
+def _published_on(item: dict) -> date | None:
+    published = _published_at(item)
+    return published.date() if published else None
+
+
+def pacific_report_interval(report_date: date) -> tuple[datetime, datetime]:
+    """Return the prior pulse boundary and this weekday's 06:30 PT boundary."""
+    if report_date.weekday() >= 5:
+        raise ValueError("Industry News Pulse report date must be a weekday")
+    zone = ZoneInfo("America/Los_Angeles")
+    end = datetime.combine(report_date, datetime_time(6, 30), tzinfo=zone)
+    days = 3 if report_date.weekday() == 0 else 1
+    return end - timedelta(days=days), end
+
+
 def _synthesis_catalog(surviving: list[dict], brief_date: date) -> tuple[list[dict], list[dict]]:
-    """Return a bounded, fresh, source-numbered set for one weekly brief."""
-    cutoff = brief_date - timedelta(days=SYNTHESIS_FRESHNESS_DAYS)
+    """Return every fresh material signal in deterministic source order."""
+    start, end = pacific_report_interval(brief_date)
     fresh = [
         item for item in surviving
-        if (published := _published_on(item)) is not None and cutoff <= published <= brief_date
+        if (published := _published_at(item)) is not None and start <= published < end
     ]
     fresh.sort(
         key=lambda item: (
             -int(item.get("relevance_score", 0) or 0),
-            -(_published_on(item) or date.min).toordinal(),
+            -int((_published_at(item) or datetime.min.replace(tzinfo=timezone.utc)).timestamp()),
             str(item.get("id") or ""),
         )
     )
 
-    selected: list[dict] = []
-    bucket_counts: dict[str, int] = {}
-    for item in fresh:
-        bucket = str(item.get("watchlist_bucket") or "other")
-        if bucket_counts.get(bucket, 0) >= SYNTHESIS_MAX_PER_BUCKET:
-            continue
-        selected.append(item)
-        bucket_counts[bucket] = bucket_counts.get(bucket, 0) + 1
-        if len(selected) == SYNTHESIS_MAX_ITEMS:
-            break
+    selected = [
+        item for item in fresh
+        if str(item.get("classification") or "material") == "material"
+    ]
 
     catalog: list[dict] = []
     cataloged: list[dict] = []
@@ -239,11 +250,12 @@ def _materialize_references(brief: str, catalog: list[dict]) -> str:
             f'{number}. {entry["publisher"]}, "{title}," {entry["date"]}. '
             f'{entry["url"]} — *{entry["why_it_matters"]}.*'
         )
-    body = re.sub(
-        r"(?m)^\*\*Items surfaced:\*\*\s*\d+\s*$",
-        f"**Items surfaced:** {_watchlist_row_count(body)}",
-        body,
-    )
+    if brief.startswith("# ASA Weekly Intelligence Brief"):
+        body = re.sub(
+            r"(?m)^\*\*Items surfaced:\*\*\s*\d+\s*$",
+            f"**Items surfaced:** {_watchlist_row_count(body)}",
+            body,
+        )
     return body + "\n\n## References\n\n" + "\n".join(references)
 
 
@@ -372,6 +384,7 @@ def triage_error_record(item: dict) -> dict:
         "why_it_matters_for_asa": "[triage error - see logs]",
         "uncertainty_flags": ["triage_error"],
         "duplicate_of_id": None,
+        "classification": "needs_validation",
         "_source_item": item,
     }
 
@@ -412,6 +425,16 @@ def call_perplexity_triage(
             temperature=TRIAGE_TEMP,
         )
         parsed = json.loads(strip_code_fences(text))
+        if parsed.get("duplicate_of_id"):
+            parsed["classification"] = "duplicate"
+        elif parsed.get("uncertainty_flags"):
+            parsed["classification"] = "needs_validation"
+        elif int(parsed.get("relevance_score", 0) or 0) >= TRIAGE_RELEVANCE_DROP:
+            parsed["classification"] = "material"
+        elif int(parsed.get("relevance_score", 0) or 0) == 1:
+            parsed["classification"] = "monitor"
+        else:
+            parsed["classification"] = "noise"
         parsed["_source_item"] = item
         return parsed
     except Exception as e:
@@ -529,10 +552,21 @@ def synthesize_brief(
         synthesis_items, reference_catalog = surviving, []
     template = load_prompt("synthesis")
     today_iso = (brief_date or date.today()).isoformat()
+    report_start, report_end = pacific_report_interval(brief_date or date.today())
+    interval_triaged = [
+        item for item in triaged
+        if (published := _published_at(item)) is not None and report_start <= published < report_end
+    ]
+    classification_counts = {
+        name: sum(1 for item in interval_triaged if str(item.get("classification") or ("material" if int(item.get("relevance_score", 0) or 0) >= TRIAGE_RELEVANCE_DROP else "monitor")) == name)
+        for name in ("material", "monitor", "noise", "duplicate", "needs_validation")
+    }
     prompt = render_prompt(
         template,
         today_iso=today_iso,
-        items_reviewed_count=len(triaged),
+        reporting_interval=f"{report_start.isoformat()} to {report_end.isoformat()}",
+        classification_counts_json=json.dumps(classification_counts, sort_keys=True),
+        items_reviewed_count=len(interval_triaged),
         triaged_items_json=json.dumps(synthesis_items, ensure_ascii=False, indent=2),
         reference_catalog_json=json.dumps(reference_catalog, ensure_ascii=False, indent=2),
         topic_ledger_json=json.dumps(ledger, ensure_ascii=False, indent=2),
@@ -580,7 +614,14 @@ def synthesize_brief(
                 log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempts, exc)
                 continue
         try:
-            validate_weekly_brief(candidate)
+            if candidate.startswith("# ASA Weekly Intelligence Brief"):
+                validate_weekly_brief(candidate)
+            else:
+                validate_daily_pulse(
+                    candidate,
+                    expected_interval=(report_start, report_end),
+                    expected_material_count=len(synthesis_items),
+                )
         except BriefContractError as exc:
             contract_attempts += 1
             last_error = exc
@@ -589,7 +630,7 @@ def synthesize_brief(
         brief = candidate
         break
     if brief is None:
-        raise BriefContractError(f"weekly brief contract failed after 3 attempts: {last_error}")
+        raise BriefContractError(f"daily pulse contract failed after 3 attempts: {last_error}")
 
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(brief, encoding="utf-8")

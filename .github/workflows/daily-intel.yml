@@ -1,14 +1,14 @@
-name: Weekly Intel Brief
+name: Weekday Industry News Pulse
 
 on:
   schedule:
-    # Weekly Monday 12:00 UTC = 5:00 AM Pacific (during PDT), 4:00 AM (PST).
-    # Brief lands in Slack by 8 AM PT either way.
-    - cron: '0 12 * * 1'
-  workflow_dispatch:    # allow manual runs from the Actions tab
+    # Two UTC candidates plus a Pacific-time guard preserve 06:30 PT across DST.
+    - cron: '30 13 * * 1-5'
+    - cron: '30 14 * * 1-5'
+  workflow_dispatch:
 
 permissions:
-  contents: write       # required to commit the weekly brief back to the repo
+  contents: write
 
 concurrency:
   group: daily-intel
@@ -17,8 +17,7 @@ concurrency:
 jobs:
   brief:
     runs-on: ubuntu-latest
-    timeout-minutes: 60   # was 20; ledger pipeline is ~5min slower
-
+    timeout-minutes: 60
     env:
       PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -41,94 +40,82 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Set DATE env
+      - name: Verify Pacific weekday run boundary
+        id: eligibility
+        run: python intel/schedule.py
+
+      - name: Set pulse identity
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
-          echo "DATE=$(date -u +%F)" >> "$GITHUB_ENV"
+          echo "DATE=${{ steps.eligibility.outputs.report_date }}" >> "$GITHUB_ENV"
+          echo "INTERVAL_START=${{ steps.eligibility.outputs.interval_start }}" >> "$GITHUB_ENV"
+          echo "INTERVAL_END=${{ steps.eligibility.outputs.interval_end }}" >> "$GITHUB_ENV"
 
       - name: Find most recent prior ledger
-        # Look back up to 120 days for the most recent 90-day context ledger. We can't
-        # assume last week's run exists — runs can be skipped, repos can be branched.
-        id: find_ledger
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
           PRIOR_LEDGER=""
           for i in $(seq 1 120); do
             CHECK_DATE=$(date -u -d "${i} days ago" +%F 2>/dev/null || date -u -v-${i}d +%F)
             CANDIDATE="intel/${CHECK_DATE}/ledger.json"
-            if [ -f "$CANDIDATE" ]; then
-              PRIOR_LEDGER="$CANDIDATE"
-              echo "Found prior ledger: $PRIOR_LEDGER"
-              break
-            fi
+            if [ -f "$CANDIDATE" ]; then PRIOR_LEDGER="$CANDIDATE"; break; fi
           done
-          if [ -z "$PRIOR_LEDGER" ]; then
-            echo "No prior context ledger found in the last 120 days; durable event dedup remains active"
-          fi
           echo "PRIOR_LEDGER=$PRIOR_LEDGER" >> "$GITHUB_ENV"
 
       - name: Collect raw signal
+        if: steps.eligibility.outputs.eligible == 'true'
         run: python intel/pipeline.py collect --out-dir intel/${DATE}
 
-      - name: Stage 1 — triage
-        run: |
-          python intel/pipeline.py triage \
-            --in-file  intel/${DATE}/raw.jsonl \
-            --out-file intel/${DATE}/triaged.jsonl
+      - name: Stage 1 — classify every candidate
+        if: steps.eligibility.outputs.eligible == 'true'
+        run: python intel/pipeline.py triage --in-file intel/${DATE}/raw.jsonl --out-file intel/${DATE}/triaged.jsonl
 
-      - name: Stage 2 — synthesize (with ledger dedup)
+      - name: Stage 2 — synthesize uncapped material pulse
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
-          if [ -n "${PRIOR_LEDGER}" ]; then
-            python intel/pipeline.py synthesize \
-              --in-file      intel/${DATE}/triaged.jsonl \
-              --out-file     intel/${DATE}/brief.md \
-              --prior-ledger "${PRIOR_LEDGER}" \
-              --event-registry intel/event_registry.json \
-              --brief-date "${DATE}"
-          else
-            python intel/pipeline.py synthesize \
-              --in-file  intel/${DATE}/triaged.jsonl \
-              --out-file intel/${DATE}/brief.md \
-              --event-registry intel/event_registry.json \
-              --brief-date "${DATE}"
-          fi
+          ARGS=""
+          if [ -n "${PRIOR_LEDGER}" ]; then ARGS="--prior-ledger ${PRIOR_LEDGER}"; fi
+          python intel/pipeline.py synthesize \
+            --in-file intel/${DATE}/triaged.jsonl \
+            --out-file intel/${DATE}/brief.md \
+            ${ARGS} \
+            --event-registry intel/event_registry.json \
+            --brief-date "${DATE}"
 
       - name: Update topic ledger
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
-          if [ -n "${PRIOR_LEDGER}" ]; then
-            python intel/update_ledger.py \
-              --brief-file    intel/${DATE}/brief.md \
-              --prior-ledger  "${PRIOR_LEDGER}" \
-              --ledger-out    intel/${DATE}/ledger.json \
-              --event-registry intel/event_registry.json
-          else
-            python intel/update_ledger.py \
-              --brief-file  intel/${DATE}/brief.md \
-              --ledger-out  intel/${DATE}/ledger.json \
-              --event-registry intel/event_registry.json
-          fi
+          ARGS=""
+          if [ -n "${PRIOR_LEDGER}" ]; then ARGS="--prior-ledger ${PRIOR_LEDGER}"; fi
+          python intel/update_ledger.py \
+            --brief-file intel/${DATE}/brief.md \
+            ${ARGS} \
+            --ledger-out intel/${DATE}/ledger.json \
+            --event-registry intel/event_registry.json
 
       - name: Create receipt-bound delivery package
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
           python intel/delivery.py create \
             --brief-file intel/${DATE}/brief.md \
             --package-file intel/${DATE}/delivery.json \
             --brief-date ${DATE} \
-            --cadence weekly \
+            --cadence weekday_daily \
+            --interval-start "${INTERVAL_START}" \
+            --interval-end "${INTERVAL_END}" \
             --workspace-id "${SLACK_TEAM_ID}" \
             --workflow-run-id "${GITHUB_RUN_ID}"
 
       - name: Commit canonical artifact and delivery package
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
-          git config user.name  "asa-intel-bot"
+          git config user.name "asa-intel-bot"
           git config user.email "asa-intel-bot@users.noreply.github.com"
           git add intel/${DATE}/ intel/event_registry.json
-          if git diff --cached --quiet; then
-            echo "Nothing to commit (quiet day)."
-          else
-            git commit -m "intel: brief ${DATE}"
-            git push
-          fi
+          git diff --cached --quiet || (git commit -m "intel: pulse ${DATE}" && git push)
 
       - name: Bind repository receipt
+        if: steps.eligibility.outputs.eligible == 'true'
         run: |
           python intel/delivery.py mark-repository \
             --package-file intel/${DATE}/delivery.json \
@@ -137,19 +124,17 @@ jobs:
           git diff --cached --quiet || (git commit -m "intel: repository receipt ${DATE}" && git push)
 
       - name: Deliver and read back Slack message
-        run: |
-          python intel/delivery.py resume-slack \
-            --package-file intel/${DATE}/delivery.json \
-            --channel "${SLACK_CHANNEL_ID}"
+        if: steps.eligibility.outputs.eligible == 'true'
+        run: python intel/delivery.py resume-slack --package-file intel/${DATE}/delivery.json --channel "${SLACK_CHANNEL_ID}"
 
       - name: Commit Slack delivery receipt
-        if: always()
+        if: always() && steps.eligibility.outputs.eligible == 'true'
         run: |
           git add intel/${DATE}/delivery.json
           git diff --cached --quiet || (git commit -m "intel: Slack delivery receipt ${DATE}" && git push)
 
-      - name: Upload artifacts (always, even on failure)
-        if: always()
+      - name: Upload artifacts
+        if: always() && steps.eligibility.outputs.eligible == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: intel-${{ env.DATE }}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>ai.hermes.asa-industry-news-vault-bridge</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/troymaas/.local/share/asa-industry-news/repo/scripts/run_local_vault_bridge</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StartInterval</key>
+  <integer>300</integer>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>StandardOutPath</key>
+  <string>/Users/troymaas/Library/Logs/asa-industry-news-vault-bridge.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/troymaas/Library/Logs/asa-industry-news-vault-bridge.error.log</string>
+</dict>
+</plist>
