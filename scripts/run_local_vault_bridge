@@ -3,7 +3,6 @@ set -eu
 
 APP_ROOT="${ASA_INDUSTRY_NEWS_ROOT:-$HOME/.local/share/asa-industry-news}"
 REPO="$APP_ROOT/repo"
-BRIDGE_REF="${ASA_INDUSTRY_NEWS_REF:-feat/asa-intelligence-routing}"
 VAULT_ROOT="${ASA_VAULT_ROOT:-$HOME/Documents/Documents - Troy’s MacBook Air/Main local Vault}"
 
 if [ ! -d "$REPO/.git" ]; then
@@ -11,13 +10,36 @@ if [ ! -d "$REPO/.git" ]; then
   exit 1
 fi
 
-git -C "$REPO" pull --ff-only origin "$BRIDGE_REF"
+git -C "$REPO" switch main
+git -C "$REPO" pull --ff-only origin main
 export MIOS_VAULT_RECEIPT_KEY="$(security find-generic-password -w -s ai.hermes.asa-industry-news.vault-receipt)"
 export ACTION_OS_INDUSTRY_NEWS_CAPABILITY="$(security find-generic-password -w -s ai.hermes.asa-industry-news.action-os)"
 export ACTION_OS_URL="${ACTION_OS_URL:-http://127.0.0.1:8890}"
 
 cd "$REPO"
-exec "$HOME/.local/bin/uv" run --with-requirements "$REPO/requirements.txt" \
+bridge_status=0
+"$HOME/.local/bin/uv" run --with-requirements "$REPO/requirements.txt" \
   python -m intel.vault_bridge \
   --package-root "$REPO/intel" \
-  --vault-root "$VAULT_ROOT"
+  --vault-root "$VAULT_ROOT" || bridge_status=$?
+
+for receipt in intel/*/delivery.json intel/*/vault-receipt.json; do
+  if [ -f "$receipt" ]; then git add -- "$receipt"; fi
+done
+if ! git diff --cached --quiet; then
+  git -c user.name=asa-intel-bot -c user.email=asa-intel-bot@users.noreply.github.com \
+    commit -m "intel: publish Vault delivery receipts"
+  git push origin main
+fi
+"$HOME/.local/bin/uv" run --with-requirements "$REPO/requirements.txt" \
+  python -m intel.action_os_handoff \
+  --package-root "$REPO/intel" --action-os-url "$ACTION_OS_URL" || bridge_status=$?
+for receipt in intel/*/action-os-receipt.json; do
+  if [ -f "$receipt" ]; then git add -- "$receipt"; fi
+done
+if ! git diff --cached --quiet; then
+  git -c user.name=asa-intel-bot -c user.email=asa-intel-bot@users.noreply.github.com \
+    commit -m "intel: publish Action OS review readbacks"
+  git push origin main
+fi
+exit "$bridge_status"

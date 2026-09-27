@@ -14,12 +14,12 @@ def test_runner_guard_selects_weekday_0630_pacific_across_dst() -> None:
 
 def test_runner_guard_rejects_weekend_and_wrong_local_time() -> None:
     assert not is_eligible_pacific_run(datetime(2026, 7, 5, 13, 30, tzinfo=ZoneInfo("UTC")))
-    assert not is_eligible_pacific_run(datetime(2026, 7, 6, 14, 30, tzinfo=ZoneInfo("UTC")))
+    assert not is_eligible_pacific_run(datetime(2026, 7, 6, 13, 29, tzinfo=ZoneInfo("UTC")))
 
 
 def test_workflow_uses_dst_safe_guard_and_weekday_daily_identity() -> None:
     workflow = (Path(__file__).parents[1] / ".github" / "workflows" / "daily-intel.yml").read_text()
     assert "30 13 * * 1-5" in workflow
     assert "30 14 * * 1-5" in workflow
-    assert "python intel/schedule.py" in workflow
+    assert "python intel/schedule.py --scheduled-cron" in workflow
     assert "cadence weekday_daily" in workflow

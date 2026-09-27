@@ -9,19 +9,26 @@ from zoneinfo import ZoneInfo
 PACIFIC = ZoneInfo("America/Los_Angeles")
 
 
-def is_eligible_pacific_run(moment: datetime) -> bool:
+def is_eligible_pacific_run(moment: datetime, *, scheduled_cron: str = "") -> bool:
     if moment.tzinfo is None:
         raise ValueError("schedule guard requires a timezone-aware datetime")
     local = moment.astimezone(PACIFIC)
-    return local.weekday() < 5 and (local.hour, local.minute) == (6, 30)
+    if local.weekday() >= 5 or (local.hour, local.minute) < (6, 30):
+        return False
+    if scheduled_cron:
+        scheduled_hour = {"30 13 * * 1-5": 13, "30 14 * * 1-5": 14}.get(scheduled_cron)
+        nominal = local.replace(hour=6, minute=30, second=0, microsecond=0)
+        return scheduled_hour is not None and nominal.astimezone(ZoneInfo("UTC")).hour == scheduled_hour
+    return True
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Emit DST-safe weekday 06:30 PT eligibility")
     parser.add_argument("--at", help="ISO-8601 instant; defaults to now")
+    parser.add_argument("--scheduled-cron", default="", help="GitHub schedule expression; empty for manual recovery")
     args = parser.parse_args()
     moment = datetime.fromisoformat(args.at.replace("Z", "+00:00")) if args.at else datetime.now(tz=ZoneInfo("UTC"))
-    eligible = is_eligible_pacific_run(moment)
+    eligible = is_eligible_pacific_run(moment, scheduled_cron=args.scheduled_cron)
     local = moment.astimezone(PACIFIC)
     output = os.environ.get("GITHUB_OUTPUT")
     if output:

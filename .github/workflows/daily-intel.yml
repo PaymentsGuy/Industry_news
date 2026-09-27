@@ -42,7 +42,7 @@ jobs:
 
       - name: Verify Pacific weekday run boundary
         id: eligibility
-        run: python intel/schedule.py
+        run: python intel/schedule.py --scheduled-cron '${{ github.event.schedule }}'
 
       - name: Set pulse identity
         if: steps.eligibility.outputs.eligible == 'true'

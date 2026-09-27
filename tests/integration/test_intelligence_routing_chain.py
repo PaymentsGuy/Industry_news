@@ -19,6 +19,7 @@ sys.path[:0] = [
 ]
 
 import action_os_industry_news_intake as action_os_intake
+from intel.action_os_handoff import publish_review_packets
 from chief_of_staff.industry_news import IndustryNewsSourceAdapter, build_industry_news_projection
 from competitive_radar_mios_bridge import bridge_package
 from competitive_radar_package import emit_package
@@ -100,22 +101,17 @@ def test_isolated_industry_and_radar_chain_has_read_only_consumers_and_no_downst
     assert projection["daily"]["material_count"] == 6
     assert projection["external_writes_performed"] is False
 
-    action_payload = {
-        "pulse_id": "industry-pulse-2026-09-21",
-        "pulse_sha256": json.loads(package_path.read_text())["content_sha256"],
-        "pulse_link": package_path.as_uri(),
-        "signal_id": "signal-0",
-        "evidence_link": "https://evidence.example/0",
-        "classification": "material",
-        "proposed_decision": "Review the signal",
-        "proposed_next_action": "Assign follow-up",
-        "proposed_owner": "Troy",
-    }
-    action_payload["idempotency_key"] = "industry-news:" + hashlib.sha256(
-        json.dumps({"pulse_id": action_payload["pulse_id"], "signal_id": action_payload["signal_id"]}, sort_keys=True, separators=(",", ":")).encode()
-    ).hexdigest()[:24]
-    candidate = action_os_intake.submit_candidate(action_payload, root=tmp_path / "action-os", occurred_at="2026-09-21T07:00:00-07:00")
-    assert candidate["external_writes_performed"] is False
+    action_root = tmp_path / "action-os"
+    def local_action_os(method, path, payload, capability):
+        assert capability == "fixture-capability"
+        if method == "POST":
+            return action_os_intake.submit_candidate(payload, root=action_root, occurred_at="2026-09-21T07:00:00-07:00")
+        assert method == "GET"
+        return action_os_intake.read_candidate(root=action_root, candidate_id=path.rsplit("/", 1)[-1])
+    handoff = publish_review_packets(package_path, base_url="http://127.0.0.1:8890", capability="fixture-capability", request_json=local_action_os)
+    assert handoff["status"] == "verified"
+    assert len(handoff["candidate_ids"]) == 6
+    assert len(action_os_intake.list_candidates(root=action_root)) == 6
 
     vault = tmp_path / "radar-vault"
     report = vault / "Atlas/competitive-intel/ASA Competitive Radar Weekly — 2026-09-21.md"
