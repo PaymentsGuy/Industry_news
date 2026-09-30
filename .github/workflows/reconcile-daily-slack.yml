@@ -1,0 +1,54 @@
+name: Reconcile Daily Industry News Slack Receipt
+
+on:
+  workflow_dispatch:
+    inputs:
+      brief_date:
+        description: "Existing weekday pulse date (YYYY-MM-DD)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-intel
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DATE: ${{ inputs.brief_date }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_CHANNEL_ID: C0B1TPFSZKJ
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Verify existing ambiguous daily delivery
+        run: |
+          python - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          day = os.environ['DATE']
+          if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', day):
+              raise SystemExit('invalid daily pulse date')
+          package = json.loads(Path(f'intel/{day}/delivery.json').read_text())
+          if (package['brief_date'] != day or package['cadence'] != 'weekday_daily'
+              or package['destinations']['repository']['status'] != 'verified'
+              or package['destinations']['slack']['status'] not in {'ambiguous_outcome', 'attempting'}):
+              raise SystemExit('expected existing ambiguous daily Slack delivery')
+          PY
+      - name: Reconcile Slack by exact native client identity and content hash
+        run: python -m intel.delivery resume-slack --package-file intel/${DATE}/delivery.json --channel "${SLACK_CHANNEL_ID}"
+      - name: Commit verified Slack receipt
+        run: |
+          git config user.name "asa-intel-bot"
+          git config user.email "asa-intel-bot@users.noreply.github.com"
+          git add intel/${DATE}/delivery.json
+          git diff --cached --quiet || (git commit -m "intel: reconcile Slack receipt ${DATE}" && git push)

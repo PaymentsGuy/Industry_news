@@ -9,8 +9,10 @@ from __future__ import annotations
 
 import hashlib
 import hmac
+import html
 import json
 import os
+import re
 import tempfile
 import uuid
 import subprocess
@@ -216,7 +218,7 @@ def _verify_slack_message(package: dict[str, Any], message: dict[str, Any], *, e
         raise AmbiguousDelivery("Slack native readback identity mismatch")
     if message.get("client_msg_id") != row.get("client_msg_id") or not message.get("permalink"):
         raise AmbiguousDelivery("Slack native readback identity mismatch")
-    actual = sha256_text(canonical_body(str(message.get("text", ""))))
+    actual = sha256_text(canonical_body(_slack_plain_text(str(message.get("text", "")))))
     if actual != package["content_sha256"]:
         raise ValueError("Slack native readback content hash mismatch")
     row.update(
@@ -227,6 +229,42 @@ def _verify_slack_message(package: dict[str, Any], message: dict[str, Any], *, e
             "readback_sha256": actual,
         }
     )
+    _refresh_status(package)
+    return package
+
+
+def _slack_plain_text(text: str) -> str:
+    """Undo Slack's display-only link escaping before comparing native readback."""
+    text = re.sub(r"<(https?://[^<>|]+)\|([^<>]+)>", r"\2", text)
+    text = re.sub(r"<(https?://[^<>]+)>", r"\1", text)
+    return html.unescape(text)
+
+
+def _verify_slack_parts(package: dict[str, Any], messages: list[dict[str, Any]]) -> dict[str, Any]:
+    if len(messages) == 1:
+        return _verify_slack_message(package, messages[0])
+    row = package["destinations"]["slack"]
+    parts = sorted(messages, key=lambda message: str(message.get("ts", "")))
+    stamps = [str(part.get("ts", "")) for part in parts]
+    if len(set(stamps)) != len(stamps) or any(
+        not re.fullmatch(r"\d+\.\d+", ts)
+        or part.get("client_msg_id") != row["client_msg_id"]
+        or not part.get("permalink")
+        for ts, part in zip(stamps, parts)
+    ):
+        raise AmbiguousDelivery("Slack native readback identity mismatch")
+    fragments = [_slack_plain_text(str(part.get("text", ""))) for part in parts]
+    expected = package["content_sha256"]
+    if not any(
+        sha256_text(canonical_body(separator.join(fragments))) == expected
+        for separator in ("", "\n", "\n\n")
+    ):
+        raise AmbiguousDelivery("Slack native readback content hash mismatch")
+    row.update({
+        "status": "verified", "message_ts": stamps[0],
+        "message_timestamps": stamps, "permalink": parts[0]["permalink"],
+        "readback_sha256": expected,
+    })
     _refresh_status(package)
     return package
 
@@ -243,16 +281,17 @@ def resume_slack(package_file: Path, client: SlackClient, *, channel: str) -> di
 
     client_msg_id = row["client_msg_id"]
     matches = client.find_by_client_msg_id(channel=channel, client_msg_id=client_msg_id)
-    if len(matches) == 1:
-        package = _verify_slack_message(package, matches[0])
+    if matches:
+        try:
+            package = _verify_slack_parts(package, matches)
+        except (AmbiguousDelivery, ValueError):
+            row["status"] = "ambiguous_outcome"
+            _refresh_status(package)
+            _atomic_json(package_file, package)
+            raise
         _atomic_json(package_file, package)
         return package
-    if len(matches) > 1:
-        row["status"] = "ambiguous_outcome"
-        _refresh_status(package)
-        _atomic_json(package_file, package)
-        raise AmbiguousDelivery("Multiple Slack messages share the deterministic client identity")
-    if row["status"] == "ambiguous_outcome":
+    if row["status"] in {"ambiguous_outcome", "attempting"}:
         raise AmbiguousDelivery("Slack outcome is ambiguous; unique native reconciliation is required before retry")
 
     row["attempt_count"] = int(row.get("attempt_count", 0)) + 1
@@ -276,19 +315,22 @@ def resume_slack(package_file: Path, client: SlackClient, *, channel: str) -> di
         _atomic_json(package_file, package)
         raise RuntimeError(f"Slack rejected delivery: {row['last_error']}")
     try:
-        message = client.get_message(channel=channel, ts=ts)
+        matches = client.find_by_client_msg_id(channel=channel, client_msg_id=client_msg_id)
+        if matches:
+            package = _verify_slack_parts(package, matches)
+        else:
+            message = client.get_message(channel=channel, ts=ts)
+            if message is None:
+                raise AmbiguousDelivery("Slack acknowledged the write but native readback failed")
+            package = _verify_slack_message(package, message, expected_ts=ts)
     except Exception as exc:
         row["status"] = "ambiguous_outcome"
         row["last_error"] = type(exc).__name__
         _refresh_status(package)
         _atomic_json(package_file, package)
+        if isinstance(exc, AmbiguousDelivery):
+            raise
         raise AmbiguousDelivery("Slack acknowledged the write but native readback outcome is ambiguous") from exc
-    if message is None:
-        row["status"] = "ambiguous_outcome"
-        _refresh_status(package)
-        _atomic_json(package_file, package)
-        raise AmbiguousDelivery("Slack acknowledged the write but native readback failed")
-    package = _verify_slack_message(package, message, expected_ts=ts)
     _atomic_json(package_file, package)
     return package
 
@@ -355,12 +397,14 @@ class SlackWebApiClient:
                 return messages
 
     def find_by_client_msg_id(self, *, channel: str, client_msg_id: str) -> list[dict[str, Any]]:
-        return [row for row in self._history(channel) if row.get("client_msg_id") == client_msg_id]
+        matches = [dict(row) for row in self._history(channel) if row.get("client_msg_id") == client_msg_id]
+        for row in matches:
+            row["permalink"] = self._call("chat.getPermalink", {"channel": channel, "message_ts": row["ts"]}).get("permalink")
+        return matches
 
     def get_message(self, *, channel: str, ts: str) -> dict[str, Any] | None:
-        data = self._call("conversations.replies", {"channel": channel, "ts": ts, "limit": 1})
-        rows = list(data.get("messages", []))
-        if not rows:
+        rows = [dict(row) for row in self._history(channel) if str(row.get("ts")) == ts]
+        if len(rows) != 1:
             return None
         row = dict(rows[0])
         row["permalink"] = self._call("chat.getPermalink", {"channel": channel, "message_ts": ts}).get("permalink")
