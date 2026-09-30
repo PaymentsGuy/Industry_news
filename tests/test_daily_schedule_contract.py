@@ -21,5 +21,13 @@ def test_workflow_uses_dst_safe_guard_and_weekday_daily_identity() -> None:
     workflow = (Path(__file__).parents[1] / ".github" / "workflows" / "daily-intel.yml").read_text()
     assert "30 13 * * 1-5" in workflow
     assert "30 14 * * 1-5" in workflow
-    assert "python intel/schedule.py --scheduled-cron" in workflow
+    assert "python -m intel.schedule --scheduled-cron" in workflow
+    assert "python -m intel.pipeline collect" in workflow
+    assert "python -m intel.pipeline triage" in workflow
+    assert "python -m intel.pipeline synthesize" in workflow
+    assert "python -m intel.update_ledger" in workflow
+    assert "python -m intel.delivery create" in workflow
+    assert "python -m intel.delivery mark-repository" in workflow
+    assert "python -m intel.delivery resume-slack" in workflow
+    assert "python intel/" not in workflow
     assert "cadence weekday_daily" in workflow

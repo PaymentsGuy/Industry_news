@@ -42,7 +42,7 @@ jobs:
 
       - name: Verify Pacific weekday run boundary
         id: eligibility
-        run: python intel/schedule.py --scheduled-cron '${{ github.event.schedule }}'
+        run: python -m intel.schedule --scheduled-cron '${{ github.event.schedule }}'
 
       - name: Set pulse identity
         if: steps.eligibility.outputs.eligible == 'true'
@@ -64,18 +64,18 @@ jobs:
 
       - name: Collect raw signal
         if: steps.eligibility.outputs.eligible == 'true'
-        run: python intel/pipeline.py collect --out-dir intel/${DATE}
+        run: python -m intel.pipeline collect --out-dir intel/${DATE}
 
       - name: Stage 1 — classify every candidate
         if: steps.eligibility.outputs.eligible == 'true'
-        run: python intel/pipeline.py triage --in-file intel/${DATE}/raw.jsonl --out-file intel/${DATE}/triaged.jsonl
+        run: python -m intel.pipeline triage --in-file intel/${DATE}/raw.jsonl --out-file intel/${DATE}/triaged.jsonl
 
       - name: Stage 2 — synthesize uncapped material pulse
         if: steps.eligibility.outputs.eligible == 'true'
         run: |
           ARGS=""
           if [ -n "${PRIOR_LEDGER}" ]; then ARGS="--prior-ledger ${PRIOR_LEDGER}"; fi
-          python intel/pipeline.py synthesize \
+          python -m intel.pipeline synthesize \
             --in-file intel/${DATE}/triaged.jsonl \
             --out-file intel/${DATE}/brief.md \
             ${ARGS} \
@@ -87,7 +87,7 @@ jobs:
         run: |
           ARGS=""
           if [ -n "${PRIOR_LEDGER}" ]; then ARGS="--prior-ledger ${PRIOR_LEDGER}"; fi
-          python intel/update_ledger.py \
+          python -m intel.update_ledger \
             --brief-file intel/${DATE}/brief.md \
             ${ARGS} \
             --ledger-out intel/${DATE}/ledger.json \
@@ -96,7 +96,7 @@ jobs:
       - name: Create receipt-bound delivery package
         if: steps.eligibility.outputs.eligible == 'true'
         run: |
-          python intel/delivery.py create \
+          python -m intel.delivery create \
             --brief-file intel/${DATE}/brief.md \
             --package-file intel/${DATE}/delivery.json \
             --brief-date ${DATE} \
@@ -117,7 +117,7 @@ jobs:
       - name: Bind repository receipt
         if: steps.eligibility.outputs.eligible == 'true'
         run: |
-          python intel/delivery.py mark-repository \
+          python -m intel.delivery mark-repository \
             --package-file intel/${DATE}/delivery.json \
             --commit-sha "$(git rev-parse HEAD)"
           git add intel/${DATE}/delivery.json
@@ -125,7 +125,7 @@ jobs:
 
       - name: Deliver and read back Slack message
         if: steps.eligibility.outputs.eligible == 'true'
-        run: python intel/delivery.py resume-slack --package-file intel/${DATE}/delivery.json --channel "${SLACK_CHANNEL_ID}"
+        run: python -m intel.delivery resume-slack --package-file intel/${DATE}/delivery.json --channel "${SLACK_CHANNEL_ID}"
 
       - name: Commit Slack delivery receipt
         if: always() && steps.eligibility.outputs.eligible == 'true'

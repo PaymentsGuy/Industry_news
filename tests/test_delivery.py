@@ -306,9 +306,9 @@ def test_pipeline_publish_delegates_to_delivery_owner_and_has_no_webhook_posting
 
 def test_workflow_commits_package_before_slack_and_commits_receipt_afterward():
     workflow = (Path(__file__).parents[1] / ".github" / "workflows" / "daily-intel.yml").read_text(encoding="utf-8")
-    create_at = workflow.index("intel/delivery.py create")
+    create_at = workflow.index("intel.delivery create")
     package_commit_at = workflow.index("Commit canonical artifact and delivery package")
-    slack_at = workflow.index("intel/delivery.py resume-slack")
+    slack_at = workflow.index("intel.delivery resume-slack")
     receipt_commit_at = workflow.index("Commit Slack delivery receipt")
     assert create_at < package_commit_at < slack_at < receipt_commit_at
     assert "SLACK_BOT_TOKEN" in workflow
