@@ -1,6 +1,9 @@
 import json
 from datetime import date
 
+import pytest
+
+from intel.brief_contract import BriefContractError
 from intel.pipeline import synthesize_brief
 
 
@@ -86,3 +89,54 @@ def test_synthesis_uses_fresh_catalog_and_materializes_reference_metadata(tmp_pa
     assert "Stale source" not in prompt
     assert "https://example.com/fresh" in brief
     assert "https://model.invalid" not in brief
+
+
+def test_daily_synthesis_uses_source_counts_and_interval_not_model_formatted_metadata(tmp_path):
+    in_file = tmp_path / "triaged.jsonl"
+    out_file = tmp_path / "brief.md"
+    in_file.write_text(json.dumps(_record(
+        "fresh", "Fresh source", "https://example.com/fresh",
+        "Mon, 28 Sep 2026 20:00:00 GMT",
+    )) + "\n")
+    candidate = (
+        "# ASA Industry News Pulse — 2026-09-29\n\n"
+        "**Reporting interval:** Yesterday to today\n"
+        "**Candidates classified:** one\n"
+        "**Material signals:** one\n"
+        "**Classification counts:** material: one\n\n"
+        "## Top summary\n\nFresh source changed [REF 1].\n\n"
+        "## Material signals\n\n### Fresh source\n\nFresh source changed [REF 1].\n\n"
+        "## Candidate disposition\n\nOne item was classified.\n\n"
+        "## References\n"
+    )
+    calls = []
+
+    def completion(**kwargs):
+        calls.append(kwargs)
+        return candidate
+
+    synthesize_brief(in_file, out_file, None, completion_func=completion, brief_date=date(2026, 9, 29))
+
+    brief = out_file.read_text()
+    assert len(calls) == 1
+    assert "**Reporting interval:** 2026-09-28T06:30:00-07:00 to 2026-09-29T06:30:00-07:00" in brief
+    assert "**Candidates classified:** 1\n**Material signals:** 1" in brief
+    assert "**Classification counts:** material=1; monitor=0; noise=0; duplicate=0; needs_validation=0" in brief
+    assert "Yesterday to today" not in brief
+    assert "https://example.com/fresh" in brief
+
+
+def test_daily_synthesis_does_not_repair_missing_evidence_body(tmp_path):
+    in_file = tmp_path / "triaged.jsonl"
+    out_file = tmp_path / "brief.md"
+    in_file.write_text(json.dumps(_record(
+        "fresh", "Fresh source", "https://example.com/fresh",
+        "Mon, 28 Sep 2026 20:00:00 GMT",
+    )) + "\n")
+
+    with pytest.raises(BriefContractError, match="missing section: ## Material signals"):
+        synthesize_brief(
+            in_file, out_file, None, brief_date=date(2026, 9, 29),
+            completion_func=lambda **kwargs: "# ASA Industry News Pulse — 2026-09-29\n\n## Top summary\n\nNo signals.\n",
+        )
+    assert not out_file.exists()

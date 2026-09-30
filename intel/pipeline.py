@@ -259,6 +259,28 @@ def _materialize_references(brief: str, catalog: list[dict]) -> str:
     return body + "\n\n## References\n\n" + "\n".join(references)
 
 
+def _materialize_daily_metadata(
+    brief: str, report_date: str, report_start: datetime, report_end: datetime,
+    classification_counts: dict[str, int], candidates_count: int,
+) -> str:
+    """Keep model-written analysis, but source the pulse header from classified data."""
+    body = re.search(r"(?ms)^## Top summary\s*$.*", brief)
+    if not body:
+        return brief  # Leave malformed bodies to the publication contract.
+    counts = "; ".join(
+        f"{name}={classification_counts[name]}"
+        for name in ("material", "monitor", "noise", "duplicate", "needs_validation")
+    )
+    return (
+        f"# ASA Industry News Pulse — {report_date}\n\n"
+        f"**Reporting interval:** {report_start.isoformat()} to {report_end.isoformat()}\n"
+        f"**Candidates classified:** {candidates_count}\n"
+        f"**Material signals:** {classification_counts['material']}\n"
+        f"**Classification counts:** {counts}\n\n"
+        + body.group().rstrip()
+    )
+
+
 # ---------------------------------------------------------------------------
 # COLLECT
 # ---------------------------------------------------------------------------
@@ -608,6 +630,11 @@ def synthesize_brief(
         if brief_date:
             try:
                 candidate = _materialize_references(candidate, reference_catalog)
+                if not candidate.startswith("# ASA Weekly Intelligence Brief"):
+                    candidate = _materialize_daily_metadata(
+                        candidate, today_iso, report_start, report_end,
+                        classification_counts, len(interval_triaged),
+                    )
             except BriefContractError as exc:
                 contract_attempts += 1
                 last_error = exc
