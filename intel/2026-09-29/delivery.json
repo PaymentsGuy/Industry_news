@@ -1,0 +1,91 @@
+{
+  "brief_date": "2026-09-29",
+  "brief_id": "industry-pulse-2026-09-29",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-09-29\n\n**Reporting interval:** 2026-09-28T06:30:00-07:00 to 2026-09-29T06:30:00-07:00\n**Candidates classified:** 29\n**Material signals:** 6\n**Classification counts:** material=6; monitor=6; noise=0; duplicate=0; needs_validation=17\n\n## Top summary\n\nSix material signals cleared the evidence threshold. The strongest themes are continued court-backed CFPB funding, expanding federal identity-verification activity involving Socure, and heightened regulatory scrutiny of fintech banking models\u2014both restrictive, in Wise\u2019s charter denial over AML concerns, and permissive, in Mission Lane\u2019s conditional approval. Jack Henry also extended its bank-technology footprint through a Centreville Bank selection, while FDIC action against Old Glory Bank reinforces capital and partner-risk concerns.\n\n## Material signals\n\n### CFPB funding remains protected by court order\n\nA federal judge again rejected the effort to halt CFPB funding, keeping the agency financed under court order.[REF 1] The development preserves the regulator that shapes consumer-protection and data-access expectations relevant to ASA\u2019s platform and go-to-market narrative.[REF 1]\n\n### Socure supports Login.gov mobile-driver\u2019s-license verification\n\nSocure and Xcelerate Solutions are supporting Login.gov\u2019s adoption of mobile driver\u2019s licenses for next-generation digital identity verification.[REF 2] The announcement signals continued traction for Socure in federal identity workflows relevant to ASA Verify and Auth positioning.[REF 2]\n\n### Jack Henry wins Centreville Bank technology selection\n\nCentreville Bank selected Jack Henry for core processing and several digital-banking and workflow products.[REF 3] The win strengthens Jack Henry\u2019s footprint in the bank-technology stack targeted by ASA and supports its role as a channel partner.[REF 3]\n\n### OCC rejects Wise national trust-bank charter\n\nThe OCC denied Wise\u2019s national trust-bank charter application over anti-money-laundering and compliance concerns.[REF 4] The decision indicates continued scrutiny of AML controls in fintech-bank charter applications, reinforcing ASA\u2019s compliance-first positioning and partner-risk considerations.[REF 4]\n\n### Mission Lane receives conditional OCC charter approval\n\nMission Lane received preliminary conditional OCC approval to establish a national credit-card bank.[REF 5] The decision signals a regulatory opening for certain fintech-lender banking models, although it is not a direct ASA product-roadmap trigger.[REF 5]\n\n### FDIC takes corrective action against Old Glory Bank\n\nThe FDIC issued a prompt corrective-action directive against Old Glory Bank after its leverage ratio fell to 2.69%, a significantly undercapitalized level.[REF 6] The action reinforces deposit, capital, and regulatory-risk considerations for ASA\u2019s financial-institution ecosystem, but it does not directly change ASA\u2019s product roadmap or competitive position this quarter.[REF 6]\n\n## Candidate disposition\n\nThe pipeline classified 29 candidates: 6 material, 6 monitor, 17 needs_validation, 0 noise, and 0 duplicate. The 17 needs-validation items remain blocked from publication because the supplied evidence was insufficient for a material, evidence-backed signal; they are not treated as additional material events. No automatic downstream action, roadmap change, Jira item, or provider action is created.\n\n## References\n\n1. American Banker, \"Another judge rejects Trump's attempt to halt CFPB funding - American Banker,\" 2026-09-28. https://news.google.com/rss/articles/CBMimAFBVV95cUxPeUNnc1pZcnZhb2Y5d2kzYW9mYkY5TW52QXBpQm9lNWVnOFg3TmVTeDdfd2VmYTUxRXRzaVQ0aTFhMXhwd0RBYXVHMFkxVW9ValAxblNySTkwM0UwTHpRRXN3OHh2TGdYaFF4OUowSXdVQU5IMjhhbk9HRXNicjBQUmloRk02dTJDRmpTQzdYcXc2dlNoV0Z1cg?oc=5 \u2014 *CFPB funding stability preserves the regulator that shapes data-access and consumer-protection expectations across ASA's platform and go-to-market narrative..*\n2. Socure (blog), \"Xcelerate Solutions and Socure to Support Login.gov's Adoption of Mobile Driver's Licenses for Next-Generation Digital Identity Verification - PR Newswire,\" 2026-09-29. https://news.google.com/rss/articles/CBMingJBVV95cUxQM1d4d3NRemR5VlFiUTN2ZlJPTFR0enFPMmdEYTJXXzliWlB4dXVNdm5SNWlXQ01WbkRxdGp5LU9uakFteWtWeWpINl9td0I4VHNyVEhKN0JKeTdGdlVYcXBIOXJzMmswRkwzWl9FamNDaGVUZjd2VXVKYzRzQlpsdDlwY2UtU3ZWTEZ0RFNFNzhWNTBGM0ZQUXB0R2tkLUpBZUhqeENfLUE0aWNDem81bG5nZjNEOExqdGl4bWtBLUpBcGUzSngybHBpTGtZOTRsQ2JhT29ZZXdZeU1NV19Hbkhpa3QyTGZaYnh4V0xZVVJpRGZHQ3BuVWR5OGlla2dYQ2l1QXJpOERLQWdkTlBhdkNxQ29LQTFaMEhrNTlR?oc=5 \u2014 *This signals continued traction for a direct adjacent identity verification competitor in federal identity workflows, relevant to ASA Verify and Auth positioning..*\n3. Jack Henry (blog), \"Centreville Bank selects Jack Henry & Associates for tech upgrades - pbn.com,\" 2026-09-29. https://news.google.com/rss/articles/CBMikAFBVV95cUxPM1N1TDZjV21ZN2o3SnFvUTJjVlhYVWtZbmhhYUhRWHBDUjkxcTdPUU5WZ1B2NktiUVZ4T3Q4Sm9RVFBINmZpbnd4ZnlUaGJJbzhBUGVRX190VHREY2Y1WVVPdnBxOUFKMTlkOGhyME5zLWVyUDRxc0dOcjFjdE1mSVZfa3YtV1JWMl9SbVFkcU_SAZABQVVfeXFMTzNTdUw2Y1dtWTdqN0pxb1EyY1ZYWFVrWW5oYWFIUVhwQ1I5MXE3T1FOVmdQdjZLYlFWeE90OEpvUVRQSDZmaW53eGZ5VGhiSW84QVBlUV9fdFR0RGNmNVlVT3ZwcTlBSjE5ZDhocjBOcy1lclA0cXNHTnIxY3RNZklWX2t2LVdSVjJfUm1RZHFP?oc=5 \u2014 *Jack Henry\u2019s Banno win strengthens a key channel partner and extends its footprint in the same bank tech stack ASA targets..*\n4. OCC (newsroom), \"OCC Rejects Wise National Trust Charter Over AML Failures - The Fintech Times,\" 2026-09-28. https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ0lqNWJDb2p4V2lBbEZPV0c0Mkdaa0ZNYVAwUlVoQ1pGbGxaMkRPQWg2N2JHOEtldThnOTJaSU5ncmhyenJPWlJpeFBTRFNMaENSaXU4NEhjTjgxVlFqTS16dEdPVXh4R3luTXpNS1JEcHFkZjhuSWxrdThEUTc2MDZjS1lYOWtGU1RaWW9paw?oc=5 \u2014 *Shows stricter bank charter scrutiny on AML controls, reinforcing ASA\u2019s compliance-first positioning and partner-risk assessments..*\n5. OCC (newsroom), \"Mission Lane gets green light for OCC charter - Banking Dive,\" 2026-09-28. https://news.google.com/rss/articles/CBMiswFBVV95cUxOSi1TTVhIMy1MQ3dhd21fSURpTGlvdTJtNXlTd1pDVE5MUFlST3d4MS1UaWhoYlVLLWlzZURyNFBLc0dQSnZNWlF6bGZ6Tmx6R2d0a3pKbl9INHZTUHJqbUF5Q0NnQ0RnZGNTTllkMGZPbjhiN29NOWd2MEpMWTlSSmtua0F1RXJwcW1JMTZGbUxlOXp2MVJMS2VhNW9ZdWtBeUJ3YVBRYy1QWEV2eXFIVFJoSQ?oc=5 \u2014 *Signals a noteworthy regulatory opening for fintech-lender banking models, useful for ASA\u2019s positioning and partner conversations but not a direct product roadmap trigger..*\n6. Banking Dive, \"FDIC clamps down on \u2018significantly undercapitalized\u2019 Old Glory Bank,\" 2026-09-28. https://www.bankingdive.com/news/fdic-prompt-corrective-action-old-glory-bank-significantly-undercapitalized/831505/ \u2014 *This reinforces deposit-climate and regulatory-risk narratives, but it does not directly change ASA\u2019s product roadmap or competitive position this quarter..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 6,
+    "monitor": 6,
+    "needs_validation": 17,
+    "noise": 0
+  },
+  "content_sha256": "6df6f231bb327abceba5200a7059ebf6194e97cdce40756e6179d883026a669a",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "f16bbc04-bfda-51e5-a2c5-93d085704b41",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-09-29T06:30:00-07:00",
+    "start": "2026-09-28T06:30:00-07:00"
+  },
+  "material_signal_count": 6,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeUNnc1pZcnZhb2Y5d2kzYW9mYkY5TW52QXBpQm9lNWVnOFg3TmVTeDdfd2VmYTUxRXRzaVQ0aTFhMXhwd0RBYXVHMFkxVW9ValAxblNySTkwM0UwTHpRRXN3OHh2TGdYaFF4OUowSXdVQU5IMjhhbk9HRXNicjBQUmloRk02dTJDRmpTQzdYcXc2dlNoV0Z1cg?oc=5"
+      ],
+      "signal_id": "signal-4962940dd5384da63607cba6",
+      "title": "CFPB funding remains protected by court order"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMingJBVV95cUxQM1d4d3NRemR5VlFiUTN2ZlJPTFR0enFPMmdEYTJXXzliWlB4dXVNdm5SNWlXQ01WbkRxdGp5LU9uakFteWtWeWpINl9td0I4VHNyVEhKN0JKeTdGdlVYcXBIOXJzMmswRkwzWl9FamNDaGVUZjd2VXVKYzRzQlpsdDlwY2UtU3ZWTEZ0RFNFNzhWNTBGM0ZQUXB0R2tkLUpBZUhqeENfLUE0aWNDem81bG5nZjNEOExqdGl4bWtBLUpBcGUzSngybHBpTGtZOTRsQ2JhT29ZZXdZeU1NV19Hbkhpa3QyTGZaYnh4V0xZVVJpRGZHQ3BuVWR5OGlla2dYQ2l1QXJpOERLQWdkTlBhdkNxQ29LQTFaMEhrNTlR?oc=5"
+      ],
+      "signal_id": "signal-54ac862b9ac59107997e9adf",
+      "title": "Socure supports Login.gov mobile-driver\u2019s-license verification"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMikAFBVV95cUxPM1N1TDZjV21ZN2o3SnFvUTJjVlhYVWtZbmhhYUhRWHBDUjkxcTdPUU5WZ1B2NktiUVZ4T3Q4Sm9RVFBINmZpbnd4ZnlUaGJJbzhBUGVRX190VHREY2Y1WVVPdnBxOUFKMTlkOGhyME5zLWVyUDRxc0dOcjFjdE1mSVZfa3YtV1JWMl9SbVFkcU_SAZABQVVfeXFMTzNTdUw2Y1dtWTdqN0pxb1EyY1ZYWFVrWW5oYWFIUVhwQ1I5MXE3T1FOVmdQdjZLYlFWeE90OEpvUVRQSDZmaW53eGZ5VGhiSW84QVBlUV9fdFR0RGNmNVlVT3ZwcTlBSjE5ZDhocjBOcy1lclA0cXNHTnIxY3RNZklWX2t2LVdSVjJfUm1RZHFP?oc=5"
+      ],
+      "signal_id": "signal-de2bcd9b1d60291be05890c9",
+      "title": "Jack Henry wins Centreville Bank technology selection"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ0lqNWJDb2p4V2lBbEZPV0c0Mkdaa0ZNYVAwUlVoQ1pGbGxaMkRPQWg2N2JHOEtldThnOTJaSU5ncmhyenJPWlJpeFBTRFNMaENSaXU4NEhjTjgxVlFqTS16dEdPVXh4R3luTXpNS1JEcHFkZjhuSWxrdThEUTc2MDZjS1lYOWtGU1RaWW9paw?oc=5"
+      ],
+      "signal_id": "signal-115bce80cd78cfe65149367c",
+      "title": "OCC rejects Wise national trust-bank charter"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSi1TTVhIMy1MQ3dhd21fSURpTGlvdTJtNXlTd1pDVE5MUFlST3d4MS1UaWhoYlVLLWlzZURyNFBLc0dQSnZNWlF6bGZ6Tmx6R2d0a3pKbl9INHZTUHJqbUF5Q0NnQ0RnZGNTTllkMGZPbjhiN29NOWd2MEpMWTlSSmtua0F1RXJwcW1JMTZGbUxlOXp2MVJMS2VhNW9ZdWtBeUJ3YVBRYy1QWEV2eXFIVFJoSQ?oc=5"
+      ],
+      "signal_id": "signal-036125820ad3ca4809b24cb9",
+      "title": "Mission Lane receives conditional OCC charter approval"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.bankingdive.com/news/fdic-prompt-corrective-action-old-glory-bank-significantly-undercapitalized/831505/"
+      ],
+      "signal_id": "signal-5f938440b59a97391fc74918",
+      "title": "FDIC takes corrective action against Old Glory Bank"
+    }
+  ],
+  "source_repository_path": "intel/2026-09-29/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-5ff17171ef27a7c3c9255ae43c040b094ebd43f26dddba0d60685a460eb04ba8",
+  "version": 2,
+  "workflow_run_id": "36679505709"
+}
