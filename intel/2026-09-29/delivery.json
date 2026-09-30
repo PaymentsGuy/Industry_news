@@ -17,10 +17,11 @@
       "status": "verified"
     },
     "slack": {
-      "attempt_count": 0,
+      "attempt_count": 1,
       "channel_id": "C0B1TPFSZKJ",
       "client_msg_id": "f16bbc04-bfda-51e5-a2c5-93d085704b41",
-      "status": "pending",
+      "last_error": "SlackApiError",
+      "status": "ambiguous_outcome",
       "workspace_id": "T01TY2FGRT9"
     },
     "vault": {
