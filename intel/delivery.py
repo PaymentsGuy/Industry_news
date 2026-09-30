@@ -365,12 +365,12 @@ class SlackWebApiClient:
         self.timeout = timeout
 
     def _call(self, method: str, payload: dict[str, Any]) -> dict[str, Any]:
-        response = requests.post(
-            f"{SLACK_API}/{method}",
-            headers={"Authorization": f"Bearer {self.token}"},
-            json=payload,
-            timeout=self.timeout,
-        )
+        url = f"{SLACK_API}/{method}"
+        headers = {"Authorization": f"Bearer {self.token}"}
+        if method == "chat.getPermalink":
+            response = requests.post(url, headers=headers, data=payload, timeout=self.timeout)
+        else:
+            response = requests.post(url, headers=headers, json=payload, timeout=self.timeout)
         response.raise_for_status()
         data = response.json()
         if not data.get("ok"):

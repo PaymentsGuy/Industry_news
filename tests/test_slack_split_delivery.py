@@ -64,3 +64,26 @@ def test_native_message_readback_uses_history_not_thread_replies(monkeypatch):
     message = client.get_message(channel="C0B1TPFSZKJ", ts="222.001")
     assert message["permalink"] == "https://slack.test/p222001"
     assert calls == ["conversations.history", "chat.getPermalink"]
+
+
+def test_permalink_request_uses_form_arguments_not_json(monkeypatch):
+    client = delivery.SlackWebApiClient("test-token")
+    calls = []
+
+    class Response:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"ok": True, "permalink": "https://slack.test/p222001"}
+
+    def post(url, **kwargs):
+        calls.append((url, kwargs))
+        return Response()
+
+    monkeypatch.setattr(delivery.requests, "post", post)
+    client._call("chat.getPermalink", {"channel": "C0B1TPFSZKJ", "message_ts": "222.001"})
+    url, kwargs = calls[0]
+    assert url.endswith("/chat.getPermalink")
+    assert kwargs["data"] == {"channel": "C0B1TPFSZKJ", "message_ts": "222.001"}
+    assert "json" not in kwargs
