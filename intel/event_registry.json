@@ -135,6 +135,35 @@
       ]
     },
     {
+      "topic_key": "alkami_gate_city_bank_digital_sales_service_platform",
+      "first_covered": "2026-09-30",
+      "last_covered": "2026-09-30",
+      "entities": [
+        "Alkami",
+        "BioCatch",
+        "Gate City Bank",
+        "MANTL"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "horizontal",
+        "one_view",
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-09-30",
+          "summary": "Alkami said Gate City Bank expanded into data and marketing, MANTL onboarding, and fraud prevention, validating a broader digital sales-and-service platform.",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/gate-city-bank-accelerates-growth-with-alkamis-digital-sales--service-platform-302891860.html"
+          ],
+          "source_dates": [
+            "2026-09-29"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "worldline_agentic_ai_payments",
       "first_covered": "2026-09-15",
       "last_covered": "2026-09-15",
