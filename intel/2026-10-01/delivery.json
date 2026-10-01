@@ -1,0 +1,75 @@
+{
+  "brief_date": "2026-10-01",
+  "brief_id": "industry-pulse-2026-10-01",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-10-01\n\n**Reporting interval:** 2026-09-30T06:30:00-07:00 to 2026-10-01T06:30:00-07:00\n**Candidates classified:** 30\n**Material signals:** 4\n**Classification counts:** material=4; monitor=2; noise=3; duplicate=0; needs_validation=21\n\n## Top summary\n\nFour evidence-backed signals cleared the materiality threshold: **Fiserv launched live stablecoin-enabled bank-to-bank payments for more than 90 North Dakota financial institutions**; **Socure expanded mobile driver\u2019s-license verification across Google and Samsung Wallets and Login.gov**; and the **Federal Reserve finalized stress-test changes intended to improve transparency and reduce capital-requirement volatility**. Two separate Socure developments reinforce the same strategic direction: mDLs are moving into production identity-proofing workflows, increasing competitive pressure around ASA Verify.\n\n## Material signals\n\n### Fiserv goes live with stablecoin-enabled bank payments\n\nFiserv\u2019s Digital Asset Platform is live with Roughrider Coin, a dollar-backed digital asset for bank-to-bank money movement among more than 90 North Dakota banks and credit unions.[REF 1]\n\nThe development extends Fiserv\u2019s existing stablecoin strategy into an operating financial-institution channel and could influence ASA Pay\u2019s positioning around payment orchestration, settlement, and platform adjacency.[REF 1]\n\n### Socure launches mobile driver\u2019s-license verification\n\nSocure launched mDL verification supporting credentials presented through **Google Wallet and Samsung Wallet** for remote onboarding and step-up flows.[REF 2]\n\nThe capability enables cryptographic verification against the issuing authority rather than relying solely on an image of a physical license, strengthening Socure\u2019s competitive position in identity verification workflows overlapping ASA Verify.[REF 2]\n\n### Federal Reserve finalizes stress-test changes\n\nThe Federal Reserve finalized changes designed to increase transparency around stress-test scenarios and model changes while reducing year-to-year volatility in banks\u2019 stress capital requirements.[REF 3]\n\nThe changes include public input on annual scenarios and material model updates, plus revised capital-buffer calculations based on recent stress-test results.[REF 3]\n\nFor ASA\u2019s financial-institution customers, this changes the broader capital-planning environment and may affect platform narratives and roadmap assumptions, but the supplied evidence does not indicate an immediate product requirement.[REF 3]\n\n### Socure and Xcelerate expand mDL support for Login.gov\n\nSocure and Xcelerate Solutions expanded Login.gov identity proofing to support mobile driver\u2019s licenses, adding operational traction for mDL-based government identity verification.[REF 4]\n\nThe signal reinforces mDL support as an emerging channel requirement across remote identity-proofing workflows and strengthens Socure\u2019s position as both a direct competitor and channel partner in ASA Verify-adjacent use cases.[REF 4]\n\n## Candidate disposition\n\nThe interval contained **30 classified candidates**: 4 material, 2 monitor, 3 noise, 0 duplicate, and 21 needs validation. The counts reconcile to the 30 candidates classified.\n\nThe 21 needs-validation items remain blocked from publication because the supplied evidence was insufficient to establish materiality or currentness. The two monitor items do not meet the material threshold but remain relevant for continued observation. No candidate was classified as a duplicate.\n\n## References\n\n1. Fiserv (blog), \"More than 90 North Dakota banks and credit unions can move money with a dollar-backed coin. - stocktitan.net,\" 2026-10-01. https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXMtd3lfSVRPbnlyZzkwc2ZjRjJMSGtfbEhET1UxT2NxLXZzWWpWVmdGalVpcE9VVWR2bVVTMUdLaE1wYmNVZUtOeGZGTzJ4R3Q3XzNyQXdmaXQ2V3hXR0trY2VLT3duYWl1OUI4a0U1NFQ3OTQ4VmwyMWxWRmp2UmxlT1BkaFpZcTB3T3RTOXM5ek12d2RuVFZycXVzSjYyZzhmWWNOM1VVYXlaWEdtMmZaeHI5TmdlM25jdnJn?oc=5 \u2014 *This shows a channel partner moving into stablecoin-enabled money movement, which could influence ASA\u2019s payments and platform positioning..*\n2. Socure (blog), \"Socure Launches mDL Verification with Samsung and Google as Regulators Clear Digital IDs - 01net,\" 2026-09-30. https://news.google.com/rss/articles/CBMirwFBVV95cUxNTlJXU09WVjktNzZoUWhaZnBzeW5jNHR5M1NtRjA5WXIySnRaY0o4eGZzRHFJWWpKLWNGaG81OW04LXhzNUpqNjJ1MmRuSGNJYjk2TUdYandkTzI2eVhPYl9fQmwwLXBSWDdEZVluRi1Tbi1UdkdGQ1NxWXM5OEx1M0ZrN2tscVhEdmxlTGtEZVNfSXZaM1NmbDRmVnd0WmNVbTdweTZraktQeDJvSW1z?oc=5 \u2014 *This strengthens a direct identity-verification competitor in a fast-evolving onboarding and step-up channel that overlaps ASA Verify and broader trust workflows..*\n3. Banking Dive, \"Fed finalizes stress-test changes,\" 2026-09-30. https://www.bankingdive.com/news/fed-stress-test-changes-transparency-volatility-scenarios-capital-buffer-requirements-bowman-barr/831787/ \u2014 *This shifts bank risk and capital planning conditions across ASA's FI customers, affecting platform narratives and roadmap assumptions but not forcing a product change immediately..*\n4. Socure (blog), \"Xcelerate, Socure Add mDL Support in Login.gov - ExecutiveBiz,\" 2026-09-30. https://news.google.com/rss/articles/CBMikgFBVV95cUxQc29fMTliaXMwbkpGMDlpeDFBS0NMWk5PTFRJZFNaSGx6Nldldmk5N25RdjVZMjV6eER4Ny1GTE9JVThCTGFFV290Z0hBVTBxRy0tNlJJM3dvSXlXVDdudDBOMzJxMmpiRnFxMjJsb0tvVVBiVFdzWEl5aTNfRmVlRjExenJYYlBsSC14THFNeUNDUQ?oc=5 \u2014 *This strengthens a channel-partner competitor in government identity proofing and shows mDL support gaining operational traction in verification workflows..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 4,
+    "monitor": 2,
+    "needs_validation": 21,
+    "noise": 3
+  },
+  "content_sha256": "c07ef2fd8d585df8ef2005a7566b05289ca48308eefe792f896f5a23c266f9a7",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "759d9f11-b77d-5089-8954-873183ba366a",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-10-01T06:30:00-07:00",
+    "start": "2026-09-30T06:30:00-07:00"
+  },
+  "material_signal_count": 4,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXMtd3lfSVRPbnlyZzkwc2ZjRjJMSGtfbEhET1UxT2NxLXZzWWpWVmdGalVpcE9VVWR2bVVTMUdLaE1wYmNVZUtOeGZGTzJ4R3Q3XzNyQXdmaXQ2V3hXR0trY2VLT3duYWl1OUI4a0U1NFQ3OTQ4VmwyMWxWRmp2UmxlT1BkaFpZcTB3T3RTOXM5ek12d2RuVFZycXVzSjYyZzhmWWNOM1VVYXlaWEdtMmZaeHI5TmdlM25jdnJn?oc=5"
+      ],
+      "signal_id": "signal-dda081c6ba399b0cd8c37653",
+      "title": "Fiserv goes live with stablecoin-enabled bank payments"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTlJXU09WVjktNzZoUWhaZnBzeW5jNHR5M1NtRjA5WXIySnRaY0o4eGZzRHFJWWpKLWNGaG81OW04LXhzNUpqNjJ1MmRuSGNJYjk2TUdYandkTzI2eVhPYl9fQmwwLXBSWDdEZVluRi1Tbi1UdkdGQ1NxWXM5OEx1M0ZrN2tscVhEdmxlTGtEZVNfSXZaM1NmbDRmVnd0WmNVbTdweTZraktQeDJvSW1z?oc=5"
+      ],
+      "signal_id": "signal-ed2fa43647648c6e376661c3",
+      "title": "Socure launches mobile driver\u2019s-license verification"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.bankingdive.com/news/fed-stress-test-changes-transparency-volatility-scenarios-capital-buffer-requirements-bowman-barr/831787/"
+      ],
+      "signal_id": "signal-29f21c540244c1ac585f02f3",
+      "title": "Federal Reserve finalizes stress-test changes"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxQc29fMTliaXMwbkpGMDlpeDFBS0NMWk5PTFRJZFNaSGx6Nldldmk5N25RdjVZMjV6eER4Ny1GTE9JVThCTGFFV290Z0hBVTBxRy0tNlJJM3dvSXlXVDdudDBOMzJxMmpiRnFxMjJsb0tvVVBiVFdzWEl5aTNfRmVlRjExenJYYlBsSC14THFNeUNDUQ?oc=5"
+      ],
+      "signal_id": "signal-9841ce7a05f04f0ee05dc424",
+      "title": "Socure and Xcelerate expand mDL support for Login.gov"
+    }
+  ],
+  "source_repository_path": "intel/2026-10-01/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-0c633b77baedffd24fba2d2f5a26df9f4701bbfe925627c40f22213bef595f40",
+  "version": 2,
+  "workflow_run_id": "36910837271"
+}

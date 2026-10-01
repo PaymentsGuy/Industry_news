@@ -2,6 +2,95 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_mdl_verification_wallets",
+      "first_covered": "2026-10-01",
+      "last_covered": "2026-10-01",
+      "entities": [
+        "Google",
+        "Login.gov",
+        "Samsung",
+        "Socure",
+        "Xcelerate Solutions"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-01",
+          "summary": "Socure and Xcelerate Solutions expanded Login.gov identity proofing to support mobile driver’s licenses in government verification workflows.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMikgFBVV95cUxQc29fMTliaXMwbkpGMDlpeDFBS0NMWk5PTFRJZFNaSGx6Nldldmk5N25RdjVZMjV6eER4Ny1GTE9JVThCTGFFV290Z0hBVTBxRy0tNlJJM3dvSXlXVDdudDBOMzJxMmpiRnFxMjJsb0tvVVBiVFdzWEl5aTNfRmVlRjExenJYYlBsSC14THFNeUNDUQ?oc=5",
+            "https://www.businesswire.com/news/home/20260930708056/en/Socure-Launches-mDL-Verification-with-Samsung-and-Google-as-Regulators-Clear-Digital-IDs"
+          ],
+          "source_dates": [
+            "2026-09-30"
+          ]
+        },
+        {
+          "covered_on": "2026-10-01",
+          "summary": "Socure launched mDL verification for Google Wallet and Samsung Wallet to support remote onboarding and step-up identity verification.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTlJXU09WVjktNzZoUWhaZnBzeW5jNHR5M1NtRjA5WXIySnRaY0o4eGZzRHFJWWpKLWNGaG81OW04LXhzNUpqNjJ1MmRuSGNJYjk2TUdYandkTzI2eVhPYl9mQmwwLXBSWDdEZVluRi1Tbi1UdkdGQ1NxWXM5OEx1M0ZrN2tscVhEdmxlTGtEZVNfSXZaM1NmbDRmVnd0WmNVbTdweTZraktQeDJvSW1z?oc=5",
+            "https://www.businesswire.com/news/home/20260930708056/en/Socure-Launches-mDL-Verification-with-Samsung-and-Google-as-Regulators-Clear-Digital-IDs"
+          ],
+          "source_dates": [
+            "2026-09-30"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fiserv_roughrider_coin_go_live",
+      "first_covered": "2026-10-01",
+      "last_covered": "2026-10-01",
+      "entities": [
+        "Bank of North Dakota",
+        "Fiserv",
+        "Roughrider Coin"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-01",
+          "summary": "Fiserv launched Roughrider Coin for stablecoin-enabled bank-to-bank payments across more than 90 North Dakota financial institutions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXMtd3lfSVRPbnlyZzkwc2ZjRjJMSGtfbEhET1UxT2NxLXZzWWpWVmdGalVpcE9VVWR2bVVTMUdLaE1wYmNVZUtOeGZGTzJ4R3Q3XzNyQXdmaXQ2V3hXR0trY2VLT3duYWl1OUI4a0U1NFQ3OTQ4VmwyMWxWRmp2UmxlT1BkaFpZcTB3T3RTOXM5ek12d2RuVFZycXVzSjYyZzhmWWNOM1VVYXlaWEdtMmZaeHI5TmdlM25jdnJn?oc=5",
+            "https://www.globenewswire.com/news-release/2026/10/01/3372889/0/en/index.html",
+            "https://www.paymentsdive.com/news/fiserv-north-dakota-stablecoin-system-digital-asset/831901/"
+          ],
+          "source_dates": [
+            "2026-10-01"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fed_stress_test_overhaul",
+      "first_covered": "2026-10-01",
+      "last_covered": "2026-10-01",
+      "entities": [
+        "Federal Reserve"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-01",
+          "summary": "The Federal Reserve finalized stress-test changes to increase transparency and reduce year-to-year volatility in bank capital requirements.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/fed-stress-test-changes-transparency-volatility-scenarios-capital-buffer-requirements-bowman-barr/831787/",
+            "https://www.federalreserve.gov/newsevents/pressreleases/2026-press.htm",
+            "https://www.reuters.com/business/finance/fed-finalizes-bank-stress-test-overhaul-2026-09-30/"
+          ],
+          "source_dates": [
+            "2026-09-30"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "wise_trust_charter_denial",
       "first_covered": "2026-09-30",
       "last_covered": "2026-09-30",
