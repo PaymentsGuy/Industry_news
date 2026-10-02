@@ -2,6 +2,116 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_circle_arc_integration",
+      "first_covered": "2026-10-02",
+      "last_covered": "2026-10-02",
+      "entities": [
+        "Arc",
+        "Circle",
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-02",
+          "summary": "Socure integrated its identity and fraud decisioning into Circle's Arc onramp at mainnet launch.",
+          "source_urls": [
+            "https://www.biometricupdate.com/202610/arcs-socure-integration-pushes-identity-deeper-into-crypto-infrastructure"
+          ],
+          "source_dates": [
+            "2026-10-01"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "nubank_monzo_takeover_denial",
+      "first_covered": "2026-10-02",
+      "last_covered": "2026-10-02",
+      "entities": [
+        "Monzo",
+        "Nubank"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-02",
+          "summary": "Nubank denied reported takeover discussions involving Monzo, removing the rumor as an immediate M&A development.",
+          "source_urls": [],
+          "source_dates": []
+        }
+      ]
+    },
+    {
+      "topic_key": "monarch_arr_hmbradley_acquisition",
+      "first_covered": "2026-10-02",
+      "last_covered": "2026-10-02",
+      "entities": [
+        "HMBradley",
+        "Monarch"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-02",
+          "summary": "Monarch said it reached $100 million in ARR and acquired the former HMBradley team in its first acquisition.",
+          "source_urls": [
+            "https://www.axios.com/pro/fintech-deals/2026/10/01/personal-finance-monarch-hmbradley-100-million-arr",
+            "https://www.prnewswire.com/news-releases/monarch-hits-100m-in-arr-acquires-mbi-to-accelerate-next-phase-of-growth-302896004.html"
+          ],
+          "source_dates": [
+            "2026-10-01"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fiserv_roughrider_coin_go_live",
+      "first_covered": "2026-10-01",
+      "last_covered": "2026-10-02",
+      "entities": [
+        "Bank of North Dakota",
+        "Fireblocks",
+        "Fiserv",
+        "Roughrider Coin",
+        "Solana",
+        "VersaBank"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-01",
+          "summary": "Fiserv launched Roughrider Coin for stablecoin-enabled bank-to-bank payments across more than 90 North Dakota financial institutions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXMtd3lfSVRPbnlyZzkwc2ZjRjJMSGtfbEhET1UxT2NxLXZzWWpWVmdGalVpcE9VVWR2bVVTMUdLaE1wYmNVZUtOeGZGTzJ4R3Q3XzNyQXdmaXQ2V3hXR0trY2VLT3duYWl1OUI4a0U1NFQ3OTQ4VmwyMWxWRmp2UmxlT1BkaFpZcTB3T3RTOXM5ek12d2RuVFZycXVzSjYyZzhmWWNOM1VVYXlaWEdtMmZaeHI5TmdlM25jdnJn?oc=5",
+            "https://www.globenewswire.com/news-release/2026/10/01/3372889/0/en/index.html",
+            "https://www.paymentsdive.com/news/fiserv-north-dakota-stablecoin-system-digital-asset/831901/"
+          ],
+          "source_dates": [
+            "2026-10-01"
+          ]
+        },
+        {
+          "covered_on": "2026-10-02",
+          "summary": "Fiserv launched its digital-asset platform in production with Bank of North Dakota's Roughrider Coin as the first live use case.",
+          "source_urls": [
+            "https://investors.fiserv.com/node/53051/pdf",
+            "https://www.digitaltransactions.net/stablecoins-get-a-boost-as-a-new-fiserv-platform-goes-live/",
+            "https://www.paymentsdive.com/news/fiserv-north-dakota-stablecoin-system-digital-asset/831901/"
+          ],
+          "source_dates": [
+            "2026-10-01",
+            "2026-10-02"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_mdl_verification_wallets",
       "first_covered": "2026-10-01",
       "last_covered": "2026-10-01",
@@ -36,33 +146,6 @@
           ],
           "source_dates": [
             "2026-09-30"
-          ]
-        }
-      ]
-    },
-    {
-      "topic_key": "fiserv_roughrider_coin_go_live",
-      "first_covered": "2026-10-01",
-      "last_covered": "2026-10-01",
-      "entities": [
-        "Bank of North Dakota",
-        "Fiserv",
-        "Roughrider Coin"
-      ],
-      "roadmap_areas": [
-        "pay"
-      ],
-      "events": [
-        {
-          "covered_on": "2026-10-01",
-          "summary": "Fiserv launched Roughrider Coin for stablecoin-enabled bank-to-bank payments across more than 90 North Dakota financial institutions.",
-          "source_urls": [
-            "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcXMtd3lfSVRPbnlyZzkwc2ZjRjJMSGtfbEhET1UxT2NxLXZzWWpWVmdGalVpcE9VVWR2bVVTMUdLaE1wYmNVZUtOeGZGTzJ4R3Q3XzNyQXdmaXQ2V3hXR0trY2VLT3duYWl1OUI4a0U1NFQ3OTQ4VmwyMWxWRmp2UmxlT1BkaFpZcTB3T3RTOXM5ek12d2RuVFZycXVzSjYyZzhmWWNOM1VVYXlaWEdtMmZaeHI5TmdlM25jdnJn?oc=5",
-            "https://www.globenewswire.com/news-release/2026/10/01/3372889/0/en/index.html",
-            "https://www.paymentsdive.com/news/fiserv-north-dakota-stablecoin-system-digital-asset/831901/"
-          ],
-          "source_dates": [
-            "2026-10-01"
           ]
         }
       ]
