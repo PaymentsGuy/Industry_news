@@ -17,10 +17,13 @@
       "status": "verified"
     },
     "slack": {
-      "attempt_count": 0,
+      "attempt_count": 1,
       "channel_id": "C0B1TPFSZKJ",
       "client_msg_id": "3739408a-921e-5dee-91a9-a594d46dfc78",
-      "status": "pending",
+      "message_ts": "1791235523.915099",
+      "permalink": "https://asafinancial.slack.com/archives/C0B1TPFSZKJ/p1791235523915099",
+      "readback_sha256": "59b6eb9f3a5803701129038281479b272f8733abe40b0cf479152403d6a57eff",
+      "status": "verified",
       "workspace_id": "T01TY2FGRT9"
     },
     "vault": {
