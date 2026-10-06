@@ -2,6 +2,54 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "icba_occ_crypto_trust_charters",
+      "first_covered": "2026-10-06",
+      "last_covered": "2026-10-06",
+      "entities": [
+        "Independent Community Bankers of America",
+        "Jonathan Gould",
+        "Office of the Comptroller of the Currency",
+        "Protego Holdings Corp."
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-06",
+          "summary": "ICBA sued the OCC, challenging its authority to charter crypto firms as national trust banks and seeking to invalidate related rules and Protego’s conditional charter.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/icba-sues-occ-gould-over-trust-charters-crypto-banking/832146/"
+          ],
+          "source_dates": [
+            "2026-10-05"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fiserv_fiusd_strategy_shift",
+      "first_covered": "2026-10-06",
+      "last_covered": "2026-10-06",
+      "entities": [
+        "Bank of North Dakota",
+        "Fiserv"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-06",
+          "summary": "Fiserv changed the timing and strategy for issuing FIUSD while operating stablecoin infrastructure that hosts Bank of North Dakota’s Roughrider stablecoin.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/fiserv-payments-processor-stablecoin-pivot-fiusd/832214/"
+          ],
+          "source_dates": [
+            "2026-10-05"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_circle_arc_integration",
       "first_covered": "2026-10-02",
       "last_covered": "2026-10-02",
