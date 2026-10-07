@@ -1,0 +1,75 @@
+{
+  "brief_date": "2026-10-07",
+  "brief_id": "industry-pulse-2026-10-07",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-10-07\n\n**Reporting interval:** 2026-10-06T06:30:00-07:00 to 2026-10-07T06:30:00-07:00\n**Candidates classified:** 20\n**Material signals:** 4\n**Classification counts:** material=4; monitor=2; noise=7; duplicate=0; needs_validation=7\n\n## Top summary\n\nFour evidence-backed material signals were identified: two fintech charter developments, one expansion of Plaid\u2019s AI risk capabilities, and one Lumin Digital behavioral-intelligence launch. Together, they reinforce competitive pressure around integrated banking platforms, regulated payment infrastructure, identity and fraud decisioning, and embedded financial intelligence.\n\n## Material signals\n\n### Avant applies for national bank charter\n\nAvant filed applications with the OCC and FDIC on September 18, 2026, to establish Avant Bank, N.A., an insured national bank. The proposed bank would support an integrated platform combining credit, banking products, and financial-health tools.[REF 1]\n\nThe move would increase competition for integrated financial experiences and heightens the importance of flexible financial-institution connectivity for ASA\u2019s horizontal roadmap.[REF 1]\n\n### Agora receives conditional approval for national trust bank\n\nThe OCC granted Agora preliminary conditional approval to establish a national trust bank. The proposed institution would bring Agora\u2019s stablecoin, custody, and transaction infrastructure under federal supervision.[REF 2]\n\nThe development is relevant to ASA Pay because federally supervised stablecoin and payment infrastructure could influence partnership models and the regulated digital-asset ecosystem.[REF 2]\n\n### Plaid expands into AI-driven credit, fraud, and payment risk\n\nPlaid launched AI models intended to improve lending decisions, fraud detection, and payment-risk management for financial firms. The launch includes expanded credit-risk models, a fraud foundation model, and sequential transaction analysis for payment risk.[REF 3]\n\nThe expansion broadens Plaid\u2019s competitive position across workflows adjacent to ASA Verify and ASA Pay, beyond its established connectivity and data-intelligence footprint.[REF 3]\n\n### Lumin Digital launches behavioral-intelligence capability\n\nLumin Digital launched Lumin Signal for banks and credit unions, providing behavioral analytics, in-app guidance, and surveys within its digital-banking platform. The capability is designed to identify user friction, improve feature adoption, and measure digital-experience ROI.[REF 4]\n\nLumin\u2019s move extends its platform from transaction and channel visibility into actionable digital-experience intelligence, increasing competitive pressure around ASA Compass and One View insights.[REF 4]\n\n## Candidate disposition\n\nThe interval contained 20 classified candidates: 4 material, 2 monitor, 7 noise, 7 needs_validation, and 0 duplicate. The 7 needs-validation candidates remain blocked from publication because the supplied evidence was insufficient for an evidence-backed material determination. Monitor items remain separate from the material set; no automatic downstream action is created.\n\n## References\n\n1. Tearsheet, \"Avant is building a bank from scratch as the OCC approves most charter applicants,\" 2026-10-07. https://tearsheet.co/banking/avant-is-building-a-bank-from-scratch-as-the-occ-approves-most-charter-applicants/?utm_source=rss&utm_medium=rss&utm_campaign=avant-is-building-a-bank-from-scratch-as-the-occ-approves-most-charter-applicants \u2014 *A fintech becoming a bank highlights growing competition for integrated financial experiences and reinforces the need for flexible financial-institution connectivity..*\n2. OCC (newsroom), \"Agora Secures OCC Conditional Approval for National Trust Bank to Power Stablecoin Ecosystem - FF News,\" 2026-10-07. https://news.google.com/rss/articles/CBMimAFBVV95cUxPblJEMlBtSjFTUm0tVXV1Yk41OE1jaVEwVkJpV3pVQVFmSHNTZXI5Q0wtUU40MDFWUC1xSW9nRjE1eG5ucGc1X3kyMkw3RjU4UUpzcEVHRGVHbmRua2Zld3RPSDJSWHluTFJ5MmtrZll1eTJXZTVYUkVmT1plOWROLWEwRTFHUXMzLW0zYTM3ZnRyb1Y1ZHVsag?oc=5 \u2014 *Federally supervised stablecoin and payment infrastructure could shape ASA Pay partnerships and inform its regulated digital-asset ecosystem strategy..*\n3. Finextra, \"Plaid launches credit, fraud and payment risk AI models,\" 2026-10-06. https://www.finextra.com/newsarticle/48545/plaid-launches-credit-fraud-and-payment-risk-ai-models?utm_medium=rssfinextra&utm_source=finextrafeed \u2014 *The launch expands Plaid\u2019s competitive positioning into fraud, verification, and payment-risk workflows relevant to ASA Verify and ASA Pay..*\n4. Lumin Digital (blog), \"Lumin Digital Launches Lumin Signal, Bringing Behavioral Intelligence to Credit Unions and Banks - Yahoo Finance,\" 2026-10-06. https://news.google.com/rss/articles/CBMinAFBVV95cUxNQTY2NDRPdmVEOUxFNm0zUUc1X2dDQTRKeHNPYTdSRS1pYWRCcXc3VEMtdkpmQkFUM1NHUmNZNnYyLUNraVNlSlR2SVZyeGlsdk1jNWlUa0JHOFBUMHRETXBnakUtUGt6WHZJZFIxa01OTWh2Q0JhelFfUEZsVFZsLUUzT3piamVYcURYamNHeXZqODRsVlVvNWxCel8?oc=5 \u2014 *Lumin expands from transaction visibility into actionable digital-experience intelligence, creating competitive pressure around Compass recommendations and One View insights..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 4,
+    "monitor": 2,
+    "needs_validation": 7,
+    "noise": 7
+  },
+  "content_sha256": "d59d557cc97464770bf7791fa8fb083c02db3688c04bd2e40f28d6d538b63fbc",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "8868d6c6-0210-5935-a839-1bd6a5c52fff",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-10-07T06:30:00-07:00",
+    "start": "2026-10-06T06:30:00-07:00"
+  },
+  "material_signal_count": 4,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://tearsheet.co/banking/avant-is-building-a-bank-from-scratch-as-the-occ-approves-most-charter-applicants/?utm_source=rss&utm_medium=rss&utm_campaign=avant-is-building-a-bank-from-scratch-as-the-occ-approves-most-charter-applicants"
+      ],
+      "signal_id": "signal-b9707e2633b586949a2f6830",
+      "title": "Avant applies for national bank charter"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxPblJEMlBtSjFTUm0tVXV1Yk41OE1jaVEwVkJpV3pVQVFmSHNTZXI5Q0wtUU40MDFWUC1xSW9nRjE1eG5ucGc1X3kyMkw3RjU4UUpzcEVHRGVHbmRua2Zld3RPSDJSWHluTFJ5MmtrZll1eTJXZTVYUkVmT1plOWROLWEwRTFHUXMzLW0zYTM3ZnRyb1Y1ZHVsag?oc=5"
+      ],
+      "signal_id": "signal-cd2bedfd6b7ca01651ae24f3",
+      "title": "Agora receives conditional approval for national trust bank"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.finextra.com/newsarticle/48545/plaid-launches-credit-fraud-and-payment-risk-ai-models?utm_medium=rssfinextra&utm_source=finextrafeed"
+      ],
+      "signal_id": "signal-76e6df3f50ef2d0c95858d58",
+      "title": "Plaid expands into AI-driven credit, fraud, and payment risk"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQTY2NDRPdmVEOUxFNm0zUUc1X2dDQTRKeHNPYTdSRS1pYWRCcXc3VEMtdkpmQkFUM1NHUmNZNnYyLUNraVNlSlR2SVZyeGlsdk1jNWlUa0JHOFBUMHRETXBnakUtUGt6WHZJZFIxa01OTWh2Q0JhelFfUEZsVFZsLUUzT3piamVYcURYamNHeXZqODRsVlVvNWxCel8?oc=5"
+      ],
+      "signal_id": "signal-669a3f0096cd601ecc5721c5",
+      "title": "Lumin Digital launches behavioral-intelligence capability"
+    }
+  ],
+  "source_repository_path": "intel/2026-10-07/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-7d2d7e5715a2ad0bdd1f4a70b8b46ef2bbd6e615bd56dc738058067253f61f79",
+  "version": 2,
+  "workflow_run_id": "37674609440"
+}
