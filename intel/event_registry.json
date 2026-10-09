@@ -2,6 +2,84 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "mastercard_europe_offline_payments",
+      "first_covered": "2026-10-09",
+      "last_covered": "2026-10-09",
+      "entities": [
+        "Mastercard"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-09",
+          "summary": "Mastercard will require newly issued European cards and new or replacement terminals to support offline payments beginning in 2027.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48560/mastercard-to-enable-offline-payments-across-europe?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-08"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "american_express_aml_enforcement",
+      "first_covered": "2026-10-09",
+      "last_covered": "2026-10-09",
+      "entities": [
+        "American Express",
+        "American Express National Bank",
+        "Federal Reserve",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-09",
+          "summary": "The OCC and Federal Reserve penalized American Express National Bank $350 million for significant BSA/AML program, monitoring, and reporting deficiencies.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/amex-dinged-by-fed-occ-must-pay-350m-for-aml-failures/832570/",
+            "https://www.finextra.com/newsarticle/48562/amex-hit-with-350m-penalty-for-aml-deficiencies?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-08",
+            "2026-10-09"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "alkami_fall_2026_platform_release",
+      "first_covered": "2026-10-09",
+      "last_covered": "2026-10-09",
+      "entities": [
+        "Alkami"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "one_view",
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-09",
+          "summary": "Alkami’s Fall 2026 release expands transaction guidance, business payment controls, validation, reporting, and operational visibility across capabilities adjacent to ASA’s roadmap.",
+          "source_urls": [
+            "https://www.alkami.com/blog/alkamis-fall-2026-digital-banking-platform-release/"
+          ],
+          "source_dates": [
+            "2026-10-08"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "plaid_risk_ai_models",
       "first_covered": "2026-10-07",
       "last_covered": "2026-10-07",
