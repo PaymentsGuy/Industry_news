@@ -2,6 +2,111 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "icba_occ_crypto_trust_bank_charters",
+      "first_covered": "2026-10-12",
+      "last_covered": "2026-10-12",
+      "entities": [
+        "Independent Community Bankers of America",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "one_view",
+        "pay",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-12",
+          "summary": "ICBA is challenging the OCC’s authority to charter non-depository crypto and stablecoin firms as national trust banks, creating uncertainty for fintech custody, payments, account connectivity, and partner strategy.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMihwFBVV95cUxNaWE4UWc3NzNIUExUNnYyQS15ME9pNlp5YmNlRU1tclFTSmJBa0J6aloyMk56V2ZMOS1oR2NJYk1qTEdIUUFmdW11MDV4Qk9qNjNTYjFDSnNDNXNvamhsd2hYVHowS3pCbHh5RHpnc08zeUItQlE0cktCdzJVYTE5aGc2b3RabWM?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-11"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fiserv_finxact_veripark_deployment",
+      "first_covered": "2026-10-12",
+      "last_covered": "2026-10-12",
+      "entities": [
+        "Finxact",
+        "Fiserv",
+        "Queensland Country Bank",
+        "VeriPark",
+        "Vision Next"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-12",
+          "summary": "Queensland Country Bank plans phased modernization with Fiserv’s Finxact core, VeriPark loan-origination, CRM and digital-banking systems, and Vision Next card management, reinforcing Fiserv’s channel position.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRWJsNkxPX0Vxdk50cTJHb09QVDhXUkd6dktQV2FvSjNnMGE5Ti1HWW00bHlOVklQcV9VenllU2Ftd05ZTHN0RnZ4Q0ZHOEthNWotUTljalVrRVo0V19yNkxpVk5jOUZxZTRDRWRhbGJsZUE3dTFKLVEySnA1amRtRGVZdnAzZzYza284ZjMybDdOc2h3Vm5kU0RnRmlLc00?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-12"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fis_agentic_cfo_suite",
+      "first_covered": "2026-10-12",
+      "last_covered": "2026-10-12",
+      "entities": [
+        "FIS"
+      ],
+      "roadmap_areas": [
+        "compass",
+        "forecast",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-12",
+          "summary": "FIS launched an agentic CFO suite combining cash-flow forecasting, collections, liquidity, risk management, recommendations, and unified financial data, overlapping ASA Forecast, Compass, and One View; its forecasting uses multi-horizon scenarios and supports risk analysis and recommended actions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVUxuSi1GMk10WkhOUnNHeTNvX0JNLU5ocnkzUnRKTnlxLVZoQjFoT1haVUtGVF9GSk9vRGNVMnNTRWIyT0VxQ3N6MWZoNElPZDFpWF9NTkhWWGFuUW43VjBaSVg0TEZjSk9HM3VTMTFsaUVtUU5QZTBZX1MyNTJrbEdTUUc3dzU3QWM1Vl9qVl8zbzBIT2dkNFBJLU9ib1U?oc=5",
+            "https://www.finextra.com/newsarticle/48568/fis-launches-agentic-ai-suite-for-the-office-of-the-cfo?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-12"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "corelation_unit21_key_stone_fraud_aml",
+      "first_covered": "2026-10-12",
+      "last_covered": "2026-10-12",
+      "entities": [
+        "Corelation",
+        "KeyBridge",
+        "KeyStone",
+        "Unit21"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-12",
+          "summary": "Corelation and Unit21 integrated AI-native fraud prevention and AML monitoring into KeyStone, enabling bidirectional data and workflows for detection, investigation, card blocking, payment stops, and account holds.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQTnB6bUhoZ3MyczhGNkFMbG9qYjAwcjJtRnhaSjdWX3JoQW9HYnI3OEU3a3FhYXMzN2hGRDk2Um9GXy1mMFVKOWdmMTdOcExnQUJPTmZaTUJaU09JVDNsM24tYzU5VzVRN3dsT1R2MUU3bmluVUJjYWdzWkZ4V0NzZmhMdWhOcWNCWmE1c0w1MFQySkpyek9VN1AxQkkteHZEeGFCNXAydDVWemdraUI5ZElNbVZzZFdSVW9lY2V2bWRVT1otQmJBSzlCTzBCYTh3bVJuTl85cmNIcTRLOU9xVU5nLS1kM1hFalZPVDlHTGM?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-12"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "mastercard_europe_offline_payments",
       "first_covered": "2026-10-09",
       "last_covered": "2026-10-09",
