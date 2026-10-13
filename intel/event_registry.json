@@ -2,6 +2,35 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "upgrade_bank_ilc_charter",
+      "first_covered": "2026-10-13",
+      "last_covered": "2026-10-13",
+      "entities": [
+        "Federal Deposit Insurance Corporation",
+        "Nevada Financial Institutions Division",
+        "Upgrade",
+        "Upgrade Bank"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-13",
+          "summary": "Upgrade applied to the FDIC and Nevada Financial Institutions Division to establish Upgrade Bank, a proposed Nevada-chartered, FDIC-insured industrial loan bank.",
+          "source_urls": [
+            "https://ffnews.com/news/upgrade-submits-applications-to-establish-an-industrial-loan-company-f76999c3",
+            "https://www.bankingdive.com/news/upgrade-fintech-applies-ilc-charter-fdic-nevada/832873/",
+            "https://www.upgrade.com/press/releases/upgrade-closes-40-million-series-d-round-led-by-santander-innoventures/"
+          ],
+          "source_dates": [
+            "2026-10-12",
+            "2026-10-13"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "icba_occ_crypto_trust_bank_charters",
       "first_covered": "2026-10-12",
       "last_covered": "2026-10-12",

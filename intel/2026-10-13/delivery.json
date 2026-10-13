@@ -1,0 +1,49 @@
+{
+  "brief_date": "2026-10-13",
+  "brief_id": "industry-pulse-2026-10-13",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-10-13\n\n**Reporting interval:** 2026-10-12T06:30:00-07:00 to 2026-10-13T06:30:00-07:00\n**Candidates classified:** 26\n**Material signals:** 1\n**Classification counts:** material=1; monitor=3; noise=9; duplicate=0; needs_validation=13\n\n## Top summary\n\nUpgrade has applied to the FDIC and Nevada Financial Institutions Division to establish Upgrade Bank, a proposed Nevada-chartered, FDIC-insured industrial loan bank. The move would bring lending and banking infrastructure further in-house while preserving existing bank-partner and loan-purchaser relationships, reinforcing the fintech industry\u2019s continued push toward chartered financial models.[1]\n\n## Material signals\n\n### Upgrade applies for FDIC-supervised industrial loan company charter\n\nUpgrade submitted applications to the FDIC and Nevada Financial Institutions Division to establish Upgrade Bank, a proposed Nevada-chartered industrial loan bank.[1][2] If approved, the bank would be a wholly owned, FDIC-insured subsidiary with independent governance and internal controls.[1] Upgrade said the charter would complement its existing bank-partner and loan-purchaser relationships while providing greater flexibility to fund its credit products.[1]\n\nFor ASA, this is a relevant horizontal signal: fintechs are continuing to pursue vertical integration of lending and banking capabilities, potentially changing partner economics, infrastructure requirements, and platform opportunities across the financial-services ecosystem.[1]\n\n## Candidate disposition\n\nOne evidence-backed material signal is published above. Three candidates remain classified as monitor, nine as noise, and thirteen as needs_validation; no candidates were classified as duplicates. Needs-validation items remain blocked from publication pending sufficient source evidence or confirmation of materiality.\n\n## References\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 1,
+    "monitor": 3,
+    "needs_validation": 13,
+    "noise": 9
+  },
+  "content_sha256": "d6fac690e83c984bc0b8dc1d831989b6085745b95dd4b7ecc4d7b79b666d77c0",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "5ffa35f5-8c13-5051-82e1-9e6c667e2df2",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-10-13T06:30:00-07:00",
+    "start": "2026-10-12T06:30:00-07:00"
+  },
+  "material_signal_count": 1,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [],
+      "signal_id": "signal-9cfbf73a5295aecd4aed47cd",
+      "title": "Upgrade applies for FDIC-supervised industrial loan company charter"
+    }
+  ],
+  "source_repository_path": "intel/2026-10-13/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-3b63d224f5ad9b86532204a6f0806c1b7a50352ed047e5c1a252eaecf6cbb301",
+  "version": 2,
+  "workflow_run_id": "38458762590"
+}
