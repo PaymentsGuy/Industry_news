@@ -13,8 +13,8 @@
   "content_sha256": "d6fac690e83c984bc0b8dc1d831989b6085745b95dd4b7ecc4d7b79b666d77c0",
   "destinations": {
     "repository": {
-      "commit_sha": null,
-      "status": "pending"
+      "commit_sha": "639da745516cf772eb61976a2fbc430d073cf66e",
+      "status": "verified"
     },
     "slack": {
       "attempt_count": 0,
@@ -33,6 +33,15 @@
   },
   "material_signal_count": 1,
   "producer": "industry_news",
+  "producer_receipt": {
+    "brief_path": "intel/2026-10-13/brief.md",
+    "content_sha256": "d6fac690e83c984bc0b8dc1d831989b6085745b95dd4b7ecc4d7b79b666d77c0",
+    "package_path": "intel/2026-10-13/delivery.json",
+    "receipt_id": "producer-receipt-228680c6f9bad5f158a821a888b562cd53e54e8367ac12a1c9faedf0bb568b91",
+    "repository_commit": "639da745516cf772eb61976a2fbc430d073cf66e",
+    "transaction_id": "brief-delivery-3b63d224f5ad9b86532204a6f0806c1b7a50352ed047e5c1a252eaecf6cbb301",
+    "workflow_run_id": "38458762590"
+  },
   "signals": [
     {
       "classification": "material",
@@ -42,7 +51,7 @@
     }
   ],
   "source_repository_path": "intel/2026-10-13/brief.md",
-  "status": "pending",
+  "status": "partial_delivery",
   "transaction_id": "brief-delivery-3b63d224f5ad9b86532204a6f0806c1b7a50352ed047e5c1a252eaecf6cbb301",
   "version": 2,
   "workflow_run_id": "38458762590"
