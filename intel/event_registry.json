@@ -4,7 +4,7 @@
     {
       "topic_key": "upgrade_bank_ilc_charter",
       "first_covered": "2026-10-13",
-      "last_covered": "2026-10-13",
+      "last_covered": "2026-10-14",
       "entities": [
         "Federal Deposit Insurance Corporation",
         "Nevada Financial Institutions Division",
@@ -26,6 +26,100 @@
           "source_dates": [
             "2026-10-12",
             "2026-10-13"
+          ]
+        },
+        {
+          "covered_on": "2026-10-14",
+          "summary": "Upgrade applied for an FDIC-reviewed Nevada industrial loan company charter that could alter fintech-bank distribution, sponsor-bank relationships, and partner economics.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/upgrade-fintech-applies-ilc-charter-fdic-nevada/832873/"
+          ],
+          "source_dates": [
+            "2026-10-13"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_hyland_integration_network",
+      "first_covered": "2026-10-14",
+      "last_covered": "2026-10-14",
+      "entities": [
+        "Hyland",
+        "Jack Henry",
+        "OnBase",
+        "SilverLake",
+        "Symitar Episys"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-14",
+          "summary": "Hyland joined Jack Henry’s integration network to connect OnBase content workflows with SilverLake and Symitar Episys core systems through governed data access and automation.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQOHJmQVI4SGJic1pqaWR5V0xpeW10cWw4QWZ3TVNXMzNZNjktdEVRMkh5c1g1WFlEY2U1eGlnSHpzTGt6cWhXdFloS3h5ZHBtcEVKaFB6ZTVqc1BlY2tGQXhSbjFKek1hLTliTkNKZzU0MGZ0S1V0X0FBVmhlM0hKbktkMDlNd3IzRl9hUk93cXNrR19KUnRKWUhQV1QtWlYtbXlYNFptRk1aU01ueWhQWnJqbmMwTHNNQ1ZSbjFJVDdpbVhsUTVyamo1SVBBRjF0UEdlOWlKZWlvOEpVUUR5LWZxRTJYdUk5YnZ1dVpRQdIB7wFBVV95cUxQOHJmQVI4SGJic1pqaWR5V0xpeW10cWw4QWZ3TVNXMzNZNjktdEVRMkh5c1g1WFlEY2U1eGlnSHpzTGt6cWhXdFloS3h5ZHBtcEVKaFB6ZTVqc1BlY2tGQXhSbjFKek1hLTliTkNKZzU0MGZ0S1V0X0FBVmhlM0hKbktkMDlNd3IzRl9hUk93cXNrR19KUnRKWUhQV1QtWlYtbXlYNFptRk1aU01ueWhQWnJqbmMwTHNNQ1ZSbjFJVDdpbVhsUTVyamo1SVBBRjF0UEdlOWlKZWlvOEpVUUR5LWZxRTJYdUk5YnZ1dVpRQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-14"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "corelation_unit21_credit_union_fraud_aml",
+      "first_covered": "2026-10-14",
+      "last_covered": "2026-10-14",
+      "entities": [
+        "Corelation",
+        "KeyStone",
+        "Unit21"
+      ],
+      "roadmap_areas": [
+        "pay",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-14",
+          "summary": "Corelation is integrating Unit21’s real-time fraud and AML platform with KeyStone for more than 300 credit unions, including investigation and transaction-control workflows.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWmhObkt1NHpUajZKbDZuOFRxeWJsZU5lSWlIYS12ZUpJOUxkRm51TnJ4YVBibGlhTmdzempqaVpkQjQyU3p2dWZUSnNoQnBtYktBY0hZdXhrbmFLUWt4N2VrVllKVjg4YXRuX1ZiRjF4ZUtZbHRYcXYzVFJQazhZcGwyNmtJN0doNl9UZERCaVBKbTdVRTZIbUs2UGdBdTRPbk1HMlFSVVRlOGFFV2JUTlFpSQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-13"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "bank_of_america_aml_penalties",
+      "first_covered": "2026-10-14",
+      "last_covered": "2026-10-14",
+      "entities": [
+        "Bank of America",
+        "FinCEN",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-14",
+          "summary": "U.S. authorities imposed more than $1.21 billion in penalties on Bank of America for sustained AML, BSA, transaction-monitoring, reporting, and sanctions-control failures.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMif0FVX3lxTE1zVXp2RjB4STRNOUZMOGM1X0xIRnlnWkN2Qkw4WDN5U3RnaWtXOXgzUE5meGQ4OHVuVl9uSU43RGdmODlNY3JXY3NDX0FnbWNjc0J0UHVfVkxubGRwTHM2dEFIQ21xdUFnU3ZFcHNDRVhMTHZXbG1uLXlwWnlWZTQ?oc=5",
+            "https://news.google.com/rss/articles/CBMihwFBVV95cUxQOVNfbE5CQzRUbWFGOUlhMnl3d21Qd3BucVJFM1NZbGFyR3A2ZHVGc3hvRjVPWmpHRFMwNmxTZXdGVEZRU1pJSW1xV1BsaEpsS1J6OUc5dzBrc0lBQjhtT2djZmNDdTViaHdGcjVwa1B0OUhNTDdQVlQwRnZaVFV2bk9kZUFnRVU?oc=5",
+            "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYmlHR2padEY4WlozWlZfZ014YzgwbkUyMjhmbDZiZTVRZGZyT19rbFJtYU1vMUtnQ2JSMWhDY2lJWVJDY005cjJOZnlBNXkwRkZlOFZlSUdKWWJ1TmF0NFpRcjJMcGVDZHlaaGc5aTdLU0VtNGtQTHduV2RsTHpET0dWZVhuRW54RlFXMi1CUXRLRXdCcmFRclZXOWJJekxoclQ4?oc=5",
+            "https://www.finextra.com/newsarticle/48579/boa-fined-12bn-over-egregious-aml-deficiencies?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-13",
+            "2026-10-14"
           ]
         }
       ]
