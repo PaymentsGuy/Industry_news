@@ -2,6 +2,139 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_q3_bookings",
+      "first_covered": "2026-10-15",
+      "last_covered": "2026-10-15",
+      "entities": [
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-15",
+          "summary": "Socure reported $42.7 million in Q3 bookings, $34.2 million in renewals across 75 customers, and continued expansion in AI-driven identity and fraud prevention.[REF 1]",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMikgJBVV95cUxQZTFUX0p6b2JlSkdPRC1OdENiWGh1bks5V1IzOWVOOGtzYzEyamZfajlPYUxSTDREaW1LOHNvQkVxaTNNWmlLeXgtWTZTWi1KaDJDWHhTNUhfdW5mbzFRdVhDUV9UMDJBMnJrbWRiQVhLRExBZHNiNzZuZHVVSkNwZkVVa1hISXZYX3dLRU9SYTJSZ19vbzZqQTR0SFNDUVFMQlh5alhqS0JYdlJab2JPTFpYOUFGNUt5YWJ0QXhuR2dBWlEzMkVfM2ViekZNTU5KaXk3Y25hak9BYUxxcHJMbXp2UGJxdktWNGtkc1ZVUE5McGR4Sl9yY2FOMHI3RThockU2ZXVhb2s4OF9kaEhxbVJR?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "occ_debanking_review",
+      "first_covered": "2026-10-15",
+      "last_covered": "2026-10-15",
+      "entities": [
+        "BMO Bank",
+        "Bank of America",
+        "Capital One",
+        "Citibank",
+        "Consumer Financial Protection Bureau",
+        "JPMorgan Chase",
+        "Office of the Comptroller of the Currency",
+        "PNC Bank",
+        "TD Bank",
+        "U.S. Bank",
+        "Wells Fargo"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "one_view",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-15",
+          "summary": "The OCC found restrictive or unclear debanking policies at nine large banks, while the CFPB launched an initiative addressing potential consumer harm and access-control concerns.[REF 2][REF 5]",
+          "source_urls": [
+            "https://www.bankingdive.com/news/occ-debanking-report-trump-gould-jpmorgan-bofa-capital-one-td-cfpb/832997/"
+          ],
+          "source_dates": [
+            "2026-10-14"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "hkma_art_ai_framework",
+      "first_covered": "2026-10-15",
+      "last_covered": "2026-10-15",
+      "entities": [
+        "Hong Kong Monetary Authority"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-15",
+          "summary": "HKMA introduced the ART Framework for responsible banking AI, alongside updated supervision, training-data sharing, agentic-AI testing, and planned governance guidance.[REF 2][REF 4]",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBUblE2MUVVSFNFc2c1X0dlZVpIZ3A3WEJ2UnNXU2haVmFNME5Id0k2eWlBMFF3VEJxSzlhN3VBOFVjTTdzOUhxSFVTLXhzZjhwdWIwbEZES2s?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "corelation_unit21_integration",
+      "first_covered": "2026-10-15",
+      "last_covered": "2026-10-15",
+      "entities": [
+        "Corelation",
+        "KeyStone",
+        "Unit21"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-15",
+          "summary": "Corelation is integrating Unit21’s fraud and AML platform with KeyStone to enable real-time detection and direct account-control actions.",
+          "source_urls": [],
+          "source_dates": []
+        }
+      ]
+    },
+    {
+      "topic_key": "alkami_mantl_onboarding",
+      "first_covered": "2026-10-15",
+      "last_covered": "2026-10-15",
+      "entities": [
+        "Alkami",
+        "City First Bank",
+        "MANTL"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-15",
+          "summary": "City First Bank selected MANTL’s omnichannel account-opening suite, reinforcing automated onboarding, KYC, AML, and BSA competition around Alkami.[REF 5]",
+          "source_urls": [
+            "https://www.alkami.com/news/city-first-bank-partners-with-mantl-to-advance-its-nationwide-growth-strategy/"
+          ],
+          "source_dates": [
+            "2026-10-14"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "upgrade_bank_ilc_charter",
       "first_covered": "2026-10-13",
       "last_covered": "2026-10-14",
