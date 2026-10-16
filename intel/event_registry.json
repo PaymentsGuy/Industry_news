@@ -2,6 +2,150 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "stablecore_jack_henry_stablecoin_distribution",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-16",
+      "entities": [
+        "Jack Henry",
+        "Stablecore"
+      ],
+      "roadmap_areas": [
+        "pay",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "Stablecore joined Jack Henry’s integration network to distribute stablecoin and tokenized-asset services across approximately 1,600 U.S. banks and credit unions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZVViamMzeG9QMXZTTTh2WUhpRDVtMHFIYVBXeVZWZnhEMmRlTUVTdERoMDNTUmdxRnRGa2ROOGx2Vk1sV2E0eVN2YTJJOGlXUmV1U0E5dmIxUWxMZk9Ed0ttR3Y0SmU1aFZpZERPbkJqMjNmZXlnZHVKWXpEX2IxVUdIdEY2NDFXc2JfRlNXeTdISFFSNkhBNzdfYWlmajNDNnpVQ3lR?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-16"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "mastercard_bvnk_stablecoin_payments_api",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-16",
+      "entities": [
+        "BVNK",
+        "Mastercard"
+      ],
+      "roadmap_areas": [
+        "pay",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "Mastercard launched a single API combining global fiat-payment capabilities with stablecoin infrastructure from BVNK.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48590/mastercard-and-bvnk-bring-fiat-and-stablecoin-payments-together-in-global-money-platform?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "lumin_signal_behavioral_analytics",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-16",
+      "entities": [
+        "Lumin Digital",
+        "Signal"
+      ],
+      "roadmap_areas": [
+        "compass"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "Lumin Digital launched Signal, an embedded behavioral-analytics capability covering user journeys, adoption, funnel drop-off, retention, guidance, and surveys.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMinAFBVV95cUxQX195cGtVTmx3TzhUQy1mMUEycGZ4ZTBOTFlFZURvOFFCeGk3VWZObGVSbURLTG40bHRoQS1NT0ZzQnktRXlkMFoyU1BOSGdzNVJQajZyY2ExR05UQmp5R1o5N2dHYlFWQ0JaQTNjdi1Cb2NtS0FSZkJLeGNtdzZfaFc1NEJPdUtnc2lUNGhRZ2dIQjFyMzlzUVN6M3I?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "lumin_digital_platform_expansion",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-16",
+      "entities": [
+        "Lumin Digital"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "Lumin Digital reported seven recent financial-institution launches adding more than 750,000 users, expanding its platform footprint to nearly one million users and 19 modules.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPTlYzNmNtUk1tSFVwQjJ3QU9uYWwzSk95MTJZTTljWHVSUTZSbDdwbHBPRGlPaTlzZHJXZnhXbGRNYjZha1NxN3pZVjFwU2VkclF1akRDYS1LMk1peVBzNjlSSlNSbXg2a0l1V2J3Z1NoZGpfMGZrV1djUmljeUZUR3BrUkZxdDg0MFY5N2NJMEt0anh5UzRCdHg5ZGF0NjE1UzlkdjBZMzZ4SHl6aVZpQmVFOG9TMmcyVEVsRDlOMGVGeXRWczc0RmVuTHZoUjVUX0hBV2J3TlhYQTV2N291d0x6M2VIdXJPWFBBY2pmbnBGNTRhcnc?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_iran_charity_money_flows",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-16",
+      "entities": [
+        "FinCEN"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "FinCEN issued red flags to help financial institutions identify Iran-linked financial flows routed through religious charities.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOVzNTVHZfY1BJQTFKSUxsOU4tMVNiTGR5WVNTZmY4YVJhdDVQdzN0T01MbnJCUm1uU3ZIcF9VVjdmYUUxQzVIcDA1TkdDT0x2YTZqMDZWa3c4TlR2dTlHQ1hwY0FwWmhWRjdUV0w5V1dYNzVYMUhsOEJhY2hhd1ZJdURGV1dzM2xXbkRHeElNZHVjTzltSWl1dVh0cTNUbFluYjZaX19ROWdRLU01UTFCbE05Y2pnRUJ0TWh0Q1RIenNKT0hXVTRtVDNfdWxpaHhGOGU0?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "corelation_unit21_keystone_integration",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-16",
+      "entities": [
+        "Corelation",
+        "KeyBridge",
+        "KeyStone",
+        "Unit21"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "Corelation and Unit21 integrated near-real-time fraud and AML monitoring with KeyStone, enabling analysts to trigger card, payment, and account actions through KeyBridge.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMisAFBVV95cUxORV80cDRTaWJJcEN5S3A4S0tDZmVZMVhiQVBFdTRJWjRRVGpIZGVIeGFTVkttX3ZXQ2dPbDNDejhDMVFRSWhiSEdLNUlrN0lrQTlVNFZEdnlSdFZibDllNzBYWk94OHNNalhZelQyX0M5SGxPdkRwWmhjXzRyNC1EbjF4aGgxNEVtdEZwWURkWkpJcEc4NGxzd1JKNXNNYXFsc0xJNUFobUk4UUFsbTJUOA?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-16"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_q3_bookings",
       "first_covered": "2026-10-15",
       "last_covered": "2026-10-15",
