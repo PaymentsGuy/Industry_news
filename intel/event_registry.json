@@ -2,6 +2,104 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_identity_market_growth",
+      "first_covered": "2026-10-19",
+      "last_covered": "2026-10-19",
+      "entities": [
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-19",
+          "summary": "Socure reported accelerated Q3 growth and more than 3,000 customer additions, intensifying competition in identity verification and fraud prevention.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWFhXR010Wm10amZiYXpkM2NzYkYyaUgxZUExeTNHMDRYTUdxZUxnTnhMRzFtOVVKV2dyWnZnRldJcHgwcnRJV0QxeWxid3NBTFRLUm5QZDRMVVc2SHk5WXRpMXV6ekF6TVF6MVV2TXpyOW5RendSLUdyZnUtZmp1VmV0NWwwYmhKb0t3VFpPUERqaUVPcUhWbFp0a2N4b2dzR25DUFlB?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-16"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_google_cloud_tokenized_deposits",
+      "first_covered": "2026-10-19",
+      "last_covered": "2026-10-19",
+      "entities": [
+        "Google Cloud",
+        "Jack Henry"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-19",
+          "summary": "Jack Henry expanded its Google Cloud relationship to help banks and credit unions offer tokenized deposits through Universal Ledger integration.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNTWpDOHhXQ3JlbFlFak05d3hrLVhaaDhSNFB0ZEIzOXdqbTM4RzJ3ZFRVc1ZidThja1ViUHp6TzFfel8wOHhNVFA4ZUdPWm52VENVSkRwU0NRRlZzTEZiZWEwT0lxZ252dnkydTZyQzliQWZlbGtqc1BoSERvY3MtLUU1TUpSYmVISTN3UklWTkV5NE1nQnFISlJNYlg0OWR0bUdmTUtaM191TzNvZ2NpVU5EdTNOYW1pWlhqLWIxV0lIRVZNTzFsU21NdngwVTBOT0RDR1JMMUxKWDJOaklwY1AxX2FKX3ZUMnR0cFZ5LUJRTU9nMzI4?oc=5",
+            "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUjM3Nk9XX3BpS1NLWHd3UDNKWUZaYWtrNmdIalJaOXJfQXpDRjdFVC1HOUpsR2RaendWbXkyb0tNdkp6LU5tWmxzMGtSLUtmLW9qZkZCMGc4UFQ4SHdsSnhScERfT05oaFhMQThFZktFM2NMRm85bFBoelRCTUJpbVRVZWZjLTNmRlVja0p4VENhQTFyLTl6WkFmbDB1ems?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-16"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "hkma_ai_deepfake_detection",
+      "first_covered": "2026-10-19",
+      "last_covered": "2026-10-19",
+      "entities": [
+        "HSBC",
+        "Hong Kong Monetary Authority",
+        "Ping An Digital Bank"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-19",
+          "summary": "Banks in the HKMA GenAI Sandbox tested AI-powered deepfake detection, with Ping An reporting over 96% accuracy and HSBC reporting no successful bypasses.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMingFBVV95cUxON1lrM0l2S1lXOHkzdTJXbmFsZ19ZYmZsaHkyaTFZb3VjT0lqQVRFUV9VOVFub0psNEVjY0gyNEJ6NFpDYnRPX2gzR1ZOVERhNzROaXBFOHMyREtWOWhjXzdpZi1nZ210Nno3U0xuajlIZk5BSzFCTzZjRXNFb2FEUVk0OWsyQ3dEMFV6Njl1SkFUNHlIb0dTaGh5S1JRZw?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-19"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fca_ai_advice_disclosures",
+      "first_covered": "2026-10-19",
+      "last_covered": "2026-10-19",
+      "entities": [
+        "Financial Conduct Authority"
+      ],
+      "roadmap_areas": [
+        "forecast"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-19",
+          "summary": "The UK FCA called for clear, proportionate disclaimers explaining limitations and accountability risks for AI-generated financial information and agentic advice.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48604/fca-calls-for-disclaimers-on-ai-financial-advice?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-19"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "stablecore_jack_henry_stablecoin_distribution",
       "first_covered": "2026-10-16",
       "last_covered": "2026-10-16",
