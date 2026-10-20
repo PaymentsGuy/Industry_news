@@ -2,6 +2,131 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "ramp_occ_trust_bank_charter",
+      "first_covered": "2026-10-20",
+      "last_covered": "2026-10-20",
+      "entities": [
+        "Office of the Comptroller of the Currency",
+        "Ramp"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-20",
+          "summary": "Ramp applied for an OCC national trust-bank charter covering fiduciary investment management and digital-asset custody without deposits or commercial lending.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/ramp-applies-national-trust-bank-charter-occ-fintech-icba/833434/"
+          ],
+          "source_dates": [
+            "2026-10-20"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "lumin_financial_institution_distribution",
+      "first_covered": "2026-10-20",
+      "last_covered": "2026-10-20",
+      "entities": [
+        "Lumin Digital"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-20",
+          "summary": "Lumin Digital reported seven financial-institution launches adding more than 750,000 users across 19 modules spanning banking, payments, fraud protection, and analytics.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNjZVQW9HWEZrS0RndElnX1Vndk5pTWRQMXdEX3FPdTR1N3BucG1jdkVjZkE1eTktYmowTlRXYlAxUFQ2dWV5blNRRUZXaE54XzV1SkhfNUNwWDA0YndpdGhyRmpacm11SWNLMzZ1TlFVX1VlaUtqS1k2Z1dhWUdvcExJVVZndDZpSERISzZKQ0xoZW8wempVaVF4UXZTYUE?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-19"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_strategycorps_monetizeiq",
+      "first_covered": "2026-10-20",
+      "last_covered": "2026-10-20",
+      "entities": [
+        "Jack Henry",
+        "MonetizeIQ",
+        "StrategyCorps"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-20",
+          "summary": "StrategyCorps joined Jack Henry’s FIN, connecting MonetizeIQ to SilverLake and Symitar for automated offers, rewards, pricing, and relationship-tier intelligence.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMilAFBVV95cUxNdzF5ZUd1R0JfY2V1TWRtY1ZIb1RuZHJSMHNNbFF3OTJGbjNHalFnMVE5Mm1tV1dnUEZ4UERfNTNPeEU2eWRzS2hKWHctTkRnYWtDUVV2VFZiVXRWWWQwcUVrSGNSV3JvdTVGMVN1aFVqaFlaRzhYRDdLVUstbXVSX1h1RUwxNFBZMkllcTViSFlqT1lL?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-20"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "bankjoy_corelation_engagement",
+      "first_covered": "2026-10-20",
+      "last_covered": "2026-10-20",
+      "entities": [
+        "Bankjoy",
+        "CommunityWide Federal Credit Union",
+        "Corelation",
+        "FraudSense",
+        "JoyCompass"
+      ],
+      "roadmap_areas": [
+        "compass",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-20",
+          "summary": "Bankjoy reported stronger engagement and retention among Corelation KeyStone credit unions using JoyCompass and FraudSense, including 91.8% retention among budget users.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdFgzS3BoWFl6LXVfdUltQjZDSHQ4dmtHWEVMclJ5d05ncUdNYU5uNlhQTlJaM1Rrc21pOEd0VXREQ3ZSOUZIdFlYcVpGaW91Xy1Zb0wwVk9CeWZOR1lLSjk1M2d6bmVmeHNqbGYtbVZmcF84dVlSZEU4MkVPTWVoN3NUdWRjQmNXRlV5S19DenBQdTcyRkNlekJkS20wUzAwMWdURzJYZDdyQk9jaWVobEZaNUZweTFReUFnOGduQjhRQ21vak1RNnJSZUFuRnJ0Z1R0blhuakI?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-20"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "atomic_us_bank_payment_switch",
+      "first_covered": "2026-10-20",
+      "last_covered": "2026-10-20",
+      "entities": [
+        "Atomic",
+        "U.S. Bank"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "one_view",
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-20",
+          "summary": "U.S. Bank launched Atomic-powered Payment Switch to help customers change recurring-bill payment methods through a Bills & Subscriptions dashboard.",
+          "source_urls": [
+            "https://finovate.com/u-s-bank-taps-atomic-to-simplify-recurring-payment-switching/"
+          ],
+          "source_dates": [
+            "2026-10-19"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_identity_market_growth",
       "first_covered": "2026-10-19",
       "last_covered": "2026-10-19",
