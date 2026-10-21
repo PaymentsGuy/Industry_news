@@ -2,6 +2,54 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "td_akoya_open_finance_connectivity",
+      "first_covered": "2026-10-21",
+      "last_covered": "2026-10-21",
+      "entities": [
+        "Akoya",
+        "TD"
+      ],
+      "roadmap_areas": [
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-21",
+          "summary": "TD and Akoya announced a phased secure-API model giving customers visibility and control over third-party financial-data access, including provider selection and revocation.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMUcxNkp5N3hwTXc1ZzVtYVhkMm1aOEtuRUtpYXJtTUhIbTdOQWZTeU5pQUtnRkJmSW8zR1BpaXNITElWX1hzb1Eyb3F5M0RRcngySWlTd2RWMEhwWWt6d2RQUkYwTkp4WTZRWDdLMlVNR3lnSGVQQUtZZkRlWWIyUzBKN2g1dHV2UGJhdnUyNTRmcTVIX0pXSUZ4ZkpmdjJMblZWaGlURENHekJ1OE9MeXRELTBWT1h6NHVhdHo1VQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-20"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "occ_debanking_policies",
+      "first_covered": "2026-10-21",
+      "last_covered": "2026-10-21",
+      "entities": [
+        "Office of the Comptroller of the Currency",
+        "U.S. national banks"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-21",
+          "summary": "The OCC found that all nine largest supervised national banks maintained policies that could restrict financial-service access based on political, religious, or lawful business considerations.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTlE2UTVGOE5mZm1NWW5ORUN6ZHBBaVNqTHhpQTd1a2d6SHZjT3paMjJuZGpIOHc4R0lJXzkzSDhDTTBQSEFWRHNRUm5jU0JUVW95cnlDMWx6SnkyZzBXZjFhVmpSTC1Kb2ZCblc4SWZqQlZIRkYwUjZGVFNaVlhLQUNPc0VrNjNvLXpNam5R?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-20"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "ramp_occ_trust_bank_charter",
       "first_covered": "2026-10-20",
       "last_covered": "2026-10-20",
