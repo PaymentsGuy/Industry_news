@@ -2,6 +2,132 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "td_akoya_permissioned_data_connectivity",
+      "first_covered": "2026-10-22",
+      "last_covered": "2026-10-22",
+      "entities": [
+        "Akoya",
+        "TD"
+      ],
+      "roadmap_areas": [
+        "one_view",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-22",
+          "summary": "TD and Akoya plan permissioned API connections that let customers select and revoke financial-data access without credential-based aggregation.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUGxaRGRDVTBQWHNBNm5UNmZpNncxRlRTY0hjbHlJR3gtTGJqMml1OXBOOTF2elBGUkpTUjZESkxDdEVuODVuTE9YNjNzc1k2Mmp2elg4M3ZFV3UtcWtyMDFNbi1UUDNoZTdXLWowZWZycXFTLXNYWmlDNDRwQUMtVEdIMVVTTmpmUjkybDF3MDdyOERNNnp1YjdUYnZORGhvcEx0VnU4aGxyc3dDdFJPVmFBUVRtZ1ZLYWRMMWlqbjM?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-21"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "occ_genius_act_stablecoin_framework",
+      "first_covered": "2026-10-22",
+      "last_covered": "2026-10-22",
+      "entities": [
+        "Congress",
+        "Office of the Comptroller of the Currency",
+        "U.S. Treasury"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "pay",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-22",
+          "summary": "The OCC finalized a GENIUS Act framework for payment-stablecoin issuance and custody, effective January 18, 2027, with AML and sanctions rules deferred.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/occ-final-rule-genius-stablecoin-yield-gould-bessent-icba/833638/"
+          ],
+          "source_dates": [
+            "2026-10-21"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_doj_aml_enforcement",
+      "first_covered": "2026-10-22",
+      "last_covered": "2026-10-22",
+      "entities": [
+        "FinCEN",
+        "U.S. Department of Justice"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-22",
+          "summary": "FinCEN and DOJ say AML reforms will reduce compliance burdens without weakening enforcement against willful misconduct or high-risk violations.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZmFaNzhmOFNMSG9YWlhJSmJsdjhkR1E0QzlOMFJGQjFxdlV6djZRWWZCeExNTkVXQlBiZ2NPbEh0b29URnpydmlMTTJ0OHBFQzFpSmJCeUhPRUc5TFI4YW9aS3QxWUwta0VlVjFOOVNCdlNPVEd6VFhMdVBkbm5tcUdRbW92WUw0d2tGeWJUSkdkLVVyZWs4a0RTaTY?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-21"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fdic_agentic_ai_deposit_movement",
+      "first_covered": "2026-10-22",
+      "last_covered": "2026-10-22",
+      "entities": [
+        "Federal Deposit Insurance Corporation",
+        "Travis Hill"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-22",
+          "summary": "FDIC Chair Travis Hill is evaluating whether existing supervision adequately covers AI agents moving customer deposits and may seek public input.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVmpDVE9yNVRxaFJuTHh1WEJqa0lZbm44QTNXbGhvd1ktNnR4MjRZMnl4M3U4dnlkNDUtYm9YTXJKM0hSUnRya2hYcDVxZ3FjTlBYXy1jRTIxcEEzYldWNlVCaFNaRUFkZ0JfblRqMkx6cFVQRFdEWUYyUFhjdWotNmRTRFBSMW1RdmNZTDM4SlU0cTBSbGE1dw?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-21"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "alkami_mantl_carleton_lending_automation",
+      "first_covered": "2026-10-22",
+      "last_covered": "2026-10-22",
+      "entities": [
+        "Alkami",
+        "Carleton",
+        "MANTL"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-22",
+          "summary": "Alkami’s MANTL integrated with Carleton to automate loan calculations, compliance validation, and disclosures within origination workflows.",
+          "source_urls": [
+            "https://www.alkami.com/news/mantl-brings-automated-loan-calculations-and-compliance-validation-to-loan-origination-with-carleton-integration/"
+          ],
+          "source_dates": [
+            "2026-10-21"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "td_akoya_open_finance_connectivity",
       "first_covered": "2026-10-21",
       "last_covered": "2026-10-21",
