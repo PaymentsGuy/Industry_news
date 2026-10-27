@@ -2,6 +2,155 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "td_akoya_open_banking",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Akoya",
+        "TD Bank"
+      ],
+      "roadmap_areas": [
+        "one_view",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "TD Bank selected Akoya for secure API-based access by financial applications and data aggregators, with phased onboarding beginning in Q4 2026.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMingFBVV95cUxPYXI2c0FkTGpseUhHX3VXM0NZbS1WeFp1MV9qYTg4aU43c25CdWVXRXlqeWNHd2phaHJ1U2dOYmV4Rloxa1lIbDB5NnRIeS1yVVBRYm52Wk9wc0hEU3FpbTlqaW1WT2szVDVzOFdhR3ZHZkNJTHM2dGxQazlYQVBNdktfZVVpcVB6THBUNm9NU0hVa01JNzI1VV9qV3A4dw?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "sezzle_occ_national_bank_charter",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Office of the Comptroller of the Currency",
+        "Sezzle"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Sezzle applied for an OCC national bank charter to offer deposits, checking, savings, and credit products, continuing the fintech-to-bank trend.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRjBzZGloem9GTzB6OGpPVDVscFBXWl9xMHNhamE0LVptWnUzZFdtNE1VZlgzbWw1Z3VwQ0J1bERBUmtnMUhhaC1UUWRzVXo2UVdtNWJ3a0JsQ1JldnpFWUpoTnBjczhtdmhVYllCcnJLanBUY1o1bmdLTjhJWFRUc2hHSEVXV2tzLVVjdEdGSQ?oc=5",
+            "https://www.bankingdive.com/news/sezzle-applies-occ-national-trust-bank-charter/833860/"
+          ],
+          "source_dates": [
+            "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_tokenized_deposits",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Google Cloud",
+        "Jack Henry"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Jack Henry plans to use Google Cloud’s Universal Ledger to support tokenized deposits and programmable settlement for financial institutions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdC01VTFZRklHT3Etc2NJTklrdHJNVUVlUi1UZnBpYmRTZmNmYkRuOVFUd0puNUl4Z0dpVnFpdkpZT2t6djRYNWpOeG40dVFUT3RRNTFScmdWVE52YmFUTjNNLVNlNG8wb2ROeWJOWHVDSGg0YWVVei02OVFDUnJrN1BnQkpLWW9iXzdnRUxCWFpkWGptVDc4MlZFa0ZiMk5zRm1mTExzWnloRjZ5MDlaYUZCN0M?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "hkma_art_agentic_banking",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Hong Kong Monetary Authority"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "HKMA introduced the ART framework for agentic banking AI, emphasizing accountability, resilience, trust, registries, lineage, and intervention mechanisms.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMilgFBVV95cUxNMlFhRU1CT3hwZngzOUREM24tWjRfSU80OWg0YjdRNlhXVW54clJoYWt1YWs3Y012Yk1aTV9GMTRObzBpeEoyQjZHcjNOREpoeloydGZHMmFReHk0b05BMEFVOEhTZXd4amxSNFk2ZVh4VnB0c2pWMU5qbm1OTzdoc1c5cTBYdEE4RExoUEs3UlUzYXp2RFE?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fca_agentic_open_finance",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Financial Conduct Authority"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "vault",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "The FCA will test open-finance infrastructure for agentic services, covering consent, verification, delegation, monitoring, and accountability.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdnQ3QnBHdkYzM1BkODR5aWIyUEJCNlIxWm5NRUo0WnBIQlVWZlFWX2E0TGFJeWxwcGhpUE9HUmVyM3VkejlWRHBycXVGV2NOSlQ3TnM3NDItQ3dHbVJLWlpQYl9JakcySkpLRV81bElTblJ4NXdkRzVNd2tGQ0Zncmpsa1QxX2ZkTzU1Z09uTVVzSjlpa3EtZUYyQ0pZVHlTUEpsS20xVGNVelFlVF9BekRLTDdUTks0blFXSw?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-26"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "corelation_bankjoy_integration",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Bankjoy",
+        "Corelation",
+        "TEN Credit Union"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "TEN Credit Union selected Bankjoy for digital banking alongside conversion to Corelation’s KeyStone core, strengthening a competing core-connected distribution path.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQ0lsaWxRbjNKUzJZWWlNMDJuaXZfRktZMTdTdklIOHFhNzJUSS1SWVRPZVMxZFYyWWNRUVM1b051WjBhSzJ6S2pKYURZTDBtV3NVSVdkUWxsQ0JUcWF2aVZKMW8xQ0pjcEx6cnM2cXU4SWJKRmFHSk94RTBoT0NCajRMeE1NS29Bak0yZXVhdHNjcGlla1FwXzh0a3Z4VjZMVjIwTlA0LU5pVFRTazY4VlJTUQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "td_akoya_permissioned_data_connectivity",
       "first_covered": "2026-10-22",
       "last_covered": "2026-10-22",
