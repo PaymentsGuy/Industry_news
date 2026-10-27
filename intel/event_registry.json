@@ -27,6 +27,30 @@
       ]
     },
     {
+      "topic_key": "socure_agent_intelligence",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Socure launched Agent Intelligence to detect AI agents, assess trustworthiness, and link agents to verified authorizing people or businesses.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMieEFVX3lxTE5pXzVtMlE5a0dPTk5aQmhMb2lSaVpJb0dJMkZ0T2Zma1IxWVZmajZEMHktLXBKeWtZSXdLMnloTF91Zk5SbU5FbER4Snk3SXJ1bTFBMTVkQUdtb0FZTnh2V3ZxRUNjSlRsZzNFdDJ5MGZnaC1RbWgzdg?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-27"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "sezzle_occ_national_bank_charter",
       "first_covered": "2026-10-27",
       "last_covered": "2026-10-27",
@@ -47,6 +71,57 @@
           ],
           "source_dates": [
             "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "sezzle_national_bank_charter",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Federal Deposit Insurance Corporation",
+        "Office of the Comptroller of the Currency",
+        "Sezzle"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Sezzle applied for an OCC national bank charter and FDIC deposit insurance to expand from buy now, pay later into deposits and credit products.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMikwFBVV95cUxNMEVGRUZYRUpoVWJESDd1NEJDQXE2aGZWRFR0X3VOSzNmM3h0ZExEYWhHQ2gwSnd0RkJuMWxldTRUTmpYanE2dXZIZ0g4UEZaQ19RVjc1aWRVWHFjU1JSOVRHeGMtQl9wRG82Mm9POHNTVEdPM1NLQVFUZlBhZzV1UkRDV1RSdlBwUDAtV1YtWThkLXc?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-26"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "q2_agentic_banking_fraud_controls",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Q2 Holdings"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Q2 framed personal AI agents as a new banking channel requiring identity, transaction, session, and account-takeover fraud controls.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcVpiendTYlRSbFpzZFBnV1dFV3VTTDBiV3hwZksxZWs5MlY3RmEyZzFiV05aVE8tY3lSSHBtVnIzYU5qN1VhdkJhS1BJRVRKVkV5RTUxZ3NCUWNqQnM2cWRITXUwY3lybU5oaHpRRzFlVnY3QUVmVm80QjJxZTYyZzhlMXc1aXlTQzd0R3NrcTFSY2xFREgtcWR5UDJZTDVwMEFZbUFjMENVVFRwMnNYN2RlTXhDX2U2ZklZT29mUkx6akhYS20tNWxIVUQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-26"
           ]
         }
       ]
@@ -146,6 +221,32 @@
           ],
           "source_dates": [
             "2026-10-23"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "alkami_mantl_alloy_fraud_controls",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-27",
+      "entities": [
+        "Alkami",
+        "Alloy",
+        "MANTL"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Alkami highlighted MANTL and Alloy integration using layered identity and fraud controls to combat generative-AI account-opening fraud.",
+          "source_urls": [
+            "https://www.alkami.com/blog/combating-generative-ai-fraud-during-account-opening-best-practices-and-a-101-on-emerging-ai-driven-fraud-trends/"
+          ],
+          "source_dates": [
+            "2026-10-26"
           ]
         }
       ]
