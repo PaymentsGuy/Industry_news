@@ -11,9 +11,9 @@ INPUTS
 - durable_event_registry (historical weekly competitive intelligence coverage): {{durable_event_registry_json}}
 
 CANONICAL RULES
-1. Publish every evidence-backed material candidate. There is no numeric cap.
-2. Compare each candidate with the recent ledger and durable registry by the same underlying event. A repeated event without a material new fact is a duplicate, not a fresh signal.
-3. Retain the supplied exact classification counts. Do not relabel candidates.
+1. Publish every distinct evidence-backed material event. There is no numeric cap. The supplied material candidates are source articles, not yet deduplicated events.
+2. Compare each candidate with the recent ledger and durable registry by the same underlying event. A repeated event without a material new fact is a duplicate, not a fresh signal. Keep one representative article per new event and map additional coverage to that representative; map already-covered events to their exact supplied historical topic_key.
+3. Account for every selected material candidate in the machine-readable disposition map below. Only material-to-duplicate transitions are allowed here; do not silently omit or otherwise relabel candidates. Final material count equals retained representatives; duplicate count increases by the explicitly mapped duplicates. All other supplied counts stay unchanged. The pipeline derives and validates the final counts from this map.
 4. The top summary is part of this exact canonical body. Slack must not prepend a separate un-hashed summary.
 5. Cite only `[REF n]` values from the supplied source catalog. Do not invent sources or facts.
 6. A zero-material interval is valid only when stated explicitly as `No evidence-backed material signals in this interval.`
@@ -34,13 +34,17 @@ OUTPUT EXACTLY THIS MARKDOWN SHAPE
 
 ## Material signals
 
-For every material candidate use `### <short signal title>` followed by evidence-backed prose whose factual claims end with source anchors. Order by relevance then source date. When empty, use the required no-material sentence.
+For every retained material representative use exactly one `### <short signal title>` followed by evidence-backed prose whose factual claims end with source anchors, including that representative's own `[REF n]`. Do not combine two retained representatives under one heading or pad the brief by repeating a duplicate. Order by relevance then source date. When empty, use the required no-material sentence.
 
 Only when a signal contains an explicit decision for Troy's review, append all three lines: `**Proposed decision:** ...`, `**Proposed next action:** ...`, and `**Proposed owner:** ...`. Never invent these fields, and never create downstream work automatically.
 
 ## Candidate disposition
 
-<Reconcile the supplied classification counts and name any blocked or needs-validation state. Do not turn a material signal into an action by default.>
+<Reconcile the final classification counts and name any blocked or needs-validation state. Explain duplicate exclusions. Do not turn a material signal into an action by default.>
+
+Immediately after this prose and BEFORE References, emit one JSON map in this exact comment shape:
+<!-- candidate-dispositions: {"1":"material","2":"duplicate:1","3":"duplicate:history:exact_topic_key"} -->
+Use every supplied source-catalog reference number exactly once as a string key. Values are `material`, `duplicate:<retained reference number>`, or `duplicate:history:<exact supplied topic_key>`. The example is illustrative, not actual dispositions. A duplicate must point directly to a retained material representative or a real historical topic; no self-references or chains. Use `{}` when no material candidates were supplied. Do not reproduce this map inside a code fence. It is removed from the published prose and retained in the audit receipt.
 
 ## References
 
@@ -48,9 +52,9 @@ Only when a signal contains an explicit decision for Troy's review, append all t
 
 CRITICAL REJECTION CONDITIONS
 - Missing or altered reporting interval.
-- Material count differs from the supplied material classification count.
-- Classification counts do not sum to candidates classified.
-- Any material candidate is omitted because of length or a fixed item cap.
+- Material count differs from the retained `material` dispositions.
+- Classification counts do not sum to candidates classified after explicit material-to-duplicate transitions.
+- Any material candidate is omitted without a valid explicit duplicate target, or because of length or a fixed item cap.
 - Missing source anchor, invented source, or unsupported factual claim.
 - Blank output or false-current wording when source data is unavailable.
 - Automatic Action OS, MIOS, roadmap, Jira, or provider action.

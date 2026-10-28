@@ -259,6 +259,79 @@ def _materialize_references(brief: str, catalog: list[dict]) -> str:
     return body + "\n\n## References\n\n" + "\n".join(references)
 
 
+def _resolve_daily_dispositions(
+    brief: str, items: list[dict], counts: dict[str, int],
+    ledger: list[dict], registry: Any,
+) -> tuple[str, dict[str, int], dict[str, str]]:
+    """Reconcile every selected article before fixing the published signal count."""
+    matches = list(re.finditer(r"<!--\s*candidate-dispositions:\s*(.*?)\s*-->", brief, re.S))
+    expected = {str(item["reference_number"]) for item in items}
+    if not matches and len(items) <= 1:
+        dispositions = {key: "material" for key in expected}
+    elif len(matches) != 1:
+        raise BriefContractError("one complete candidate-dispositions JSON map is required")
+    else:
+        try:
+            pairs = json.loads(matches[0].group(1), object_pairs_hook=list)
+            if not isinstance(pairs, list) or any(
+                not isinstance(pair, tuple) or len(pair) != 2 for pair in pairs
+            ):
+                raise ValueError("dispositions must be an object")
+            dispositions = dict(pairs)
+            if len(dispositions) != len(pairs):
+                raise BriefContractError("candidate-dispositions contains repeated source keys")
+        except (ValueError, TypeError) as exc:
+            if isinstance(exc, BriefContractError):
+                raise
+            raise BriefContractError("candidate-dispositions must be valid JSON") from exc
+        if not isinstance(dispositions, dict) or set(dispositions) != expected:
+            raise BriefContractError("candidate-dispositions must account for every selected source exactly once")
+        brief = brief[:matches[0].start()] + brief[matches[0].end():]
+    topics = registry.get("topics", []) if isinstance(registry, dict) else registry
+    historical_keys = {row.get("topic_key") for row in [*ledger, *topics] if isinstance(row, dict)}
+    material_refs = {key for key, value in dispositions.items() if value == "material"}
+    for key, value in dispositions.items():
+        if value == "material":
+            continue
+        if not isinstance(value, str) or not value.startswith("duplicate:"):
+            raise BriefContractError(f"source {key} needs a material or explicit duplicate disposition")
+        target = value[len("duplicate:"):]
+        if target.startswith("history:"):
+            if target[len("history:"):] not in historical_keys:
+                raise BriefContractError(f"source {key} duplicate target is not in supplied history")
+        elif target == key or target not in material_refs:
+            raise BriefContractError(f"source {key} duplicate target must be a retained material source")
+    section = re.search(r"(?ms)^## Material signals\s*(.*?)(?=^## |\Z)", brief)
+    entries = re.split(r"(?m)^###\s+", section.group(1) if section else "")[1:]
+    # Each retained candidate needs its own evidenced entry, not merely a matching total.
+    if dispositions and (len(entries) != len(material_refs) or any(
+        len({str(number) for number in re.findall(r"\[REF\s+(\d+)\]", entry, re.I)} & material_refs) != 1
+        for entry in entries
+    ) or {str(number) for entry in entries for number in re.findall(r"\[REF\s+(\d+)\]", entry, re.I)} & material_refs != material_refs):
+        raise BriefContractError("material source dispositions do not match the evidenced signal entries")
+    resolved_counts = dict(counts)
+    duplicates = len(dispositions) - len(material_refs)
+    resolved_counts["material"] -= duplicates
+    resolved_counts["duplicate"] += duplicates
+    return brief, resolved_counts, dispositions
+
+
+def _save_synthesis_rejection(
+    out_file: Path, attempt: int, raw_response: str, candidate: str, error: Exception,
+    items: list[dict],
+) -> None:
+    diagnostics = out_file.parent / "synthesis-diagnostics"
+    diagnostics.mkdir(parents=True, exist_ok=True)
+    section = re.search(r"(?ms)^## Material signals\s*(.*?)(?=^## |\Z)", candidate)
+    (diagnostics / f"attempt-{attempt}.json").write_text(json.dumps({
+        "attempt": attempt, "raw_response": raw_response,
+        "candidate": candidate, "error": str(error),
+        "selected_source_count": len(items),
+        "selected_source_ids": [item["id"] for item in items],
+        "parsed_material_headings": len(re.findall(r"(?m)^###\s+", section.group(1) if section else "")),
+    }, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def _materialize_daily_metadata(
     brief: str, report_date: str, report_start: datetime, report_end: datetime,
     classification_counts: dict[str, int], candidates_count: int,
@@ -626,19 +699,29 @@ def synthesize_brief(
                 transport_failures, type(exc).__name__,
             )
             continue
+        raw_response = candidate
         candidate = strip_code_fences(candidate)
+        resolved_counts = dict(classification_counts)
+        dispositions = {str(item["reference_number"]): "material" for item in synthesis_items} if brief_date else {}
         if brief_date:
             try:
+                if not candidate.startswith("# ASA Weekly Intelligence Brief") and (
+                    len(synthesis_items) > 1 or "candidate-dispositions:" in candidate
+                ):
+                    candidate, resolved_counts, dispositions = _resolve_daily_dispositions(
+                        candidate, synthesis_items, classification_counts, ledger, durable_events,
+                    )
                 candidate = _materialize_references(candidate, reference_catalog)
                 if not candidate.startswith("# ASA Weekly Intelligence Brief"):
                     candidate = _materialize_daily_metadata(
                         candidate, today_iso, report_start, report_end,
-                        classification_counts, len(interval_triaged),
+                        resolved_counts, len(interval_triaged),
                     )
             except BriefContractError as exc:
                 contract_attempts += 1
                 last_error = exc
-                log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempts, exc)
+                _save_synthesis_rejection(out_file, contract_attempts, raw_response, candidate, exc, synthesis_items)
+                log.warning("Brief contract rejected attempt %d: %s", contract_attempts, exc)
                 continue
         try:
             if candidate.startswith("# ASA Weekly Intelligence Brief"):
@@ -647,14 +730,23 @@ def synthesize_brief(
                 validate_daily_pulse(
                     candidate,
                     expected_interval=(report_start, report_end),
-                    expected_material_count=len(synthesis_items),
+                    expected_material_count=resolved_counts["material"] if brief_date else len(synthesis_items),
                 )
         except BriefContractError as exc:
             contract_attempts += 1
             last_error = exc
-            log.warning("Weekly brief contract rejected attempt %d: %s", contract_attempts, exc)
+            _save_synthesis_rejection(out_file, contract_attempts, raw_response, candidate, exc, synthesis_items)
+            log.warning("Brief contract rejected attempt %d: %s", contract_attempts, exc)
             continue
         brief = candidate
+        if brief_date and not candidate.startswith("# ASA Weekly Intelligence Brief"):
+            out_file.parent.mkdir(parents=True, exist_ok=True)
+            (out_file.parent / "synthesis-dispositions.json").write_text(json.dumps({
+                "brief_date": today_iso, "dispositions": dispositions,
+                "source_ids": {str(item["reference_number"]): item["id"] for item in synthesis_items},
+                "classification_counts": resolved_counts,
+                "initial_classification_counts": classification_counts,
+            }, indent=2, sort_keys=True), encoding="utf-8")
         break
     if brief is None:
         raise BriefContractError(f"daily pulse contract failed after 3 attempts: {last_error}")
