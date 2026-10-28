@@ -1,0 +1,37 @@
+{
+  "brief_date": "2026-10-28",
+  "classification_counts": {
+    "duplicate": 3,
+    "material": 5,
+    "monitor": 4,
+    "needs_validation": 15,
+    "noise": 5
+  },
+  "dispositions": {
+    "1": "material",
+    "2": "material",
+    "3": "material",
+    "4": "duplicate:3",
+    "5": "material",
+    "6": "material",
+    "7": "duplicate:3",
+    "8": "duplicate:5"
+  },
+  "initial_classification_counts": {
+    "duplicate": 0,
+    "material": 8,
+    "monitor": 4,
+    "needs_validation": 15,
+    "noise": 5
+  },
+  "source_ids": {
+    "1": "75fe95608952c6e7",
+    "2": "7a86c231dbb8df88",
+    "3": "4bbc18ee132a5607",
+    "4": "429dab5ce66134a2",
+    "5": "eb1bc205ca193724",
+    "6": "2330d2dd7aee2c10",
+    "7": "0ba0a7027444dc38",
+    "8": "a67a5af33841d713"
+  }
+}

@@ -2,6 +2,148 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_agent_intelligence",
+      "first_covered": "2026-10-27",
+      "last_covered": "2026-10-28",
+      "entities": [
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-27",
+          "summary": "Socure launched Agent Intelligence to detect AI agents, assess trustworthiness, and link agents to verified authorizing people or businesses.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMieEFVX3lxTE5pXzVtMlE5a0dPTk5aQmhMb2lSaVpJb0dJMkZ0T2Zma1IxWVZmajZEMHktLXBKeWtZSXdLMnloTF91Zk5SbU5FbER4Snk3SXJ1bTFBMTVkQUdtb0FZTnh2V3ZxRUNjSlRsZzNFdDJ5MGZnaC1RbWgzdg?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-27"
+          ]
+        },
+        {
+          "covered_on": "2026-10-28",
+          "summary": "Socure launched Agent Intelligence to detect AI agents, assess trustworthiness, and link agents to authorized people or businesses through credentials and trust scoring.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNam1vVWprZUpxR3ZYODF3TmFxUU1NMUhnMzZELUdGVjR3b05qUTBLQjFaNExvOHhwX2I5TFQzU0dRZVVMSV9PWW5wVHl3SFk2MFNFQlNvbk91YWVncmtDMVJ2aVdkMmVjc08xSlVWTW1UaUtCS3ROLVdYdll5dVZiUTRkME9xRFlFR2VIVUNlbGEzYi1QcW42NGI2MjJmczdtVFlEMlFSTDI?oc=5",
+            "https://news.google.com/rss/articles/CBMiugFBVV95cUxQY3dIXzFCN2tqOURXWGk2MmppZ2hLUzV6Y0xfNFEwRGZUSkhrS0lrOFh1RmlDdTVkeFkteFNxU1pyMWw0TzZtb3p5RE1YSUtWMHpkU24xejQySktyU0hzMjBRVG10RGtpVnBWXzgwQ3h3alNHc1dwMnpiR2syMFFuNzRYdk9hZDFMMUhya1U0UzdaYU9DQjVpNDhua2Jxdm5LbjNoRFBuZWZ6ZnZKMzRqZTVoQjRpYXhmSnc?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-27"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "ripple_national_trust_bank",
+      "first_covered": "2026-10-28",
+      "last_covered": "2026-10-28",
+      "entities": [
+        "BNY",
+        "Ripple",
+        "Robinhood"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "one_view",
+        "pay",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-28",
+          "summary": "Ripple received approval to establish a national trust bank and announced partnerships with BNY and Robinhood, potentially expanding regulated custody, stablecoin, and institutional trust services.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48655/ripple-secures-national-bank-charter-inks-deals-with-bny-and-robinhood?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-27"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "mastercard_zen_pay_by_bank",
+      "first_covered": "2026-10-28",
+      "last_covered": "2026-10-28",
+      "entities": [
+        "Mastercard",
+        "Zen.com"
+      ],
+      "roadmap_areas": [
+        "pay",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-28",
+          "summary": "Mastercard expanded Pay by Bank with Zen.com for merchant acceptance and digital-wallet top-ups across nine European markets, benchmarking ASA Pay and Vault capabilities.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48659/zencom-and-mastercard-expand-pay-by-bank-for-merchants-and-consumers-across-europe?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-10-28"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_nuuvia_banno",
+      "first_covered": "2026-10-28",
+      "last_covered": "2026-10-28",
+      "entities": [
+        "Banno",
+        "Jack Henry",
+        "Nuuvia"
+      ],
+      "roadmap_areas": [
+        "one_view",
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-28",
+          "summary": "Jack Henry integrated Nuuvia’s youth and family banking platform into Banno, expanding community-institution capabilities for household engagement and lifelong relationships.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaUY0TjRCb3BpRlNPUkctNU5TX3dFbXgxOUlXMVdmSkRmVll3Mm5iWmNuRW01MWV4MDlOaUwzc1lZNC1tM3BwbkozX283QVJNZmtRSmpfUzRuVmlRVmpCbHZNZWZUNWNyS0FJNlBVaVYwSE1mb0xxYkdNNFRpTjM1VUNjOURDd1pRNFZMdjdzUFVHMTNOWU84eklqcGxmYmc1ZlpJWTZCbEZFUTB6S0dLUVByNE5CVGtncGx4ckFkOUh2Z05sUThPOXE3bVdxLTZjM3lZ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-27"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "bank_of_america_aml_enforcement",
+      "first_covered": "2026-10-28",
+      "last_covered": "2026-10-28",
+      "entities": [
+        "Bank of America",
+        "FinCEN",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "one_view",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-28",
+          "summary": "FinCEN and the OCC penalized Bank of America $1.95 billion for BSA/AML deficiencies, reinforcing expectations for identity verification, due diligence, monitoring, sanctions controls, and data governance.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiogJBVV95cUxOcEI4M3Q1UzZWd25WSHlRN3U2eWh0cndtN25LLVpZcW8wNVA0OVRDT3cxT19CeC1aQlpHNGFqM000OFFIem43UDBiU2RkQmppZlFQVjVwM1JBTi01VHZTNzQ3X2p5aks1SFluWi1qaGpKS3NYbV8ybldyN1NSS1E5Q2RnS0k4WmxqWVVUUUR0NUkzZGJPclIyd3Q4eFl3VWhZTW1MUHpETXR5R3Q1SGt2VkliVnhhekZ0UzNCVmlsYTBjZEh3bTZidHZORW00S3dnNXBadHdnYmg2VEFpWTRrM3M1Qjd0N0FXYmxKbTJqQU9laUNaZ3VLRVJubE1GNXBUOXBpUDl0aVJGNUN6dVN2Xzh5bGZoTS1IUk5QbmNMdTVhQQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-27"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "td_akoya_open_banking",
       "first_covered": "2026-10-27",
       "last_covered": "2026-10-27",
@@ -22,30 +164,6 @@
           ],
           "source_dates": [
             "2026-10-23"
-          ]
-        }
-      ]
-    },
-    {
-      "topic_key": "socure_agent_intelligence",
-      "first_covered": "2026-10-27",
-      "last_covered": "2026-10-27",
-      "entities": [
-        "Socure"
-      ],
-      "roadmap_areas": [
-        "auth",
-        "verify"
-      ],
-      "events": [
-        {
-          "covered_on": "2026-10-27",
-          "summary": "Socure launched Agent Intelligence to detect AI agents, assess trustworthiness, and link agents to verified authorizing people or businesses.",
-          "source_urls": [
-            "https://news.google.com/rss/articles/CBMieEFVX3lxTE5pXzVtMlE5a0dPTk5aQmhMb2lSaVpJb0dJMkZ0T2Zma1IxWVZmajZEMHktLXBKeWtZSXdLMnloTF91Zk5SbU5FbER4Snk3SXJ1bTFBMTVkQUdtb0FZTnh2V3ZxRUNjSlRsZzNFdDJ5MGZnaC1RbWgzdg?oc=5"
-          ],
-          "source_dates": [
-            "2026-10-27"
           ]
         }
       ]
