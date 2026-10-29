@@ -1,0 +1,75 @@
+{
+  "brief_date": "2026-10-29",
+  "brief_id": "industry-pulse-2026-10-29",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-10-29\n\n**Reporting interval:** 2026-10-28T06:30:00-07:00 to 2026-10-29T06:30:00-07:00\n**Candidates classified:** 38\n**Material signals:** 4\n**Classification counts:** material=4; monitor=5; noise=15; duplicate=0; needs_validation=14\n\n## Top summary\n\nFour material signals cleared the interval: Socure appointed a CFO, Q2 Holdings named its CFO co-CEO while beginning a CFO search, Jack Henry expanded its distribution channel into stablecoin and tokenized-asset services, and major U.S. banks are blocking external AI agents over security, fraud, and liability concerns. The common strategic implication is tighter control of identity, permissions, transaction access, and partner economics across ASA\u2019s Verify, Auth, Vault, Pay, and horizontal roadmap areas.\n\n## Material signals\n\n### Socure appoints Rohan Sivaram as CFO\n\nSocure appointed Rohan Sivaram as chief financial officer, with responsibility for finance, operations, capital markets, and pricing economics. The leadership change could influence commercial scaling and pricing strategy around ASA-relevant identity and risk capabilities in Verify and Auth.[REF 1]\n\n### Jack Henry expands stablecoin distribution through Stablecore\n\nStablecore joined Jack Henry\u2019s integration network, enabling approximately 1,600 U.S. banks and credit unions to offer stablecoin and tokenized-asset services. The move broadens Jack Henry\u2019s embedded payments and digital-asset proposition across a key ASA distribution channel, with implications for Pay and platform positioning.[REF 2]\n\n### Q2 Holdings appoints CFO Jonathan Price as co-CEO\n\nQ2 Holdings appointed CFO Jonathan Price as co-CEO alongside Matt Flake, effective October 29, while retaining Price as CFO during a search for his successor; Price also joins the board.[REF 3] The change warrants attention for potential shifts in Q2\u2019s financial-institution platform strategy, AI roadmap, and partnership priorities.\n\n### U.S. banks block external AI-agent access\n\nMajor U.S. banks are restricting external AI agents from accessing customer accounts because of security, fraud, credential, and liability concerns. Reported controls include blocking agents from accessing accounts or moving money, while banks acknowledge that self-identifying agents may not be the only agents reaching their systems.[REF 4] The market direction supports controlled or read-only agent access and strengthens the relevance of ASA Auth, Verify, and Vault capabilities for consent, identity, permissions, and auditability.\n\n## Candidate disposition\n\nAll four supplied material candidates are retained as distinct, evidence-backed events. No candidate is excluded as a duplicate; the duplicate count therefore remains zero. The five monitor, fifteen noise, and fourteen needs-validation candidates remain outside the material set, with needs-validation items blocked from publication pending sufficient evidence.\n\n## References\n\n1. Socure (blog), \"Socure Appoints Rohan Sivaram as Chief Financial Officer - Yahoo Finance Singapore,\" 2026-10-29. https://news.google.com/rss/articles/CBMijAFBVV95cUxNUGo5SjN2MVhYMVA3Q0pQQlFaLVRkQWhEWmQ1NlRCRWJwM0tVTXRWT3RlM2NTYWJEMU8zOVlodUh3MElRY0M0eEo3R010RjYzZXBuUXJJaWZkNl9wdWJwb2xwelhlbnVrcC1jQXBpNzNVZU5peVJ1eEtBcW1PeE1oZG5uclBJTndrbkJnYg?oc=5 \u2014 *A senior finance hire at ASA's identity and risk partner may influence pricing, scaling, and commercial strategy around Verify and Auth..*\n2. Jack Henry (blog), \"Stablecore Brings Stablecoins to 1,600 U.S. Banks via Jack Henry - CoinMarketCap,\" 2026-10-29. https://news.google.com/rss/articles/CBMipgFBVV95cUxQZVViamMzeG9QMXZTTTh2WUhpRDVtMHFIYVBXeVZWZnhEMmRlTUVTdERoMDNTUmdxRnRGa2ROOGx2Vk1sV2E0eVN2YTJJOGlXUmV1U0E5dmIxUWxMZk9Ed0ttR3Y0SmU1aFZpZERPbkJqMjNmZXlnZHVKWXpEX2IxVUdIdEY2NDFXc2JfRlNXeTdISFFSNkhBNzdfYWlmajNDNnpVQ3lR?oc=5 \u2014 *Jack Henry is expanding embedded payments and digital-asset capabilities across ASA\u2019s key distribution channel, warranting monitoring of Pay and platform positioning..*\n3. Q2 Holdings (SEC 8-K), \"8-K  - Current report,\" 2026-10-28. https://www.sec.gov/Archives/edgar/data/1410384/000141038426000063/0001410384-26-000063-index.htm \u2014 *A leadership change at a tracked distribution partner warrants monitoring for potential shifts in Q2\u2019s financial-institution platform strategy and partnership priorities..*\n4. Agentic AI in banking (blog), \"Banks are blocking external AI agents. Is this sustainable? - American Banker,\" 2026-10-28. https://news.google.com/rss/articles/CBMimAFBVV95cUxOWjZXMDlCQnhqNFllTThhYTloOWJtRzFScFhFUDg2UGp6SDVMWl9PUU9Ba2tJY3Y0VUcxQmhlbks2dlFJTG9ZbHR5QXBVdHQ5OXFZRjhTLTRFanAycHhIaFdvQXFwWWgxSVRLV0N5ZnhwekNWdmFYVklzcEtSOW9VY3VJTjZ6a3g4NXdkZDJaQlpiTGhMMHdmOA?oc=5 \u2014 *The shift toward controlled or read-only agent access strengthens the case for ASA Auth, Verify, and Vault capabilities around consent, identity, permissions, and auditability..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 4,
+    "monitor": 5,
+    "needs_validation": 14,
+    "noise": 15
+  },
+  "content_sha256": "c926f56711de7e5a8978c5652a957860f9ca1d8a8399b1c4a194b8bfe9613b0e",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "8c3817b1-5eef-528a-a537-3033fefa1078",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-10-29T06:30:00-07:00",
+    "start": "2026-10-28T06:30:00-07:00"
+  },
+  "material_signal_count": 4,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUGo5SjN2MVhYMVA3Q0pQQlFaLVRkQWhEWmQ1NlRCRWJwM0tVTXRWT3RlM2NTYWJEMU8zOVlodUh3MElRY0M0eEo3R010RjYzZXBuUXJJaWZkNl9wdWJwb2xwelhlbnVrcC1jQXBpNzNVZU5peVJ1eEtBcW1PeE1oZG5uclBJTndrbkJnYg?oc=5"
+      ],
+      "signal_id": "signal-327913e33a5fe10ac07ded0e",
+      "title": "Socure appoints Rohan Sivaram as CFO"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZVViamMzeG9QMXZTTTh2WUhpRDVtMHFIYVBXeVZWZnhEMmRlTUVTdERoMDNTUmdxRnRGa2ROOGx2Vk1sV2E0eVN2YTJJOGlXUmV1U0E5dmIxUWxMZk9Ed0ttR3Y0SmU1aFZpZERPbkJqMjNmZXlnZHVKWXpEX2IxVUdIdEY2NDFXc2JfRlNXeTdISFFSNkhBNzdfYWlmajNDNnpVQ3lR?oc=5"
+      ],
+      "signal_id": "signal-24156b9fc39977450c45e2ad",
+      "title": "Jack Henry expands stablecoin distribution through Stablecore"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.sec.gov/Archives/edgar/data/1410384/000141038426000063/0001410384-26-000063-index.htm"
+      ],
+      "signal_id": "signal-ec19a2df0df19b0dbbf941b6",
+      "title": "Q2 Holdings appoints CFO Jonathan Price as co-CEO"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWjZXMDlCQnhqNFllTThhYTloOWJtRzFScFhFUDg2UGp6SDVMWl9PUU9Ba2tJY3Y0VUcxQmhlbks2dlFJTG9ZbHR5QXBVdHQ5OXFZRjhTLTRFanAycHhIaFdvQXFwWWgxSVRLV0N5ZnhwekNWdmFYVklzcEtSOW9VY3VJTjZ6a3g4NXdkZDJaQlpiTGhMMHdmOA?oc=5"
+      ],
+      "signal_id": "signal-155bdaef4a530f25c49b350c",
+      "title": "U.S. banks block external AI-agent access"
+    }
+  ],
+  "source_repository_path": "intel/2026-10-29/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-c74aebe31ac27a70a74b86d8fbe0cafe87d0be747d52ca45e22ad571146b9a79",
+  "version": 2,
+  "workflow_run_id": "40937127403"
+}

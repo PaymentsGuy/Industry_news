@@ -2,6 +2,116 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "stablecore_jack_henry_stablecoin_distribution",
+      "first_covered": "2026-10-16",
+      "last_covered": "2026-10-29",
+      "entities": [
+        "Jack Henry",
+        "Stablecore"
+      ],
+      "roadmap_areas": [
+        "pay",
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-16",
+          "summary": "Stablecore joined Jack Henry’s integration network to distribute stablecoin and tokenized-asset services across approximately 1,600 U.S. banks and credit unions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZVViamMzeG9QMXZTTTh2WUhpRDVtMHFIYVBXeVZWZnhEMmRlTUVTdERoMDNTUmdxRnRGa2ROOGx2Vk1sV2E0eVN2YTJJOGlXUmV1U0E5dmIxUWxMZk9Ed0ttR3Y0SmU1aFZpZERPbkJqMjNmZXlnZHVKWXpEX2IxVUdIdEY2NDFXc2JfRlNXeTdISFFSNkhBNzdfYWlmajNDNnpVQ3lR?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-16"
+          ]
+        },
+        {
+          "covered_on": "2026-10-29",
+          "summary": "Stablecore joined Jack Henry's integration network, enabling approximately 1,600 U.S. banks and credit unions to offer stablecoin and tokenized-asset services.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZVViamMzeG9QMXZTTTh2WUhpRDVtMHFIYVBXeVZWZnhEMmRlTUVTdERoMDNTUmdxRnRGa2ROOGx2Vk1sV2E0eVN2YTJJOGlXUmV1U0E5dmIxUWxMZk9Ed0ttR3Y0SmU1aFZpZERPbkJqMjNmZXlnZHVKWXpEX2IxVUdIdEY2NDFXc2JfRlNXeTdISFFSNkhBNzdfYWlmajNDNnpVQ3lR?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-29"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "socure_rohan_sivaram_cfo",
+      "first_covered": "2026-10-29",
+      "last_covered": "2026-10-29",
+      "entities": [
+        "Rohan Sivaram",
+        "Socure"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-29",
+          "summary": "Socure appointed Rohan Sivaram as CFO to oversee finance, operations, capital markets, and pricing economics, potentially affecting Verify and Auth-related commercial strategy.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUGo5SjN2MVhYMVA3Q0pQQlFaLVRkQWhEWmQ1NlRCRWJwM0tVTXRWT3RlM2NTYWJEMU8zOVlodUh3MElRY0M0eEo3R010RjYzZXBuUXJJaWZkNl9wdWJwb2xwelhlbnVrcC1jQXBpNzNVZU5peVJ1eEtBcW1PeE1oZG5uclBJTndrbkJnYg?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-29"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "q2_holdings_jonathan_price_co_ceo",
+      "first_covered": "2026-10-29",
+      "last_covered": "2026-10-29",
+      "entities": [
+        "Jonathan Price",
+        "Matt Flake",
+        "Q2 Holdings"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-10-29",
+          "summary": "Q2 Holdings appointed CFO Jonathan Price as co-CEO alongside Matt Flake while retaining him as CFO during a successor search, potentially affecting platform, AI, and partnership strategy.",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1410384/000141038426000063/0001410384-26-000063-index.htm"
+          ],
+          "source_dates": [
+            "2026-10-28"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "banks_block_external_ai_agents",
+      "first_covered": "2026-10-29",
+      "last_covered": "2026-10-29",
+      "entities": [
+        "American Banker",
+        "Major U.S. banks"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "vault",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-29",
+          "summary": "Major U.S. banks are restricting external AI agents from accessing accounts or moving money because of security, fraud, credential, and liability concerns.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWjZXMDlCQnhqNFllTThhYTloOWJtRzFScFhFUDg2UGp6SDVMWl9PUU9Ba2tJY3Y0VUcxQmhlbks2dlFJTG9ZbHR5QXBVdHQ5OXFZRjhTLTRFanAycHhIaFdvQXFwWWgxSVRLV0N5ZnhwekNWdmFYVklzcEtSOW9VY3VJTjZ6a3g4NXdkZDJaQlpiTGhMMHdmOA?oc=5"
+          ],
+          "source_dates": [
+            "2026-10-28"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_agent_intelligence",
       "first_covered": "2026-10-27",
       "last_covered": "2026-10-28",
@@ -762,31 +872,6 @@
           ],
           "source_dates": [
             "2026-10-19"
-          ]
-        }
-      ]
-    },
-    {
-      "topic_key": "stablecore_jack_henry_stablecoin_distribution",
-      "first_covered": "2026-10-16",
-      "last_covered": "2026-10-16",
-      "entities": [
-        "Jack Henry",
-        "Stablecore"
-      ],
-      "roadmap_areas": [
-        "pay",
-        "vault"
-      ],
-      "events": [
-        {
-          "covered_on": "2026-10-16",
-          "summary": "Stablecore joined Jack Henry’s integration network to distribute stablecoin and tokenized-asset services across approximately 1,600 U.S. banks and credit unions.",
-          "source_urls": [
-            "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZVViamMzeG9QMXZTTTh2WUhpRDVtMHFIYVBXeVZWZnhEMmRlTUVTdERoMDNTUmdxRnRGa2ROOGx2Vk1sV2E0eVN2YTJJOGlXUmV1U0E5dmIxUWxMZk9Ed0ttR3Y0SmU1aFZpZERPbkJqMjNmZXlnZHVKWXpEX2IxVUdIdEY2NDFXc2JfRlNXeTdISFFSNkhBNzdfYWlmajNDNnpVQ3lR?oc=5"
-          ],
-          "source_dates": [
-            "2026-10-16"
           ]
         }
       ]
