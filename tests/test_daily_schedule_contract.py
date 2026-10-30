@@ -19,9 +19,10 @@ def test_runner_guard_rejects_weekend_and_wrong_local_time() -> None:
 
 def test_workflow_uses_dst_safe_guard_and_weekday_daily_identity() -> None:
     workflow = (Path(__file__).parents[1] / ".github" / "workflows" / "daily-intel.yml").read_text()
-    assert "30 13 * * 1-5" in workflow
-    assert "30 14 * * 1-5" in workflow
+    assert "  schedule:" not in workflow
+    assert "workflow_dispatch:" in workflow
     assert "python -m intel.schedule --scheduled-cron" in workflow
+    assert "python -m intel.publication_guard" in workflow
     assert "python -m intel.pipeline collect" in workflow
     assert "python -m intel.pipeline triage" in workflow
     assert "python -m intel.pipeline synthesize" in workflow
