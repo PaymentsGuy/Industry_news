@@ -1,6 +1,6 @@
-# ASA Weekly Competitive Intelligence Pipeline
+# ASA Industry News Pulse
 
-Automated weekly pull of competitor, channel-partner, regulatory, and technology signal for ASA Technologies. Runs Monday at 5:00 AM Pacific during PDT / 4:00 AM during PST, produces a one-page executive brief by 8:00 AM Pacific, commits the canonical artifact and delivery package, and then posts/readbacks Slack through one receipt-bound delivery coordinator. The local Vault bridge and live Slack-token migration remain separately gated and are not activated by the source change alone.
+Weekday competitor, channel-partner, regulatory, and technology intelligence for ASA Technologies. Local launchd owns the 06:30 America/Los_Angeles trigger; GitHub Actions executes the existing pipeline but no longer schedules it. A local five-minute watchdog checks delivery receipts and COS consumption, catches missed triggers, and alerts on blocked outcomes. See **[Local scheduler operations](docs/local-scheduler.md)** for installation, recovery limits, state, and the Mac sleep/offline limitation. The existing local Vault bridge remains the archive/receipt owner.
 
 ## What it does
 
@@ -15,7 +15,7 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
 .
 ├── .github/
 │   └── workflows/
-│       └── daily-intel.yml          # GitHub Actions scheduler
+│       └── daily-intel.yml          # Dispatch-only execution; local launchd owns timing
 ├── intel/
 │   ├── watchlist.yaml               # source of truth for what to track
 │   ├── delivery.py                  # repository/Slack/Vault transaction owner
@@ -63,11 +63,11 @@ Automated weekly pull of competitor, channel-partner, regulatory, and technology
    python intel/pipeline.py publish    --brief-file intel/$DATE/brief.md  # add --dry-run to skip Slack
    ```
 
-6. **Enable the workflow.** Once the dry run looks right, enable `.github/workflows/daily-intel.yml`. It runs weekly on Monday at 12:00 UTC (5 AM Pacific during PDT, 4 AM during PST) and on manual `workflow_dispatch`.
+6. **Install the local scheduler.** Follow `docs/local-scheduler.md` after disposable tests pass. The dispatch-only workflow must be published on `main` first. Do not restore GitHub cron or create a second generation timer. Manual workflow dispatch remains available, but a committed per-date reservation prevents repeated paid generation.
 
-## Weekly ops
+## Operations
 
-- The brief lands in `#troy-research` around 8 AM PT. Reading time: 90 seconds.
+- The local job starts at 06:30 Pacific on weekdays; the watchdog alerts if receipt-bound delivery and COS consumption are not verified by 07:00 Pacific. A sleeping/offline Mac can only catch up after it resumes. An always-on host is deferred.
 - Anything tagged "Decision needed by [date]" goes on your action list immediately. Everything else is reading.
 - Once a week, glance at the `intel/<date>/triaged.jsonl` files — look for score-3 items the brief de-emphasized, or score-1 items that should have been higher. That's how you tune the rubric.
 - Once a month, edit `watchlist.yaml`. Markets shift; entities die or get acquired. The watchlist is a living document.
@@ -92,7 +92,7 @@ These are requirements only. The current pipeline still posts to Slack and commi
 
 ## Cost ceiling
 
-At weekly cadence with Perplexity/Sonar pricing, this should be low-volume operational spend. The workflow still keeps the legacy `MAX_DAILY_COST_USD=3` env var name to avoid unnecessary churn if older cost-guard code reads it.
+The scheduler does not change the existing provider/model or launch automatic paid regeneration after a failed or uncertain generation. A per-date reservation is committed before provider work. The legacy `MAX_DAILY_COST_USD=3` environment value remains, but is not an enforced spending cap in the current pipeline; do not treat it as one.
 
 ## Failure modes & monitoring
 

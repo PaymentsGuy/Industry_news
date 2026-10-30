@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+# The repository bridge alone owns checkout updates and Vault writes.
+export PYTHONDONTWRITEBYTECODE=1
+exec /opt/homebrew/bin/python3 /Users/troymaas/.local/share/asa-industry-news/repo/intel/local_scheduler.py "$@"
