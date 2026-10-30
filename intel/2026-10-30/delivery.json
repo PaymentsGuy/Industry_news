@@ -1,0 +1,51 @@
+{
+  "brief_date": "2026-10-30",
+  "brief_id": "industry-pulse-2026-10-30",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-10-30\n\n**Reporting interval:** 2026-10-29T06:30:00-07:00 to 2026-10-30T06:30:00-07:00\n**Candidates classified:** 34\n**Material signals:** 1\n**Classification counts:** material=1; monitor=2; noise=19; duplicate=0; needs_validation=12\n\n## Top summary\n\nGalaxy Digital applied for an OCC national trust-bank charter that would bring digital-asset custody, trading, staking, and fiduciary investment advisory services under one federal framework, subject to OCC approval.[REF 1] The move reinforces the expansion of federally supervised digital-asset infrastructure relevant to ASA Vault\u2019s custody and institutional financial-data positioning.\n\n## Material signals\n\n### Galaxy Digital seeks OCC national trust-bank charter\n\nGalaxy Digital\u2019s subsidiary, Galaxy Digital LP, submitted an application to establish Galaxy National Bank, a proposed New York-based national trust bank.[REF 1] If approved, the institution would provide digital-asset custody, trading, staking, and fiduciary investment advisory services under OCC supervision through a single federal framework.[REF 1] A national trust charter would not permit deposits or commercial lending, but would strengthen Galaxy\u2019s positioning as federally supervised digital-asset infrastructure.[REF 1]\n\n## Candidate disposition\n\nOne evidence-backed material event was retained. No duplicate exclusions were required; the supplied material candidate is the sole source-catalog item and maps directly to the retained signal. Twelve candidates remain blocked in `needs_validation`, while two are classified as monitor and 19 as noise. No downstream action is created by default.\n\n## References\n\n1. Banking Dive, \"Galaxy Digital applies for OCC charter,\" 2026-10-29. https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/ \u2014 *The application signals expanding federally supervised digital-asset infrastructure, relevant to ASA Vault\u2019s custody and institutional financial-data positioning..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 1,
+    "monitor": 2,
+    "needs_validation": 12,
+    "noise": 19
+  },
+  "content_sha256": "9df5a0f60dd59da83c343c337951c5d87f24da2f56eb076ea7f8afb468d3ac00",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "2da8d1b7-6312-50d6-9630-9f70de5d3f01",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-10-30T06:30:00-07:00",
+    "start": "2026-10-29T06:30:00-07:00"
+  },
+  "material_signal_count": 1,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
+      ],
+      "signal_id": "signal-665771b3505d233cece88ea5",
+      "title": "Galaxy Digital seeks OCC national trust-bank charter"
+    }
+  ],
+  "source_repository_path": "intel/2026-10-30/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-bf6fc1c2c63895ee33d95c92e1afea4b14c2edd8aa7041ec3402f794014cd6ba",
+  "version": 2,
+  "workflow_run_id": "41099606084"
+}

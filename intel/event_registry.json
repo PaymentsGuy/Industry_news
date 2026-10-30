@@ -2,6 +2,32 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "galaxy_digital_occ_trust_charter",
+      "first_covered": "2026-10-30",
+      "last_covered": "2026-10-30",
+      "entities": [
+        "Galaxy Digital",
+        "Galaxy Digital LP",
+        "Galaxy National Bank",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "vault"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-10-30",
+          "summary": "Galaxy Digital applied for an OCC national trust-bank charter to provide federally supervised digital-asset custody, trading, staking, and fiduciary advisory services without deposits or commercial lending.",
+          "source_urls": [
+            "https://www.bankingdive.com/news/galaxy-digital-applies-occ-national-trust-bank-charter/873209/"
+          ],
+          "source_dates": [
+            "2026-10-29"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "stablecore_jack_henry_stablecoin_distribution",
       "first_covered": "2026-10-16",
       "last_covered": "2026-10-29",
