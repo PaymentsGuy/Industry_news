@@ -11,3 +11,7 @@ def test_daily_slack_reconciliation_only_reads_existing_delivery_and_commits_rec
     assert "intel.pipeline" not in workflow
     assert "intel.delivery create" not in workflow
     assert "intel.delivery mark-repository" not in workflow
+    assert "request_id:" in workflow
+    assert "run-name: Industry News Delivery" in workflow
+    assert "{'pending', 'failed', 'ambiguous_outcome', 'attempting'}" in workflow
+    assert "if: always()" in workflow
