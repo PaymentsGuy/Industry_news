@@ -1,0 +1,59 @@
+{
+  "brief_date": "2026-11-02",
+  "brief_id": "industry-pulse-2026-11-02",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-02\n\n**Reporting interval:** 2026-10-30T06:30:00-07:00 to 2026-11-02T06:30:00-08:00\n**Candidates classified:** 34\n**Material signals:** 2\n**Classification counts:** material=2; monitor=4; noise=11; duplicate=0; needs_validation=17\n\n## Top summary\n\nTwo evidence-backed material signals emerged: Jack Henry broadened distribution of its treasury-management solution to all ICBA members, strengthening a channel partner\u2019s commercial-finance offering; and Senator Warren urged the DOJ to investigate Bank of America\u2019s AML failures, reinforcing heightened compliance and data-governance expectations for financial institutions.\n\n## Material signals\n\n### Jack Henry expands treasury-management distribution through ICBA\n\nJack Henry\u2019s JHA Treasury Management solution was added to the ICBA Preferred Service Provider program and is now available to all ICBA members.[REF 1] The expanded distribution strengthens Jack Henry\u2019s commercial-finance capabilities adjacent to ASA\u2019s transaction-visibility and cash-flow-forecasting products.[REF 1]\n\n### Warren urges DOJ investigation into Bank of America AML failures\n\nSenator Elizabeth Warren asked the DOJ to investigate Bank of America\u2019s AML and sanctions-law violations after regulators imposed $1.21 billion in penalties.[REF 2] The request raises the prospect of criminal scrutiny in addition to regulatory enforcement and reinforces heightened expectations for AML controls, transaction monitoring, sanctions compliance, and supporting data governance.[REF 2]\n\n## Candidate disposition\n\nBoth supplied material candidates are retained as distinct evidence-backed events. No material candidate was excluded as a duplicate. The remaining 32 candidates retain their supplied non-material classifications, including 17 needs-validation items; no additional disposition changes are made here.\n\n## References\n\n1. Jack Henry (blog), \"ICBA Adds Jack Henry's Treasury Management Solution to Preferred Service Provider Program - TradingView,\" 2026-11-02. https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRHVSX2pCWkFsQlJTZXZWa1B0VUp4TlpkRkp6eHAxNHJFZ0toLXk2N1gxV19fTHUxNGxiUUFyZ0I4c0ExRFFEUFlXM0hwY3ZxMVhkNjdPQ2gtUkI5TGczNFZ4bFV5VEZyTkV5dldTLVV5c2ZwSG9odlBCSVdMZ1FqSVN0UktWTDQ4TmtTSm5YYWZTd1h4T0hoYm51SDJqeWZ2RjkzUnd3QkVjUlNZRktsZ29UT3NoYU5oT0syU01NeE9mNHNNMy1zNmJGckxteldjRHZmVTVtWENRdVVJWFZyZndTamw?oc=5 \u2014 *Broader Jack Henry distribution strengthens a channel partner\u2019s commercial-finance capabilities adjacent to ASA\u2019s transaction visibility and cash-flow forecasting products..*\n2. Banking Dive, \"Warren urges DOJ to probe BofA\u2019s AML issues,\" 2026-10-30. https://www.bankingdive.com/news/warren-urges-doj-probe-bofa-aml-issues-blanche/873326/ \u2014 *The enforcement and potential criminal investigation reinforce heightened AML expectations and could influence ASA\u2019s financial-institution risk, compliance, and data-governance roadmap..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 2,
+    "monitor": 4,
+    "needs_validation": 17,
+    "noise": 11
+  },
+  "content_sha256": "bc4134735da5764ac4245e638867d0b833adfb4d06943d20afd9e6d23338fdc3",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "06df9ea0-c8db-510e-ad4c-84e2a3779db5",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-02T06:30:00-08:00",
+    "start": "2026-10-30T06:30:00-07:00"
+  },
+  "material_signal_count": 2,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRHVSX2pCWkFsQlJTZXZWa1B0VUp4TlpkRkp6eHAxNHJFZ0toLXk2N1gxV19fTHUxNGxiUUFyZ0I4c0ExRFFEUFlXM0hwY3ZxMVhkNjdPQ2gtUkI5TGczNFZ4bFV5VEZyTkV5dldTLVV5c2ZwSG9odlBCSVdMZ1FqSVN0UktWTDQ4TmtTSm5YYWZTd1h4T0hoYm51SDJqeWZ2RjkzUnd3QkVjUlNZRktsZ29UT3NoYU5oT0syU01NeE9mNHNNMy1zNmJGckxteldjRHZmVTVtWENRdVVJWFZyZndTamw?oc=5"
+      ],
+      "signal_id": "signal-253cfd42f2fa582dee8dc63d",
+      "title": "Jack Henry expands treasury-management distribution through ICBA"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.bankingdive.com/news/warren-urges-doj-probe-bofa-aml-issues-blanche/873326/"
+      ],
+      "signal_id": "signal-68cf695aab7a3add8d37e24a",
+      "title": "Warren urges DOJ investigation into Bank of America AML failures"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-02/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-f9744a3916d8eef7d86e132f9305daf128e072b5565e0d474831296c19b8e8a1",
+  "version": 2,
+  "workflow_run_id": "41462556047"
+}
