@@ -2,6 +2,43 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "jack_henry_icba_treasury_distribution",
+      "first_covered": "2026-11-02",
+      "last_covered": "2026-11-03",
+      "entities": [
+        "ASA",
+        "Independent Community Bankers of America",
+        "JHA Treasury Management",
+        "Jack Henry"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-02",
+          "summary": "Jack Henry added JHA Treasury Management to ICBA’s Preferred Service Provider program, expanding availability to all ICBA members and strengthening commercial-finance capabilities.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRHVSX2pCWkFsQlJTZXZWa1B0VUp4TlpkRkp6eHAxNHJFZ0toLXk2N1gxV19fTHUxNGxiUUFyZ0I4c0ExRFFEUFlXM0hwY3ZxMVhkNjdPQ2gtUkI5TGczNFZ4bFV5VEZyTkV5dldTLVV5c2ZwSG9odlBCSVdMZ1FqSVN0UktWTDQ4TmtTSm5YYWZTd1h4T0toYm51SDJqeWZ2RjkzUnd3QkVjUlNZRktsZ29UT3NoYU5oT0syU01NeE9mNHNNMy1zNmJGckxteldjRHZmVTVtWENRdVVJWFZyZndTamw?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-02"
+          ]
+        },
+        {
+          "covered_on": "2026-11-03",
+          "summary": "Jack Henry added JHA Treasury Management to ICBA’s Preferred Service Provider program, expanding access among community banks and supporting commercial banking, deposits, and fee income.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTktzMXM5ZXlrWDRxbFl5MmhwVEREb09tbFN5ZDF2M0JFcU52YUhXS3lBMlprRnhaSFY1ZjhmMzh1bVphdkFSeDVKRlRKNllBN1JJWU90TG5rRFd3cTZWNXZlMXR4dThKWVVwTXhmei10NUY1alBCbVBhTHlpaHpzbWk4VEdYbFhnRkNaUWk2RGV0X1BadU54R1JWTWlBbDRYRFp2WVBpSVZGVjBFeXhrdGt2T3ZSNjJfVWRMcmswd1VnQkFNUG9Melp2MDEzSGZmbjNQNXg5M3VoUHlfblFlVENLMA?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-02"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "warren_bofa_aml_investigation",
       "first_covered": "2026-11-02",
       "last_covered": "2026-11-02",
@@ -24,31 +61,6 @@
           ],
           "source_dates": [
             "2026-10-30"
-          ]
-        }
-      ]
-    },
-    {
-      "topic_key": "jack_henry_icba_treasury_distribution",
-      "first_covered": "2026-11-02",
-      "last_covered": "2026-11-02",
-      "entities": [
-        "Independent Community Bankers of America",
-        "Jack Henry"
-      ],
-      "roadmap_areas": [
-        "forecast",
-        "one_view"
-      ],
-      "events": [
-        {
-          "covered_on": "2026-11-02",
-          "summary": "Jack Henry added JHA Treasury Management to ICBA’s Preferred Service Provider program, expanding availability to all ICBA members and strengthening commercial-finance capabilities.",
-          "source_urls": [
-            "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPRHVSX2pCWkFsQlJTZXZWa1B0VUp4TlpkRkp6eHAxNHJFZ0toLXk2N1gxV19fTHUxNGxiUUFyZ0I4c0ExRFFEUFlXM0hwY3ZxMVhkNjdPQ2gtUkI5TGczNFZ4bFV5VEZyTkV5dldTLVV5c2ZwSG9odlBCSVdMZ1FqSVN0UktWTDQ4TmtTSm5YYWZTd1h4T0toYm51SDJqeWZ2RjkzUnd3QkVjUlNZRktsZ29UT3NoYU5oT0syU01NeE9mNHNNMy1zNmJGckxteldjRHZmVTVtWENRdVVJWFZyZndTamw?oc=5"
-          ],
-          "source_dates": [
-            "2026-11-02"
           ]
         }
       ]

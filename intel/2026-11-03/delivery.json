@@ -1,0 +1,51 @@
+{
+  "brief_date": "2026-11-03",
+  "brief_id": "industry-pulse-2026-11-03",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-03\n\n**Reporting interval:** 2026-11-02T06:30:00-08:00 to 2026-11-03T06:30:00-08:00\n**Candidates classified:** 36\n**Material signals:** 1\n**Classification counts:** material=1; monitor=6; noise=14; duplicate=0; needs_validation=15\n\n## Top summary\n\nJack Henry added JHA Treasury Management to ICBA\u2019s Preferred Service Provider program, making the solution available to all ICBA members. The move expands Jack Henry\u2019s distribution reach among community banks and strengthens its positioning in commercial banking, deposits, and fee-income workflows.[REF 1]\n\n## Material signals\n\n### Jack Henry expands ICBA treasury-management distribution\n\nJHA Treasury Management is now available to all ICBA members through the Preferred Service Provider program.[REF 1] Jack Henry positions the platform as a way for community banks to serve larger and more complex commercial customers, while improving financial control and visibility and supporting deposit growth and fee income.[REF 1] The expanded channel increases Jack Henry\u2019s access to community banks and may intensify competition for ASA\u2019s partnership and platform positioning.\n\n## Candidate disposition\n\nOne evidence-backed material candidate was retained. No duplicate exclusions were identified among the supplied candidates. The remaining six monitor, fourteen noise, and fifteen needs-validation candidates remain outside the material-signal set; no blocked state was reported.\n\n## References\n\n1. Jack Henry (blog), \"Jack Henry & Associates, Inc. Announces Addition Of JHA Treasury Management To Independent Community Bankers Of America Preferred Service Provider Program - marketscreener.com,\" 2026-11-02. https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTktzMXM5ZXlrWDRxbFl5MmhwVEREb09tbFN5ZDF2M0JFcU52YUhXS3lBMlprRnhaSFY1ZjhmMzh1bVphdkFSeDVKRlRKNllBN1JJWU90TG5rRFd3cTZWNXZlMXR4dThKWVVwTXhmei10NUY1alBCbVBhTHlpaHpzbWk4VEdYbFhnRkNaUWk2RGV0X1BadU54R1JWTWlBbDRYRFp2WVBpSVZGVjBFeXhrdGt2T3ZSNjJfVWRMcmswd1VnQkFNUG9Melp2MDEzSGZmbjNQNXg5M3VoUHlfblFlVENLMA?oc=5 \u2014 *The expanded Jack Henry distribution channel increases access to community banks and may affect ASA\u2019s partnership and platform positioning..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 1,
+    "monitor": 6,
+    "needs_validation": 15,
+    "noise": 14
+  },
+  "content_sha256": "d98a1c3ac1b4b79c88cd9288bc57b9b3446caa97ab143a2c135466e41e343d2a",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "86dcc5c6-b4d1-50ea-a0c9-fbc6659233c7",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-03T06:30:00-08:00",
+    "start": "2026-11-02T06:30:00-08:00"
+  },
+  "material_signal_count": 1,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPTktzMXM5ZXlrWDRxbFl5MmhwVEREb09tbFN5ZDF2M0JFcU52YUhXS3lBMlprRnhaSFY1ZjhmMzh1bVphdkFSeDVKRlRKNllBN1JJWU90TG5rRFd3cTZWNXZlMXR4dThKWVVwTXhmei10NUY1alBCbVBhTHlpaHpzbWk4VEdYbFhnRkNaUWk2RGV0X1BadU54R1JWTWlBbDRYRFp2WVBpSVZGVjBFeXhrdGt2T3ZSNjJfVWRMcmswd1VnQkFNUG9Melp2MDEzSGZmbjNQNXg5M3VoUHlfblFlVENLMA?oc=5"
+      ],
+      "signal_id": "signal-530a52200e7abf7e2292d98d",
+      "title": "Jack Henry expands ICBA treasury-management distribution"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-03/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-3e16464ba547b8d0a57b13abdde04f68a6b1df1dfde8431cddbee108436a0247",
+  "version": 2,
+  "workflow_run_id": "41654311624"
+}
