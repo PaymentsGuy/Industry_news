@@ -1,0 +1,83 @@
+{
+  "brief_date": "2026-11-04",
+  "brief_id": "industry-pulse-2026-11-04",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-04\n\n**Reporting interval:** 2026-11-03T06:30:00-08:00 to 2026-11-04T06:30:00-08:00\n**Candidates classified:** 44\n**Material signals:** 5\n**Classification counts:** material=5; monitor=9; noise=17; duplicate=0; needs_validation=13\n\n## Top summary\n\nFive material signals cleared the interval: Corelation\u2019s KeyStone ecosystem gained a Bankjoy digital-banking deployment at TEN Credit Union; EPC tightened Verification of Payee name-matching guidance; Socure extended reusable identity into the Stellar ecosystem; FinCEN withdrew proposed unhosted-wallet and CVC-mixing rules; and Alkami reinforced demand for contextual, personalized banking experiences. No supplied material candidate duplicates an already-covered historical topic.\n\n## Material signals\n\n### Corelation ecosystem adds Bankjoy deployment\n\nTEN Credit Union selected Bankjoy for digital banking while migrating to Corelation\u2019s KeyStone core. Bankjoy connects to KeyStone through Corelation\u2019s certified KeyBridge integration, reinforcing a competing core-connected distribution path relevant to ASA\u2019s FI channel strategy.[REF 1]\n\n### EPC tightens Verification of Payee matching guidance\n\nThe EPC updated its Verification of Payee recommendations with guidance on character handling and beneficiary-name matching before payment initiation. The recommendations address match, close-match, and no-match outcomes and may require ASA Verify and Pay to support standardized name normalization and matching logic.[REF 2]\n\n### Socure extends reusable identity into Stellar\n\nSocure partnered with the Stellar Development Foundation to bring Socure Pass, its reusable identity product, to applications across the Stellar ecosystem. The move expands Socure\u2019s ecosystem-based distribution and is relevant to ASA Auth and Verify positioning.[REF 3]\n\n### FinCEN withdraws proposed digital-asset transaction rules\n\nFinCEN withdrew proposed reporting, verification, and recordkeeping rules covering certain unhosted-wallet and CVC-mixing transactions. The withdrawal changes the digital-asset compliance backdrop for financial-institution connectivity and monitoring but does not, on the supplied evidence, require an immediate ASA roadmap change.[REF 4]\n\n### Alkami emphasizes contextual personalization\n\nAlkami published generational research on using account-holder context to deliver more personalized digital-banking experiences. The signal reinforces demand for contextual insights and next-best recommendations relevant to ASA Compass and personalization across the platform.[REF 5]\n\n## Candidate disposition\n\nAll five supplied material candidates are retained as distinct, evidence-backed representatives. No candidate was excluded as a duplicate: the Corelation/Bankjoy item is a new dated development relative to the historical Corelation/Bankjoy topic; the EPC, Socure/Stellar, FinCEN withdrawal, and Alkami research items do not match an exact previously covered topic in the supplied ledger. Monitor, noise, and needs-validation items remain separate and unchanged; no blocked state is asserted from the supplied data.\n\n## References\n\n1. Corelation (blog), \"TEN Credit Union selects digital banking platform - ATM Marketplace,\" 2026-11-04. https://news.google.com/rss/articles/CBMijwFBVV95cUxPdTdSOUIzS2w2cXFjd3FGYlo2Z1NXd1pCSXZCSHhPaTZMUVF5V09QcE8zTHZjY09TekQ2VDJxZDZDa0pjQ2licDZiMGdIekdBdGoteWFXOXJWcHgzLW5IZ3ZzLXZsN1BwNHNGd0lPdmZ6bTE3SkRTSWVRMnZDUkFrS1hvVFYwb1lDbGxvMkpTdw?oc=5 \u2014 *Corelation\u2019s certified KeyBridge integration shows a channel ecosystem where digital banking and core connectivity can shape ASA\u2019s FI distribution strategy..*\n2. Finextra, \"EPC publishes new Verification of Payee matching recommendations,\" 2026-11-04. https://www.finextra.com/newsarticle/48697/epc-publishes-new-verification-of-payee-matching-recommendations?utm_medium=rssfinextra&utm_source=finextrafeed \u2014 *The recommendations may require ASA Verify and Pay to support standardized name normalization and match, close-match, or no-match outcomes..*\n3. Socure (blog), \"Socure brings Socure Pass to Stellar ecosystem - The Paypers,\" 2026-11-03. https://news.google.com/rss/articles/CBMirgFBVV95cUxPdDFSYkZmMW12ZGM1dW1VcDdmSklCclZmWDNGeGZTYWhtMjZxMHdGMXpRdF9JY0hXRTVSam9uOEt1dVV3R0JZZEVidGpseU5OTF9JckcxaU4tRlo2bFRnZ0VrTVY5SzU4RVR1TTZvcmVyMmYzVFpOT0tuQ0REVFVodzZqSk95UWR0RlpZTFdocVhwY1kwUkFSc0ZNeVRnLWJhZlg1Yk02RVVRQ05nU2c?oc=5 \u2014 *The partnership expands Socure\u2019s reusable identity distribution and informs ASA\u2019s Auth and Verify positioning for ecosystem-based identity products..*\n4. FinCEN (newsroom), \"FinCEN Withdraws Proposed Unhosted Wallet and CVC Mixing Rules - JD Supra,\" 2026-11-03. https://news.google.com/rss/articles/CBMigwFBVV95cUxNQUduOXZzVlRJemc0UmV4VjZ0WU5lQTNzMzdCT2tBblZCQkVLYjExWjhuS3p1VWJTV3Vub1g2WEhsaVRPR2FScERTdUdES3lEYndBcmJId3JIRHQ3Ujh6eGk3M01jaFJTZC1wdXVLbktIV3dBV1dJQVZ6eEp0bGk0UlJQRQ?oc=5 \u2014 *The withdrawal changes the digital-asset compliance backdrop for financial-institution connectivity and monitoring, but does not require an immediate ASA roadmap change..*\n5. Alkami (blog), \"Relevance is the New Relationship Currency,\" 2026-11-03. https://www.alkami.com/blog/relevance-is-the-new-relationship-currency/?utm_source=rss&utm_medium=rss&utm_campaign=relevance-is-the-new-relationship-currency \u2014 *The research reinforces demand for contextual insights and next-best recommendations, supporting ASA Compass positioning and personalization across the platform..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 5,
+    "monitor": 9,
+    "needs_validation": 13,
+    "noise": 17
+  },
+  "content_sha256": "09997049b002a6b831b74c1b73f387b4e11ba5d894650b184bef0e405aafe87f",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "f35d024a-5d2c-5706-9163-55bab0c56cf9",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-04T06:30:00-08:00",
+    "start": "2026-11-03T06:30:00-08:00"
+  },
+  "material_signal_count": 5,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdTdSOUIzS2w2cXFjd3FGYlo2Z1NXd1pCSXZCSHhPaTZMUVF5V09QcE8zTHZjY09TekQ2VDJxZDZDa0pjQ2licDZiMGdIekdBdGoteWFXOXJWcHgzLW5IZ3ZzLXZsN1BwNHNGd0lPdmZ6bTE3SkRTSWVRMnZDUkFrS1hvVFYwb1lDbGxvMkpTdw?oc=5"
+      ],
+      "signal_id": "signal-82fd4e9410714a586e01000d",
+      "title": "Corelation ecosystem adds Bankjoy deployment"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.finextra.com/newsarticle/48697/epc-publishes-new-verification-of-payee-matching-recommendations?utm_medium=rssfinextra&utm_source=finextrafeed"
+      ],
+      "signal_id": "signal-061bf06d562af1b0c8138681",
+      "title": "EPC tightens Verification of Payee matching guidance"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdDFSYkZmMW12ZGM1dW1VcDdmSklCclZmWDNGeGZTYWhtMjZxMHdGMXpRdF9JY0hXRTVSam9uOEt1dVV3R0JZZEVidGpseU5OTF9JckcxaU4tRlo2bFRnZ0VrTVY5SzU4RVR1TTZvcmVyMmYzVFpOT0tuQ0REVFVodzZqSk95UWR0RlpZTFdocVhwY1kwUkFSc0ZNeVRnLWJhZlg1Yk02RVVRQ05nU2c?oc=5"
+      ],
+      "signal_id": "signal-50c6a0bd3aaae439fe46d016",
+      "title": "Socure extends reusable identity into Stellar"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQUduOXZzVlRJemc0UmV4VjZ0WU5lQTNzMzdCT2tBblZCQkVLYjExWjhuS3p1VWJTV3Vub1g2WEhsaVRPR2FScERTdUdES3lEYndBcmJId3JIRHQ3Ujh6eGk3M01jaFJTZC1wdXVLbktIV3dBV1dJQVZ6eEp0bGk0UlJQRQ?oc=5"
+      ],
+      "signal_id": "signal-26f53bb25aae8fc5c92681d1",
+      "title": "FinCEN withdraws proposed digital-asset transaction rules"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.alkami.com/blog/relevance-is-the-new-relationship-currency/?utm_source=rss&utm_medium=rss&utm_campaign=relevance-is-the-new-relationship-currency"
+      ],
+      "signal_id": "signal-ed0d14abebd00eb5a3114716",
+      "title": "Alkami emphasizes contextual personalization"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-04/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-9224f83aa95e99a52c724eb5ed4231d4f3b783860b5be3db91b9db9f1ab86101",
+  "version": 2,
+  "workflow_run_id": "41848195176"
+}

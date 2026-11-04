@@ -2,6 +2,122 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "socure_stellar_reusable_identity",
+      "first_covered": "2026-11-04",
+      "last_covered": "2026-11-04",
+      "entities": [
+        "Socure",
+        "Stellar Development Foundation"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-04",
+          "summary": "Socure partnered with the Stellar Development Foundation to bring reusable Socure Pass identity capabilities to applications across the Stellar ecosystem.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdDFSYkZmMW12ZGM1dW1VcDdmSklCclZmWDNGeGZTYWhtMjZxMHdGMXpRdF9JY0hXRTVSam9uOEt1dVV3R0JZZEVidGpseU5OTF9JckcxaU4tRlo2bFRnZ0VrTVY5SzU4RVR1TTZvcmVyMmYzVFpOT0tuQ0REVFVodzZqSk95UWR0RlpZTFdocVhwY1kwUkFSc0ZNeVRnLWJhZlg1Yk02RVVRQ05nU2c?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-03"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_unhosted_wallet_rules_withdrawal",
+      "first_covered": "2026-11-04",
+      "last_covered": "2026-11-04",
+      "entities": [
+        "FinCEN"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-11-04",
+          "summary": "FinCEN withdrew proposed reporting, verification, and recordkeeping rules for certain unhosted-wallet and CVC-mixing transactions.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQUduOXZzVlRJemc0UmV4VjZ0WU5lQTNzMzdCT2tBblZCQkVLYjExWjhuS3p1VWJTV3Vub1g2WEhsaVRPR2FScERTdUdES3lEYndBcmJId3JIRHQ3Ujh6eGk3M01jaFJTZC1wdXVLbktIV3dBV1dJQVZ6eEp0bGk0UlJQRQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-03"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "epc_vop_matching_guidance",
+      "first_covered": "2026-11-04",
+      "last_covered": "2026-11-04",
+      "entities": [
+        "European Payments Council"
+      ],
+      "roadmap_areas": [
+        "pay",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-04",
+          "summary": "The EPC updated Verification of Payee guidance for character handling, name normalization, and match, close-match, or no-match outcomes.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48697/epc-publishes-new-verification-of-payee-matching-recommendations?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-11-04"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "corelation_bankjoy_deployment",
+      "first_covered": "2026-11-04",
+      "last_covered": "2026-11-04",
+      "entities": [
+        "Bankjoy",
+        "Corelation",
+        "TEN Credit Union"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-11-04",
+          "summary": "TEN Credit Union selected Bankjoy for digital banking while migrating to Corelation’s KeyStone core through the certified KeyBridge integration.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdTdSOUIzS2w2cXFjd3FGYlo2Z1NXd1pCSXZCSHhPaTZMUVF5V09QcE8zTHZjY09TekQ2VDJxZDZDa0pjQ2licDZiMGdIekdBdGoteWFXOXJWcHgzLW5IZ3ZzLXZsN1BwNHNGd0lPdmZ6bTE3SkRTSWVRMnZDUkFrS1hvVFYwb1lDbGxvMkpTdw?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-04"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "alkami_contextual_personalization",
+      "first_covered": "2026-11-04",
+      "last_covered": "2026-11-04",
+      "entities": [
+        "Alkami"
+      ],
+      "roadmap_areas": [
+        "compass"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-04",
+          "summary": "Alkami’s generational research emphasized using account-holder context to deliver personalized digital-banking experiences and next-best recommendations.",
+          "source_urls": [
+            "https://www.alkami.com/blog/relevance-is-the-new-relationship-currency/?utm_source=rss&utm_medium=rss&utm_campaign=relevance-is-the-new-relationship-currency"
+          ],
+          "source_dates": [
+            "2026-11-03"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "jack_henry_icba_treasury_distribution",
       "first_covered": "2026-11-02",
       "last_covered": "2026-11-03",
