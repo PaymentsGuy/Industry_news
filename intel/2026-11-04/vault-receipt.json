@@ -1,0 +1,11 @@
+{
+  "brief_id": "industry-pulse-2026-11-04",
+  "content_sha256": "09997049b002a6b831b74c1b73f387b4e11ba5d894650b184bef0e405aafe87f",
+  "destination": "vault",
+  "readback": true,
+  "receipt_id": "vault-receipt-75d7ea282f54e061867f7ff6d2313ce171a4026c273393f6e80fa0d7a89bd1e1",
+  "signature": "40dccc9a3a7156d2f59c8ec8cad6f2fb1aa819e1bbf845fc9a7179fdb78defc7",
+  "transaction_id": "brief-delivery-9224f83aa95e99a52c724eb5ed4231d4f3b783860b5be3db91b9db9f1ab86101",
+  "vault_file_sha256": "c8776932df44054f4e37d57bd607fb73356b85be6845f36ee862041f28c9390f",
+  "vault_path": "Atlas/competitive-intel/intelligence-briefs/2026-11-04 - ASA Intelligence Brief.md"
+}
