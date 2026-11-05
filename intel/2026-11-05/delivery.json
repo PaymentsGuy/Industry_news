@@ -1,0 +1,67 @@
+{
+  "brief_date": "2026-11-05",
+  "brief_id": "industry-pulse-2026-11-05",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-05\n\n**Reporting interval:** 2026-11-04T06:30:00-08:00 to 2026-11-05T06:30:00-08:00\n**Candidates classified:** 44\n**Material signals:** 3\n**Classification counts:** material=3; monitor=9; noise=14; duplicate=0; needs_validation=18\n\n## Top summary\n\nThree material signals emerged. Multi-agent AI adoption is advancing faster than enterprise orchestration, reinforcing the value of governed coordination infrastructure. FIS research indicates strong consumer interest in AI-assisted financial guidance but limited willingness to delegate autonomous money management, supporting bounded automation and human oversight. Jack Henry reported stronger fiscal Q1 performance, raised its outlook, and highlighted momentum in competitive wins, cloud, payments, and security\u2014raising channel-positioning pressure for ASA.\n\n## Material signals\n\n### Multi-agent AI adoption is outpacing orchestration\n\nCapgemini reports that 59% of financial-services firms are piloting or deploying multi-agent AI in production, while only one in ten have achieved the enterprise-wide orchestration needed for autonomous operation.[REF 1] The gap supports continued emphasis on governed agent orchestration, trusted data access, security, and measurable controls across ASA\u2019s platform, but does not by itself require an immediate product decision.[REF 1]\n\n### Consumers want AI help, not autonomous money management\n\nA FIS survey of 2,000 UK adults found that 22% are ready to hand day-to-day money management to an AI assistant, while 58% are not.[REF 2] The evidence supports human-in-the-loop controls, bounded automation, and explainable recommendations in ASA Compass and Forecast rather than unrestricted autonomous execution.[REF 2]\n\n### Jack Henry raises outlook amid stronger channel momentum\n\nJack Henry reported fiscal Q1 GAAP revenue growth of 8.8% and raised its fiscal 2027 revenue outlook to 6.0%\u20136.8% GAAP growth and 6.6%\u20137.4% non-GAAP growth.[REF 3] Management highlighted nine competitive core wins, 11% cloud-services revenue growth, accelerating security demand, and 42% year-over-year growth in Zelle, RTP, and FedNow payment volume.[REF 3] The combination increases competitive pressure on ASA\u2019s channel-partner positioning and distribution strategy, particularly across cloud, payments, security, and core-connected offerings.[REF 3]\n\n## Candidate disposition\n\nAll three supplied material candidates are retained as distinct, evidence-backed representatives. No duplicate exclusions apply. The nine monitor, fourteen noise, and eighteen needs-validation candidates remain outside the material set and are not converted into actions or signals. No blocked state is reported in the supplied classifications.\n\n## References\n\n1. Agentic AI in banking (blog), \"Capgemini: Multi-agent AI moves into banking and insurance, but orchestration remains limited - Finextra Research,\" 2026-11-05. https://news.google.com/rss/articles/CBMizwFBVV95cUxOc0Nzck5UOFliSmRnTmVFYnRQa3NHQVJiRVhsNUY0ZGNuUEpLNDJaY3ItTDJZT2hQbFk5dzFWVWFXcWVIWkdzOGVNWlY3MURHZ0JJQzA0U1VJcG1JV3RZaVdMeHRUZmdCcllsUWZlRlV0cWd3dk9udXFoa0NwVTI2RS1Mb3l6bE9DMnZUcE10Nm1fNTlxODQzSGNqYVdhREt3blBGWkRGU2FZa2RhdTZSZXNqeXl0QTR2dF9OZHFNZVpkQXJhM3JqTWE5VGgzcG8?oc=5 \u2014 *The adoption data supports prioritizing governed agent orchestration across ASA\u2019s platform, but does not by itself require a near-term product decision..*\n2. Finextra, \"Most Brits not ready to let AI manage their money,\" 2026-11-05. https://www.finextra.com/newsarticle/48705/most-brits-not-ready-to-let-ai-manage-their-money?utm_medium=rssfinextra&utm_source=finextrafeed \u2014 *The findings support human-in-the-loop controls, bounded automation, and explainable recommendations across ASA Compass and Forecast..*\n3. Jack Henry (blog), \"Jack Henry & Associates Q1 Earnings Call Highlights - TradingView,\" 2026-11-04. https://news.google.com/rss/articles/CBMirwFBVV95cUxNTjNGbmFjbG9QUWM0QmF1SHhMMDNNZzdOTzJQb2dkYVdJd3N4WFJjWE5BbHoxNEZxWVROMEk0TE5sUnhpRHktWVQ2dUk3d09BRXVtUFJqUV9DRzMySlhFRHJFb2ZjdlVTWnZ6R0UxTV9JY1NxYjNqYk5HZWItaENSYno1dm1Jd1l5Tl9kMmtrbVp1cWRUWFBhcWRjRlNMM3FneDNxUFhvUWRpUEdOVnNZ?oc=5 \u2014 *Jack Henry\u2019s stronger momentum and growing cloud, payments, and security businesses could affect ASA\u2019s channel-partner positioning and distribution strategy..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 3,
+    "monitor": 9,
+    "needs_validation": 18,
+    "noise": 14
+  },
+  "content_sha256": "75570f3a959fb550921ac17beb0cb8e6d3d5da898f5ba210dfdaed44e1f59cfe",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "0086fda5-1866-504b-bd4b-afdecbfae951",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-05T06:30:00-08:00",
+    "start": "2026-11-04T06:30:00-08:00"
+  },
+  "material_signal_count": 3,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMizwFBVV95cUxOc0Nzck5UOFliSmRnTmVFYnRQa3NHQVJiRVhsNUY0ZGNuUEpLNDJaY3ItTDJZT2hQbFk5dzFWVWFXcWVIWkdzOGVNWlY3MURHZ0JJQzA0U1VJcG1JV3RZaVdMeHRUZmdCcllsUWZlRlV0cWd3dk9udXFoa0NwVTI2RS1Mb3l6bE9DMnZUcE10Nm1fNTlxODQzSGNqYVdhREt3blBGWkRGU2FZa2RhdTZSZXNqeXl0QTR2dF9OZHFNZVpkQXJhM3JqTWE5VGgzcG8?oc=5"
+      ],
+      "signal_id": "signal-3b103c3e2eed72e01104f271",
+      "title": "Multi-agent AI adoption is outpacing orchestration"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.finextra.com/newsarticle/48705/most-brits-not-ready-to-let-ai-manage-their-money?utm_medium=rssfinextra&utm_source=finextrafeed"
+      ],
+      "signal_id": "signal-1721a45acd222fe0d6ed8ad1",
+      "title": "Consumers want AI help, not autonomous money management"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTjNGbmFjbG9QUWM0QmF1SHhMMDNNZzdOTzJQb2dkYVdJd3N4WFJjWE5BbHoxNEZxWVROMEk0TE5sUnhpRHktWVQ2dUk3d09BRXVtUFJqUV9DRzMySlhFRHJFb2ZjdlVTWnZ6R0UxTV9JY1NxYjNqYk5HZWItaENSYno1dm1Jd1l5Tl9kMmtrbVp1cWRUWFBhcWRjRlNMM3FneDNxUFhvUWRpUEdOVnNZ?oc=5"
+      ],
+      "signal_id": "signal-79eabb0a4b4b144bb474f876",
+      "title": "Jack Henry raises outlook amid stronger channel momentum"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-05/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-6fc7ce8fd09314a5d17d62e8b7f3e6f52144cd0f0f66b46af417c3375afd2d63",
+  "version": 2,
+  "workflow_run_id": "42045629880"
+}

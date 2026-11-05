@@ -2,6 +2,82 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "multi_agent_ai_orchestration",
+      "first_covered": "2026-11-05",
+      "last_covered": "2026-11-05",
+      "entities": [
+        "Capgemini",
+        "Finextra Research"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "one_view",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-05",
+          "summary": "Capgemini found that financial-services firms are adopting multi-agent AI faster than they are achieving enterprise-wide orchestration, reinforcing governed coordination and controls.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMizwFBVV95cUxOc0Nzck5UOFliSmRnTmVFYnRQa3NHQVJiRVhsNUY0ZGNuUEpLNDJaY3ItTDJZT2hQbFk5dzFWVWFXcWVIWkdzOGVNVlY3MURHZ0JJQzA0U1VJcG1JV3RZaVdMeHRUZmdCcllsUWZlRlV0cWd3dk9udXFoa0NwVTI2RS1Mb3l6bE9DMnZUcE10Nm1fNTlxODQzSGNqYVdhREt3blBGWkRGU2FZa2RhdTZSZXNqeXl0QTR2dF9OZHFNZVpkQXJhM3JqTWE5VGgzcG8?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-05"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_fiscal_q1_momentum",
+      "first_covered": "2026-11-05",
+      "last_covered": "2026-11-05",
+      "entities": [
+        "Jack Henry"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "horizontal",
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-05",
+          "summary": "Jack Henry reported stronger fiscal Q1 results, raised its fiscal 2027 outlook, and highlighted competitive wins, cloud, payments, and security momentum that heighten channel pressure on ASA.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMirwFBVV95cUxNTjNGbmFjbG9QUWM0QmF1SHhMMDNNZzdOTzJQb2dkYVdJd3N4WFJjWE5BbHoxNEZxWVROMEk0TE5sUnhpRHktWVQ2dUk3d09BRXVtUFJqUV9DRzMySlhFRHJFb2ZjdlVTWnZ6R0UxTV9JY1NxYjNqYk5HZWItaENSYno1dm1Jd1l5Tl9kMmtrbVp1cWRUWFBhcWRjRlNMM3FneDNxUFhvUWRpUEdOVnNZ?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-04"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "ai_autonomous_money_management",
+      "first_covered": "2026-11-05",
+      "last_covered": "2026-11-05",
+      "entities": [
+        "FIS"
+      ],
+      "roadmap_areas": [
+        "compass",
+        "forecast"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-05",
+          "summary": "A FIS survey found UK consumers want AI assistance with finances but mostly reject autonomous money management, supporting bounded automation and human oversight.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48705/most-brits-not-ready-to-let-ai-manage-their-money?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-11-05"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "socure_stellar_reusable_identity",
       "first_covered": "2026-11-04",
       "last_covered": "2026-11-04",
