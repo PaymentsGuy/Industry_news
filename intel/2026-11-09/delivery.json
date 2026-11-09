@@ -1,0 +1,68 @@
+{
+  "brief_date": "2026-11-09",
+  "brief_id": "industry-pulse-2026-11-09",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-09\n\n**Reporting interval:** 2026-11-06T06:30:00-08:00 to 2026-11-09T06:30:00-08:00\n**Candidates classified:** 37\n**Material signals:** 3\n**Classification counts:** material=3; monitor=2; noise=15; duplicate=1; needs_validation=16\n\n## Top summary\n\nThree distinct material events emerged: Lumin launched an end-to-end M&A digital-banking conversion framework; the OCC issued an examiner framework for banks\u2019 generative and agentic AI use; and FinCEN cut MEXC Global off from the U.S. financial system over at least $16 billion in alleged illicit flows. The two MEXC candidates describe the same enforcement action and are consolidated into one representative.\n\n## Material signals\n\n### Lumin launches M&A digital-banking conversion framework\n\nLumin introduced an end-to-end framework intended to help financial institutions manage digital-banking conversions during acquisitions. The launch could strengthen Lumin\u2019s channel-partner position and increase competitive pressure around ASA\u2019s integration and distribution strategy.[REF 1]\n\n### OCC issues examiner framework for bank use of generative and agentic AI\n\nThe OCC issued a supervisory framework to help examiners evaluate banks\u2019 use of \u201csuper intelligence,\u201d including generative and agentic AI, and the associated risks and controls.[REF 2] The framework is an examiner resource rather than a new set of enforceable bank requirements; it emphasizes applying existing governance, model-risk, technology, compliance, operational-risk, oversight, and resilience practices according to the materiality of each use case.[REF 2]\n\n### FinCEN cuts off MEXC Global from U.S. financial system\n\nFinCEN issued an order effectively cutting MEXC Global off from the U.S. financial system and preventing U.S. financial institutions from processing funds transfers involving the exchange.[REF 3] FinCEN said MEXC facilitated at least $16 billion in illicit transactions connected to sanctions evasion, cybercrime, and other illicit activity.[REF 3][REF 4] The action reinforces the importance of AML, sanctions-screening, transaction-monitoring, and counterparty-risk controls across ASA\u2019s identity and financial-data platform.\n\n## Candidate disposition\n\nThree representatives are retained as material signals. The second MEXC article is a duplicate of the first MEXC enforcement report and is mapped directly to reference 3. The remaining classified candidates retain their supplied monitor, noise, and needs-validation dispositions; no additional action is inferred from those states.\n\n## References\n\n1. Lumin Digital (blog), \"Lumin Digital Launches the M&A Readiness Advantage, the Industry - The National Law Review,\" 2026-11-09. https://news.google.com/rss/articles/CBMitgFBVV95cUxOQjF4WlI3cW0tWHFTNG53a1FfWXZpeUlQZDI5WDR2Y2YzMWFRMzFWMndaUDRKOXMzZVgyc2pyY3FUY3NEWU0zcEtWQWRPUWlYdzhOb0h4MUdFR2xhTEtzN3dsTWp4ZXp1SGtnMVJqZHUxZzZPeU5leExTTzQ4eW5HSm4xQ3JoNTlraTVzSnAyYm9pclRJQ2FESU1xVUNTOUxJbnA1U2U4Nm5KNG9pNVVQNUF2WmNEUQ?oc=5 \u2014 *Lumin\u2019s acquisition-conversion capabilities may strengthen a channel partner\u2019s platform position and inform ASA\u2019s integration and distribution strategy..*\n2. OCC (newsroom), \"OCC Issues \u201cSuper Intelligence\u201d Framework for Bank Examiners - Fintech Business Weekly | Jason Mikula,\" 2026-11-08. https://news.google.com/rss/articles/CBMijAFBVV95cUxOaVVSMkEzOUlPZU9HQ2s1Slc4ZGVWQnZqMjdaTlBxRXJ1elJfRmpsbmZFSFVqNUZpSlB4RVV1S0NYY3BnWi1OUXRLeFNhR1JsUzFNS3o1TmVGZTg0TEhMRWg1UnpSS2oydXNUN3dRSjV2ajlwbTBsWXk1b0VkaTdXMElIc1c1R2x3YXN1TA?oc=5 \u2014 *The framework reinforces governance, oversight, resilience, and auditability expectations relevant to ASA\u2019s platform and future agentic capabilities..*\n3. FinCEN (newsroom), \"FinCEN Cuts Off MEXC Global From U.S. Financial System Over $16 Billion Illicit Flows: how 7 outlets framed it - NewsCord,\" 2026-11-07. https://news.google.com/rss/articles/CBMi6gFBVV95cUxNSlNXY2gtVVlmalB5aURCZWNZMWVLekNHNUE2bWZQTDJSQ190Q0R2QmV6NUFkMW5RbHczT0RBanZfQmtrclZmUnprSUNZemluWUhOeUI0R2JGVDFyWGJtVHJnSWNHZWNBZ1U2NUZUZDN6bmo2a1hSSzJGcmc1NmRrTk1ZSFl6MHRvNUpJMVJqVGNIT3A1cjVtSDFoOEhsYW16ZWJQYzdYZ0J0UURaMGRDT1N4NmZ3dnVEWmJRM05Sb1VtZnVhS0kyelVSdFBGM3pSQW5ra1lKejhOSFNVR1k1akJHZ2RtQ2dnNnc?oc=5 \u2014 *The enforcement action reinforces AML, sanctions-screening, and counterparty-risk requirements across ASA\u2019s identity and financial-data platform..*\n4. FinCEN (newsroom), \"FinCEN cuts MEXC off from US banking over $16.7B in illicit flows - Cryptopolitan,\" 2026-11-07. https://news.google.com/rss/articles/CBMimwFBVV95cUxOUHkyTFdlbjNubmVIUDJoSHlabmRnaHJhNU8yT1B6RS1yZHJ4bVpPMGNiOGYxQk4yVGNTQ3lzM3hPZ3JLQndWZjhlai1HVEJlS1Jtb2hPRUdqTUhiWDF2QlRYMmE1ZlFyZ0NGNDFtdV8wRlRnMExkU2FXd2dWd0h2TURXV1NqT0hEdkRhT090OHA0ZEp2SS0ydUI0Yw?oc=5 \u2014 *The enforcement action reinforces the need for strong AML, sanctions, and counterparty-risk controls across ASA\u2019s identity and financial-data platform..*\n",
+  "classification_counts": {
+    "duplicate": 1,
+    "material": 3,
+    "monitor": 2,
+    "needs_validation": 16,
+    "noise": 15
+  },
+  "content_sha256": "21bc09e8c4642c6754767194d9989eecb7da9248c901157e295a4df2337c82e7",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "bf53f193-b258-5f77-b297-05ba28220688",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-09T06:30:00-08:00",
+    "start": "2026-11-06T06:30:00-08:00"
+  },
+  "material_signal_count": 3,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQjF4WlI3cW0tWHFTNG53a1FfWXZpeUlQZDI5WDR2Y2YzMWFRMzFWMndaUDRKOXMzZVgyc2pyY3FUY3NEWU0zcEtWQWRPUWlYdzhOb0h4MUdFR2xhTEtzN3dsTWp4ZXp1SGtnMVJqZHUxZzZPeU5leExTTzQ4eW5HSm4xQ3JoNTlraTVzSnAyYm9pclRJQ2FESU1xVUNTOUxJbnA1U2U4Nm5KNG9pNVVQNUF2WmNEUQ?oc=5"
+      ],
+      "signal_id": "signal-4eb86119884fa0528e706a4a",
+      "title": "Lumin launches M&A digital-banking conversion framework"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaVVSMkEzOUlPZU9HQ2s1Slc4ZGVWQnZqMjdaTlBxRXJ1elJfRmpsbmZFSFVqNUZpSlB4RVV1S0NYY3BnWi1OUXRLeFNhR1JsUzFNS3o1TmVGZTg0TEhMRWg1UnpSS2oydXNUN3dRSjV2ajlwbTBsWXk1b0VkaTdXMElIc1c1R2x3YXN1TA?oc=5"
+      ],
+      "signal_id": "signal-4b1dd7d14139bd04716e3c02",
+      "title": "OCC issues examiner framework for bank use of generative and agentic AI"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNSlNXY2gtVVlmalB5aURCZWNZMWVLekNHNUE2bWZQTDJSQ190Q0R2QmV6NUFkMW5RbHczT0RBanZfQmtrclZmUnprSUNZemluWUhOeUI0R2JGVDFyWGJtVHJnSWNHZWNBZ1U2NUZUZDN6bmo2a1hSSzJGcmc1NmRrTk1ZSFl6MHRvNUpJMVJqVGNIT3A1cjVtSDFoOEhsYW16ZWJQYzdYZ0J0UURaMGRDT1N4NmZ3dnVEWmJRM05Sb1VtZnVhS0kyelVSdFBGM3pSQW5ra1lKejhOSFNVR1k1akJHZ2RtQ2dnNnc?oc=5",
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUHkyTFdlbjNubmVIUDJoSHlabmRnaHJhNU8yT1B6RS1yZHJ4bVpPMGNiOGYxQk4yVGNTQ3lzM3hPZ3JLQndWZjhlai1HVEJlS1Jtb2hPRUdqTUhiWDF2QlRYMmE1ZlFyZ0NGNDFtdV8wRlRnMExkU2FXd2dWd0h2TURXV1NqT0hEdkRhT090OHA0ZEp2SS0ydUI0Yw?oc=5"
+      ],
+      "signal_id": "signal-78c271fa24697b0fa8a50064",
+      "title": "FinCEN cuts off MEXC Global from U.S. financial system"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-09/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-a5062942174c5e710d9882421a0aad1780233e8a638aeda8a74ef45f9b877777",
+  "version": 2,
+  "workflow_run_id": "42635307112"
+}

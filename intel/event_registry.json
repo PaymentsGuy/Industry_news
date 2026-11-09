@@ -2,6 +2,77 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "occ_super_intelligence_examiner_framework",
+      "first_covered": "2026-11-09",
+      "last_covered": "2026-11-09",
+      "entities": [
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-09",
+          "summary": "The OCC issued an examiner framework for evaluating banks’ generative and agentic AI use, emphasizing materiality-based governance, risk management, oversight, auditability, and resilience.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMijAFBVV95cUxOaVVSMkEzOUlPZU9HQ2s1Slc4ZGVWQnZqMjdaTlBxRXJ1elJfRmpsbmZFSFVqNUZpSlB4RVV1S0NYY3BnWi1OUXRLeFNhR1JsUzFNS3o1TmVGZTg0TEhMRWg1UnpSS2oydXNUN3dRSjV2ajlwbTBsWXk1b0VkaTdXMElIc1c1R2x3YXN1TA?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-08"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "lumin_ma_conversion_framework",
+      "first_covered": "2026-11-09",
+      "last_covered": "2026-11-09",
+      "entities": [
+        "Lumin Digital"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-11-09",
+          "summary": "Lumin launched an end-to-end framework to help financial institutions manage digital-banking conversions during acquisitions, increasing competitive pressure on ASA’s integration and distribution strategy.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQjF4WlI3cW0tWHFTNG53a1FfWXZpeUlQZDI5WDR2Y2YzMWFRMzFWMndaUDRKOXMzZVgyc2pyc3FUY3NEWU0zcEtWQWRPUWlYdzhOb0h4MUdFR2xhTEtzN3dsTWp4ZXp1SGtnMVJqZHUxZzZPeU5leExTTzQ4eW5HSm4xQ3JoNTlraTVzSnAyYm9pclRJQ2FESU1xVUNTOUxJbnA1U2U4Nm5KNG9pNVVQNUF2WmNEUQ?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-09"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_mexc_cutoff",
+      "first_covered": "2026-11-09",
+      "last_covered": "2026-11-09",
+      "entities": [
+        "Financial Crimes Enforcement Network",
+        "MEXC Global"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "one_view",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-09",
+          "summary": "FinCEN cut MEXC Global off from the U.S. financial system over at least $16 billion in alleged illicit transactions involving sanctions evasion, cybercrime, and other activity.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNSlNXY2gtVVlmalB5aURCZWNZMWVLekNHNUE2bWZQTDJSQ190Q0R2QmV6NUFkMW5RbHczT0RBanZfQmtrclZmUnprSUNZemluWUhOeUI0R2JGVDFyWGJtVHJnSWNHZWNBZ1U2NUZUZDN6bmo2a1hSSzJGcmc1NmRrTk1ZSFl6MHRvNUpJMVJqVGNIT3A1cjVtSDFoOEhsYW16ZWJQYzdYZ0J0UURaMGRDT1N4NmZ3dnVEWmJRM05Sb1VtZnVhS0kyelVSdFBGM3pSQW5ra1lKejhOSFNVR1k1akJHZ2RtQ2dnNnc?oc=5",
+            "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUHkyTFdlbjNubmVIUDJoSHlabmRnaHJhNU8yT1B6RS1yZHJ4bVpPMGNiOGYxQk4yVGNTQ3lzM3hPZ3JLQndWZjhlai1HVEJlS1Jtb2hPRUdqTUhiWDF2QlRYMmE1ZlFyZ0NGNDFtdV8wRlRnMExkU2FXd2dWd0h2TURXV1NqT0hEdkRhT090OHA0ZEp2SS0ydUI0Yw?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-07"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "multi_agent_ai_orchestration",
       "first_covered": "2026-11-05",
       "last_covered": "2026-11-05",
