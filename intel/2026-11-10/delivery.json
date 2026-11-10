@@ -1,0 +1,59 @@
+{
+  "brief_date": "2026-11-10",
+  "brief_id": "industry-pulse-2026-11-10",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-10\n\n**Reporting interval:** 2026-11-09T06:30:00-08:00 to 2026-11-10T06:30:00-08:00\n**Candidates classified:** 36\n**Material signals:** 2\n**Classification counts:** material=2; monitor=5; noise=15; duplicate=0; needs_validation=14\n\n## Top summary\n\nTwo evidence-backed signals cleared the materiality threshold: Bud Financial secured BankTech Ventures backing to accelerate U.S. expansion, strengthening a direct competitor across customer intelligence and transaction insights; FinCEN convened financial institutions, digital-asset firms, and law enforcement to disrupt transnational scam-center networks, reinforcing demand for cross-platform fraud intelligence and privacy-conscious information sharing.[REF 1][REF 2]\n\n## Material signals\n\n### Bud Financial secures backing for U.S. expansion\n\nBud Financial secured an investment from BankTech Ventures to accelerate its expansion into the U.S. banking market. The funding supports Bud\u2019s customer-intelligence layer and related AI banking capabilities, increasing competitive pressure on ASA Compass, One View, and Forecast in customer intelligence, transaction insights, and predictive banking use cases.[REF 1]\n\n### FinCEN convenes cross-industry scam-center intelligence exchange\n\nFinCEN convened financial institutions, digital-asset industry participants, law enforcement, and government partners to share intelligence on transnational scam-center financial activity and strengthen public-private efforts to identify and disrupt related illicit networks.[REF 2] The development reinforces demand for coordinated fraud intelligence, transaction monitoring, and privacy-conscious financial-data sharing across platforms.[REF 2]\n\n## Candidate disposition\n\nBoth supplied material candidates are retained as distinct, evidence-backed events. No material candidate was excluded as a duplicate, and no duplicate transition is applied. The five monitor, 15 noise, and 14 needs-validation candidates remain outside the material set; the needs-validation items are blocked from publication pending sufficient evidence or confirmation.\n\n## References\n\n1. Finextra, \"Bud lands venture backing for US push,\" 2026-11-10. https://www.finextra.com/newsarticle/48729/bud-lands-venture-backing-for-us-push?utm_medium=rssfinextra&utm_source=finextrafeed \u2014 *Bud\u2019s funded US expansion strengthens a direct competitor in customer intelligence, transaction insights, and predictive banking use cases..*\n2. FinCEN (newsroom), \"LATEST: FinCEN enlists banks and crypto firms in scam compound crackdown - AML Intelligence,\" 2026-11-10. https://news.google.com/rss/articles/CBMisgFBVV95cUxPVkVUM0s1MWk4WHp5MlNNY2xFek1VODFNQVJUbDNkR3VlT3podmtLQ3gwNlNIdnBKTzZFb3hBUHpjdXBWOXJzaGVoQXRaeFZmZ2NNc25wTzBLXy1SdVBwak1NS0VlOUxTeTZGTGJoWnRJQ3ZEWVJoT1Uyd01SOHpCcWV1ZHJTWElEUF9ySVpnN1gzcnI4X3loNVNoSTF4T1dodmpZeU1EWVRsbGpCVkoycW9n?oc=5 \u2014 *The coordinated anti-scam effort reinforces demand for stronger cross-platform fraud intelligence and privacy-conscious financial-data sharing..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 2,
+    "monitor": 5,
+    "needs_validation": 14,
+    "noise": 15
+  },
+  "content_sha256": "9adb4d24716f08aa7ab15a61ac245e4f5268b79a4de82b71805b64f0c5db62d3",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "6b42a768-43d4-5eda-af66-80abb0f5f3e0",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-10T06:30:00-08:00",
+    "start": "2026-11-09T06:30:00-08:00"
+  },
+  "material_signal_count": 2,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://www.finextra.com/newsarticle/48729/bud-lands-venture-backing-for-us-push?utm_medium=rssfinextra&utm_source=finextrafeed"
+      ],
+      "signal_id": "signal-680072f7d644d9eebea919f7",
+      "title": "Bud Financial secures backing for U.S. expansion"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVkVUM0s1MWk4WHp5MlNNY2xFek1VODFNQVJUbDNkR3VlT3podmtLQ3gwNlNIdnBKTzZFb3hBUHpjdXBWOXJzaGVoQXRaeFZmZ2NNc25wTzBLXy1SdVBwak1NS0VlOUxTeTZGTGJoWnRJQ3ZEWVJoT1Uyd01SOHpCcWV1ZHJTWElEUF9ySVpnN1gzcnI4X3loNVNoSTF4T1dodmpZeU1EWVRsbGpCVkoycW9n?oc=5"
+      ],
+      "signal_id": "signal-77fe47a178b0a21e677f9f38",
+      "title": "FinCEN convenes cross-industry scam-center intelligence exchange"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-10/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-00b61a8c82d0889be0e66e807cab3e03569154801ce0a2b0eb60c9774e64e891",
+  "version": 2,
+  "workflow_run_id": "42834721325"
+}

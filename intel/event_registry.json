@@ -2,6 +2,58 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "fincen_scam_center_intelligence_exchange",
+      "first_covered": "2026-11-10",
+      "last_covered": "2026-11-10",
+      "entities": [
+        "Digital-asset firms",
+        "FinCEN",
+        "Law enforcement",
+        "U.S. financial institutions"
+      ],
+      "roadmap_areas": [
+        "one_view",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-10",
+          "summary": "FinCEN convened financial institutions, digital-asset firms, law enforcement, and government partners to disrupt transnational scam-center networks through coordinated intelligence sharing.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVkVUM0s1MWk4WHp5MlNNY2xFek1VODFNQVJUbDNkR3VlT3podmtLQ3gwNlNIdnBKTzZFb3hBUHpjdXBWOXJzaGVoQXRaeFZmZ2NNc25wTzBLXy1SdVBwak1NS0VlOUxTeTZGTGJoWnRJQ3ZEWVJoT1Uyd01SOHpCcWV1ZHJTWElEUF9ySVpnN1gzcnI4X3loNVNoSTF4T1dodmpZeU1EWVRsbGpCVkoycW9n?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-10"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "bud_banktech_us_expansion",
+      "first_covered": "2026-11-10",
+      "last_covered": "2026-11-10",
+      "entities": [
+        "BankTech Ventures",
+        "Bud Financial"
+      ],
+      "roadmap_areas": [
+        "forecast",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-10",
+          "summary": "Bud Financial secured BankTech Ventures backing to accelerate U.S. expansion, increasing competition in customer intelligence, transaction insights, and predictive banking.",
+          "source_urls": [
+            "https://www.finextra.com/newsarticle/48729/bud-lands-venture-backing-for-us-push?utm_medium=rssfinextra&utm_source=finextrafeed"
+          ],
+          "source_dates": [
+            "2026-11-10"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "occ_super_intelligence_examiner_framework",
       "first_covered": "2026-11-09",
       "last_covered": "2026-11-09",
