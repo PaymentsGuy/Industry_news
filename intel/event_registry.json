@@ -2,6 +2,35 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "bpi_digital_asset_aml_obligations",
+      "first_covered": "2026-11-11",
+      "last_covered": "2026-11-11",
+      "entities": [
+        "ASA",
+        "Bank Policy Institute",
+        "FinCEN",
+        "U.S. Treasury"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "one_view",
+        "pay",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-11",
+          "summary": "BPI urged FinCEN and Treasury to designate digital-asset intermediaries and certain decentralized-finance operators as financial institutions subject to expanded AML, reporting, and information-sharing obligations.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOM3VkZEp2TEZVOUVCRDBjWVViSDVuUHlWcXFyQ2FXUmZycHg4YkROUWNGdGZYZ1Y2ZEFfckdrZkY5N1pkamI3MjVQbE1KUERfUVNIeFlsWXRNZzRMTTVyZXFnNlBZRi1VZERxUE05eW9NYnNla202cm00YS1CdU5zRE9DTWZqclF4eHVsSTRqM3NTLXZZekQxNWxMZ2FiR19rTUdITkVtWnNzQlFycGZQa2VMYkd0Q2NDcDJ0czV4SXFjU2lraDRURVp3cEpFYmJrTEhBbVJKVFdDYmFKcXc?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-10"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "fincen_scam_center_intelligence_exchange",
       "first_covered": "2026-11-10",
       "last_covered": "2026-11-10",

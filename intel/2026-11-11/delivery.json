@@ -1,0 +1,51 @@
+{
+  "brief_date": "2026-11-11",
+  "brief_id": "industry-pulse-2026-11-11",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-11\n\n**Reporting interval:** 2026-11-10T06:30:00-08:00 to 2026-11-11T06:30:00-08:00\n**Candidates classified:** 31\n**Material signals:** 1\n**Classification counts:** material=1; monitor=4; noise=11; duplicate=0; needs_validation=15\n\n## Top summary\n\nBPI urged FinCEN and Treasury to extend AML/CFT obligations across digital-asset intermediaries, including custodians, exchanges, transaction facilitators, and certain decentralized-finance arrangements. The proposal is not a rule or enforcement action, but could increase compliance, reporting, monitoring, and data-sharing expectations for financial institutions and digital-asset channels connected to ASA\u2019s platform.[REF 1]\n\n## Material signals\n\n### BPI urges broader AML obligations for digital-asset intermediaries\n\nBPI called on FinCEN and Treasury to designate digital-asset service providers\u2014including entities that custody, transfer, exchange, or facilitate customer transactions\u2014as financial institutions under the Bank Secrecy Act. It also urged applying obligations to persons operating or controlling decentralized-finance arrangements and improving information sharing across the digital-asset payment chain.[REF 1]\n\nThis is an industry recommendation rather than an adopted requirement. If pursued, it could expand AML, sanctions, reporting, recordkeeping, customer-information, and data-sharing expectations across financial institutions and digital-asset channels connected to ASA\u2019s platform.[REF 1]\n\n## Candidate disposition\n\nOne source-catalog candidate was retained as a new material signal. No supplied candidate was mapped to an existing historical topic because this BPI recommendation is distinct from the ledger\u2019s prior FinCEN convening, MEXC cutoff, and withdrawn digital-asset rulemaking events. The four monitor, 15 needs-validation, and 11 noise candidates remain outside the material set; no blocked state is identified.\n\n## References\n\n1. FinCEN (newsroom), \"BANK SECRECY ACT\u2014BPI urges broader AML rules for digital asset intermediaries (Nov 10, 2026) - VitalLaw.com,\" 2026-11-10. https://news.google.com/rss/articles/CBMi3gFBVV95cUxOM3VkZEp2TEZVOUVCRDBjWVViSDVuUHlWcXFyQ2FXUmZycHg4YkROUWNGdGZYZ1Y2ZEFfckdrZkY5N1pkamI3MjVQbE1KUERfUVNIeFlsWXRNZzRMTTVyZXFnNlBZRi1VZERxUE05eW9NYnNla202cm00YS1CdU5zRE9DTWZqclF4eHVsSTRqM3NTLXZZekQxNWxMZ2FiR19rTUdITkVtWnNzQlFycGZQa2VMYkd0Q2NDcDJ0czV4SXFjU2lraDRURVp3cEpFYmJrTEhBbVJKVFdDYmFKcXc?oc=5 \u2014 *Potentially expands compliance and data-sharing expectations across financial institutions and digital-asset channels connected to ASA's platform..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 1,
+    "monitor": 4,
+    "needs_validation": 15,
+    "noise": 11
+  },
+  "content_sha256": "a9fcafe9bccdcdb0ddd2829f76f275b3bddb6195f8240020f6aa40688a30db60",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "fd6714f0-622b-578e-9b46-d1a3b9c432b6",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-11T06:30:00-08:00",
+    "start": "2026-11-10T06:30:00-08:00"
+  },
+  "material_signal_count": 1,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOM3VkZEp2TEZVOUVCRDBjWVViSDVuUHlWcXFyQ2FXUmZycHg4YkROUWNGdGZYZ1Y2ZEFfckdrZkY5N1pkamI3MjVQbE1KUERfUVNIeFlsWXRNZzRMTTVyZXFnNlBZRi1VZERxUE05eW9NYnNla202cm00YS1CdU5zRE9DTWZqclF4eHVsSTRqM3NTLXZZekQxNWxMZ2FiR19rTUdITkVtWnNzQlFycGZQa2VMYkd0Q2NDcDJ0czV4SXFjU2lraDRURVp3cEpFYmJrTEhBbVJKVFdDYmFKcXc?oc=5"
+      ],
+      "signal_id": "signal-27f41c7c82c4a6a8cf68cd6c",
+      "title": "BPI urges broader AML obligations for digital-asset intermediaries"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-11/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-31259d22cc6bce251175d3336a31cf58e7f53bf57ef14471ebafb916021ea96f",
+  "version": 2,
+  "workflow_run_id": "43039071635"
+}
