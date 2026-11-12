@@ -1,0 +1,19 @@
+{
+  "brief_date": "2026-11-12",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 0,
+    "monitor": 4,
+    "needs_validation": 10,
+    "noise": 10
+  },
+  "dispositions": {},
+  "initial_classification_counts": {
+    "duplicate": 0,
+    "material": 0,
+    "monitor": 4,
+    "needs_validation": 10,
+    "noise": 10
+  },
+  "source_ids": {}
+}

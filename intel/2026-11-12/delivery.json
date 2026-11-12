@@ -1,0 +1,42 @@
+{
+  "brief_date": "2026-11-12",
+  "brief_id": "industry-pulse-2026-11-12",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-12\n\n**Reporting interval:** 2026-11-11T06:30:00-08:00 to 2026-11-12T06:30:00-08:00\n**Candidates classified:** 24\n**Material signals:** 0\n**Classification counts:** material=0; monitor=4; noise=10; duplicate=0; needs_validation=10\n\n## Top summary\n\nNo evidence-backed material signals in this interval.\n\n## Material signals\n\nNo evidence-backed material signals in this interval.\n\n## Candidate disposition\n\nNo source-catalog references were supplied, and no material candidates were identified. The four monitor candidates and ten needs-validation candidates remain outside the material set; ten noise candidates remain excluded. No duplicate exclusions were recorded.\n\n## References\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 0,
+    "monitor": 4,
+    "needs_validation": 10,
+    "noise": 10
+  },
+  "content_sha256": "623c4f26d0d8316dc91190c3ad4b41509bebc5be917fc4ce4ec040bcaebd2423",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "8e29f5a7-cdc9-58fa-92eb-bc14e569a261",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-12T06:30:00-08:00",
+    "start": "2026-11-11T06:30:00-08:00"
+  },
+  "material_signal_count": 0,
+  "producer": "industry_news",
+  "signals": [],
+  "source_repository_path": "intel/2026-11-12/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-b419eafcf9a47e7fc93613c2a5c6ca65a9c96ace350bd582b659c5f02db12421",
+  "version": 2,
+  "workflow_run_id": "43237836586"
+}
