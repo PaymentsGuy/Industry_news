@@ -1,0 +1,42 @@
+{
+  "brief_date": "2026-11-13",
+  "brief_id": "industry-pulse-2026-11-13",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-13\n\n**Reporting interval:** 2026-11-12T06:30:00-08:00 to 2026-11-13T06:30:00-08:00\n**Candidates classified:** 33\n**Material signals:** 0\n**Classification counts:** material=0; monitor=7; noise=16; duplicate=0; needs_validation=10\n\n## Top summary\n\nNo evidence-backed material signals in this interval.\n\n## Material signals\n\nNo evidence-backed material signals in this interval.\n\n## Candidate disposition\n\nNo source-catalog references were supplied, and no candidates were designated material. The seven monitor items and ten needs-validation items remain outside the material set; 16 items remain classified as noise. No duplicate exclusions were recorded. External search surfaced potentially relevant industry items, but they cannot be promoted into this report because the supplied source catalog contains no permitted `[REF n]` anchors.\n\n## References\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 0,
+    "monitor": 7,
+    "needs_validation": 10,
+    "noise": 16
+  },
+  "content_sha256": "05baf1bc0f927d4c7c733d5c50f41a40d58771356be1d03ae90c034fbe790d4b",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "82dd5973-eacf-5746-bd62-1fa2dbc4d54e",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-13T06:30:00-08:00",
+    "start": "2026-11-12T06:30:00-08:00"
+  },
+  "material_signal_count": 0,
+  "producer": "industry_news",
+  "signals": [],
+  "source_repository_path": "intel/2026-11-13/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-a0b923255de37b04cc07d82037fa10029b1a7a78c635b7738ac8f7b252bd10a3",
+  "version": 2,
+  "workflow_run_id": "43443315444"
+}
