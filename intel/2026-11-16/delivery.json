@@ -31,7 +31,16 @@
       "workspace_id": "T01TY2FGRT9"
     },
     "vault": {
-      "status": "pending"
+      "brief_id": "industry-pulse-2026-11-16",
+      "content_sha256": "4b5acf44b303131e94d6edf587eec807af056d2b1ac504d69dc1fd3acc1f15bd",
+      "destination": "vault",
+      "readback": true,
+      "receipt_id": "vault-receipt-9be856b899d6ec0a5aefc334db48e379112a564a4dfd8f6d6ae4625aaa7f5884",
+      "signature": "a13c602ae85f2da65917d70d03448da660e1472d92c19286dc5f86581b489de0",
+      "status": "verified",
+      "transaction_id": "brief-delivery-efa26ca94d4a3037d1825461bd6a577cc07576411f97d48c28f145c33bb3522f",
+      "vault_file_sha256": "24474601c6e777b80dc8127f2adad0b56f147993cbf416bbe269993a91552c6b",
+      "vault_path": "Atlas/competitive-intel/intelligence-briefs/2026-11-16 - ASA Intelligence Brief.md"
     }
   },
   "interval": {
@@ -76,7 +85,7 @@
     }
   ],
   "source_repository_path": "intel/2026-11-16/brief.md",
-  "status": "partial_delivery",
+  "status": "fully_delivered",
   "transaction_id": "brief-delivery-efa26ca94d4a3037d1825461bd6a577cc07576411f97d48c28f145c33bb3522f",
   "version": 2,
   "workflow_run_id": "43888196294"
