@@ -1,0 +1,67 @@
+{
+  "brief_date": "2026-11-16",
+  "brief_id": "industry-pulse-2026-11-16",
+  "cadence": "weekday_daily",
+  "canonical_body": "# ASA Industry News Pulse \u2014 2026-11-16\n\n**Reporting interval:** 2026-11-13T06:30:00-08:00 to 2026-11-16T06:30:00-08:00\n**Candidates classified:** 29\n**Material signals:** 3\n**Classification counts:** material=3; monitor=5; noise=13; duplicate=0; needs_validation=8\n\n## Top summary\n\nThree material signals emerged: Mahalo strengthened its Corelation distribution position; FinCEN withdrew a proposed lower cross-border transfer-recordkeeping threshold while restricting U.S. financial institutions from transacting with MEXC Global; and FinCEN\u2019s appeal kept uncertainty alive around nationwide AML reporting for certain residential real-estate transfers. The implications for ASA are concentrated in channel access, AML/transaction-monitoring controls, and compliance-positioning assumptions.\n\n## Material signals\n\n### Mahalo expands within the Corelation ecosystem\n\nDynamic Federal Credit Union selected Mahalo\u2019s digital-banking platform, adding another Corelation KeyStone credit union to Mahalo\u2019s footprint.[REF 1] The development may intensify competition for ASA\u2019s channel access and distribution strategy among Corelation institutions, particularly where native core integration is a selection criterion.[REF 1]\n\n### FinCEN withdraws proposed threshold reduction and restricts MEXC transactions\n\nFinCEN and the Federal Reserve withdrew a proposal that would have reduced the cross-border funds-transfer recordkeeping and Travel Rule threshold from $3,000 to $250; existing requirements remain in place.[REF 2] Separately, FinCEN prohibited covered U.S. financial institutions from processing funds transfers involving MEXC Global, reinforcing the need for adaptable AML, sanctions, transaction-monitoring, and digital-asset controls.[REF 2]\n\n### FinCEN appeal sustains real-estate AML reporting uncertainty\n\nFinCEN is appealing a ruling that vacated its nationwide Residential Real Estate Rule, which would require reporting for certain non-financed residential real-estate transfers involving entities or trusts.[REF 3] The rule is not currently in effect, so the appeal preserves uncertainty around future financial-crime reporting obligations and related ASA compliance and platform-positioning assumptions.[REF 3]\n\n## Candidate disposition\n\nAll three supplied material candidates are retained as distinct, evidence-backed events. No material candidate was excluded as a duplicate. The five monitor, 13 noise, and eight needs-validation candidates remain outside the material set; the needs-validation items are blocked from publication pending sufficient evidence or validation. Final classifications therefore remain unchanged and reconcile to 29 candidates.\n\n## References\n\n1. Corelation (blog), \"Dynamic Federal Credit Union Selects Mahalo as Digital Banking Pa - The National Law Review,\" 2026-11-15. https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTFlmZmN3VGlwQ0NhYVF3TlNmMUxTUW1fRXYyYlhCeGdwbjU2VzhkTVpxaWZFcVpDMmFsUk1fd2R6OU1JQmpBZl9PZmk2cFN5d0djMkZHdnJ6OEh3Y1Q3dWRSVnQyYXFRcGYzNDB2Q1ZRbWpTMVhNS3NaM0xBaG93blE5bnhONkpubV9LWWJaY3dTX0NwTW0xUTdCMVdaLXNWbUNrdXYxeVpOQ2M?oc=5 \u2014 *Mahalo\u2019s growth as a Corelation-integrated digital banking partner could affect ASA\u2019s channel access and distribution strategy among Corelation credit unions..*\n2. FinCEN (newsroom), \"Crypto Brief - Lowenstein Crypto Newsletter- November 12, 2026 - JD Supra,\" 2026-11-13. https://news.google.com/rss/articles/CBMifkFVX3lxTE10ZE9wMTJkTmo4QmwxSUlObGdqcl95Q0lQTGhndHE2N2dXbXlaenVXWURtdEF1a0g4Rkxid2pVVlduZXBrSXVKOHBoQkZFLTFOck9mOUxrTFV1MlRuRWlTZUVLRzdweVJxZWpyQVRuLWJHR2JNVXRiZjkyTjBiZw?oc=5 \u2014 *The changes reinforce evolving AML and crypto-transfer compliance requirements relevant to ASA\u2019s financial-institution risk, monitoring, and platform controls..*\n3. FinCEN (newsroom), \"Will the Fifth Circuit keep FinCEN anti-money laundering rule off the books? - HousingWire,\" 2026-11-13. https://news.google.com/rss/articles/CBMilAFBVV95cUxNNS1meThra1hmaE9MOE8zT295ZjVxdU54a0NwM0M3RlFaanRqT1VKdC13bzREd05Sd2ZjdHpjOUNCV2RvM0F0Z3N5enN6cmhGbTlmc1haS2wwcHRRb294VE5IZ0xrc0hJNHpuMEphb0NGckp2azEtdXZkaDV3VWU3VjVMTDZpbHdxeHd6bmtqVlVVZFdW?oc=5 \u2014 *The appeal signals continued uncertainty around financial-crime reporting obligations and could affect ASA\u2019s compliance, risk, and platform-positioning assumptions..*\n",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 3,
+    "monitor": 5,
+    "needs_validation": 8,
+    "noise": 13
+  },
+  "content_sha256": "4b5acf44b303131e94d6edf587eec807af056d2b1ac504d69dc1fd3acc1f15bd",
+  "destinations": {
+    "repository": {
+      "commit_sha": null,
+      "status": "pending"
+    },
+    "slack": {
+      "attempt_count": 0,
+      "channel_id": "C0B1TPFSZKJ",
+      "client_msg_id": "f903b791-aa9a-53cd-af02-d09e6f93bf89",
+      "status": "pending",
+      "workspace_id": "T01TY2FGRT9"
+    },
+    "vault": {
+      "status": "pending"
+    }
+  },
+  "interval": {
+    "end": "2026-11-16T06:30:00-08:00",
+    "start": "2026-11-13T06:30:00-08:00"
+  },
+  "material_signal_count": 3,
+  "producer": "industry_news",
+  "signals": [
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTFlmZmN3VGlwQ0NhYVF3TlNmMUxTUW1fRXYyYlhCeGdwbjU2VzhkTVpxaWZFcVpDMmFsUk1fd2R6OU1JQmpBZl9PZmk2cFN5d0djMkZHdnJ6OEh3Y1Q3dWRSVnQyYXFRcGYzNDB2Q1ZRbWpTMVhNS3NaM0xBaG93blE5bnhONkpubV9LWWJaY3dTX0NwTW0xUTdCMVdaLXNWbUNrdXYxeVpOQ2M?oc=5"
+      ],
+      "signal_id": "signal-846bb68654a913f29d73435b",
+      "title": "Mahalo expands within the Corelation ecosystem"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMifkFVX3lxTE10ZE9wMTJkTmo4QmwxSUlObGdqcl95Q0lQTGhndHE2N2dXbXlaenVXWURtdEF1a0g4Rkxid2pVVlduZXBrSXVKOHBoQkZFLTFOck9mOUxrTFV1MlRuRWlTZUVLRzdweVJxZWpyQVRuLWJHR2JNVXRiZjkyTjBiZw?oc=5"
+      ],
+      "signal_id": "signal-f39eb76ee80ee9d8eddc7b4a",
+      "title": "FinCEN withdraws proposed threshold reduction and restricts MEXC transactions"
+    },
+    {
+      "classification": "material",
+      "evidence_links": [
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNS1meThra1hmaE9MOE8zT295ZjVxdU54a0NwM0M3RlFaanRqT1VKdC13bzREd05Sd2ZjdHpjOUNCV2RvM0F0Z3N5enN6cmhGbTlmc1haS2wwcHRRb294VE5IZ0xrc0hJNHpuMEphb0NGckp2azEtdXZkaDV3VWU3VjVMTDZpbHdxeHd6bmtqVlVVZFdW?oc=5"
+      ],
+      "signal_id": "signal-e9db13c4fc6fd79865b88385",
+      "title": "FinCEN appeal sustains real-estate AML reporting uncertainty"
+    }
+  ],
+  "source_repository_path": "intel/2026-11-16/brief.md",
+  "status": "pending",
+  "transaction_id": "brief-delivery-efa26ca94d4a3037d1825461bd6a577cc07576411f97d48c28f145c33bb3522f",
+  "version": 2,
+  "workflow_run_id": "43888196294"
+}

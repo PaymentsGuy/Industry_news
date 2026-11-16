@@ -1,0 +1,27 @@
+{
+  "brief_date": "2026-11-16",
+  "classification_counts": {
+    "duplicate": 0,
+    "material": 3,
+    "monitor": 5,
+    "needs_validation": 8,
+    "noise": 13
+  },
+  "dispositions": {
+    "1": "material",
+    "2": "material",
+    "3": "material"
+  },
+  "initial_classification_counts": {
+    "duplicate": 0,
+    "material": 3,
+    "monitor": 5,
+    "needs_validation": 8,
+    "noise": 13
+  },
+  "source_ids": {
+    "1": "e9ee1a7ac290531e",
+    "2": "b8e1617439cd96ca",
+    "3": "960141acf64ad4ff"
+  }
+}

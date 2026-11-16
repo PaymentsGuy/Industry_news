@@ -2,6 +2,86 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "mahalo_corelation_distribution",
+      "first_covered": "2026-11-16",
+      "last_covered": "2026-11-16",
+      "entities": [
+        "ASA",
+        "Corelation",
+        "Dynamic Federal Credit Union",
+        "Mahalo"
+      ],
+      "roadmap_areas": [
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-16",
+          "summary": "Dynamic Federal Credit Union selected Mahalo’s digital-banking platform, strengthening Mahalo’s Corelation distribution footprint and potentially intensifying competition for ASA channel access.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTFlmZmN3VGlwQ0NhYVF3TlNmMUxTUW1fRXYyYlhCeGdwbjU2VzhkTVpxaWZFcVpDMmFsUk1fd2R6OU1JQmpBZl9PZmk2cFN5d0djMkZHdnJ6OEh3Y1Q3dWRSVnQyYXFRcGYzNDB2Q1ZRbWpTMVhNS3NaM0xBaG93blE5bnhONkpubV9LWWJaY3dTX0NwTW0xUTdCMVdaLXNWbUNrdXYxeVpOQ2M?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-15"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_transfer_threshold_mexc_restrictions",
+      "first_covered": "2026-11-16",
+      "last_covered": "2026-11-16",
+      "entities": [
+        "ASA",
+        "Federal Reserve",
+        "FinCEN",
+        "MEXC Global"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "pay",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-16",
+          "summary": "FinCEN and the Federal Reserve withdrew a proposed reduction of the cross-border transfer recordkeeping threshold, while FinCEN restricted covered U.S. institutions from transacting with MEXC Global.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMifkFVX3lxTE10ZE9wMTJkTmo4QmwxSUlObGdqcl95Q0lQTGhndHE2N2dXbXlaenVXWURtdEF1a0g4Rkxid2pVVlduZXBrSXVKOHBoQkZFLTFOck9mOUxrTFV1MlRuRWlTZUVLRzdweVJxZWpyQVRuLWJHR2JNVXRiZjkyTjBiZw?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-13"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_residential_real_estate_rule_appeal",
+      "first_covered": "2026-11-16",
+      "last_covered": "2026-11-16",
+      "entities": [
+        "ASA",
+        "Fifth Circuit",
+        "FinCEN"
+      ],
+      "roadmap_areas": [
+        "horizontal",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-16",
+          "summary": "FinCEN appealed the nationwide vacatur of its Residential Real Estate Rule, leaving future reporting obligations for certain non-financed transfers uncertain because the rule is not currently in effect.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNS1meThra1hmaE9MOE8zT295ZjVxdU54a0NwM0M3RlFaanRqT1VKdC13bzREd05Sd2ZjdHpjOUNCV2RvM0F0Z3N5enN6cmhGbTlmc1haS2wwcHRRb294VE5IZ0xrc0hJNHpuMEphb0NGckp2azEtdXZkaDV3VWU3VjVMTDZpbHdxeHd6bmtqVlVVZFdW?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-13"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "bpi_digital_asset_aml_obligations",
       "first_covered": "2026-11-11",
       "last_covered": "2026-11-11",
