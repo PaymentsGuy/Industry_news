@@ -2,6 +2,76 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "mastercard_app_based_merchant_acceptance",
+      "first_covered": "2026-11-17",
+      "last_covered": "2026-11-17",
+      "entities": [
+        "Mastercard"
+      ],
+      "roadmap_areas": [
+        "pay"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-17",
+          "summary": "Mastercard launched Mastercard Accept, enabling eligible debit and prepaid users to accept digital payments through existing banking or payments apps.",
+          "source_urls": [
+            "https://www.pymnts.com/credit-cards/2026/mastercard-debuts-tool-to-get-debit-users-paid-faster/"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fis_uk_gen_z_deepfake_scams",
+      "first_covered": "2026-11-17",
+      "last_covered": "2026-11-17",
+      "entities": [
+        "FIS"
+      ],
+      "roadmap_areas": [
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-17",
+          "summary": "FIS research found widespread UK Gen Z exposure to AI deepfake scams and limited confidence that banks can stop transfers before funds move.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiogFBVV95cUxNc1lDZnhrRUZGcHlfenZOV29ta2FUZm5hY0VnNkU5a2VZVy1EdHVDM3E1WnlHWnhFS20xU0JZRTJicWkteWczajBucGRMQVlFN3EtLUpVSmtTazJKcVZTMllwdUlyUzkzUDMzODFkYU03Skl4aERGTDFTTm5IQTFXMXU2M2FPYkhfMnA4NWhzdzFVbTVvMXJhajdOQ1A4QWZpYXc?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "dave_national_bank_charter",
+      "first_covered": "2026-11-17",
+      "last_covered": "2026-11-17",
+      "entities": [
+        "Dave",
+        "Dave Bank, N.A.",
+        "Federal Deposit Insurance Corporation",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-11-17",
+          "summary": "Dave filed OCC and FDIC applications to establish Dave Bank, N.A., a proposed insured full-service national bank.",
+          "source_urls": [
+            "https://www.pymnts.com/news/banking/2026/dave-seeks-permission-to-become-a-national-bank/"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "mahalo_corelation_distribution",
       "first_covered": "2026-11-16",
       "last_covered": "2026-11-16",
