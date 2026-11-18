@@ -2,6 +2,90 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "plaid_instinct_ai_connected_accounts",
+      "first_covered": "2026-11-18",
+      "last_covered": "2026-11-18",
+      "entities": [
+        "Instinct",
+        "Plaid"
+      ],
+      "roadmap_areas": [
+        "compass",
+        "forecast",
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-18",
+          "summary": "Plaid is enabling Instinct’s AI assistant to connect financial accounts and use transaction data for personalized conversations and recommendations.",
+          "source_urls": [
+            "https://plaid.com/blog/plaid-powers-instinct-ai-assistant/"
+          ],
+          "source_dates": [
+            "2026-11-18"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_beneficial_owner_due_diligence",
+      "first_covered": "2026-11-18",
+      "last_covered": "2026-11-18",
+      "entities": [
+        "Financial Crimes Enforcement Network"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-18",
+          "summary": "FinCEN proposed revised beneficial-owner due-diligence requirements that could change business-identity data collection, verification timing, and risk-based re-verification workflows.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMigAFBVV95cUxONVIxZUVMTmkxU25UNjEweWRfQlRWZVJnMXZEdWNiQ1BUNFVBRzRHVlJjTHN1TUhXQzJEMHNXcXVWd09OVTFtN2VmNEVodGxscWNPcGtzSlBsNHB5MDhycDBOcjgzemxydnk0ZElLNFQ2dWZWOE5wS1JsUFMtYnk3Yw?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "dave_national_bank_charter",
+      "first_covered": "2026-11-17",
+      "last_covered": "2026-11-18",
+      "entities": [
+        "Dave",
+        "Dave Bank, N.A.",
+        "Federal Deposit Insurance Corporation",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-11-17",
+          "summary": "Dave filed OCC and FDIC applications to establish Dave Bank, N.A., a proposed insured full-service national bank.",
+          "source_urls": [
+            "https://www.pymnts.com/news/banking/2026/dave-seeks-permission-to-become-a-national-bank/"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        },
+        {
+          "covered_on": "2026-11-18",
+          "summary": "Dave applied to the OCC and FDIC to establish Dave Bank, N.A., a proposed insured national bank offering consumer deposit and credit products.",
+          "source_urls": [
+            "https://finovate.com/dave-submits-bank-charter-application/"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "mastercard_app_based_merchant_acceptance",
       "first_covered": "2026-11-17",
       "last_covered": "2026-11-17",
@@ -40,30 +124,6 @@
           "summary": "FIS research found widespread UK Gen Z exposure to AI deepfake scams and limited confidence that banks can stop transfers before funds move.",
           "source_urls": [
             "https://news.google.com/rss/articles/CBMiogFBVV95cUxNc1lDZnhrRUZGcHlfenZOV29ta2FUZm5hY0VnNkU5a2VZVy1EdHVDM3E1WnlHWnhFS20xU0JZRTJicWkteWczajBucGRMQVlFN3EtLUpVSmtTazJKcVZTMllwdUlyUzkzUDMzODFkYU03Skl4aERGTDFTTm5IQTFXMXU2M2FPYkhfMnA4NWhzdzFVbTVvMXJhajdOQ1A4QWZpYXc?oc=5"
-          ],
-          "source_dates": [
-            "2026-11-17"
-          ]
-        }
-      ]
-    },
-    {
-      "topic_key": "dave_national_bank_charter",
-      "first_covered": "2026-11-17",
-      "last_covered": "2026-11-17",
-      "entities": [
-        "Dave",
-        "Dave Bank, N.A.",
-        "Federal Deposit Insurance Corporation",
-        "Office of the Comptroller of the Currency"
-      ],
-      "roadmap_areas": [],
-      "events": [
-        {
-          "covered_on": "2026-11-17",
-          "summary": "Dave filed OCC and FDIC applications to establish Dave Bank, N.A., a proposed insured full-service national bank.",
-          "source_urls": [
-            "https://www.pymnts.com/news/banking/2026/dave-seeks-permission-to-become-a-national-bank/"
           ],
           "source_dates": [
             "2026-11-17"

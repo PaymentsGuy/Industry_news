@@ -1,0 +1,11 @@
+{"source": "Apiture (blog)", "url": "https://news.google.com/rss/search?q=%22Apiture%22+digital+banking&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "Lumin Digital (blog)", "url": "https://news.google.com/rss/search?q=%22Lumin+Digital%22&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "Socure (blog)", "url": "https://news.google.com/rss/search?q=%22Socure%22+identity+OR+fraud&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "OCC (newsroom)", "url": "https://news.google.com/rss/search?q=%22OCC%22+OR+%22Office+of+the+Comptroller%22+bank+fintech&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "Section 1033 regulatory rewrite (blog)", "url": "https://news.google.com/rss/search?q=%22Section+1033%22+CFPB+open+banking&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "Agentic AI in banking (blog)", "url": "https://news.google.com/rss/search?q=%22agentic+AI%22+banking+OR+%22financial+institution%22&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "On-device inference / privacy-preserving compute (blog)", "url": "https://news.google.com/rss/search?q=%22on-device+AI%22+OR+%22privacy-preserving%22+financial&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "American Banker", "url": "https://news.google.com/rss/search?q=site:americanbanker.com&hl=en-US&gl=US&ceid=US:en", "error": "parse failure: <unknown>:2:252: not well-formed (invalid token)"}
+{"source": "Bank Automation News", "url": "https://bankautomationnews.com/feed/", "error": "parse failure: <unknown>:15:4: mismatched tag"}
+{"source": "Fintech Business Weekly (Mikula)", "url": "https://fintechbusinessweekly.substack.com/feed", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
+{"source": "Fintech Takes (Alex Johnson)", "url": "https://fintechtakes.substack.com/feed", "error": "parse failure: <unknown>:2:1326: not well-formed (invalid token)"}
