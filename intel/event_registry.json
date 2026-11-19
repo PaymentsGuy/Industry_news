@@ -2,6 +2,122 @@
   "schema_version": 1,
   "topics": [
     {
+      "topic_key": "mahalo_5point_corelation_digital_banking",
+      "first_covered": "2026-11-19",
+      "last_covered": "2026-11-19",
+      "entities": [
+        "5Point Credit Union",
+        "Corelation",
+        "Mahalo Banking"
+      ],
+      "roadmap_areas": [
+        "one_view"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-19",
+          "summary": "5Point Credit Union selected Mahalo Banking for digital self-service and expanded business banking, connected to Corelation KeyStone and relevant to ASA One View.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMiggJBVV95cUxNY09KMldxMnYwSFEwb3YwdExBMnBzMldUemRhdHlxSENlc1J4Mm1DRHNXRkRtVmV4RXR6UXRIQkF1TEZxUG85VVpVcWpxZW9VbjNmd3RCNktWWmlRWDdpUW5VZ0p3WVVQc1BqODdqdFpDSTBUZ0phdndVNEtaQ1BLWDFmZFdPMnluZHpkbnBqSnZobVRWV21palVjcjhBejlzVk5CdVRMU0MyUWFIWkFaZDhlMUJXRXdPVTNSOXVwMmVIM1BqemxlNnNRazQwazVKcTRlaDZhcm5pRElFSXpyWnlNbjh0VmJ4aFZMcGh2bFhxUUcyRUxfTGFVQldDS1FHWXc?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-19"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "jack_henry_competitive_core_wins",
+      "first_covered": "2026-11-19",
+      "last_covered": "2026-11-19",
+      "entities": [
+        "Jack Henry"
+      ],
+      "roadmap_areas": [
+        "horizontal"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-19",
+          "summary": "Jack Henry reported 17 competitive core-banking wins, its strongest third quarter for new core wins in seven years, increasing pressure on ASA’s financial-institution channel strategy.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQWlN0TXYtMUhxZThWRlYyNy13ajZCYlVEQ2h4R2FxdF9acF9uZmlCTjBvQ3E4UnkwQ0wwTjRVUVhLd0xMMDl1ejBha0JvVUlUajhON1F4dUpwTGtnRHBUVHB3akxsRV85OUlOR2xXODhLajcyZ0s1Ylp0eEhUMkVwZklWZXF4WVJVR050bzRJaUhoZ3dVQjBuaUpTUWgwR0dZcXYwNGxUSjZGcERtaUg5d2M1WXNYMy1HbE85NHYwX0FBYXRhaFVCWGIyUmhTdF8xRDdzNg?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-18"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "fincen_customer_due_diligence_proposal",
+      "first_covered": "2026-11-19",
+      "last_covered": "2026-11-19",
+      "entities": [
+        "FinCEN"
+      ],
+      "roadmap_areas": [
+        "auth",
+        "verify"
+      ],
+      "events": [
+        {
+          "covered_on": "2026-11-19",
+          "summary": "FinCEN proposed revised customer-due-diligence requirements affecting beneficial-owner information, verification, and risk-based review workflows relevant to ASA Verify and Auth.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMioAFBVV95cUxNY1pkeG4tenZNWVBOWVM4WHdGa0dhWUpZTVR4cGNtZmNqalpRMWNsLVJ6XzN1X0RSbElTbUZ3anMwV2VJcmJPQVdoRWFHbmVZS2c4dWgxdmZzN2NlRlBhQVNQaW9MNXNZSE1QX1JaU1h6MDA2M3JxRzh3eTF0RGdIUFVLTFEtaG01NWhPa01BQXlHdFY5QzFxVzJCMWxQWE03?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-18"
+          ]
+        }
+      ]
+    },
+    {
+      "topic_key": "dave_national_bank_charter",
+      "first_covered": "2026-11-17",
+      "last_covered": "2026-11-19",
+      "entities": [
+        "Dave",
+        "Dave Bank, N.A.",
+        "Federal Deposit Insurance Corporation",
+        "Office of the Comptroller of the Currency"
+      ],
+      "roadmap_areas": [],
+      "events": [
+        {
+          "covered_on": "2026-11-17",
+          "summary": "Dave filed OCC and FDIC applications to establish Dave Bank, N.A., a proposed insured full-service national bank.",
+          "source_urls": [
+            "https://www.pymnts.com/news/banking/2026/dave-seeks-permission-to-become-a-national-bank/"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        },
+        {
+          "covered_on": "2026-11-18",
+          "summary": "Dave applied to the OCC and FDIC to establish Dave Bank, N.A., a proposed insured national bank offering consumer deposit and credit products.",
+          "source_urls": [
+            "https://finovate.com/dave-submits-bank-charter-application/"
+          ],
+          "source_dates": [
+            "2026-11-17"
+          ]
+        },
+        {
+          "covered_on": "2026-11-19",
+          "summary": "Dave applied to establish Dave Bank, N.A., a proposed insured national bank offering consumer deposits and credit products under federal supervision if approved.",
+          "source_urls": [
+            "https://news.google.com/rss/articles/CBMilAFBVV95cUxObEhhRDEzTEtrcUdjX1prMktoX2taUnZmTUg3M3FXcnUtSS0zQ3dtMlI0WTJXT3phQkxRUGtpTTdUSi1fRUtxcVdJenVIZEtBcWZPclcwU2h2R0JSdk5veTQyNGlOWTU0aVA0TkhTSEtILVhSaVFDczh1LVpLRmJBWHpCWHpYTG5LNGI3MzEzdkVRX3l1?oc=5"
+          ],
+          "source_dates": [
+            "2026-11-18"
+          ]
+        }
+      ]
+    },
+    {
       "topic_key": "plaid_instinct_ai_connected_accounts",
       "first_covered": "2026-11-18",
       "last_covered": "2026-11-18",
@@ -44,40 +160,6 @@
           "summary": "FinCEN proposed revised beneficial-owner due-diligence requirements that could change business-identity data collection, verification timing, and risk-based re-verification workflows.",
           "source_urls": [
             "https://news.google.com/rss/articles/CBMigAFBVV95cUxONVIxZUVMTmkxU25UNjEweWRfQlRWZVJnMXZEdWNiQ1BUNFVBRzRHVlJjTHN1TUhXQzJEMHNXcXVWd09OVTFtN2VmNEVodGxscWNPcGtzSlBsNHB5MDhycDBOcjgzemxydnk0ZElLNFQ2dWZWOE5wS1JsUFMtYnk3Yw?oc=5"
-          ],
-          "source_dates": [
-            "2026-11-17"
-          ]
-        }
-      ]
-    },
-    {
-      "topic_key": "dave_national_bank_charter",
-      "first_covered": "2026-11-17",
-      "last_covered": "2026-11-18",
-      "entities": [
-        "Dave",
-        "Dave Bank, N.A.",
-        "Federal Deposit Insurance Corporation",
-        "Office of the Comptroller of the Currency"
-      ],
-      "roadmap_areas": [],
-      "events": [
-        {
-          "covered_on": "2026-11-17",
-          "summary": "Dave filed OCC and FDIC applications to establish Dave Bank, N.A., a proposed insured full-service national bank.",
-          "source_urls": [
-            "https://www.pymnts.com/news/banking/2026/dave-seeks-permission-to-become-a-national-bank/"
-          ],
-          "source_dates": [
-            "2026-11-17"
-          ]
-        },
-        {
-          "covered_on": "2026-11-18",
-          "summary": "Dave applied to the OCC and FDIC to establish Dave Bank, N.A., a proposed insured national bank offering consumer deposit and credit products.",
-          "source_urls": [
-            "https://finovate.com/dave-submits-bank-charter-application/"
           ],
           "source_dates": [
             "2026-11-17"
