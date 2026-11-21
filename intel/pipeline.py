@@ -16,6 +16,7 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import os
 import re
 import sys
 import time
@@ -32,7 +33,7 @@ import yaml
 from requests import RequestException
 
 try:
-    from intel import delivery
+    from intel import delivery, failure_status
     from intel.brief_contract import BriefContractError, validate_daily_pulse, validate_weekly_brief
     from intel.update_ledger import validate_durable_registry
     from intel.llm_provider import (
@@ -42,6 +43,7 @@ try:
     )
 except ModuleNotFoundError:  # pragma: no cover - supports `python intel/pipeline.py`
     import delivery
+    import failure_status
     from brief_contract import BriefContractError, validate_daily_pulse, validate_weekly_brief
     from update_ledger import validate_durable_registry
     from llm_provider import (
@@ -534,7 +536,11 @@ def call_perplexity_triage(
         return parsed
     except Exception as e:
         log.warning("triage failure for %s: %s", item.get("id"), e)
-        return triage_error_record(item)
+        record = triage_error_record(item)
+        code = failure_status.http_status(e)
+        if code is not None:
+            record['_provider_http_status'] = code
+        return record
 
 
 @cli.command()
@@ -676,6 +682,7 @@ def synthesize_brief(
     last_error = None
     contract_attempts = 0
     transport_failures = 0
+    transport_codes = []
     while contract_attempts < 3 and transport_failures < 3:
         current_prompt = prompt if not isinstance(last_error, BriefContractError) else (
             prompt
@@ -693,6 +700,14 @@ def synthesize_brief(
             )
         except RequestException as exc:
             transport_failures += 1
+            code = failure_status.http_status(exc)
+            if code is not None:
+                transport_codes.append(code)
+            out_file.parent.mkdir(parents=True, exist_ok=True)
+            (out_file.parent / 'provider-errors.json').write_text(json.dumps({
+                'workflow_run_id': os.environ.get('GITHUB_RUN_ID'),
+                'http_codes': sorted(set(transport_codes)),
+            }))
             last_error = exc
             log.warning(
                 "Weekly brief transport failure %d of 3: %s",

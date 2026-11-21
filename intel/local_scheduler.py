@@ -19,6 +19,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from intel.failure_status import RUN_ROOT, valid_receipt
 
 PACIFIC = ZoneInfo("America/Los_Angeles")
 
@@ -172,7 +173,8 @@ class Engine:
             needs_alert = state["stage"] in {"error", "human_recovery"} or (
                 state["stage"] != "complete" and local.hour >= 7)
             if needs_alert and not state.get("alert_sent_at"):
-                text = f"Industry News {day}: {state['stage']}; {state.get('error', '07:00 PT delivery deadline missed')}. Human review; do not rerun paid generation."
+                detail = state.get('source_failure_message') or state.get('error', '07:00 PT delivery deadline missed')
+                text = f"Industry News {day}: {state['stage']}; {detail}. Human review; do not rerun paid generation."
                 try:
                     sent = self.gateway.alert(text)
                 except Exception:
@@ -194,10 +196,27 @@ class Engine:
                 atomic_json(self.root / (day + ".json"), state)
             return state
 
+    def _failure_message(self, day, run_id):
+        try:
+            reader = getattr(self.gateway, 'failure_status', None)
+            detail = reader(day) if callable(reader) else None
+            if isinstance(detail, dict) and valid_receipt(detail, day, run_id):
+                return f"{detail['summary']} Action: {detail['action']} {detail['run_url']}"
+        except Exception:
+            pass  # Publication/read failure must not hide the failed workflow.
+        return None
+
     def _advance(self, state, day, save):
+        state.pop('source_failure_message', None)
         package = self.gateway.package(day)
         if package is not None:
             if not validate_package(package, day):
+                run_id = str(package.get('workflow_run_id') or '')
+                message = self._failure_message(day, run_id)
+                if message:
+                    state['source_failure_message'] = message
+                elif re.fullmatch(r'[1-9]\d{0,29}', run_id):
+                    state['source_failure_message'] = f"Delivery is not verified; detailed cause unavailable. View failed run: {RUN_ROOT}{run_id}"
                 destinations = package.get("destinations", {})
                 if (destinations.get("repository", {}).get("status") == "verified"
                         and destinations.get("slack", {}).get("status") in {"pending", "failed", "attempting", "ambiguous_outcome"}):
@@ -243,7 +262,14 @@ class Engine:
             return
         today_runs = [run for run in runs if datetime.fromisoformat(run["created_at"].replace("Z", "+00:00")).astimezone(PACIFIC).date().isoformat() == day]
         if matches or today_runs:
-            save("human_recovery", "completed daily workflow has no package; no automatic paid rerun")
+            run = max(matches or today_runs, key=lambda row: (row.get('created_at', ''), int(row['id'])))
+            run_id = str(run['id'])
+            if state.get('failed_run_id') != run_id:
+                state.pop('alert_sent_at', None)
+                state.pop('recovery_sent_at', None)
+            state['failed_run_id'] = run_id
+            error = self._failure_message(day, run_id) or f"completed daily workflow has no package; detailed cause unavailable. View failed run: {RUN_ROOT}{run_id}; no automatic paid rerun"
+            save("human_recovery", error)
             return
         if self.gateway.generation_attempt(day) is not None:
             save("human_recovery", "paid generation already reserved remotely")
@@ -366,6 +392,9 @@ class NativeGateway:
 
     def generation_attempt(self, day):
         return self._contents(day, "generation-attempt.json")
+
+    def failure_status(self, day):
+        return self._contents(day, "failure-status.json")
 
     def runs(self):
         return self._runs("daily-intel.yml")

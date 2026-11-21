@@ -86,14 +86,17 @@ jobs:
           echo "PRIOR_LEDGER=$PRIOR_LEDGER" >> "$GITHUB_ENV"
 
       - name: Collect raw signal
+        id: collect
         if: steps.generation.outputs.generate == 'true'
         run: python -m intel.pipeline collect --out-dir intel/${DATE}
 
       - name: Stage 1 — classify every candidate
+        id: triage
         if: steps.generation.outputs.generate == 'true'
         run: python -m intel.pipeline triage --in-file intel/${DATE}/raw.jsonl --out-file intel/${DATE}/triaged.jsonl
 
       - name: Stage 2 — synthesize uncapped material pulse
+        id: synthesis
         if: steps.generation.outputs.generate == 'true'
         run: |
           ARGS=""
@@ -106,6 +109,7 @@ jobs:
             --brief-date "${DATE}"
 
       - name: Update topic ledger
+        id: ledger
         if: steps.generation.outputs.generate == 'true'
         run: |
           ARGS=""
@@ -117,6 +121,7 @@ jobs:
             --event-registry intel/event_registry.json
 
       - name: Create receipt-bound delivery package
+        id: delivery
         if: steps.generation.outputs.generate == 'true'
         run: |
           python -m intel.delivery create \
@@ -130,6 +135,7 @@ jobs:
             --workflow-run-id "${GITHUB_RUN_ID}"
 
       - name: Commit canonical artifact and delivery package
+        id: repository
         if: steps.generation.outputs.generate == 'true'
         run: |
           git config user.name "asa-intel-bot"
@@ -147,14 +153,27 @@ jobs:
           git diff --cached --quiet || (git commit -m "intel: repository receipt ${DATE}" && git push)
 
       - name: Deliver and read back Slack message
+        id: slack
         if: steps.generation.outputs.generate == 'true'
         run: python -m intel.delivery resume-slack --package-file intel/${DATE}/delivery.json --channel "${SLACK_CHANNEL_ID}"
 
       - name: Commit Slack delivery receipt
         if: always() && steps.generation.outputs.generate == 'true'
         run: |
-          git add intel/${DATE}/delivery.json
+          test ! -f "intel/${DATE}/delivery.json" || git add "intel/${DATE}/delivery.json"
           git diff --cached --quiet || (git commit -m "intel: Slack delivery receipt ${DATE}" && git push)
+
+      - name: Persist safe terminal failure receipt
+        id: failure_receipt
+        if: failure() && steps.generation.outputs.generate == 'true'
+        env:
+          FAILED_STAGE: ${{ steps.collect.outcome == 'failure' && 'collect' || steps.triage.outcome == 'failure' && 'triage' || steps.synthesis.outcome == 'failure' && 'synthesis' || steps.ledger.outcome == 'failure' && 'ledger' || steps.delivery.outcome == 'failure' && 'delivery' || steps.repository.outcome == 'failure' && 'repository' || steps.slack.outcome == 'failure' && 'slack' || 'workflow' }}
+        run: |
+          python -m intel.failure_status --out-dir "intel/${DATE}" --report-date "${DATE}" --stage "${FAILED_STAGE}"
+          git config user.name "asa-intel-bot"
+          git config user.email "asa-intel-bot@users.noreply.github.com"
+          git add "intel/${DATE}/failure-status.json"
+          git diff --cached --quiet || (git commit -m "intel: failed pulse ${DATE}" && git push)
 
       - name: Upload artifacts
         if: always() && steps.generation.outputs.generate == 'true'
