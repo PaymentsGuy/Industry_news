@@ -19,7 +19,11 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
-from intel.failure_status import RUN_ROOT, valid_receipt
+if __package__:
+    from .failure_status import RUN_ROOT, valid_receipt
+else:
+    # Managed scheduler/watchdog launch this file directly.
+    from failure_status import RUN_ROOT, valid_receipt
 
 PACIFIC = ZoneInfo("America/Los_Angeles")
 

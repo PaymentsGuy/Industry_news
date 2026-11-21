@@ -5,6 +5,8 @@ import hashlib
 import hmac
 import json
 import plistlib
+import os
+import subprocess
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -14,6 +16,19 @@ from typing import Any
 from intel import local_scheduler as scheduler
 
 DAY = "2026-10-30"
+
+
+def test_managed_direct_file_help_without_pythonpath():
+    """The launch agent executes this file, not a package module."""
+    env = {key: value for key, value in os.environ.items() if key != 'PYTHONPATH'}
+    env['PYTHONDONTWRITEBYTECODE'] = '1'
+    result = subprocess.run(
+        ['/opt/homebrew/bin/python3', str(Path(scheduler.__file__).resolve()), '--help'],
+        cwd=Path.home(), env=env, capture_output=True, text=True, timeout=15,
+    )
+    assert result.returncode == 0, result.stderr
+    assert 'usage:' in result.stdout
+
 
 
 def now(value="2026-10-30T14:00:00+00:00"):
