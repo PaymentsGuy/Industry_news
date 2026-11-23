@@ -15,8 +15,8 @@ The Hermes bootstrap discovery command is supported by the installed launcher. T
 1. Independently review the local commit and run the tests below. Publish/merge only under the separately granted release authority. Both workflow changes must be present on **main** before the first real Pulse. The result-upload workflow cannot be dispatched until it exists there.
 2. Provision a stable pinned worker release outside the bridge's live checkout and outside the scratch directory. Do not point launchd at this development worktree (scratch data can be pruned).
 3. Verify `gh` is authenticated locally with Actions read and workflow-dispatch rights for the exact repository. No PAT, Codex token or OAuth secret is added to GitHub. Existing GitHub Slack credentials stay under the original owner. The repository is public: only public news and the existing public report ledgers may be included in requests/results.
-4. Provision a dedicated, owner-only Hermes home using `deploy/pulse-hermes-config.yaml`, no `.env`, no manually added API-key pool entries and no custom endpoint. Complete supported `HERMES_HOME="$PULSE_HERMES_HOME" hermes login --provider openai-codex` locally if required. Do not copy another profile's configuration, modify the default profile or print authentication files. Verify native transport/token refresh during parent acceptance.
-5. Parent must exercise tiny synthetic calls for both exact models through the shipped helper, then one authorized real Pulse and its GitHub artifacts, existing delivery/Slack/Vault readbacks and COS status. A fake-network test is not live acceptance.
+4. Set `PULSE_HERMES_HOME` to the existing owner-authenticated `/Users/troymaas/.hermes/profiles/research_analyst` home. Parent native calls for both approved models succeeded there; an empty dedicated home had no OAuth credential. Reuse the owned native credential resolver without copying tokens or changing that profile's configuration. The helper constructs no agent, memory, MCP or tool dispatcher and rejects every endpoint except the ChatGPT subscription endpoint. No API-key fallback is constructed.
+5. Exercise both exact models and a complete saved-input replay through the shipped helper, then verify installation and the loaded launchd job. Troy explicitly chose to preserve the November 23 failed attempt and begin with the next scheduled Pulse: do not clear its generation reservation or run catch-up. Actual unattended GitHub/result-artifact/delivery/Vault/COS acceptance remains pending that scheduled execution; diagnostic replay is not publication.
 
 ## Stable installation template
 
@@ -24,19 +24,15 @@ These are **activation instructions, not actions performed by the implementation
 
 ```sh
 BASE="$HOME/.local/share/asa-industry-news/model-worker"
-mkdir -p "$BASE/state" "$BASE/hermes" "$BASE/state/tmp"
-chmod 700 "$BASE/state" "$BASE/hermes" "$BASE/state/tmp"
+mkdir -p "$BASE/state" "$BASE/state/tmp"
+chmod 700 "$BASE/state" "$BASE/state/tmp"
 git -C "$HOME/.local/share/asa-industry-news/repo" worktree add --detach "$BASE/release" REVIEWED_COMMIT
 python3 -m venv "$BASE/venv"
 "$BASE/venv/bin/python" -m pip install -r "$BASE/release/requirements.txt"
-test ! -e "$BASE/hermes/config.yaml"
-cp "$BASE/release/deploy/pulse-hermes-config.yaml" "$BASE/hermes/config.yaml"
-chmod 600 "$BASE/hermes/config.yaml"
 export PULSE_WORKER_STATE="$BASE/state"
-export PULSE_HERMES_HOME="$BASE/hermes"
+export PULSE_HERMES_HOME="/Users/troymaas/.hermes/profiles/research_analyst"
 export PULSE_PYTHON="$BASE/venv/bin/python"
-# Supported OAuth login if needed; never put the token in a command or chat:
-HERMES_HOME="$PULSE_HERMES_HOME" hermes login --provider openai-codex
+# Existing OAuth is reused; no token is copied or placed in a command or GitHub.
 ```
 
 Render `deploy/local-model-worker.plist.in` to `~/Library/LaunchAgents/com.asa.industry-news.model-worker.plist` with these exact substitutions, using XML escaping for paths:
@@ -45,7 +41,7 @@ Render `deploy/local-model-worker.plist.in` to `~/Library/LaunchAgents/com.asa.i
 |---|---|
 | `@RELEASE@` | `$BASE/release` |
 | `@STATE@` | `$BASE/state` |
-| `@HERMES_HOME@` | `$BASE/hermes` |
+| `@HERMES_HOME@` | `/Users/troymaas/.hermes/profiles/research_analyst` |
 | `@PYTHON@` | `$BASE/venv/bin/python` |
 
 Then validate and activate only after the acceptance prerequisites above:
@@ -63,9 +59,9 @@ launchctl print "gui/$(id -u)/com.asa.industry-news.model-worker"
 
 1. Existing workflow commits its generation reservation, collects data, creates a request containing repository, run/attempt, source commit, canonical report date, 30-minute absolute deadline and SHA-256 of the complete request data.
 2. `actions/upload-artifact@v4` publishes `pulse-request-RUN-ATTEMPT/request.json`. Original workflow waits at most 30 minutes.
-3. Worker validates identity/hash/deadline, creates/fsyncs an exclusive durable run claim **before inference**, then performs the fixed batch classification and native synthesis. Native contract-only regeneration remains bounded by the existing maximum of three synthesis candidates; transport timeouts/errors never auto-repeat the ambiguous inference.
+3. Worker validates identity/hash/deadline, creates/fsyncs an exclusive durable run claim **before inference**, then classifies in fixed batches of at most 24 articles and performs native synthesis. Every candidate is retained exactly once; producer labels are derived using native duplicate → uncertainty → score precedence, while consumer validation remains strict. Native contract-only regeneration remains bounded by the existing maximum of three synthesis candidates; transport timeouts/errors never auto-repeat the ambiguous inference or proceed to later batches.
 4. Worker validates coverage, schema, dispositions, references, report date/interval and all classification counts. A failure sends only safe producer-owned failure facts, never model/provider response text or rejected candidate diagnostics.
-5. A locally reserved POST dispatches only `pulse-model-result.yml` on main. The request/result envelope is capped at 60,000 UTF-8 bytes (GitHub dispatch payload budget); oversized outputs fail safely rather than truncate signals or switch providers. Requests are capped at 2 MB; there is no candidate/material-signal count cap. Each model subprocess is at most 300 seconds and respects the remaining request deadline. Native HTTP timeout is 270 seconds.
+5. A locally reserved POST dispatches only `pulse-model-result.yml` on main. The reservation file and its containing directory are fsynced **before** the POST. Complete logical output is capped at 2 MB and transported losslessly as LZMA/base64 with an aggregate POST body below 60,000 UTF-8 bytes. Decoding caps output and memory and rejects corruption, truncation, trailing data or outer/inner identity mismatch. Oversized outputs fail safely rather than truncate signals or switch providers. Requests are capped at 2 MB; there is no candidate/material-signal count cap. Each model subprocess is at most 300 seconds and respects the remaining request deadline. Native HTTP timeout is 270 seconds.
 6. The result workflow validates the envelope against the original exact request before uploading `pulse-result-RUN-ATTEMPT-HASH/result.json`. It has read-only repository/Actions permissions, no secrets and never interpolates input JSON into a shell command.
 7. Original workflow retrieves that exact artifact from a successful main result workflow and validates it again. Only `triaged.jsonl`, `brief.md`, `synthesis-dispositions.json` (or safe `failure-status.json`) can be materialized. Existing ledger/delivery continues without accepting an arbitrary remote write payload. Request data is removed before canonical report commits. Request/result Actions artifacts expire after two days.
 

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       result:
-        description: "Bounded public-news inference envelope; no commands or secrets"
+        description: "Bounded compressed public-news inference envelope; no commands or secrets"
         required: true
         type: string
 
