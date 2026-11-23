@@ -128,6 +128,28 @@ def batch_input(kwargs):
     return json.loads(kwargs['messages'][0]['content'].split('INPUT ITEMS JSON:')[-1])
 
 
+def test_completed_partial_batch_repairs_only_missing_ids_once():
+    m = module(); raw = [{**item(), 'id':f'{i:016x}'} for i in range(24)]; calls = []
+    def complete(**kw):
+        batch = batch_input(kw); calls.append([r['id'] for r in batch])
+        chosen = batch[:-1] if len(calls) == 1 else batch
+        return json.dumps([{**classified(), 'id':r['id']} for r in chosen])
+    assert len(m.classify(raw, complete)) == 24
+    assert calls == [[r['id'] for r in raw], [raw[-1]['id']]]
+
+
+def test_partial_batch_repair_is_bounded_and_never_repeats_completed_ids():
+    m = module(); raw = [{**item(), 'id':f'{i:016x}'} for i in range(24)]; calls = []
+    def complete(**kw):
+        batch = batch_input(kw); calls.append([r['id'] for r in batch])
+        chosen = batch[:-2] if len(calls) == 1 else batch[:-1]
+        return json.dumps([{**classified(), 'id':r['id']} for r in chosen])
+    with pytest.raises(ValueError, match='coverage'):
+        m.classify(raw, complete)
+    assert len(calls) == 2
+    assert calls[1] == [r['id'] for r in raw[-2:]]
+
+
 @pytest.mark.parametrize('count,expected', [(25, 2), (49, 3)])
 def test_bounded_batches_cover_each_candidate_exactly_once(count, expected):
     m = module(); raw = [{**item(), 'id':f'{i:016x}'} for i in range(count)]; calls = []
