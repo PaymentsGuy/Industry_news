@@ -198,6 +198,29 @@ def test_submission_file_then_state_directory_are_fsynced_before_dispatch(tmp_pa
     assert events[:3] == ['file','directory','dispatch']
 
 
+def test_new_claim_directory_is_durable_before_inference(tmp_path, monkeypatch):
+    import os
+    import stat
+    m = module(); events = []; real_fsync = os.fsync; state = tmp_path/'fresh-state'
+    req = m.make_request(run(), '2026-11-23', [], [], [])
+    def fsync(fd):
+        info = os.fstat(fd)
+        if stat.S_ISDIR(info.st_mode):
+            for name, path in [('claims',state/'claims'),('state',state),('parent',state.parent)]:
+                if path.exists() and info.st_ino == path.stat().st_ino:
+                    events.append(name); break
+        else:
+            events.append('file')
+        return real_fsync(fd)
+    def execute(*args):
+        events.append('inference')
+        raise RuntimeError('intentional diagnostic; no inference')
+    monkeypatch.setattr(m.os, 'fsync', fsync)
+    m.process(req, run(), state, execute)
+    before = events[:events.index('inference')]
+    assert before == ['file','claims','state','parent']
+
+
 def test_consumer_still_rejects_inconsistent_classification(tmp_path):
     m = module(); req, result = large_result(tmp_path)
     result['output']['triaged'][0]['classification'] = 'material'

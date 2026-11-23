@@ -312,9 +312,11 @@ def process(req, observed, state, execute=execute_request):
         return previous.get('result') or failed_result(req, 'execution_unknown')
     with os.fdopen(fd, 'w') as f:
         json.dump({'request_hash':req['request_hash'], 'status':'unknown'}, f); f.flush(); os.fsync(f.fileno())
-    directory_fd = os.open(claim.parent, os.O_RDONLY)
-    try: os.fsync(directory_fd)
-    finally: os.close(directory_fd)
+    # Persist both the claim and new directory links before any inference.
+    for directory in (claim.parent, state, state.parent):
+        directory_fd = os.open(directory, os.O_RDONLY)
+        try: os.fsync(directory_fd)
+        finally: os.close(directory_fd)
     try:
         with tempfile.TemporaryDirectory(prefix='pulse-run-', dir=state) as work:
             output = execute(req, Path(work))
