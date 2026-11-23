@@ -1,0 +1,155 @@
+....................FFF...FFF                                            [100%]
+=================================== FAILURES ===================================
+_____________ test_hermes_invocation_is_bounded_toolless_and_exact _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107c21950>
+tmp_path = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_hermes_invocation_is_boun0')
+
+    def test_hermes_invocation_is_bounded_toolless_and_exact(monkeypatch, tmp_path):
+        m = module(); calls = []
+        (tmp_path / 'config.yaml').write_text('fallback_providers: []\n')
+        def launch(argv, **kwargs):
+            calls.append((argv, kwargs))
+            if '--print-runtime-command' in argv:
+                return subprocess.CompletedProcess(argv, 0, json.dumps(['/python','-I','-c',"import runpy; runpy.run_module('runpy', run_name='__main__', alter_sys=True)"]), '')
+            return subprocess.CompletedProcess(argv, 0, json.dumps({'text':'[]','model':'gpt-6-luna','provider':'openai-codex'}), '')
+        monkeypatch.setattr(m.subprocess, 'run', launch)
+>       assert m.hermes_completion(model='gpt-6-luna', messages=[{'role':'user','content':'public news'}], home=tmp_path) == '[]'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_local_model_worker.py:146:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+model = 'gpt-6-luna', messages = [{'role': 'user', 'content': 'public news'}]
+home = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_hermes_invocation_is_boun0')
+_ = {}
+
+    def hermes_completion(*, model, messages, home=None, **_):
+        if model not in MODELS.values():
+            raise ValueError('model not approved')
+        home = Path(home or os.environ['PULSE_HERMES_HOME']).resolve()
+        if not (home / 'config.yaml').is_file():
+            raise ValueError('dedicated Hermes home not provisioned')
+        env = {k: v for k, v in os.environ.items() if k in {'HOME','PATH','USER','LOGNAME','LANG','LC_ALL','TMPDIR','SSL_CERT_FILE'}}
+        env['HERMES_HOME'] = str(home)
+        # No API-key inheritance, no resume, no fallback, no remote command/prompt argument.
+        with tempfile.TemporaryDirectory(prefix='pulse-inference-', dir=home) as work:
+            prompt = Path(work) / 'query.txt'
+            prompt.write_text('\n\n'.join(m['content'] for m in messages), encoding='utf-8')
+            prompt.chmod(0o600)
+            argv = [os.environ.get('PULSE_HERMES_BIN', str(Path.home()/'.local/bin/hermes')), 'chat',
+                    '--safe-mode', '--ignore-rules', '--toolsets', '', '--provider', 'openai-codex',
+                    '--model', model, '--max-turns', '1', '--run-budget', '600',
+                    '--format', 'stream-json', '--source', 'tool', '--query-file', str(prompt)]
+            result = subprocess.run(argv, cwd=work, env=env, capture_output=True, text=True, timeout=600, check=False)
+        if result.returncode != 0 or len(result.stdout) > 2_000_000:
+            raise RuntimeError('Hermes inference failed')
+        events = [json.loads(line) for line in result.stdout.splitlines() if line.strip()]
+        if any(e.get('type') not in {'system','text','result'} for e in events):
+>           raise ValueError('unexpected inference event (tools forbidden)')
+E           ValueError: unexpected inference event (tools forbidden)
+
+intel/local_model_worker.py:167: ValueError
+_________ test_native_codex_tools_and_incomplete_rejected[tools0-stop] _________
+
+tools = [{'name': 'terminal'}], finish = 'stop'
+
+    @pytest.mark.parametrize('tools,finish', [([{'name':'terminal'}], 'stop'), (None,'length')])
+    def test_native_codex_tools_and_incomplete_rejected(tools, finish):
+>       from intel.codex_inference import infer
+E       ModuleNotFoundError: No module named 'intel.codex_inference'
+
+tests/test_local_model_worker.py:159: ModuleNotFoundError
+_________ test_native_codex_tools_and_incomplete_rejected[None-length] _________
+
+tools = None, finish = 'length'
+
+    @pytest.mark.parametrize('tools,finish', [([{'name':'terminal'}], 'stop'), (None,'length')])
+    def test_native_codex_tools_and_incomplete_rejected(tools, finish):
+>       from intel.codex_inference import infer
+E       ModuleNotFoundError: No module named 'intel.codex_inference'
+
+tests/test_local_model_worker.py:159: ModuleNotFoundError
+____ test_daily_routes_inference_to_request_and_await_without_paid_secrets _____
+
+    def test_daily_routes_inference_to_request_and_await_without_paid_secrets():
+        text = (ROOT/'.github/workflows/daily-intel.yml').read_text()
+>       assert 'PERPLEXITY_API_KEY' not in text
+E       AssertionError: assert 'PERPLEXITY_API_KEY' not in 'name: Weekd...n-days: 30\n'
+E
+E         'PERPLEXITY_API_KEY' is contained here:
+E           nv:
+E                 PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+E         ?       ++++++++++++++++++
+E                 SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+E                 SLACK_CHANNEL_ID: C0B1TPFSZKJ...
+E
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_local_model_workflow.py:8: AssertionError
+______________ test_result_workflow_cannot_execute_input_as_shell ______________
+
+    def test_result_workflow_cannot_execute_input_as_shell():
+>       text = (ROOT/'.github/workflows/pulse-model-result.yml').read_text()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_local_model_workflow.py:22:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/Users/troymaas/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-codex-migration/.github/workflows/pulse-model-result.yml')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-codex-migration/.github/workflows/pulse-model-result.yml'
+
+/Users/troymaas/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____________ test_worker_templates_do_not_replace_existing_owners _____________
+
+    def test_worker_templates_do_not_replace_existing_owners():
+>       text = (ROOT/'scripts/run_local_model_worker').read_text()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_local_model_workflow.py:33:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/Users/troymaas/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-codex-migration/scripts/run_local_model_worker')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-codex-migration/scripts/run_local_model_worker'
+
+/Users/troymaas/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/pathlib.py:1044: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_local_model_worker.py::test_hermes_invocation_is_bounded_toolless_and_exact
+FAILED tests/test_local_model_worker.py::test_native_codex_tools_and_incomplete_rejected[tools0-stop]
+FAILED tests/test_local_model_worker.py::test_native_codex_tools_and_incomplete_rejected[None-length]
+FAILED tests/test_local_model_workflow.py::test_daily_routes_inference_to_request_and_await_without_paid_secrets
+FAILED tests/test_local_model_workflow.py::test_result_workflow_cannot_execute_input_as_shell
+FAILED tests/test_local_model_workflow.py::test_worker_templates_do_not_replace_existing_owners
+6 failed, 23 passed in 0.17s

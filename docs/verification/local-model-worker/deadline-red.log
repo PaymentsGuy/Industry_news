@@ -1,0 +1,30 @@
+..................................F                                      [100%]
+=================================== FAILURES ===================================
+________________ test_expired_request_is_rejected_before_claim _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108081f90>
+tmp_path = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_expired_request_is_reject0')
+
+    def test_expired_request_is_rejected_before_claim(monkeypatch, tmp_path):
+        m = module(); req = request()
+        monkeypatch.setattr(m.time,'time',lambda:req['deadline_unix'] + 1)
+        with pytest.raises(ValueError,match='deadline'):
+>           m.process(req,run(),tmp_path,lambda *_:pytest.fail('expired inference'))
+
+tests/test_local_model_worker.py:314:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+intel/local_model_worker.py:233: in process
+    output = execute(req, Path(work))
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ({'schema_version': 1, 'repository': 'PaymentsGuy/Industry_news', 'run_id': '123', 'run_attempt': 1, ...}, PosixPath('...maas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_expired_request_is_reject0/pulse-run-l2i0xsw3'))
+
+>   m.process(req,run(),tmp_path,lambda *_:pytest.fail('expired inference'))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: expired inference
+
+tests/test_local_model_worker.py:314: Failed
+=========================== short test summary info ============================
+FAILED tests/test_local_model_worker.py::test_expired_request_is_rejected_before_claim
+1 failed, 34 passed in 0.21s

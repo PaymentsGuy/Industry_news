@@ -1,0 +1,42 @@
+..........................FF....                                         [100%]
+=================================== FAILURES ===================================
+__________ test_codex_failure_is_not_overwritten_by_workflow_handler ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b6b31d0>
+tmp_path = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_codex_failure_is_not_over0')
+
+    def test_codex_failure_is_not_overwritten_by_workflow_handler(monkeypatch, tmp_path):
+        monkeypatch.setenv('GITHUB_RUN_ID','123')
+        monkeypatch.setenv('PULSE_MODEL_BACKEND','codex')
+        existing = failure_status.build_receipt('2026-11-23','123','synthesis',[],provider='OpenAI Codex')
+        (tmp_path/'failure-status.json').write_text(json.dumps(existing))
+>       assert failure_status.write_failure(tmp_path,'2026-11-23','synthesis') == existing
+E       AssertionError: assert {'schema_vers...6-11-23', ...} == {'schema_vers...6-11-23', ...}
+E
+E         Omitting 10 identical items, use -vv to show
+E         Differing items:
+E         {'summary': 'Perplexity synthesis stage failed.'} != {'summary': 'OpenAI Codex synthesis stage failed.'}
+E         {'attempted_at': '2026-11-23T18:20:43.085336Z'} != {'attempted_at': '2026-11-23T18:20:43.085252Z'}
+E         {'provider': 'Perplexity'} != {'provider': 'OpenAI Codex'}
+E         Use -v to get more diff
+
+tests/test_local_model_worker.py:221: AssertionError
+__________ test_workflow_timeout_receipt_names_subscription_provider ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b67b950>
+tmp_path = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_workflow_timeout_receipt_0')
+
+    def test_workflow_timeout_receipt_names_subscription_provider(monkeypatch, tmp_path):
+        monkeypatch.setenv('GITHUB_RUN_ID','123')
+        monkeypatch.setenv('PULSE_MODEL_BACKEND','codex')
+>       assert failure_status.write_failure(tmp_path,'2026-11-23','synthesis')['provider'] == 'OpenAI Codex'
+E       AssertionError: assert 'Perplexity' == 'OpenAI Codex'
+E
+E         - OpenAI Codex
+E         + Perplexity
+
+tests/test_local_model_worker.py:227: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_local_model_worker.py::test_codex_failure_is_not_overwritten_by_workflow_handler
+FAILED tests/test_local_model_worker.py::test_workflow_timeout_receipt_names_subscription_provider
+2 failed, 30 passed in 0.16s

@@ -1,0 +1,38 @@
+....................................FF                                   [100%]
+=================================== FAILURES ===================================
+__________________ test_result_metadata_is_source_bound[date] __________________
+
+tmp_path = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_result_metadata_is_source0')
+change = 'date'
+
+    @pytest.mark.parametrize('change',['date','counts'])
+    def test_result_metadata_is_source_bound(tmp_path,change):
+        m = module(); req,result = material_result(tmp_path)
+        if change == 'date':
+            result['output']['brief'] = result['output']['brief'].replace('Pulse — 2026-11-23','Pulse — 2026-11-24')
+        else:
+            result['output']['brief'] = result['output']['brief'].replace('classified:** 2','classified:** 3').replace('monitor=0','monitor=1')
+>       with pytest.raises(ValueError): m.accept_result(req,result,tmp_path/'out')
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_local_model_worker.py:346: Failed
+_________________ test_result_metadata_is_source_bound[counts] _________________
+
+tmp_path = PosixPath('/Users/troymaas/.hermes/profiles/research_analyst/cache/scratch/pulse-pytest/test_result_metadata_is_source1')
+change = 'counts'
+
+    @pytest.mark.parametrize('change',['date','counts'])
+    def test_result_metadata_is_source_bound(tmp_path,change):
+        m = module(); req,result = material_result(tmp_path)
+        if change == 'date':
+            result['output']['brief'] = result['output']['brief'].replace('Pulse — 2026-11-23','Pulse — 2026-11-24')
+        else:
+            result['output']['brief'] = result['output']['brief'].replace('classified:** 2','classified:** 3').replace('monitor=0','monitor=1')
+>       with pytest.raises(ValueError): m.accept_result(req,result,tmp_path/'out')
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_local_model_worker.py:346: Failed
+=========================== short test summary info ============================
+FAILED tests/test_local_model_worker.py::test_result_metadata_is_source_bound[date]
+FAILED tests/test_local_model_worker.py::test_result_metadata_is_source_bound[counts]
+2 failed, 36 passed in 0.21s

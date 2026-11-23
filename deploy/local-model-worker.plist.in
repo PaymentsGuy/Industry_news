@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.asa.industry-news.model-worker</string>
+  <key>ProgramArguments</key><array><string>/bin/sh</string><string>@RELEASE@/scripts/run_local_model_worker</string></array>
+  <key>EnvironmentVariables</key><dict>
+    <key>PULSE_WORKER_STATE</key><string>@STATE@</string>
+    <key>PULSE_HERMES_HOME</key><string>@HERMES_HOME@</string>
+    <key>PULSE_PYTHON</key><string>@PYTHON@</string>
+  </dict>
+  <key>StartInterval</key><integer>30</integer>
+  <key>RunAtLoad</key><true/>
+  <key>StandardOutPath</key><string>@STATE@/worker.stdout.log</string>
+  <key>StandardErrorPath</key><string>@STATE@/worker.stderr.log</string>
+</dict></plist>

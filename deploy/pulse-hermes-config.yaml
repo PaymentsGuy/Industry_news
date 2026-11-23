@@ -1,0 +1,10 @@
+# Dedicated home only. Native adapter does not construct an agent or load tools.
+model:
+  provider: openai-codex
+  default: gpt-6.1-sol
+fallback_providers: []
+compression:
+  enabled: false
+memory:
+  memory_enabled: false
+  user_profile_enabled: false

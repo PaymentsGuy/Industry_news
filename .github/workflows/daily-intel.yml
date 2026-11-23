@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: daily-intel
@@ -22,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      PULSE_MODEL_BACKEND: codex
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       SLACK_CHANNEL_ID: C0B1TPFSZKJ
       SLACK_TEAM_ID: ${{ secrets.SLACK_TEAM_ID }}
@@ -54,7 +55,7 @@ jobs:
           echo "INTERVAL_START=${{ steps.eligibility.outputs.interval_start }}" >> "$GITHUB_ENV"
           echo "INTERVAL_END=${{ steps.eligibility.outputs.interval_end }}" >> "$GITHUB_ENV"
 
-      - name: Reserve this date before any paid generation
+      - name: Reserve this date before any model generation
         if: steps.eligibility.outputs.eligible == 'true'
         id: generation
         env:
@@ -90,23 +91,30 @@ jobs:
         if: steps.generation.outputs.generate == 'true'
         run: python -m intel.pipeline collect --out-dir intel/${DATE}
 
-      - name: Stage 1 — classify every candidate
+      - name: Prepare run-bound local model request
         id: triage
         if: steps.generation.outputs.generate == 'true'
-        run: python -m intel.pipeline triage --in-file intel/${DATE}/raw.jsonl --out-file intel/${DATE}/triaged.jsonl
-
-      - name: Stage 2 — synthesize uncapped material pulse
-        id: synthesis
-        if: steps.generation.outputs.generate == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           ARGS=""
           if [ -n "${PRIOR_LEDGER}" ]; then ARGS="--prior-ledger ${PRIOR_LEDGER}"; fi
-          python -m intel.pipeline synthesize \
-            --in-file intel/${DATE}/triaged.jsonl \
-            --out-file intel/${DATE}/brief.md \
-            ${ARGS} \
-            --event-registry intel/event_registry.json \
-            --brief-date "${DATE}"
+          python -m intel.local_model_worker prepare --out-dir "intel/${DATE}" --report-date "${DATE}" ${ARGS}
+
+      - name: Publish data-only inference request
+        if: steps.generation.outputs.generate == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pulse-request-${{ github.run_id }}-${{ github.run_attempt }}
+          path: intel/${{ env.DATE }}/request.json
+          retention-days: 2
+
+      - name: Await validated local classification and synthesis
+        id: synthesis
+        if: steps.generation.outputs.generate == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m intel.local_model_worker await --out-dir "intel/${DATE}"
 
       - name: Update topic ledger
         id: ledger
@@ -140,6 +148,7 @@ jobs:
         run: |
           git config user.name "asa-intel-bot"
           git config user.email "asa-intel-bot@users.noreply.github.com"
+          rm -f "intel/${DATE}/request.json"
           git add intel/${DATE}/ intel/event_registry.json
           git diff --cached --quiet || (git commit -m "intel: pulse ${DATE}" && git push)
 

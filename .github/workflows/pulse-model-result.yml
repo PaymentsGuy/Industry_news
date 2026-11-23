@@ -1,0 +1,37 @@
+name: Pulse model result
+run-name: pulse-result-${{ fromJSON(inputs.result).run_id }}-${{ fromJSON(inputs.result).run_attempt }}-${{ fromJSON(inputs.result).request_hash }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      result:
+        description: "Bounded public-news inference envelope; no commands or secrets"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  result:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Validate fixed run-bound result
+        id: validated
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PULSE_RESULT: ${{ inputs.result }}
+        run: python -m intel.local_model_worker receive
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.validated.outputs.artifact_name }}
+          path: result.json
+          retention-days: 2

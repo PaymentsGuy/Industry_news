@@ -24,8 +24,8 @@ def test_workflow_uses_dst_safe_guard_and_weekday_daily_identity() -> None:
     assert "python -m intel.schedule --scheduled-cron" in workflow
     assert "python -m intel.publication_guard" in workflow
     assert "python -m intel.pipeline collect" in workflow
-    assert "python -m intel.pipeline triage" in workflow
-    assert "python -m intel.pipeline synthesize" in workflow
+    assert "python -m intel.local_model_worker prepare" in workflow
+    assert "python -m intel.local_model_worker await" in workflow
     assert "python -m intel.update_ledger" in workflow
     assert "python -m intel.delivery create" in workflow
     assert "python -m intel.delivery mark-repository" in workflow

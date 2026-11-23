@@ -1,0 +1,13 @@
+#!/bin/sh
+# Install from a reviewed, pinned release; never run from the bridge's live checkout.
+set -eu
+umask 077
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+: "${PULSE_WORKER_STATE:?set durable owner-only claim directory}"
+: "${PULSE_HERMES_HOME:?set dedicated Hermes OAuth home}"
+: "${PULSE_PYTHON:?set worker venv Python}"
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:/usr/bin:/bin"
+export TMPDIR="$PULSE_WORKER_STATE/tmp"
+mkdir -p "$TMPDIR"
+cd "$ROOT"
+exec "$PULSE_PYTHON" -m intel.local_model_worker poll --state "$PULSE_WORKER_STATE"

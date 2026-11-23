@@ -1,0 +1,454 @@
+FFFFFFFFFFFFFFFFFFFFFFFFF                                                [100%]
+=================================== FAILURES ===================================
+_________________________ test_protocol_module_exists __________________________
+
+    def test_protocol_module_exists():
+>       assert module().REPO == 'PaymentsGuy/Industry_news'
+               ^^^^^^^^
+
+tests/test_local_model_worker.py:40:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_______________ test_wrong_run_rejected_before_inference[id-124] _______________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before0')
+field = 'id', value = 124
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+___________ test_wrong_run_rejected_before_inference[run_attempt-2] ____________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before1')
+field = 'run_attempt', value = 2
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_ test_wrong_run_rejected_before_inference[head_sha-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb] _
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before2')
+field = 'head_sha', value = 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_________ test_wrong_run_rejected_before_inference[head_branch-other] __________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before3')
+field = 'head_branch', value = 'other'
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_ test_wrong_run_rejected_before_inference[path-.github/workflows/weekly-intel.yml] _
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before4')
+field = 'path', value = '.github/workflows/weekly-intel.yml'
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_________ test_wrong_run_rejected_before_inference[event-pull_request] _________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before5')
+field = 'event', value = 'pull_request'
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_________ test_wrong_run_rejected_before_inference[repository-value6] __________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_wrong_run_rejected_before6')
+field = 'repository', value = {'full_name': 'evil/Industry_news'}
+
+    @pytest.mark.parametrize('field,value', [('id', 124), ('run_attempt', 2), ('head_sha', 'b'*40),
+        ('head_branch', 'other'), ('path', '.github/workflows/weekly-intel.yml'), ('event', 'pull_request'),
+        ('repository', {'full_name': 'evil/Industry_news'})])
+    def test_wrong_run_rejected_before_inference(tmp_path, field, value):
+>       m = module(); req = request(); observed = run(); observed[field] = value
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:47:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_________________________ test_tampered_hash_rejected __________________________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_tampered_hash_rejected0')
+
+    def test_tampered_hash_rejected(tmp_path):
+>       m = module(); req = request(); req['raw'][0]['text'] = 'changed'
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_______ test_claim_durable_before_inference_and_duplicate_never_repeats ________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_claim_durable_before_infe0')
+
+    def test_claim_durable_before_inference_and_duplicate_never_repeats(tmp_path):
+>       m = module(); req = request(); calls = []
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:61:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_______________ test_crash_unknown_claim_blocks_automatic_repeat _______________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_crash_unknown_claim_block0')
+
+    def test_crash_unknown_claim_blocks_automatic_repeat(tmp_path):
+>       m = module(); req = request()
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:77:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_________________ test_changed_request_same_run_blocks_repeat __________________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_changed_request_same_run_0')
+
+    def test_changed_request_same_run_blocks_repeat(tmp_path):
+>       m = module(); req = request()
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:88:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+____________ test_batch_requires_exact_schema_and_coverage[missing] ____________
+
+mutation = 'missing'
+
+    @pytest.mark.parametrize('mutation', ['missing', 'duplicate', 'wrong_id', 'score', 'extra', 'bucket'])
+    def test_batch_requires_exact_schema_and_coverage(mutation):
+>       m = module(); rows = [classified()]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:97:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+___________ test_batch_requires_exact_schema_and_coverage[duplicate] ___________
+
+mutation = 'duplicate'
+
+    @pytest.mark.parametrize('mutation', ['missing', 'duplicate', 'wrong_id', 'score', 'extra', 'bucket'])
+    def test_batch_requires_exact_schema_and_coverage(mutation):
+>       m = module(); rows = [classified()]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:97:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+___________ test_batch_requires_exact_schema_and_coverage[wrong_id] ____________
+
+mutation = 'wrong_id'
+
+    @pytest.mark.parametrize('mutation', ['missing', 'duplicate', 'wrong_id', 'score', 'extra', 'bucket'])
+    def test_batch_requires_exact_schema_and_coverage(mutation):
+>       m = module(); rows = [classified()]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:97:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_____________ test_batch_requires_exact_schema_and_coverage[score] _____________
+
+mutation = 'score'
+
+    @pytest.mark.parametrize('mutation', ['missing', 'duplicate', 'wrong_id', 'score', 'extra', 'bucket'])
+    def test_batch_requires_exact_schema_and_coverage(mutation):
+>       m = module(); rows = [classified()]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:97:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_____________ test_batch_requires_exact_schema_and_coverage[extra] _____________
+
+mutation = 'extra'
+
+    @pytest.mark.parametrize('mutation', ['missing', 'duplicate', 'wrong_id', 'score', 'extra', 'bucket'])
+    def test_batch_requires_exact_schema_and_coverage(mutation):
+>       m = module(); rows = [classified()]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:97:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+____________ test_batch_requires_exact_schema_and_coverage[bucket] _____________
+
+mutation = 'bucket'
+
+    @pytest.mark.parametrize('mutation', ['missing', 'duplicate', 'wrong_id', 'score', 'extra', 'bucket'])
+    def test_batch_requires_exact_schema_and_coverage(mutation):
+>       m = module(); rows = [classified()]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:97:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_____________ test_batch_classification_uses_one_fixed_model_call ______________
+
+    def test_batch_classification_uses_one_fixed_model_call():
+>       m = module(); calls = []
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+______________ test_native_synthesis_exact_model_no_paid_fallback ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b04f090>
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_native_synthesis_exact_mo0')
+
+    def test_native_synthesis_exact_model_no_paid_fallback(monkeypatch, tmp_path):
+>       m = module(); calls = []
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:119:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_____________ test_hermes_invocation_is_bounded_toolless_and_exact _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b0a0dd0>
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_hermes_invocation_is_boun0')
+
+    def test_hermes_invocation_is_bounded_toolless_and_exact(monkeypatch, tmp_path):
+>       m = module(); calls = []
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:138:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_______________ test_tool_call_or_ambiguous_stream_fails_closed ________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b0af450>
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_tool_call_or_ambiguous_st0')
+
+    def test_tool_call_or_ambiguous_stream_fails_closed(monkeypatch, tmp_path):
+>       m = module()
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:157:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+_______ test_fixed_result_payload_rejects_wrong_hash_or_arbitrary_writes _______
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_fixed_result_payload_reje0')
+
+    def test_fixed_result_payload_rejects_wrong_hash_or_arbitrary_writes(tmp_path):
+>       m = module(); req = request()
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:167:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+________________ test_fake_github_roundtrip_timeout_and_replay _________________
+
+tmp_path = PosixPath('/private/var/folders/vl/mpbdb4xd0sxfdws6zttv_b380000gn/T/pytest-of-troymaas/pytest-34/test_fake_github_roundtrip_tim0')
+
+    def test_fake_github_roundtrip_timeout_and_replay(tmp_path):
+>       m = module(); req = request(); gh = FakeGH(req); calls=[]
+            ^^^^^^^^
+
+tests/test_local_model_worker.py:186:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def module():
+>       from intel import local_model_worker
+E       ImportError: cannot import name 'local_model_worker' from 'intel' (unknown location)
+
+tests/test_local_model_worker.py:12: ImportError
+________________ test_codex_receipt_preserves_legacy_validation ________________
+
+    def test_codex_receipt_preserves_legacy_validation():
+>       receipt = failure_status.build_receipt('2026-11-23','123','synthesis',[],provider='OpenAI Codex')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: build_receipt() got an unexpected keyword argument 'provider'
+
+tests/test_local_model_worker.py:199: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_local_model_worker.py::test_protocol_module_exists - Import...
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[id-124]
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[run_attempt-2]
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[head_sha-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[head_branch-other]
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[path-.github/workflows/weekly-intel.yml]
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[event-pull_request]
+FAILED tests/test_local_model_worker.py::test_wrong_run_rejected_before_inference[repository-value6]
+FAILED tests/test_local_model_worker.py::test_tampered_hash_rejected - Import...
+FAILED tests/test_local_model_worker.py::test_claim_durable_before_inference_and_duplicate_never_repeats
+FAILED tests/test_local_model_worker.py::test_crash_unknown_claim_blocks_automatic_repeat
+FAILED tests/test_local_model_worker.py::test_changed_request_same_run_blocks_repeat
+FAILED tests/test_local_model_worker.py::test_batch_requires_exact_schema_and_coverage[missing]
+FAILED tests/test_local_model_worker.py::test_batch_requires_exact_schema_and_coverage[duplicate]
+FAILED tests/test_local_model_worker.py::test_batch_requires_exact_schema_and_coverage[wrong_id]
+FAILED tests/test_local_model_worker.py::test_batch_requires_exact_schema_and_coverage[score]
+FAILED tests/test_local_model_worker.py::test_batch_requires_exact_schema_and_coverage[extra]
+FAILED tests/test_local_model_worker.py::test_batch_requires_exact_schema_and_coverage[bucket]
+FAILED tests/test_local_model_worker.py::test_batch_classification_uses_one_fixed_model_call
+FAILED tests/test_local_model_worker.py::test_native_synthesis_exact_model_no_paid_fallback
+FAILED tests/test_local_model_worker.py::test_hermes_invocation_is_bounded_toolless_and_exact
+FAILED tests/test_local_model_worker.py::test_tool_call_or_ambiguous_stream_fails_closed
+FAILED tests/test_local_model_worker.py::test_fixed_result_payload_rejects_wrong_hash_or_arbitrary_writes
+FAILED tests/test_local_model_worker.py::test_fake_github_roundtrip_timeout_and_replay
+FAILED tests/test_local_model_worker.py::test_codex_receipt_preserves_legacy_validation
+25 failed in 0.18s

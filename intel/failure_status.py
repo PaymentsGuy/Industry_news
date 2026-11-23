@@ -17,7 +17,7 @@ def http_status(error):
     return value if type(value) is int and 400 <= value <= 599 else None
 
 
-def build_receipt(report_date, run_id, stage, codes, *, attempted_at=None):
+def build_receipt(report_date, run_id, stage, codes, *, attempted_at=None, provider=None):
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', report_date):
         raise ValueError('invalid report date')
     date.fromisoformat(report_date)
@@ -25,7 +25,10 @@ def build_receipt(report_date, run_id, stage, codes, *, attempted_at=None):
     if not re.fullmatch(r'[1-9]\d*', run_id) or stage not in STAGES:
         raise ValueError('invalid run identity or stage')
     codes = sorted({code for code in codes if type(code) is int and 400 <= code <= 599})
-    provider = 'Perplexity' if stage in {'triage', 'synthesis'} else 'Industry Pulse'
+    default_provider = 'Perplexity' if stage in {'triage', 'synthesis'} else 'Industry Pulse'
+    provider = provider or default_provider
+    if provider not in {default_provider, 'OpenAI Codex'} or (provider == 'OpenAI Codex' and stage not in {'triage', 'synthesis'}):
+        raise ValueError('invalid provider')
     if 402 in codes:
         summary = f'{provider} rejected requests: payment required' + ('; rate limiting also occurred.' if 429 in codes else '.')
         action = f'Check {provider} credits/billing. Once resolved, explicitly retry the failed Pulse.'
@@ -48,13 +51,22 @@ def build_receipt(report_date, run_id, stage, codes, *, attempted_at=None):
 def valid_receipt(value, report_date, run_id):
     try:
         return isinstance(value, dict) and value == build_receipt(
-            report_date, str(run_id), value['stage'], value['http_codes'], attempted_at=value['attempted_at'])
+            report_date, str(run_id), value['stage'], value['http_codes'], attempted_at=value['attempted_at'],
+            provider=value.get('provider'))
     except (KeyError, ValueError, TypeError):
         return False
 
 
 def write_failure(out_dir, report_date, stage):
     out_dir = Path(out_dir)
+    existing = out_dir / 'failure-status.json'
+    if existing.exists():
+        try:
+            value = json.loads(existing.read_text())
+            if value.get('stage') == stage and valid_receipt(value, report_date, os.environ.get('GITHUB_RUN_ID', '')):
+                return value
+        except (ValueError, AttributeError):
+            pass
     codes = []
     triaged = out_dir / 'triaged.jsonl'
     if stage in {'triage', 'synthesis'} and triaged.exists():
@@ -68,7 +80,8 @@ def write_failure(out_dir, report_date, stage):
         value = json.loads(evidence.read_text())
         if value.get('workflow_run_id') == os.environ.get('GITHUB_RUN_ID'):
             codes.extend(value.get('http_codes', []))
-    receipt = build_receipt(report_date, os.environ.get('GITHUB_RUN_ID', ''), stage, codes)
+    provider = 'OpenAI Codex' if os.environ.get('PULSE_MODEL_BACKEND') == 'codex' and stage in {'triage', 'synthesis'} else None
+    receipt = build_receipt(report_date, os.environ.get('GITHUB_RUN_ID', ''), stage, codes, provider=provider)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / 'failure-status.json').write_text(json.dumps(receipt, indent=2) + '\n')
     return receipt

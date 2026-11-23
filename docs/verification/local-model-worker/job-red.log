@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_github_poll_requires_exact_active_brief_job _______________
+
+    def test_github_poll_requires_exact_active_brief_job():
+        m = module(); gh = m.GitHub(); jobs = [{'name':'not-the-brief','status':'in_progress','run_id':123}]
+        def api(suffix, **kw):
+            return {'total_count':len(jobs),'jobs':jobs} if '/jobs?' in suffix else {'workflow_runs':[run()]}
+        gh.api = api
+>       assert gh.pending() == []
+E       AssertionError: assert [{'id': 123, ... 'main', ...}] == []
+E
+E         Left contains one more item: {'id': 123, 'run_attempt': 1, 'head_sha': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'head_branch': 'main', ...}
+E         Use -v to get more diff
+
+tests/test_local_model_worker.py:354: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_local_model_worker.py::test_github_poll_requires_exact_active_brief_job
+1 failed in 0.11s
