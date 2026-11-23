@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "producer": "industry_news",
+  "status": "failed",
+  "brief_id": "industry-pulse-2026-11-23",
+  "brief_date": "2026-11-23",
+  "workflow_run_id": "45194898297",
+  "run_url": "https://github.com/PaymentsGuy/Industry_news/actions/runs/45194898297",
+  "attempted_at": "2026-11-23T14:31:05.121394Z",
+  "stage": "triage",
+  "provider": "Perplexity",
+  "http_codes": [
+    401
+  ],
+  "summary": "Perplexity triage stage failed.",
+  "action": "View the failed run, resolve the reported issue, then explicitly retry the failed Pulse."
+}
