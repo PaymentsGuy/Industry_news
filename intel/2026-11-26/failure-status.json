@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "producer": "industry_news",
+  "status": "failed",
+  "brief_id": "industry-pulse-2026-11-26",
+  "brief_date": "2026-11-26",
+  "workflow_run_id": "45839659314",
+  "run_url": "https://github.com/PaymentsGuy/Industry_news/actions/runs/45839659314",
+  "attempted_at": "2026-11-26T14:52:04.165500Z",
+  "stage": "ledger",
+  "provider": "Industry Pulse",
+  "http_codes": [],
+  "summary": "Industry Pulse ledger stage failed.",
+  "action": "View the failed run, resolve the reported issue, then explicitly retry the failed Pulse."
+}
